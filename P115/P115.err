@@ -1,0 +1,7 @@
+>>> Warning 203 "P115.c" Line 29(1,1): Condition always TRUE
+>>> Warning 202 "P115.c" Line 6(17,24): Variable never used:   centena
+>>> Warning 202 "P115.c" Line 6(25,31): Variable never used:   dezena
+>>> Warning 202 "P115.c" Line 6(32,39): Variable never used:   unidade
+      Memory usage:   ROM=8%      RAM=3% - 5%
+      0 Errors,  4 Warnings.
+Build Successful.

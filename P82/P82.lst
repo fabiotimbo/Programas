@@ -1,0 +1,228 @@
+CCS PCH C Compiler, Version 5.007, 61971               22-dez-19 20:59
+
+               Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Microcontroladores e dispositivos periféricos\Programas apostila oficiais\P82\P82.lst
+
+               ROM used:   406 bytes (1%)
+                           Largest free fragment is 32358
+               RAM used:   37 (2%) at main() level
+                           39 (2%) worst case
+               Stack used: 1 locations (0 in main + 1 for interrupts)
+               Stack size: 31
+
+*
+0000:  GOTO   013C
+*
+0008:  MOVWF  04
+000A:  MOVFF  FD8,05
+000E:  MOVFF  FE0,06
+0012:  MOVLB  0
+0014:  MOVFF  FE9,0C
+0018:  MOVFF  FEA,07
+001C:  MOVFF  FE1,08
+0020:  MOVFF  FE2,09
+0024:  MOVFF  FD9,0A
+0028:  MOVFF  FDA,0B
+002C:  MOVFF  FF3,12
+0030:  MOVFF  FF4,13
+0034:  MOVFF  FFA,14
+0038:  MOVFF  00,0E
+003C:  MOVFF  01,0F
+0040:  MOVFF  02,10
+0044:  MOVFF  03,11
+0048:  BTFSS  FF2.5
+004A:  GOTO   0054
+004E:  BTFSC  FF2.2
+0050:  GOTO   0096
+0054:  MOVFF  0E,00
+0058:  MOVFF  0F,01
+005C:  MOVFF  10,02
+0060:  MOVFF  11,03
+0064:  MOVFF  0C,FE9
+0068:  MOVFF  07,FEA
+006C:  BSF    07.7
+006E:  MOVFF  08,FE1
+0072:  MOVFF  09,FE2
+0076:  MOVFF  0A,FD9
+007A:  MOVFF  0B,FDA
+007E:  MOVFF  12,FF3
+0082:  MOVFF  13,FF4
+0086:  MOVFF  14,FFA
+008A:  MOVF   04,W
+008C:  MOVFF  06,FE0
+0090:  MOVFF  05,FD8
+0094:  RETFIE 0
+.................... //luz vermelha ligada no pino d2 
+.................... //luz amarela ligada no pino d1 
+.................... //luz verde ligada no pin_d0 
+.................... #include <18F4550.h>  
+.................... //////// Standard Header file for the PIC18F4550 device //////////////// 
+.................... #device PIC18F4550 
+....................  
+.................... #list 
+....................  
+.................... #byte port_d = 0xF83  
+.................... #fuses HS, NOWDT, PUT, BROWNOUT, NOLVP, CPUDIV1,PLL5,USBDIV 
+.................... #use delay(clock=20000000)  
+.................... unsigned int var[] = {0b1,0b10,0b100}; 
+.................... unsigned int16 tempos[] = {1250,3000,4000}; 
+.................... unsigned int *lampadas=var; 
+.................... #int_timer0  
+.................... void funcao_tempo()  
+.................... {  
+.................... static unsigned int32 n; 
+.................... set_timer0(131+get_timer0()); 
+0096:  MOVF   FD6,W
+0098:  MOVFF  FD7,03
+009C:  ADDLW  83
+009E:  MOVWF  25
+00A0:  MOVLW  00
+00A2:  ADDWFC FD7,W
+00A4:  MOVWF  FD7
+00A6:  MOVFF  25,FD6
+.................... n++;  
+00AA:  MOVLW  01
+00AC:  ADDWF  21,F
+00AE:  BTFSC  FD8.0
+00B0:  INCF   22,F
+00B2:  BTFSC  FD8.2
+00B4:  INCF   23,F
+00B6:  BTFSC  FD8.2
+00B8:  INCF   24,F
+.................... if (n==tempos[0]) 
+00BA:  MOVF   19,W
+00BC:  SUBWF  21,W
+00BE:  BNZ   00DA
+00C0:  MOVF   1A,W
+00C2:  SUBWF  22,W
+00C4:  BNZ   00DA
+00C6:  MOVF   23,F
+00C8:  BNZ   00DA
+00CA:  MOVF   24,F
+00CC:  BNZ   00DA
+.................... { 
+.................... port_d=*lampadas; 
+00CE:  MOVFF  1F,FE9
+00D2:  MOVFF  20,FEA
+00D6:  MOVFF  FEF,F83
+.................... }  
+.................... if (n==tempos[1]) 
+00DA:  MOVF   1B,W
+00DC:  SUBWF  21,W
+00DE:  BNZ   0100
+00E0:  MOVF   1C,W
+00E2:  SUBWF  22,W
+00E4:  BNZ   0100
+00E6:  MOVF   23,F
+00E8:  BNZ   0100
+00EA:  MOVF   24,F
+00EC:  BNZ   0100
+.................... { 
+.................... lampadas++; 
+00EE:  INCF   1F,F
+00F0:  BTFSC  FD8.2
+00F2:  INCF   20,F
+.................... port_d=*lampadas; 
+00F4:  MOVFF  1F,FE9
+00F8:  MOVFF  20,FEA
+00FC:  MOVFF  FEF,F83
+.................... }  
+.................... if (n==tempos[2]) 
+0100:  MOVF   1D,W
+0102:  SUBWF  21,W
+0104:  BNZ   0136
+0106:  MOVF   1E,W
+0108:  SUBWF  22,W
+010A:  BNZ   0136
+010C:  MOVF   23,F
+010E:  BNZ   0136
+0110:  MOVF   24,F
+0112:  BNZ   0136
+.................... { 
+.................... n=0; 
+0114:  CLRF   24
+0116:  CLRF   23
+0118:  CLRF   22
+011A:  CLRF   21
+.................... lampadas++; 
+011C:  INCF   1F,F
+011E:  BTFSC  FD8.2
+0120:  INCF   20,F
+.................... port_d=*lampadas; 
+0122:  MOVFF  1F,FE9
+0126:  MOVFF  20,FEA
+012A:  MOVFF  FEF,F83
+.................... lampadas=lampadas-2; 
+012E:  MOVLW  02
+0130:  SUBWF  1F,F
+0132:  MOVLW  00
+0134:  SUBWFB 20,F
+0136:  BCF    FF2.2
+0138:  GOTO   0054
+.................... }}  
+.................... void main()  
+013C:  CLRF   FF8
+013E:  BCF    FD0.7
+0140:  BSF    07.7
+0142:  CLRF   20
+0144:  MOVLW  16
+0146:  MOVWF  1F
+0148:  MOVF   FC1,W
+014A:  ANDLW  C0
+014C:  IORLW  0F
+014E:  MOVWF  FC1
+0150:  MOVLW  07
+0152:  MOVWF  FB4
+0154:  MOVLW  01
+0156:  MOVWF  16
+0158:  MOVLW  02
+015A:  MOVWF  17
+015C:  MOVLW  04
+015E:  MOVWF  18
+0160:  MOVLW  E2
+0162:  MOVWF  19
+0164:  MOVLW  04
+0166:  MOVWF  1A
+0168:  MOVLW  B8
+016A:  MOVWF  1B
+016C:  MOVLW  0B
+016E:  MOVWF  1C
+0170:  MOVLW  A0
+0172:  MOVWF  1D
+0174:  MOVLW  0F
+0176:  MOVWF  1E
+0178:  CLRF   21
+017A:  CLRF   22
+017C:  CLRF   23
+017E:  CLRF   24
+.................... {setup_timer_0 (RTCC_DIV_64|RTCC_INTERNAL | RTCC_8_BIT );  
+0180:  MOVLW  C5
+0182:  MOVWF  FD5
+.................... set_timer0(131);  
+0184:  CLRF   FD7
+0186:  MOVLW  83
+0188:  MOVWF  FD6
+.................... enable_interrupts(GLOBAL);  
+018A:  MOVLW  C0
+018C:  IORWF  FF2,F
+.................... enable_interrupts(INT_TIMER0);  
+018E:  BSF    FF2.5
+.................... set_tris_d(0b00000000); 
+0190:  MOVLW  00
+0192:  MOVWF  F95
+.................... port_d=0; 
+0194:  CLRF   F83
+.................... while(true)  
+.................... {}} 
+0196:  BRA    0196
+....................  
+0198:  SLEEP 
+....................  
+
+Configuration Fuses:
+   Word  1: CC24   PLL5 CPUDIV1 USBDIV HS FCMEN IESO
+   Word  2: 1E3E   PUT BROWNOUT BORV21 VREGEN NOWDT WDT32768
+   Word  3: 8700   CCP2C1 PBADEN LPT1OSC MCLR
+   Word  4: 00A1   STVREN NOLVP ICSP2 NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

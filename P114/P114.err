@@ -1,0 +1,6 @@
+>>> Warning 202 "P114.c" Line 43(9,14): Variable never used:   value
+>>> Warning 202 "P114.c" Line 43(16,18): Variable never used:   n2
+>>> Warning 202 "P114.c" Line 44(19,26): Variable never used:   posicao
+      Memory usage:   ROM=6%      RAM=2% - 3%
+      0 Errors,  3 Warnings.
+Build Successful.

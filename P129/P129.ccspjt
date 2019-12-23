@@ -1,0 +1,33 @@
+[PROJECT]
+Target=P129.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.007
+Compiler=PCH
+[Target Data]
+FileList=P129.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[P129.c]
+Type=4
+[mru-list]
+1=P129.c
+[Opened Files]
+1=..\P88\P88.c
+2=..\P93\P93.c
+3=..\P96\P96.c
+4=..\P98\P98.c
+5=..\P102\P102.c
+6=..\P111\P111.c
+7=..\P113\P113.c
+8=..\P114\P114.c
+9=..\P115\P115.c
+10=..\P119\P119.c
+11=..\P122\P122.c
+12=..\P124\P124.c
+13=..\P128\P128.c
+14=P129.c
+15=..\P134\P134.c
+16=
+[Units]
+Count=1
+1=P129 (main)

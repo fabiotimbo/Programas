@@ -1,0 +1,78 @@
+CCS PCH C Compiler, Version 5.007, 61971               22-dez-19 22:00
+
+               Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Microcontroladores e dispositivos periféricos\Programas apostila oficiais\P72\P72.lst
+
+               ROM used:   52 bytes (0%)
+                           Largest free fragment is 32716
+               RAM used:   5 (0%) at main() level
+                           5 (0%) worst case
+               Stack used: 0 locations
+               Stack size: 31
+
+*
+0000:  GOTO   0004
+.................... #define led_verde pin_d0 
+.................... #define led_vermelho pin_d1 
+.................... #include <18F4550.h> 
+.................... //////// Standard Header file for the PIC18F4550 device //////////////// 
+.................... #device PIC18F4550 
+....................  
+.................... #list 
+....................  
+.................... #fuses HS,CPUDIV1,PLL5,USBDIV  //Configuração dos fusíveis 
+.................... #use delay(clock=20000000) 
+....................  
+.................... void main() 
+0004:  CLRF   FF8
+0006:  BCF    FD0.7
+0008:  MOVF   FC1,W
+000A:  ANDLW  C0
+000C:  IORLW  0F
+000E:  MOVWF  FC1
+0010:  MOVLW  07
+0012:  MOVWF  FB4
+.................... { 
+.................... while(true) 
+.................... { 
+....................     if (input(pin_e0)==0)  
+0014:  BSF    F96.0
+0016:  BTFSC  F84.0
+0018:  BRA    001E
+....................        { 
+....................        output_high(64); 
+001A:  BSF    00.0
+....................        } 
+001C:  BRA    0022
+....................     else 
+....................        { 
+....................        output_low(pin_d0); 
+001E:  BCF    F95.0
+0020:  BCF    F8C.0
+....................        } 
+....................       if (input(pin_e1)==0) 
+0022:  BSF    F96.1
+0024:  BTFSC  F84.1
+0026:  BRA    002C
+....................        { 
+....................        output_high (65); 
+0028:  BSF    00.1
+....................        } 
+002A:  BRA    0030
+....................     else 
+....................        { 
+....................        output_low(pin_d1); 
+002C:  BCF    F95.1
+002E:  BCF    F8C.1
+....................        }}} 
+0030:  BRA    0014
+....................  
+0032:  SLEEP 
+
+Configuration Fuses:
+   Word  1: CC24   PLL5 CPUDIV1 USBDIV HS FCMEN IESO
+   Word  2: 1E3E   PUT BROWNOUT BORV21 VREGEN NOWDT WDT32768
+   Word  3: 8700   CCP2C1 PBADEN LPT1OSC MCLR
+   Word  4: 00A1   STVREN NOLVP ICSP2 NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

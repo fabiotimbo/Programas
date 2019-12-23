@@ -1,0 +1,137 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016-017 angulo
+018-019 tempo2
+01A     n2
+01B-01E tempo
+01F.0   funcao_tempo.led
+020-023 funcao_tempo.n
+024     MAIN.selecao
+025     MAIN.value
+026     MAIN.n2
+027-02A MAIN.posicao
+02B     servo.angulo
+02B     @PSTRINGC_9600_31766_31767.@SCRATCH1
+02C     @delay_ms1.P1
+02C-02D @ITOF.P2
+02C-02F @SFTOI.P3
+02C-02F @MULFF.P4
+02C     servo.@SCRATCH1
+02C     @PSTRINGC_9600_31766_31767.@SCRATCH2
+02D     @delay_us1.P1
+02D     servo.@SCRATCH2
+02E     servo.@SCRATCH3
+02F     servo.@SCRATCH4
+030-033 @MULFF.P1
+030-033 @ADDFF.P2
+034-037 @ADDFF.P1
+034     @MULFF.@SCRATCH1
+035     @MULFF.@SCRATCH2
+036     @MULFF.@SCRATCH3
+038     @ADDFF.@SCRATCH1
+039     @ADDFF.@SCRATCH2
+03A     @ADDFF.@SCRATCH3
+03B     @ADDFF.@SCRATCH4
+03C     @ADDFF.@SCRATCH5
+03D     @ADDFF.@SCRATCH6
+03E     @ADDFF.@SCRATCH7
+03F     @ADDFF.@SCRATCH8
+040     funcao_tempo.@SCRATCH1
+041     funcao_tempo.@SCRATCH2
+042     funcao_tempo.@SCRATCH3
+043     funcao_tempo.@SCRATCH4
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @WRITE_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000096  funcao_tempo
+0000F0  @const670.call
+00010A  @const672.call
+000118  @const673.call
+000126  @const674.call
+000134  @const675.call
+000144  @const676.call
+000154  @const677.call
+000162  @const678.call
+000170  @const679.call
+00017E  @const680.call
+00018C  @const681.call
+00019A  @PSTRINGC_9600_31766_31767
+0001BC  @ITOF
+0001F4  @MULFF
+0002E6  @ADDFF
+000552  @SFTOI
+00058C  @delay_us1
+0005A6  @delay_ms1
+0005CE  servo
+0006A4  @cinit1
+0006A4  MAIN
+0006CC  @cinit2
+
+Project Directory:
+    C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Microcontroladores e dispositivos periféricos\Programas apostila oficiais\P114\
+
+Project Files:
+    P114.c                                                  [22-dez-19 21:18  CRC=35C56769]
+    ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
+
+Source signature=78754325
+
+Units:
+    P114 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   P114.xsym
+    Errors:      P114.err
+    Ext Symbols: P114.esym
+    INHX32:      P114.hex
+    Symbols:     P114.sym
+    List:        P114.lst
+    Debug/COFF:  P114.cof
+    Project:     P114.ccspjt
+    Call Tree:   P114.tre
+    Statistics:  P114.STA

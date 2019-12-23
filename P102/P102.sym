@@ -1,0 +1,128 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+005     MAIN.selection
+006     MAIN.value
+007-00A MAIN.vel
+00B     @PSTRINGCN_666.P1
+00B     lcd_init.i
+00B-00E @PRINTF_L32U_666.P1
+00B     @PSTRINGC_9600_31766_31767.@SCRATCH1
+00B     @PSTRINGC_666.@SCRATCH1
+00C     lcd_init.@SCRATCH1
+00C     @PSTRINGC_9600_31766_31767.@SCRATCH2
+00C     @PSTRINGC_666.@SCRATCH2
+00C     @PSTRINGCN_666.@SCRATCH1
+00D     @PSTRINGCN_666.@SCRATCH2
+00F     @PRINTF_L32U_666.@SCRATCH1
+010     @PRINTF_L32U_666.@SCRATCH2
+011     @PRINTF_L32U_666.@SCRATCH3
+012     @PRINTF_L32U_666.@SCRATCH4
+013     @PRINTF_L32U_666.@SCRATCH5
+014     @PRINTF_L32U_666.@SCRATCH6
+015     @PRINTF_L32U_666.@SCRATCH7
+016     @PRINTF_L32U_666.@SCRATCH8
+017-01A @DIV3232.P1
+017     lcd_putc.c
+018     lcd_gotoxy.x
+018     @delay_ms1.P1
+019     lcd_gotoxy.y
+01A     lcd_gotoxy.address
+01B-01E @DIV3232.P1
+01B     lcd_gotoxy.@SCRATCH1
+01C     lcd_send_byte.address
+01D     lcd_send_byte.n
+01E     lcd_read_byte.low
+01E     lcd_send_byte.@SCRATCH1
+01F     lcd_read_byte.high
+01F     lcd_send_nibble.n
+01F     @DIV3232.@SCRATCH1
+020     lcd_read_byte.@SCRATCH1
+020     @DIV3232.@SCRATCH2
+021     @DIV3232.@SCRATCH3
+022     @DIV3232.@SCRATCH4
+023     @DIV3232.@SCRATCH5
+F81     lcd
+F83     PSP_DATA
+F8A     lcdlat
+F93     lcdtris
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  LCD_INIT_STRING.call
+000014  LCD_INIT_STRING.data
+000018  @const684.call
+000032  @const686.call
+00003E  @const687.call
+00004C  @const688.call
+00005A  @const689.call
+000068  @const690.call
+000076  @const691.call
+000082  @const693.call
+000094  @delay_ms1
+0000BA  lcd_send_nibble
+0000DC  lcd_read_nibble
+0000E8  lcd_read_byte
+00012A  lcd_send_byte
+000164  lcd_init
+0001CA  @PSTRINGC_9600_31766_31767
+0001EC  lcd_gotoxy
+00020E  lcd_putc
+00025E  @PSTRINGC_666
+000280  @PSTRINGCN_666
+0002A0  @DIV3232
+00032E  @PRINTF_L32U_666
+0003D4  @cinit1
+0003D4  MAIN
+0003F6  @cinit2
+000504  @goto10729
+
+Project Directory:
+    C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Microcontroladores e dispositivos periféricos\Programas apostila oficiais\P102\
+
+Project Files:
+    P102.c                                                  [22-dez-19 21:14  CRC=C9F2CC75]
+    ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
+    ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.c [23-ago-12 09:01  CRC=D28E8746]
+
+Source signature=1067C8DF
+
+Units:
+    P102 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   P102.xsym
+    Errors:      P102.err
+    Ext Symbols: P102.esym
+    INHX32:      P102.hex
+    Symbols:     P102.sym
+    List:        P102.lst
+    Debug/COFF:  P102.cof
+    Project:     P102.ccspjt
+    Call Tree:   P102.tre
+    Statistics:  P102.STA

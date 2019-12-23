@@ -1,0 +1,45 @@
+
+ROM used:   108/16384 (0%)
+            108/16384 (0%) including unused fragments
+
+            0.1 Average locations per line
+            5.4 Average locations per statement
+
+RAM used:   8/2048 (0%) at main() level
+            9/2048 (0%) worst case
+
+Stack used: 0 worst case (0 in main + 0 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   23    20 100  P88.c
+  821     0   0  ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
+----- -----
+  844    20 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     30  14    2   167  3.7  aciona_bomba
+0     74  34    4   333  4.3  MAIN
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               2
+    Statements              20
+    Comments                142
+    Volume (V)              599
+    Difficulty (D)          7.9
+    Effort to implement (E) 4744
+    Time to implement (T)   4 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   4
+    Maintainability (MI)    127
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-07FFE   104  32660  
+
+
+

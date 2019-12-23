@@ -1,0 +1,49 @@
+
+ROM used:   586/16384 (2%)
+            586/16384 (2%) including unused fragments
+
+            0.7 Average locations per line
+            23.4 Average locations per statement
+
+RAM used:   32/2048 (2%) at main() level
+            46/2048 (2%) worst case
+
+Stack used: 1 worst case (0 in main + 1 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   36    25 100  P85.c
+  821     0   0  ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
+----- -----
+  857    25 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0    180  15    6   490  5.8  funcao_tempo
+0     56   5    2   154  2.6  @ITOF
+0    120  10   10             @FLT
+0     84   7    5   223  2.3  MAIN
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               3
+    Statements              25
+    Comments                142
+    Volume (V)              1117
+    Difficulty (D)          10.5
+    Effort to implement (E) 11760
+    Time to implement (T)   11 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   3
+    Maintainability (MI)    58
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-00094   142  0  
+00096-07FFE   440  32178  
+
+
+

@@ -1,0 +1,158 @@
+CCS PCH C Compiler, Version 5.007, 61971               22-dez-19 20:52
+
+               Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Microcontroladores e dispositivos periféricos\Programas apostila oficiais\P77\P77.lst
+
+               ROM used:   280 bytes (1%)
+                           Largest free fragment is 32484
+               RAM used:   27 (1%) at main() level
+                           29 (1%) worst case
+               Stack used: 1 locations (0 in main + 1 for interrupts)
+               Stack size: 31
+
+*
+0000:  GOTO   00EA
+*
+0008:  MOVWF  04
+000A:  MOVFF  FD8,05
+000E:  MOVFF  FE0,06
+0012:  MOVLB  0
+0014:  MOVFF  FE9,0C
+0018:  MOVFF  FEA,07
+001C:  MOVFF  FE1,08
+0020:  MOVFF  FE2,09
+0024:  MOVFF  FD9,0A
+0028:  MOVFF  FDA,0B
+002C:  MOVFF  FF3,12
+0030:  MOVFF  FF4,13
+0034:  MOVFF  FFA,14
+0038:  MOVFF  00,0E
+003C:  MOVFF  01,0F
+0040:  MOVFF  02,10
+0044:  MOVFF  03,11
+0048:  BTFSS  FF2.5
+004A:  GOTO   0054
+004E:  BTFSC  FF2.2
+0050:  GOTO   0096
+0054:  MOVFF  0E,00
+0058:  MOVFF  0F,01
+005C:  MOVFF  10,02
+0060:  MOVFF  11,03
+0064:  MOVFF  0C,FE9
+0068:  MOVFF  07,FEA
+006C:  BSF    07.7
+006E:  MOVFF  08,FE1
+0072:  MOVFF  09,FE2
+0076:  MOVFF  0A,FD9
+007A:  MOVFF  0B,FDA
+007E:  MOVFF  12,FF3
+0082:  MOVFF  13,FF4
+0086:  MOVFF  14,FFA
+008A:  MOVF   04,W
+008C:  MOVFF  06,FE0
+0090:  MOVFF  05,FD8
+0094:  RETFIE 0
+.................... #define led1 pin_d1 
+.................... #include <18F4550.h> 
+.................... //////// Standard Header file for the PIC18F4550 device //////////////// 
+.................... #device PIC18F4550 
+....................  
+.................... #list 
+....................  
+.................... #fuses HS, NOWDT, PUT, BROWNOUT, NOLVP, CPUDIV1, PLL5,USBDIV //Configuração dos fusíveis 
+.................... #use delay(clock=20000000) 
+.................... #int_timer0 
+.................... void funcao_tempo() 
+.................... { 
+.................... static boolean flag; 
+.................... static unsigned int32 n; 
+.................... set_timer0(131+get_timer0()); 
+0096:  MOVF   FD6,W
+0098:  MOVFF  FD7,03
+009C:  ADDLW  83
+009E:  MOVWF  1B
+00A0:  MOVLW  00
+00A2:  ADDWFC FD7,W
+00A4:  MOVWF  FD7
+00A6:  MOVFF  1B,FD6
+.................... n++; 
+00AA:  MOVLW  01
+00AC:  ADDWF  17,F
+00AE:  BTFSC  FD8.0
+00B0:  INCF   18,F
+00B2:  BTFSC  FD8.2
+00B4:  INCF   19,F
+00B6:  BTFSC  FD8.2
+00B8:  INCF   1A,F
+.................... if (n==625) 
+00BA:  MOVF   17,W
+00BC:  SUBLW  71
+00BE:  BNZ   00E4
+00C0:  MOVF   18,W
+00C2:  SUBLW  02
+00C4:  BNZ   00E4
+00C6:  MOVF   19,F
+00C8:  BNZ   00E4
+00CA:  MOVF   1A,F
+00CC:  BNZ   00E4
+.................... { 
+.................... n=0; 
+00CE:  CLRF   1A
+00D0:  CLRF   19
+00D2:  CLRF   18
+00D4:  CLRF   17
+.................... flag=!flag; 
+00D6:  BTG    16.0
+.................... output_bit(led1,flag); 
+00D8:  BTFSC  16.0
+00DA:  BRA    00E0
+00DC:  BCF    F8C.1
+00DE:  BRA    00E2
+00E0:  BSF    F8C.1
+00E2:  BCF    F95.1
+.................... } 
+00E4:  BCF    FF2.2
+00E6:  GOTO   0054
+.................... } 
+.................... void main() 
+00EA:  CLRF   FF8
+00EC:  BCF    FD0.7
+00EE:  BSF    07.7
+00F0:  MOVF   FC1,W
+00F2:  ANDLW  C0
+00F4:  IORLW  0F
+00F6:  MOVWF  FC1
+00F8:  MOVLW  07
+00FA:  MOVWF  FB4
+00FC:  BCF    16.0
+00FE:  BCF    16.0
+0100:  CLRF   17
+0102:  CLRF   18
+0104:  CLRF   19
+0106:  CLRF   1A
+....................  { 
+....................  setup_timer_0 (RTCC_DIV_64|RTCC_INTERNAL | RTCC_8_BIT ); //8 bits 
+0108:  MOVLW  C5
+010A:  MOVWF  FD5
+....................  set_timer0(131);                                              
+010C:  CLRF   FD7
+010E:  MOVLW  83
+0110:  MOVWF  FD6
+....................  enable_interrupts(GLOBAL); 
+0112:  MOVLW  C0
+0114:  IORWF  FF2,F
+....................  enable_interrupts(INT_TIMER0); 
+0116:  BSF    FF2.5
+....................  while(true) 
+....................  { } } 
+0118:  BRA    0118
+....................  
+011A:  SLEEP 
+
+Configuration Fuses:
+   Word  1: CC24   PLL5 CPUDIV1 USBDIV HS FCMEN IESO
+   Word  2: 1E3E   PUT BROWNOUT BORV21 VREGEN NOWDT WDT32768
+   Word  3: 8700   CCP2C1 PBADEN LPT1OSC MCLR
+   Word  4: 00A1   STVREN NOLVP ICSP2 NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

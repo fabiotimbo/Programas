@@ -1,0 +1,145 @@
+CCS PCH C Compiler, Version 5.007, 61971               22-dez-19 20:57
+
+               Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Microcontroladores e dispositivos periféricos\Programas apostila oficiais\P81\P81.lst
+
+               ROM used:   260 bytes (1%)
+                           Largest free fragment is 32504
+               RAM used:   27 (1%) at main() level
+                           27 (1%) worst case
+               Stack used: 1 locations (0 in main + 1 for interrupts)
+               Stack size: 31
+
+*
+0000:  GOTO   00D6
+*
+0008:  MOVWF  04
+000A:  MOVFF  FD8,05
+000E:  MOVFF  FE0,06
+0012:  MOVLB  0
+0014:  MOVFF  FE9,0C
+0018:  MOVFF  FEA,07
+001C:  MOVFF  FE1,08
+0020:  MOVFF  FE2,09
+0024:  MOVFF  FD9,0A
+0028:  MOVFF  FDA,0B
+002C:  MOVFF  FF3,12
+0030:  MOVFF  FF4,13
+0034:  MOVFF  FFA,14
+0038:  MOVFF  00,0E
+003C:  MOVFF  01,0F
+0040:  MOVFF  02,10
+0044:  MOVFF  03,11
+0048:  BTFSS  F9D.1
+004A:  GOTO   0054
+004E:  BTFSC  F9E.1
+0050:  GOTO   0096
+0054:  MOVFF  0E,00
+0058:  MOVFF  0F,01
+005C:  MOVFF  10,02
+0060:  MOVFF  11,03
+0064:  MOVFF  0C,FE9
+0068:  MOVFF  07,FEA
+006C:  BSF    07.7
+006E:  MOVFF  08,FE1
+0072:  MOVFF  09,FE2
+0076:  MOVFF  0A,FD9
+007A:  MOVFF  0B,FDA
+007E:  MOVFF  12,FF3
+0082:  MOVFF  13,FF4
+0086:  MOVFF  14,FFA
+008A:  MOVF   04,W
+008C:  MOVFF  06,FE0
+0090:  MOVFF  05,FD8
+0094:  RETFIE 0
+.................... #define led1 pin_d1 
+.................... #include <18F4550.h> 
+.................... //////// Standard Header file for the PIC18F4550 device //////////////// 
+.................... #device PIC18F4550 
+....................  
+.................... #list 
+....................  
+.................... #fuses HS, NOWDT, PUT, BROWNOUT, NOLVP, CPUDIV1,PLL5,USBDIV  //Configuração dos fusíveis 
+.................... #use delay(clock=20000000) 
+.................... #int_timer2 
+.................... void funcao_tempo() 
+.................... { 
+.................... static boolean flag; 
+.................... static unsigned int32 n; 
+.................... n++; 
+0096:  MOVLW  01
+0098:  ADDWF  17,F
+009A:  BTFSC  FD8.0
+009C:  INCF   18,F
+009E:  BTFSC  FD8.2
+00A0:  INCF   19,F
+00A2:  BTFSC  FD8.2
+00A4:  INCF   1A,F
+.................... if (n==1250) 
+00A6:  MOVF   17,W
+00A8:  SUBLW  E2
+00AA:  BNZ   00D0
+00AC:  MOVF   18,W
+00AE:  SUBLW  04
+00B0:  BNZ   00D0
+00B2:  MOVF   19,F
+00B4:  BNZ   00D0
+00B6:  MOVF   1A,F
+00B8:  BNZ   00D0
+.................... {n=0; 
+00BA:  CLRF   1A
+00BC:  CLRF   19
+00BE:  CLRF   18
+00C0:  CLRF   17
+.................... flag=!flag; 
+00C2:  BTG    16.0
+.................... output_bit(led1,flag); 
+00C4:  BTFSC  16.0
+00C6:  BRA    00CC
+00C8:  BCF    F8C.1
+00CA:  BRA    00CE
+00CC:  BSF    F8C.1
+00CE:  BCF    F95.1
+00D0:  BCF    F9E.1
+00D2:  GOTO   0054
+.................... }} 
+.................... void main() 
+00D6:  CLRF   FF8
+00D8:  BCF    FD0.7
+00DA:  BSF    07.7
+00DC:  MOVF   FC1,W
+00DE:  ANDLW  C0
+00E0:  IORLW  0F
+00E2:  MOVWF  FC1
+00E4:  MOVLW  07
+00E6:  MOVWF  FB4
+00E8:  BCF    16.0
+00EA:  BCF    16.0
+00EC:  CLRF   17
+00EE:  CLRF   18
+00F0:  CLRF   19
+00F2:  CLRF   1A
+....................  { setup_timer_2(T2_DIV_BY_16, 249, 1); 
+00F4:  MOVLW  00
+00F6:  IORLW  06
+00F8:  MOVWF  FCA
+00FA:  MOVLW  F9
+00FC:  MOVWF  FCB
+....................  enable_interrupts(GLOBAL); 
+00FE:  MOVLW  C0
+0100:  IORWF  FF2,F
+....................  enable_interrupts(INT_TIMER2); 
+0102:  BSF    F9D.1
+....................  while(true) 
+....................  { } } 
+0104:  BRA    0104
+....................  
+0106:  SLEEP 
+
+Configuration Fuses:
+   Word  1: CC24   PLL5 CPUDIV1 USBDIV HS FCMEN IESO
+   Word  2: 1E3E   PUT BROWNOUT BORV21 VREGEN NOWDT WDT32768
+   Word  3: 8700   CCP2C1 PBADEN LPT1OSC MCLR
+   Word  4: 00A1   STVREN NOLVP ICSP2 NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

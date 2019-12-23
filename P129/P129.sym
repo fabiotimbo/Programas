@@ -1,0 +1,100 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004-007 ad1
+008-00B lux
+00C-00F @FLT.P1
+00C-00D @ITOF.P2
+00C     @delay_ms1.P3
+00C-00F @ADDFF.P4
+00C-00F @MULFF.P5
+00C     main.@SCRATCH1
+00D     main.@SCRATCH2
+00E     main.@SCRATCH3
+00F     main.@SCRATCH4
+010-013 @FLT.P1
+010-013 @ADDFF.P2
+010-013 @MULFF.P3
+010-013 @DIVFF.P4
+014-017 @DIVFF.P1
+014     @MULFF.@SCRATCH1
+014     @FLT.@SCRATCH1
+014     @ADDFF.@SCRATCH1
+015     @MULFF.@SCRATCH2
+015     @FLT.@SCRATCH2
+015     @ADDFF.@SCRATCH2
+016     @MULFF.@SCRATCH3
+016     @ADDFF.@SCRATCH3
+017     @ADDFF.@SCRATCH4
+018     @ADDFF.@SCRATCH5
+018     @DIVFF.@SCRATCH1
+019     @ADDFF.@SCRATCH6
+019     @DIVFF.@SCRATCH2
+01A     @ADDFF.@SCRATCH7
+01A     @DIVFF.@SCRATCH3
+01B     @ADDFF.@SCRATCH8
+01B     @DIVFF.@SCRATCH4
+01C     @DIVFF.@SCRATCH5
+01D     @DIVFF.@SCRATCH6
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @WRITE_PACKED_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  @ITOF
+00003C  @delay_ms1
+000064  @MULFF
+000156  @FLT
+0001CC  @ADDFF
+000436  @DIVFF
+000590  main
+000590  @cinit1
+0005A0  @cinit2
+
+Project Directory:
+    C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Microcontroladores e dispositivos periféricos\Programas apostila oficiais\P129\
+
+Project Files:
+    P129.c                                                  [22-dez-19 21:50  CRC=72CC62B2]
+    ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
+
+Source signature=B57C3E6E
+
+Units:
+    P129 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   P129.xsym
+    Errors:      P129.err
+    Ext Symbols: P129.esym
+    INHX32:      P129.hex
+    Symbols:     P129.sym
+    List:        P129.lst
+    Debug/COFF:  P129.cof
+    Project:     P129.ccspjt
+    Call Tree:   P129.tre
+    Statistics:  P129.STA
