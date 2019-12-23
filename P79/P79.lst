@@ -1,4 +1,4 @@
-CCS PCH C Compiler, Version 5.007, 61971               22-dez-19 20:55
+CCS PCH C Compiler, Version 5.007, 61971               23-dez-19 11:20
 
                Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Microcontroladores e dispositivos periféricos\Programas apostila oficiais\P79\P79.lst
 
@@ -83,7 +83,7 @@ CCS PCH C Compiler, Version 5.007, 61971               22-dez-19 20:55
 00B4:  INCF   19,F
 00B6:  BTFSC  FD8.2
 00B8:  INCF   1A,F
-.................... if (n==10) 
+.................... if (n==10)//divisão de tempo 
 00BA:  MOVF   17,W
 00BC:  SUBLW  0A
 00BE:  BNZ   00E2

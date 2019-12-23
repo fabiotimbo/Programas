@@ -9,7 +9,7 @@ static boolean flag;
 static unsigned int32 n;
 set_timer1(3036+get_timer1());
 n++;
-if (n==10)//divisão de tempo
+if (n==10)
 {n=0;
 flag=!flag;
 output_bit(led1,flag);
