@@ -9,7 +9,7 @@
 int32 u,d,c;
 unsigned int32 selection;
 void main()
-{lcd_init();
+{lcd_init();//inicializa lcd
 while(1){
 lcd_gotoxy(1,1);
 printf(lcd_putc," Envio de valor ");
