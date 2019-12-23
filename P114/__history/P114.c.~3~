@@ -4,7 +4,7 @@
 #use delay(clock=20000000)
 #use rs232(baud=9600, xmit=PIN_C6, rcv=PIN_C7)
 const int32 tm=3036;
-const int16 pos_min=500, pos_max=2400 ;  //Valores de ajuste do servomotor
+const int16 pos_min=500, pos_max=2400 ;  //Valores de ajuste do servo
 long int  angulo=0,tempo2;
 int n2;
 float tempo;
