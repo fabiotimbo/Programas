@@ -1,7 +1,7 @@
-D G "__PCH__" 0 40 ""5.007""
-D G "__DEVICE__" 0 40 "4550"
-D G "__DATE__" 0 40 ""22-dez-19""
-D G "__TIME__" 0 40 ""21:18:19""
+D G "__PCH__" 0 0 ""5.007""
+D G "__DEVICE__" 0 0 ""
+D G "__DATE__" 0 0 ""23-dez-19""
+D G "__TIME__" 0 0 ""11:26:32""
 D G "led1" 0 1 "pin_d1"
 c L "set_tris_a" 1 1 22 "FUNCTION"
 v L "value" 1 36 "int8" `54 
@@ -912,11 +912,12 @@ V G "tempo" 0 10 "float" `647
 F G "funcao_tempo" 0 13 "void()" `648 
 V L "led" 0 14 "int1" `649 
 V L "n" 0 15 "int32" `650 
+C L "funcao_tempo" 0 7 1 "FUNCTION"
 V L "angulo" 0 21 "int8" `652 
 F G "servo" 0 22 "void(int8 angulo)" `651 
 C L "servo" 0 7 1 "FUNCTION"
 C L "servo" 0 7 1 "FUNCTION"
-F G "MAIN" 0 35 "void(float )" `663 
+F G "MAIN" 0 35 "void()" `663 
 V L "selecao" 0 42 "int8" `666 
 V L "value" 0 43 "int8" `667 
 V L "n2" 0 43 "int8" `668 

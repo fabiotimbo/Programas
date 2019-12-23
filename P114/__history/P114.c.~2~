@@ -15,7 +15,7 @@ static boolean led;
 static unsigned int32 n;
 set_timer1(tm+get_timer1());
 n++;
-if (n==5)//divisão de tempo
+if (n==5)
 {n=0;led=!led;output_bit(led1,led);}
 }
 void servo( int angulo)
