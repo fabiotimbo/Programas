@@ -1,0 +1,42 @@
+
+ROM used: 102 (0%)
+          102 (0%) including unused fragments
+
+          0 Average locations per line
+          102 Average locations per statement
+
+RAM used: 7 (0%) at main() level
+          7 (0%) worst case
+
+Stack used: 0 worst case (out of 31 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   64     1 100  botao_oscilador.c
+  451     0   0  ..\..\..\..\..\..\..\..\..\Program Files\PICC\devices\18f4550.h
+----- -----
+  515     1 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     98  48   3   397  2.5  main
+
+Program metrics:
+    Functions               1
+    Statements              1
+    Comments                103
+    Volume (V)              397
+    Difficilty (D)          2.5
+    Effort to implement (E) 992
+    Time to implement (T)   1 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    139
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-07FFE    98  32666  
+
+
+

@@ -1,0 +1,134 @@
+CCS PCH C Compiler, Version 4.104, 5967               29-mai-18 08:29
+
+               Filename: C:\Users\Fabio\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Microcontroladores e dispositivos periféricos\programas apostila\oscilador interno\botao_oscilador.lst
+
+               ROM used: 102 bytes (0%)
+                         Largest free fragment is 32666
+               RAM used: 7 (0%) at main() level
+                         7 (0%) worst case
+               Stack:    0 locations
+
+*
+0000:  GOTO   0004
+.................... #include <18f4550.h> 
+.................... //////// Standard Header file for the PIC18F4550 device //////////////// 
+.................... #device PIC18F4550 
+.................... #list 
+....................  
+.................... #fuses hs,nowdt,noprotect,nolvp,NOMCLR 
+....................  
+.................... void main() 
+.................... { 
+0004:  CLRF   FF8
+0006:  BCF    FD0.7
+0008:  CLRF   FEA
+000A:  CLRF   FE9
+000C:  MOVF   FC1,W
+000E:  ANDLW  C0
+0010:  IORLW  0F
+0012:  MOVWF  FC1
+0014:  MOVLW  07
+0016:  MOVWF  FB4
+.................... int temp; 
+.................... int delay_reg1; 
+.................... int delay_reg2;  
+.................... #asm 
+.................... GOTO teste 
+0018:  BRA    0030
+....................  
+.................... Delay100ms: 
+....................    movlw 0x83 
+001A:  MOVLW  83
+....................    movwf delay_reg1 
+001C:  MOVWF  06
+....................    movlw 0xFF 
+001E:  MOVLW  FF
+....................    movwf delay_reg2 
+0020:  MOVWF  07
+.................... loop1: 
+....................    DECFSZ delay_reg1 
+0022:  DECFSZ 06,F
+....................    GOTO loop2 
+0024:  BRA    0028
+....................    GOTO exit 
+0026:  BRA    002E
+.................... loop2: 
+....................    DECFSZ delay_reg2 
+0028:  DECFSZ 07,F
+....................    GOTO loop2 
+002A:  BRA    0028
+....................    GOTO loop1 
+002C:  BRA    0022
+.................... Exit: 
+....................    RETURN 
+002E:  RETURN 0
+....................     
+.................... teste:    
+.................... bcf    0xFF1.7  
+0030:  BCF    FF1.7
+.................... movlw  0xFF 
+0032:  MOVLW  FF
+.................... movwf  0xF93 
+0034:  MOVWF  F93
+.................... movlw  0x00 
+0036:  MOVLW  00
+.................... movwf  0xF95 
+0038:  MOVWF  F95
+.................... movlw  0xE6 
+003A:  MOVLW  E6
+.................... movwf  0xFD3 
+003C:  MOVWF  FD3
+....................  
+.................... loop: 
+....................    clrf    0XF83 
+003E:  CLRF   F83
+....................    btfss   0xF81.0 
+0040:  BTFSS  F81.0
+....................    call    fim 
+0042:  CALL   0062,1
+....................    movlw   0x05 
+0046:  MOVLW  05
+....................    movwf   temp 
+0048:  MOVWF  05
+.................... mul1: 
+....................    call    Delay100ms 
+004A:  CALL   001A,1
+....................    decfsz  temp 
+004E:  DECFSZ 05,F
+....................    goto    mul1 
+0050:  BRA    004A
+....................    movlw   0xff 
+0052:  MOVLW  FF
+....................    movwf   0XF83 
+0054:  MOVWF  F83
+....................    movlw   0xFF 
+....................    movlw   0x05 
+0056:  MOVLW  05
+....................    movwf   temp 
+0058:  MOVWF  05
+.................... mul2: 
+....................    call    Delay100ms 
+005A:  CALL   001A,1
+....................    decfsz  temp 
+005E:  DECFSZ 05,F
+....................    goto    mul2 
+0060:  BRA    005A
+.................... fim:    
+....................    goto    loop 
+0062:  BRA    003E
+.................... #endasm 
+.................... } 
+....................  
+....................  
+....................  
+....................  
+0064:  SLEEP 
+
+Configuration Fuses:
+   Word  1: CC3F   IESO FCMEN HS PLL12 CPUDIV4 USBDIV
+   Word  2: 1E3E   BROWNOUT NOWDT BORV20 PUT WDT32768 VREGEN
+   Word  3: 0700   PBADEN CCP2C1 NOMCLR LPT1OSC
+   Word  4: 0081   STVREN NODEBUG NOLVP NOXINST NOICPRT
+   Word  5: C00F   NOPROTECT NOCPD NOCPB
+   Word  6: E00F   NOWRT NOWRTD NOWRTC NOWRTB
+   Word  7: 400F   NOEBTR NOEBTRB

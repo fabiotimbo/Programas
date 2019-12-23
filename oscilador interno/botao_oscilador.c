@@ -1,0 +1,63 @@
+#include <18f4550.h>
+#fuses hs,nowdt,noprotect,nolvp,NOMCLR
+
+void main()
+{
+int temp;
+int delay_reg1;
+int delay_reg2; 
+#asm
+GOTO teste
+
+Delay100ms:
+   movlw 0x83
+   movwf delay_reg1
+   movlw 0xFF
+   movwf delay_reg2
+loop1:
+   DECFSZ delay_reg1
+   GOTO loop2
+   GOTO exit
+loop2:
+   DECFSZ delay_reg2
+   GOTO loop2
+   GOTO loop1
+Exit:
+   RETURN
+   
+teste:   
+bcf    0xFF1.7 
+movlw  0xFF
+movwf  0xF93
+movlw  0x00
+movwf  0xF95
+movlw  0xE6
+movwf  0xFD3
+
+loop:
+   clrf    0XF83
+   btfss   0xF81.0
+   call    fim
+   movlw   0x05
+   movwf   temp
+mul1:
+   call    Delay100ms
+   decfsz  temp
+   goto    mul1
+   movlw   0xff
+   movwf   0XF83
+   movlw   0xFF
+   movlw   0x05
+   movwf   temp
+mul2:
+   call    Delay100ms
+   decfsz  temp
+   goto    mul2
+fim:   
+   goto    loop
+#endasm
+}
+
+
+
+
