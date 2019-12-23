@@ -1,0 +1,6 @@
+C:\Program Files\BootProg 2\Software\BootProg2\bin\Debug\BootProgUsb.exe.config
+C:\Program Files\BootProg 2\Software\BootProg2\bin\Debug\BootProgUsb.exe
+C:\Program Files\BootProg 2\Software\BootProg2\obj\Debug\BootProgUsb.MainForm.resources
+C:\Program Files\BootProg 2\Software\BootProg2\obj\Debug\BootProgUsb.exe
+C:\Program Files\BootProg 2\Software\BootProg2\obj\Debug\BootProgUsb.csprojResolveAssemblyReference.cache
+C:\Program Files\BootProg 2\Software\BootProg2\obj\Debug\BootProgUsb.csproj.GenerateResource.Cache

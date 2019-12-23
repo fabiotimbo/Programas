@@ -1,0 +1,18 @@
+C:\Users\Tiago\Documents\SharpDevelop Projects\BootProg2\obj\Debug\BootProg2.csprojResolveAssemblyReference.cache
+C:\Users\Tiago\Documents\SharpDevelop Projects\BootProg2\bin\Debug\BootProg2.exe.config
+C:\Users\Tiago\Documents\SharpDevelop Projects\BootProg2\bin\Debug\BootProg2.exe
+C:\Users\Tiago\Documents\SharpDevelop Projects\BootProg2\bin\Debug\BootProg2.pdb
+C:\Users\Tiago\Documents\SharpDevelop Projects\BootProg2\obj\Debug\BootProg2.exe
+C:\Users\Tiago\Documents\SharpDevelop Projects\BootProg2\obj\Debug\BootProg2.pdb
+C:\Users\Tiago\Documents\SharpDevelop Projects\BootProg2\obj\Debug\BootProg2.MainForm.resources
+C:\Users\Tiago\Documents\SharpDevelop Projects\BootProg2\obj\Debug\BootProg2.csproj.GenerateResource.Cache
+C:\Users\Tiago\Documents\SharpDevelop Projects\BootProg2\bin\Debug\UsbLibrary.dll
+C:\Program Files\BootProg 2\Software\BootProg2\obj\Debug\BootProg2.MainForm.resources
+C:\Program Files\BootProg 2\Software\BootProg2\obj\Debug\BootProg2.csproj.GenerateResource.Cache
+C:\Program Files\BootProg 2\Software\BootProg2\obj\Debug\BootProg2.exe
+C:\Program Files\BootProg 2\Software\BootProg2\bin\Debug\BootProg2.exe.config
+C:\Program Files\BootProg 2\Software\BootProg2\bin\Debug\BootProg2.exe
+C:\Program Files\BootProg 2\Software\BootProg2\bin\Debug\BootProg2.pdb
+C:\Program Files\BootProg 2\Software\BootProg2\bin\Debug\UsbLibrary.dll
+C:\Program Files\BootProg 2\Software\BootProg2\obj\Debug\BootProg2.pdb
+C:\Program Files\BootProg 2\Software\BootProg2\obj\Debug\ResolveAssemblyReference.cache

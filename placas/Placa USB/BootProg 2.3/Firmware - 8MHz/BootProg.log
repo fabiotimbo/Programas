@@ -1,0 +1,19 @@
+0	1	mikroCPIC1618.exe -MSF -DBG -pP18F4550 -DL -O11111114 -fo48 -N"C:\Users\Fabio\Dropbox\Orientações em andamento\Placa USB\BootProg 2.3\Firmware - 8MHz\BootProg.mcppi" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\defs\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\uses\P18\" -SP"C:\Users\Fabio\Dropbox\Orientações em andamento\Placa USB\BootProg 2.3\Firmware - 8MHz\" -SP"C:\Users\Fabio\Dropbox\Orientações em andamento\Placa USB\BootProg 2.3\Firmware\" -SP"C:\Program Files\MikroElektronika\mikroC PRO for PIC\defs\" -SP"C:\Program Files\MikroElektronika\mikroC PRO for PIC\uses\P18\" -SP"C:\Program Files\BootProg 2\Firmware\" -SP"C:\Program Files\BootProg\firmware\" -SP"C:\Users\Tiago\Documents\MikroC PRO\Bootloader\PicuinoProg Bootloader\BootProg - firmware\" "Main.c" "USBdsc.c" "__Lib_Math.mcl" "__Lib_MathDouble.mcl" "__Lib_System.mcl" "__Lib_Delays.mcl" "__Lib_EEPROM_256.mcl" "__Lib_FLASH_w32_e64.mcl" "__Lib_USB_genHID.mcl"	 
+warning: 0	1501	Specified search path does not exist: 'C:\Program Files\MikroElektronika\mikroC PRO for PIC\defs'	 
+warning: 0	1501	Specified search path does not exist: 'C:\Program Files\MikroElektronika\mikroC PRO for PIC\uses\P18'	 
+warning: 0	1501	Specified search path does not exist: 'C:\Program Files\BootProg 2\Firmware'	 
+warning: 0	1501	Specified search path does not exist: 'C:\Program Files\BootProg\firmware'	 
+warning: 0	1501	Specified search path does not exist: 'C:\Users\Tiago\Documents\MikroC PRO\Bootloader\PicuinoProg Bootloader\BootProg - firmware'	 
+hint: 0	1139	Available RAM: 2027 [bytes], Available ROM: 32768 [bytes]	 
+diagnostics: 0	126	All files Preprocessed in 234 ms	 
+diagnostics: 0	122	Compilation Started	Main.c
+diagnostics: 179	123	Compiled Successfully	Main.c
+diagnostics: 0	122	Compilation Started	USBdsc.c
+diagnostics: 166	123	Compiled Successfully	USBdsc.c
+diagnostics: 0	127	All files Compiled in 141 ms	 
+hint: 0	1144	Used RAM (bytes): 497 (25%)  Free RAM (bytes): 1530 (75%)	Used RAM (bytes): 497 (25%)  Free RAM (bytes): 1530 (75%)
+hint: 0	1144	Used ROM (bytes): 6460 (20%)  Free ROM (bytes): 26308 (80%)	Used ROM (bytes): 6460 (20%)  Free ROM (bytes): 26308 (80%)
+diagnostics: 0	125	Project Linked Successfully	BootProg.mcppi
+diagnostics: 0	128	Linked in 109 ms	 
+diagnostics: 0	129	Project 'BootProg.mcppi' completed: 531 ms	 
+diagnostics: 0	103	Finished successfully: 13 fev 2018, 11:49:21	BootProg.mcppi
