@@ -124,11 +124,11 @@ Project Directory:
     C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Microcontroladores e dispositivos periféricos\Programas apostila oficiais\P98\
 
 Project Files:
-    P98.c                                                   [22-dez-19 21:12  CRC=1008989C]
+    P98.c                                                   [23-dez-19 11:36  CRC=E41FA8E4]
     ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
     ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.c [23-ago-12 09:01  CRC=D28E8746]
 
-Source signature=567D9506
+Source signature=2A94A54E
 
 Units:
     P98 (main)

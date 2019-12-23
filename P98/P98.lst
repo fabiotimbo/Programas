@@ -1,4 +1,4 @@
-CCS PCH C Compiler, Version 5.007, 61971               22-dez-19 21:12
+CCS PCH C Compiler, Version 5.007, 61971               23-dez-19 11:36
 
                Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Microcontroladores e dispositivos periféricos\Programas apostila oficiais\P98\P98.lst
 
@@ -1075,7 +1075,7 @@ CCS PCH C Compiler, Version 5.007, 61971               22-dez-19 21:12
 0520:  MOVWF  FC1
 0522:  MOVLW  07
 0524:  MOVWF  FB4
-.................... {lcd_init(); 
+.................... {lcd_init();//inicializa lcd 
 0526:  BRA    0178
 .................... while(1){ 
 .................... lcd_gotoxy(1,1); 

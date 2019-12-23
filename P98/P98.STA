@@ -22,7 +22,7 @@ Lines Stmts  %   Files
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
 0     38   1    1             @delay_ms1
-0     20   1    0   297  4.8  @const648
+0     20   1    0             @const648
 0     66   2    3   596  5.9  lcd_read_byte
 0     12   0    0    59  4.2  lcd_read_nibble
 0     34   1    1   179  3.3  lcd_send_nibble
@@ -49,16 +49,16 @@ Page ROM  %  RAM   Vol Diff  Functions:
  Inline         0             @cinit1
 
 Program metrics:
-    Functions               9
+    Functions               8
     Statements              114
-    Comments                246
-    Volume (V)              5868
-    Difficulty (D)          43.4
-    Effort to implement (E) 254443
-    Time to implement (T)   3 hours, 56 minutes
+    Comments                247
+    Volume (V)              5287
+    Difficulty (D)          38.1
+    Effort to implement (E) 201593
+    Time to implement (T)   3 hours, 7 minutes
     Est Delivered Bugs (B)  1
-    Cyclomatic Complexity   12
-    Maintainability (MI)    144
+    Cyclomatic Complexity   10
+    Maintainability (MI)    130
 
  Segment     Used  Free
 -----------  ----  ----
