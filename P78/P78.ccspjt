@@ -1,0 +1,16 @@
+[PROJECT]
+Target=P78.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.007
+Compiler=PCH
+[Target Data]
+FileList=P78.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[P78.c]
+Type=4
+[mru-list]
+1=P78.c
+[Units]
+Count=1
+1=P78 (main)

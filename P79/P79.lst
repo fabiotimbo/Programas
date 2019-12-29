@@ -1,16 +1,16 @@
-CCS PCH C Compiler, Version 5.007, 61971               23-dez-19 11:20
+CCS PCH C Compiler, Version 5.007, 61971               29-dez-19 11:31
 
                Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Microcontroladores e dispositivos periféricos\Programas apostila oficiais\P79\P79.lst
 
-               ROM used:   280 bytes (1%)
-                           Largest free fragment is 32484
+               ROM used:   260 bytes (1%)
+                           Largest free fragment is 32504
                RAM used:   27 (1%) at main() level
-                           29 (1%) worst case
+                           27 (1%) worst case
                Stack used: 1 locations (0 in main + 1 for interrupts)
                Stack size: 31
 
 *
-0000:  GOTO   00E8
+0000:  GOTO   00D6
 *
 0008:  MOVWF  04
 000A:  MOVFF  FD8,05
@@ -29,9 +29,9 @@ CCS PCH C Compiler, Version 5.007, 61971               23-dez-19 11:20
 003C:  MOVFF  01,0F
 0040:  MOVFF  02,10
 0044:  MOVFF  03,11
-0048:  BTFSS  F9D.0
+0048:  BTFSS  F9D.1
 004A:  GOTO   0054
-004E:  BTFSC  F9E.0
+004E:  BTFSC  F9E.1
 0050:  GOTO   0096
 0054:  MOVFF  0E,00
 0058:  MOVFF  0F,01
@@ -58,93 +58,84 @@ CCS PCH C Compiler, Version 5.007, 61971               23-dez-19 11:20
 ....................  
 .................... #list 
 ....................  
-.................... #fuses HS, NOWDT, PUT, BROWNOUT, NOLVP, CPUDIV1,PLL5,USBDIV  //Configuração dos fusíveis 
+.................... #fuses HS, NOWDT, PUT, BROWNOUT, NOLVP, CPUDIV1,PLL5,USBDIV   
 .................... #use delay(clock=20000000) 
-.................... #int_timer1 
+.................... #int_timer2 
 .................... void funcao_tempo() 
 .................... { 
 .................... static boolean flag; 
 .................... static unsigned int32 n; 
-.................... set_timer1(3036+get_timer1()); 
-0096:  MOVF   FCE,W
-0098:  MOVFF  FCF,03
-009C:  ADDLW  DC
-009E:  MOVWF  1B
-00A0:  MOVLW  0B
-00A2:  ADDWFC FCF,W
-00A4:  MOVWF  FCF
-00A6:  MOVFF  1B,FCE
 .................... n++; 
-00AA:  MOVLW  01
-00AC:  ADDWF  17,F
-00AE:  BTFSC  FD8.0
-00B0:  INCF   18,F
-00B2:  BTFSC  FD8.2
-00B4:  INCF   19,F
-00B6:  BTFSC  FD8.2
-00B8:  INCF   1A,F
-.................... if (n==10)//divisão de tempo 
-00BA:  MOVF   17,W
-00BC:  SUBLW  0A
-00BE:  BNZ   00E2
-00C0:  MOVF   18,F
-00C2:  BNZ   00E2
-00C4:  MOVF   19,F
-00C6:  BNZ   00E2
-00C8:  MOVF   1A,F
-00CA:  BNZ   00E2
+0096:  MOVLW  01
+0098:  ADDWF  17,F
+009A:  BTFSC  FD8.0
+009C:  INCF   18,F
+009E:  BTFSC  FD8.2
+00A0:  INCF   19,F
+00A2:  BTFSC  FD8.2
+00A4:  INCF   1A,F
+.................... if (n==1250) 
+00A6:  MOVF   17,W
+00A8:  SUBLW  E2
+00AA:  BNZ   00D0
+00AC:  MOVF   18,W
+00AE:  SUBLW  04
+00B0:  BNZ   00D0
+00B2:  MOVF   19,F
+00B4:  BNZ   00D0
+00B6:  MOVF   1A,F
+00B8:  BNZ   00D0
 .................... {n=0; 
-00CC:  CLRF   1A
-00CE:  CLRF   19
-00D0:  CLRF   18
-00D2:  CLRF   17
+00BA:  CLRF   1A
+00BC:  CLRF   19
+00BE:  CLRF   18
+00C0:  CLRF   17
 .................... flag=!flag; 
-00D4:  BTG    16.0
+00C2:  BTG    16.0
 .................... output_bit(led1,flag); 
-00D6:  BTFSC  16.0
-00D8:  BRA    00DE
-00DA:  BCF    F8C.1
-00DC:  BRA    00E0
-00DE:  BSF    F8C.1
-00E0:  BCF    F95.1
-00E2:  BCF    F9E.0
-00E4:  GOTO   0054
+00C4:  BTFSC  16.0
+00C6:  BRA    00CC
+00C8:  BCF    F8C.1
+00CA:  BRA    00CE
+00CC:  BSF    F8C.1
+00CE:  BCF    F95.1
+00D0:  BCF    F9E.1
+00D2:  GOTO   0054
 .................... }} 
 .................... void main() 
-00E8:  CLRF   FF8
-00EA:  BCF    FD0.7
-00EC:  BSF    07.7
-00EE:  MOVF   FC1,W
-00F0:  ANDLW  C0
-00F2:  IORLW  0F
-00F4:  MOVWF  FC1
-00F6:  MOVLW  07
-00F8:  MOVWF  FB4
-00FA:  BCF    16.0
-00FC:  BCF    16.0
-00FE:  CLRF   17
-0100:  CLRF   18
-0102:  CLRF   19
-0104:  CLRF   1A
-....................  { 
-....................  setup_timer_1 (T1_INTERNAL|T1_DIV_BY_8);  
-0106:  MOVLW  B5
-0108:  MOVWF  FCD
-....................  set_timer1(3036);                                                 
-010A:  MOVLW  0B
-010C:  MOVWF  FCF
-010E:  MOVLW  DC
-0110:  MOVWF  FCE
+00D6:  CLRF   FF8
+00D8:  BCF    FD0.7
+00DA:  BSF    07.7
+00DC:  MOVF   FC1,W
+00DE:  ANDLW  C0
+00E0:  IORLW  0F
+00E2:  MOVWF  FC1
+00E4:  MOVLW  07
+00E6:  MOVWF  FB4
+00E8:  BCF    16.0
+00EA:  BCF    16.0
+00EC:  CLRF   17
+00EE:  CLRF   18
+00F0:  CLRF   19
+00F2:  CLRF   1A
+....................  { setup_timer_2(T2_DIV_BY_16, 249, 1); 
+00F4:  MOVLW  00
+00F6:  IORLW  06
+00F8:  MOVWF  FCA
+00FA:  MOVLW  F9
+00FC:  MOVWF  FCB
 ....................  enable_interrupts(GLOBAL); 
-0112:  MOVLW  C0
-0114:  IORWF  FF2,F
-....................  enable_interrupts(INT_TIMER1); 
-0116:  BSF    F9D.0
+00FE:  MOVLW  C0
+0100:  IORWF  FF2,F
+....................  enable_interrupts(INT_TIMER2); 
+0102:  BSF    F9D.1
 ....................  while(true) 
 ....................  { } } 
-0118:  BRA    0118
+0104:  BRA    0104
 ....................  
-011A:  SLEEP 
+0106:  SLEEP 
+....................  
+....................  
 
 Configuration Fuses:
    Word  1: CC24   PLL5 CPUDIV1 USBDIV HS FCMEN IESO

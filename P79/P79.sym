@@ -23,8 +23,6 @@
 015     @INTERRUPT_AREA
 016.0   funcao_tempo.flag
 017-01A funcao_tempo.n
-01B     funcao_tempo.@SCRATCH1
-01C     funcao_tempo.@SCRATCH2
 F83     PSP_DATA
 FB4.6   C1OUT
 FB4.7   C2OUT
@@ -45,18 +43,18 @@ FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
 
 ROM Allocation:
 000096  funcao_tempo
-0000E8  MAIN
-0000E8  @cinit1
-0000FA  @cinit2
+0000D6  MAIN
+0000D6  @cinit1
+0000E8  @cinit2
 
 Project Directory:
     C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Microcontroladores e dispositivos periféricos\Programas apostila oficiais\P79\
 
 Project Files:
-    P79.c                                                   [23-dez-19 11:20  CRC=E27194A6]
+    P79.c                                                   [29-dez-19 11:31  CRC=CE399C1A]
     ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
 
-Source signature=25217062
+Source signature=10E977D6
 
 Units:
     P79 (main)

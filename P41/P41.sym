@@ -21,42 +21,60 @@
 013     @INTERRUPT_AREA
 014     @INTERRUPT_AREA
 015     @INTERRUPT_AREA
-016.0   funcao_tempo.flag
+016.0   funcao_tempo.led
 017-01A funcao_tempo.n
-01B     funcao_tempo.@SCRATCH1
-01C     funcao_tempo.@SCRATCH2
+01B-01E MAIN.ad1
+01F     MAIN.selection
+020     @PSTRINGC_9600_31766_31767.@SCRATCH1
+021     @PSTRINGC_9600_31766_31767.@SCRATCH2
+022-025 funcao_tempo.ad1
+026-027 @ITOF.P1
+026-029 @FLT.P2
+026     funcao_tempo.@SCRATCH1
+027     funcao_tempo.@SCRATCH2
+028     funcao_tempo.@SCRATCH3
+029     funcao_tempo.@SCRATCH4
+02A-02D @FLT.P1
+02E     @FLT.@SCRATCH1
+02F     @FLT.@SCRATCH2
 F83     PSP_DATA
 FB4.6   C1OUT
 FB4.7   C2OUT
-FBB     CCP_2_LOW
 FBB     CCP_2
+FBB     CCP_2_LOW
 FBC     CCP_2_HIGH
 FBE     CCP_1
 FBE     CCP_1_LOW
 FBF     CCP_1_HIGH
-FE1-FE2 @READ_PACKED_MEMORY.P1
-FE1-FE2 @WRITE_PACKED_MEMORY.P2
-FE9-FEA @WRITE_PROGRAM_MEMORY.P1
-FE9-FEA @READ_PROGRAM_MEMORY.P2
-FE9-FEA @WRITE_PACKED_MEMORY.P3
-FE9-FEA @READ_PACKED_MEMORY.P4
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
 FF6-FF8 @READ_PROGRAM_MEMORY.P1
 FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
 
 ROM Allocation:
-000096  funcao_tempo
-0000EA  MAIN
-0000EA  @cinit1
-0000FC  @cinit2
+000096  @ITOF
+0000CE  @FLT
+000146  funcao_tempo
+000202  @const654.call
+000212  @const656.call
+00022A  @const657.call
+000246  @PSTRINGC_9600_31766_31767
+000268  MAIN
+000268  @cinit1
+00028E  @cinit2
 
 Project Directory:
     C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Microcontroladores e dispositivos periféricos\Programas apostila oficiais\P41\
 
 Project Files:
-    P41.c                                                   [22-dez-19 20:52  CRC=B9D13392]
+    P41.c                                                   [29-dez-19 10:17  CRC=0CB03B1A]
     ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
 
-Source signature=FC810F4E
+Source signature=4F6016D6
 
 Units:
     P41 (main)
@@ -64,7 +82,7 @@ Units:
 Compiler Settings:
     Processor:      PIC18F4550
     Pointer Size:   16
-    ADC Range:      0-255
+    ADC Range:      0-1023
     Opt Level:      9
     Short,Int,Long: UNSIGNED: 1,8,16
     Float,Double:   32,32

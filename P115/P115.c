@@ -1,43 +1,37 @@
-#INCLUDE <18F4550.h>
+#include <18f4550.h>
+#byte portd=0xF83
 #fuses HS,CPUDIV1,PLL5,USBDIV
 #use delay(clock=20000000)
-#use rs232(baud=9600, xmit=PIN_C6, rcv=PIN_C7, BRGH1OK)
-char selection;
-int32 a,n,valor,centena,dezena,unidade,calc;
-int32 ac,ad,au;
-unsigned int32 angulo;
-#int_rda
-void serial ()
-{  selection=getc();
-   ac=getc()-'0';
-   ad=getc()-'0';
-   au=getc()-'0';
-   if(selection=='p')
-   {      a=1;   }
-   else
-   {      a=0;   }
-   valor=((100*ac)+(10*ad)+au);
-   angulo=((9.44*valor)+700);
-   calc=angulo;
-   printf("Recebido: %lu -> %lu %lu %lu \r\nAngulo calculado(em ms):%lu \r\n",valor,ac,ad,au,calc);
-}
+//motor 28Byj-48 possui 2048 passos por rotação ou 0,175° /passo
 void main()
-{  enable_interrupts (global);
-   enable_interrupts (int_rda);
-   printf ("teste...serial ok! \r\n");
-   printf ("Envie p+angulo.\r\nExemplo:enviando p090, posiciona o servo em 90 graus\r\n\r\n");
-   while(1)
-   { while(a==1)
-      { n=20;
-         do
-         {  output_high(pin_d2);
-            delay_us(angulo);
-            output_low(pin_d2);
-            delay_ms(20);
-            n--;
-         }
-         while(n>0);
-         delay_ms(1000);
-    }}}
-
+{
+int16 a=2; //tempo 2ms =>  2048*0,002=4,096 segundos (período do motor)
+port_b_pullups (true);
+set_tris_d(0x00);
+set_tris_b(0xFF);
+while(true)
+{
+    if ((input(pin_b0)==0)&&(input(pin_b1)==1))//botão b0 pressionado
+       {
+       portd=0b10010000;
+       delay_ms(a);
+       portd=0b00110000;
+       delay_ms(a);
+       portd=0b01100000;
+       delay_ms(a);
+       portd=0b11000000;
+       delay_ms(a);
+       }
+    if ((input(pin_b0)==1)&&(input(pin_b1)==0))//botão b1 pressionado
+       {
+       portd=0b11000000;
+       delay_ms(a);
+       portd=0b01100000;
+       delay_ms(a);
+       portd=0b00110000;
+       delay_ms(a);
+       portd=0b10010000;
+       delay_ms(a);       }
+       portd=0b00000000;//evita energizar as bobinas e o aquecimento do motor
+}}
 

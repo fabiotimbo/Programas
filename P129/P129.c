@@ -1,31 +1,57 @@
-#define led_verde pin_d0
-#define led_vermelho pin_d1
-#include <18F4550.h>
-#fuses HS,CPUDIV1,PLL5,USBDIV
+#INCLUDE <18F4550.h>
+#fuses HS,CPUDIV1,USBDIV,PLL5
 #device adc=10
 #use delay(clock=20000000)
-float ad1,lux;
+#use rs232(baud=9600, xmit=PIN_C6, rcv=PIN_C7)
+//#use standard_io(B) //comentar linha caso a biblioteca do LCD seja diferente
+//#define use_portB_lcd TRUE //comentar linha caso a biblioteca do LCD seja diferente
+//#define LCD_TYPE 2
+//#include <LCD.c> 
+float32 lm;
+unsigned int32 ad0;
+int m,c,d,u;
 void main()
-{setup_adc_ports(an0);
-SETUP_ADC(ADC_CLOCK_INTERNAL); //Seta a origem do clock
-SET_ADC_CHANNEL(0);
+{
+//lcd_init();
+//lcd_gotoxy(1,1);
+//printf(lcd_putc," Grafico ");
+//lcd_gotoxy(1,2);
+//printf(lcd_putc," Serial ");
+delay_ms(100);
+setup_adc_ports(an0);
+setup_adc(adc_clock_internal);
+set_adc_channel(0);
 while(true)
-{ad1=read_adc();
+{
+lm=read_adc();
 delay_ms(10);
-  ad1=ad1*0.0048875;
-  if (ad1>2 && ad1<2.8)   {      lux=(3936.4-(1249*ad1))/0.8;   }
-  if (ad1>=2.8 && ad1<=3.8)   {  lux=2057.2-494*ad1;   }
-  if (ad1>3.8)   {      lux=(900-180*ad1)/1.2;   }
-      if (lux>=20) 
-       {       output_high(led_vermelho);
-       }
-    else
-       {       output_low(led_vermelho);
-       }
-    if (lux<20) 
-       {       output_high(led_verde);
-       }
-    else
-       {       output_low(led_verde);
-       }}}
+lm=lm*0.488758;
+ad0=lm;
+delay_ms(10);
+m= ad0/1000;
+c=((ad0%1000)/100);
+d=((ad0%1000)%100)/10;
+u=(((ad0%1000)%100)%10)/1;
+delay_ms(300);
+//printf(" %f ",lux);
+printf("&");
+delay_ms(100);
+printf("%d",m);
+delay_ms(100);
+printf("%d",c);
+delay_ms(100);
+printf("%d",d);
+delay_ms(100);
+printf("%d",u);
+delay_ms(100);
+printf("f");
+delay_ms(100);
+printf("f");
+delay_ms(100);
+//lcd_gotoxy(1,1);
+//printf(lcd_putc,"\f   Temperatura ");
+//lcd_gotoxy(1,2);
+//printf(lcd_putc,"      %.1f %cC",lm,0xdf);
+delay_ms(100);
+}}
 

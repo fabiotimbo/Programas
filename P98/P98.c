@@ -1,38 +1,49 @@
 #include <18F4550.h>
-#fuses HS, CPUDIV1
-#use delay (clock=20000000)
-#use rs232(baud=9600,xmit=pin_c6,rcv=pin_c7)
+#fuses HS, CPUDIV1,PLL5,USBDIV
+#use delay(clock=20000000)
+#use rs232(baud=9600, xmit=PIN_C6, rcv=PIN_C7)
 #use standard_io(B) //comentar linha caso a biblioteca do LCD seja diferente
 #define use_portB_lcd TRUE //comentar linha caso a biblioteca do LCD seja diferente
 #define LCD_TYPE 2
 #include <LCD.c>
-int32 u,d,c;
-unsigned int32 selection;
 void main()
-{lcd_init();//inicializa lcd
-while(1){
-lcd_gotoxy(1,1);
-printf(lcd_putc," Envio de valor ");
-lcd_gotoxy(1,2);
-printf(lcd_putc," pela serial ");
-delay_ms(1000);
-do
+{lcd_init();
+while(true)
 {
-printf("\r\nEnvie um valor de setpoint entre 0 e 100:\r\n");
-c=getc()-48; //48 corresponde ao valor do caractere 0 da tabela ASCII.
-delay_ms(10);
-d=getc()-48;//48 corresponde ao valor do caractere 0 da tabela ASCII.
-delay_ms(10);
-u=getc()-48;//48 corresponde ao valor do caractere 0 da tabela ASCII.
-delay_ms(10);
-selection=(100*c)+(10*d)+u;
-printf("\r\nnumero=%lu\r\n",selection);
-if (selection>100||selection<0) {printf("\r\nValor incorreto!!\r\n");}// faixa de valores aceitáveis
-} while(selection>100||selection<0);
-lcd_gotoxy(1,1);
-{printf("\r\nValor ok\r\n");}
-printf(lcd_putc,"\fsetpoint %lu",selection);
-delay_ms(1000);
-c=0;d=0;u=0;
-}}
+   char selection;
+   int value;
+   unsigned int32 vel;
+   printf("\r\nSelecione a rotacao:\r\n");
+   printf("    1) 0 \r\n");
+   printf("    2) 20 \r\n");
+   printf("    3) 50 \r\n");
+   printf("    4) 80 \r\n");
+   printf("    5) 100 \r\n");
+  setup_timer_2(T2_DIV_BY_4, 249, 1);
+  set_pwm1_duty(value);
+  lcd_gotoxy(1,1);
+  printf(lcd_putc,"\f Motor CC ");
+  lcd_gotoxy(1,2);
+  printf(lcd_putc," Velocidade=%lu ",vel);
+   do {
+   selection=getc();
+  } while((selection<'1')||(selection>'6'));
+   setup_ccp1(CCP_PWM);
+   switch(selection) {
+     case '1' : value=0;
+                vel=0;  
+                break;
+     case '2' : value=50;
+                vel=20;
+                break;
+     case '3' : value=125;
+                vel=50;
+                break;
+     case '4' : value=200;
+                vel=80;
+                break;
+     case '5' : value=250;
+                vel=100;
+                break;
+   }}}
 

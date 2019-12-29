@@ -1,4 +1,0 @@
->>> Warning 208 "P111.c" Line 18(1,6): Function not void and does not return a value  servo
-      Memory usage:   ROM=5%      RAM=2% - 3%
-      0 Errors,  1 Warnings.
-Build Successful.

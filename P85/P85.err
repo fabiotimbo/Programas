@@ -1,5 +1,0 @@
->>> Warning 202 "P85.c" Line 23(8,11): Variable never used:   ad1
->>> Warning 202 "P85.c" Line 24(6,15): Variable never used:   selection
-      Memory usage:   ROM=2%      RAM=2% - 2%
-      0 Errors,  2 Warnings.
-Build Successful.

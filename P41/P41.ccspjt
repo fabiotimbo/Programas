@@ -14,6 +14,9 @@ Type=4
 [Opened Files]
 1=P41.c
 2=
+[documentation]
+template=C:\Users\Fabio T. Brito\Desktop\template_sdd
+output=P41.rtf
 [Units]
 Count=1
 1=P41 (main)
