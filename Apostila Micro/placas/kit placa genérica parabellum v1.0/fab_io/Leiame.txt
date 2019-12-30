@@ -1,0 +1,5 @@
+Extrair e instalar driver Xbox.zip (opcional para usar controle Xbox mas o programa só roda se instalar)
+Carregar arquivo firmware.hex para o microcontrolador 18F4550
+Extrair pasta completa debug no computador
+Executar arquivo Sup.exe na pasta
+Enjoy it

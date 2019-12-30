@@ -1,0 +1,112 @@
+CCS PCH C Compiler, Version 4.104, 5967               19-mai-18 18:51
+
+               Filename: C:\Users\Fabio\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Microcontroladores e dispositivos periféricos\programas apostila\oscilador interno\osc_int_1seg.lst
+
+               ROM used: 82 bytes (0%)
+                         Largest free fragment is 32686
+               RAM used: 6 (0%) at main() level
+                         6 (0%) worst case
+               Stack:    0 locations
+
+*
+0000:  GOTO   0004
+.................... #include <18f4550.h> 
+.................... //////// Standard Header file for the PIC18F4550 device //////////////// 
+.................... #device PIC18F4550 
+.................... #list 
+....................  
+.................... #fuses hs,nowdt,noprotect,nolvp,NOMCLR 
+....................  
+.................... void main() 
+.................... { 
+0004:  CLRF   FF8
+0006:  BCF    FD0.7
+0008:  CLRF   FEA
+000A:  CLRF   FE9
+000C:  MOVF   FC1,W
+000E:  ANDLW  C0
+0010:  IORLW  0F
+0012:  MOVWF  FC1
+0014:  MOVLW  07
+0016:  MOVWF  FB4
+....................  
+.................... int delay_reg1; 
+.................... int delay_reg2;  
+.................... #asm 
+.................... GOTO teste 
+0018:  BRA    0030
+....................  
+.................... Delay100ms: 
+....................    movlw 0x83 
+001A:  MOVLW  83
+....................    movwf delay_reg1 
+001C:  MOVWF  05
+....................    movlw 0xFF 
+001E:  MOVLW  FF
+....................    movwf delay_reg2 
+0020:  MOVWF  06
+.................... loop1: 
+....................    DECFSZ delay_reg1 
+0022:  DECFSZ 05,F
+....................    GOTO loop2 
+0024:  BRA    0028
+....................    GOTO exit 
+0026:  BRA    002E
+.................... loop2: 
+....................    DECFSZ delay_reg2 
+0028:  DECFSZ 06,F
+....................    GOTO loop2 
+002A:  BRA    0028
+....................    GOTO loop1 
+002C:  BRA    0022
+.................... Exit: 
+....................    RETURN 
+002E:  RETURN 0
+....................     
+.................... teste:    
+.................... movlw  0x80 
+0030:  MOVLW  80
+.................... movwf  0xFF1 
+0032:  MOVWF  FF1
+.................... movlw  0xFF 
+0034:  MOVLW  FF
+.................... movwf  0xF93 
+0036:  MOVWF  F93
+.................... movlw  0x00 
+0038:  MOVLW  00
+.................... movwf  0xF95 
+003A:  MOVWF  F95
+.................... movlw  0xE6 
+003C:  MOVLW  E6
+.................... movwf  0xFD3 
+003E:  MOVWF  FD3
+....................  
+.................... loop: 
+....................    clrf    0XF83 
+0040:  CLRF   F83
+....................    call    Delay100ms 
+0042:  CALL   001A,1
+....................    movlw   0xff 
+0046:  MOVLW  FF
+....................    movwf   0XF83 
+0048:  MOVWF  F83
+....................    call    Delay100ms 
+004A:  CALL   001A,1
+....................    goto    loop 
+004E:  BRA    0040
+.................... #endasm 
+.................... } 
+....................  
+....................  
+....................  
+....................  
+0050:  SLEEP 
+
+Configuration Fuses:
+   Word  1: CC3F   IESO FCMEN HS PLL12 CPUDIV4 USBDIV
+   Word  2: 1E3E   BROWNOUT NOWDT BORV20 PUT WDT32768 VREGEN
+   Word  3: 0700   PBADEN CCP2C1 NOMCLR LPT1OSC
+   Word  4: 0081   STVREN NODEBUG NOLVP NOXINST NOICPRT
+   Word  5: C00F   NOPROTECT NOCPD NOCPB
+   Word  6: E00F   NOWRT NOWRTD NOWRTC NOWRTB
+   Word  7: 400F   NOEBTR NOEBTRB

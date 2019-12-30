@@ -1,0 +1,27 @@
+1.   #define led1 pin_d1
+2.   #include <18F4550.h>
+3.   #fuses HS, NOWDT, PUT, BROWNOUT, NOLVP, CPUDIV1, PLL5,USBDIV 
+4.   #use delay(clock=20000000)
+5.   #int_timer0
+6.   void funcao_tempo()
+7.   {
+8.   static boolean flag;
+9.   static unsigned int32 n;
+10.   set_timer0(131+get_timer0());
+11.   n++;
+12.   if (n==625)
+13.   {
+14.   n=0;
+15.   flag=!flag;
+16.   output_bit(led1,flag);
+17.   }
+18.   }
+19.   void main()
+20.   {
+21.   setup_timer_0 (RTCC_DIV_64|RTCC_INTERNAL | RTCC_8_BIT ); //8 bits
+22.   set_timer0(131);                                             
+23.   enable_interrupts(GLOBAL);
+24.   enable_interrupts(INT_TIMER0);
+25.   while(true)
+26.   { } }
+
