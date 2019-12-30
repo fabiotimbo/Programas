@@ -1,0 +1,225 @@
+CCS PCH C Compiler, Version 5.007, 61971               30-dez-19 19:36
+
+               Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Microcontroladores e dispositivos periféricos\Programas apostila oficiais\Apostila Micro\P118\P118.lst
+
+               ROM used:   360 bytes (1%)
+                           Largest free fragment is 32404
+               RAM used:   27 (1%) at main() level
+                           31 (2%) worst case
+               Stack used: 1 locations (0 in main + 1 for interrupts)
+               Stack size: 31
+
+*
+0000:  GOTO   0130
+*
+0008:  MOVWF  04
+000A:  MOVFF  FD8,05
+000E:  MOVFF  FE0,06
+0012:  MOVLB  0
+0014:  MOVFF  FE9,0C
+0018:  MOVFF  FEA,07
+001C:  MOVFF  FE1,08
+0020:  MOVFF  FE2,09
+0024:  MOVFF  FD9,0A
+0028:  MOVFF  FDA,0B
+002C:  MOVFF  FF3,12
+0030:  MOVFF  FF4,13
+0034:  MOVFF  FFA,14
+0038:  MOVFF  00,0E
+003C:  MOVFF  01,0F
+0040:  MOVFF  02,10
+0044:  MOVFF  03,11
+0048:  BTFSS  F9D.0
+004A:  GOTO   0054
+004E:  BTFSC  F9E.0
+0050:  GOTO   0096
+0054:  MOVFF  0E,00
+0058:  MOVFF  0F,01
+005C:  MOVFF  10,02
+0060:  MOVFF  11,03
+0064:  MOVFF  0C,FE9
+0068:  MOVFF  07,FEA
+006C:  BSF    07.7
+006E:  MOVFF  08,FE1
+0072:  MOVFF  09,FE2
+0076:  MOVFF  0A,FD9
+007A:  MOVFF  0B,FDA
+007E:  MOVFF  12,FF3
+0082:  MOVFF  13,FF4
+0086:  MOVFF  14,FFA
+008A:  MOVF   04,W
+008C:  MOVFF  06,FE0
+0090:  MOVFF  05,FD8
+0094:  RETFIE 0
+.................... #define led0 pin_d0  
+.................... #define led1 pin_d1  
+.................... #define mpasso pin_d2 
+.................... #define dir pin_d3 
+.................... #include <18F4550.h> 
+.................... //////// Standard Header file for the PIC18F4550 device //////////////// 
+.................... #device PIC18F4550 
+....................  
+.................... #list 
+....................  
+.................... #device adc=10 
+.................... #fuses HS,PLL5,CPUDIV1,nowdt ,USBDIV//Configuração dos fusíveis 48Mhz 
+.................... #use delay(clock=20000000) 
+.................... const int32 tm=60536; 
+.................... boolean estado_anterior=0; 
+.................... #int_timer1 
+.................... void funcao_tempo() 
+.................... { 
+.................... static boolean led=1,led2=1; 
+.................... static unsigned int32 n; 
+.................... set_timer1(tm+get_timer1()); 
+0096:  MOVF   FCE,W
+0098:  MOVFF  FCF,03
+009C:  ADDLW  78
+009E:  MOVWF  1B
+00A0:  MOVLW  EC
+00A2:  ADDWFC FCF,W
+00A4:  CLRF   1D
+00A6:  BCF    FD8.2
+00A8:  BTFSC  FD8.0
+00AA:  INCF   1D,F
+00AC:  MOVWF  FCF
+00AE:  MOVFF  1B,FCE
+.................... n++; 
+00B2:  MOVLW  01
+00B4:  ADDWF  17,F
+00B6:  BTFSC  FD8.0
+00B8:  INCF   18,F
+00BA:  BTFSC  FD8.2
+00BC:  INCF   19,F
+00BE:  BTFSC  FD8.2
+00C0:  INCF   1A,F
+.................... if (n==5) 
+00C2:  MOVF   17,W
+00C4:  SUBLW  05
+00C6:  BNZ   00FC
+00C8:  MOVF   18,F
+00CA:  BNZ   00FC
+00CC:  MOVF   19,F
+00CE:  BNZ   00FC
+00D0:  MOVF   1A,F
+00D2:  BNZ   00FC
+.................... { 
+.................... n=0; 
+00D4:  CLRF   1A
+00D6:  CLRF   19
+00D8:  CLRF   18
+00DA:  CLRF   17
+.................... if ((input(pin_b0)==0))  
+00DC:  BSF    F93.0
+00DE:  BTFSC  F81.0
+00E0:  BRA    00FC
+.................... { 
+.................... led=!led;//divide a frequência por 2 poque passa só meio período ligado 
+00E2:  BTG    16.1
+.................... output_bit(led1,led); 
+00E4:  BTFSC  16.1
+00E6:  BRA    00EC
+00E8:  BCF    F8C.1
+00EA:  BRA    00EE
+00EC:  BSF    F8C.1
+00EE:  BCF    F95.1
+.................... output_bit(mpasso,led); 
+00F0:  BTFSC  16.1
+00F2:  BRA    00F8
+00F4:  BCF    F8C.2
+00F6:  BRA    00FA
+00F8:  BSF    F8C.2
+00FA:  BCF    F95.2
+.................... }} 
+.................... if (input(pin_b1)==0) 
+00FC:  BSF    F93.1
+00FE:  BTFSC  F81.1
+0100:  BRA    0104
+.................... { 
+.................... estado_anterior=1; 
+0102:  BSF    16.0
+.................... } 
+.................... if((input(pin_b1)==1)&&(estado_anterior==1)) 
+0104:  BSF    F93.1
+0106:  BTFSS  F81.1
+0108:  BRA    012A
+010A:  BTFSS  16.0
+010C:  BRA    012A
+.................... { 
+.................... estado_anterior=0; 
+010E:  BCF    16.0
+.................... led2=!led2; 
+0110:  BTG    16.2
+.................... output_bit(dir,led2); 
+0112:  BTFSC  16.2
+0114:  BRA    011A
+0116:  BCF    F8C.3
+0118:  BRA    011C
+011A:  BSF    F8C.3
+011C:  BCF    F95.3
+.................... output_bit(led0,led2); 
+011E:  BTFSC  16.2
+0120:  BRA    0126
+0122:  BCF    F8C.0
+0124:  BRA    0128
+0126:  BSF    F8C.0
+0128:  BCF    F95.0
+.................... } 
+....................  
+....................  
+012A:  BCF    F9E.0
+012C:  GOTO   0054
+.................... } 
+.................... void main() 
+0130:  CLRF   FF8
+0132:  BCF    FD0.7
+0134:  BSF    07.7
+0136:  BCF    16.0
+0138:  BSF    16.1
+013A:  BSF    16.2
+013C:  MOVF   FC1,W
+013E:  ANDLW  C0
+0140:  IORLW  0F
+0142:  MOVWF  FC1
+0144:  MOVLW  07
+0146:  MOVWF  FB4
+0148:  CLRF   17
+014A:  CLRF   18
+014C:  CLRF   19
+014E:  CLRF   1A
+.................... { 
+.................... port_b_pullups(TRUE); 
+0150:  BCF    FF1.7
+.................... output_d(0); 
+0152:  CLRF   F95
+0154:  CLRF   F8C
+.................... enable_interrupts(GLOBAL); 
+0156:  MOVLW  C0
+0158:  IORWF  FF2,F
+.................... enable_interrupts(INT_timer1); 
+015A:  BSF    F9D.0
+.................... setup_timer_1(T1_INTERNAL|T1_DIV_BY_2); 
+015C:  MOVLW  95
+015E:  MOVWF  FCD
+.................... set_timer1(tm);                                              
+0160:  MOVLW  EC
+0162:  MOVWF  FCF
+0164:  MOVLW  78
+0166:  MOVWF  FCE
+.................... while(true) 
+.................... {  
+0168:  BRA    0168
+....................  
+.................... } 
+.................... } 
+....................  
+016A:  SLEEP 
+
+Configuration Fuses:
+   Word  1: CC24   PLL5 CPUDIV1 USBDIV HS FCMEN IESO
+   Word  2: 1E3E   PUT BROWNOUT BORV21 VREGEN NOWDT WDT32768
+   Word  3: 8700   CCP2C1 PBADEN LPT1OSC MCLR
+   Word  4: 00A1   STVREN NOLVP ICSP2 NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

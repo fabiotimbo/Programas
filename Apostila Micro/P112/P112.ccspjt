@@ -1,0 +1,16 @@
+[PROJECT]
+Target=P112.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.007
+Compiler=PCH
+[Target Data]
+FileList=P112.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[P112.c]
+Type=4
+[mru-list]
+1=P112.c
+[Units]
+Count=1
+1=P112 (main)

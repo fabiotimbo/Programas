@@ -1,0 +1,66 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+005     MAIN.estado
+006     MAIN.x
+007     MAIN.y
+008     aciona_bomba.alto
+008     MAIN.@SCRATCH1
+009     aciona_bomba.baixo
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  aciona_bomba
+000022  MAIN
+000022  @cinit1
+000032  @cinit2
+
+Project Directory:
+    C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Microcontroladores e dispositivos periféricos\Programas apostila oficiais\Apostila Micro\P86\
+
+Project Files:
+    P86.c                                                   [30-dez-19 18:20  CRC=0CB7508D]
+    ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
+
+Source signature=4F672C49
+
+Units:
+    P86 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   P86.xsym
+    Errors:      P86.err
+    Ext Symbols: P86.esym
+    INHX32:      P86.hex
+    Symbols:     P86.sym
+    List:        P86.lst
+    Debug/COFF:  P86.cof
+    Project:     P86.ccspjt
+    Call Tree:   P86.tre
+    Statistics:  P86.STA

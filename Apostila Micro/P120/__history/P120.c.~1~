@@ -26,6 +26,6 @@ ad0=lm*0.488758;//igual a (5/1023)*100
 lcd_gotoxy(1,1);
 printf(lcd_putc,"\f   Temperatura  ", );
 lcd_gotoxy(1,2);
-printf(lcd_putc,"        %lu %cC",ad0,0xdf);
+printf(lcd_putc,"        %u %cC",ad0,0xdf);
 delay_ms(1000);}}
 

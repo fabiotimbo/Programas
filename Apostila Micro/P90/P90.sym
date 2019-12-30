@@ -1,0 +1,117 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004-007 n
+008     @PSTRINGCN_662.P1
+008     lcd_init.i
+008-00B @PRINTF_L32U_662.P1
+008     MAIN.@SCRATCH1
+008     @PSTRINGC_662.@SCRATCH1
+009     lcd_init.@SCRATCH1
+009     @PSTRINGC_662.@SCRATCH2
+009     @PSTRINGCN_662.@SCRATCH1
+00A     @PSTRINGCN_662.@SCRATCH2
+00C     @PRINTF_L32U_662.@SCRATCH1
+00D     @PRINTF_L32U_662.@SCRATCH2
+00E     @PRINTF_L32U_662.@SCRATCH3
+00F     @PRINTF_L32U_662.@SCRATCH4
+010     @PRINTF_L32U_662.@SCRATCH5
+011     @PRINTF_L32U_662.@SCRATCH6
+012     @PRINTF_L32U_662.@SCRATCH7
+013     @PRINTF_L32U_662.@SCRATCH8
+014-017 @DIV3232.P1
+014     lcd_putc.c
+015     @delay_ms1.P1
+015     lcd_gotoxy.x
+016     lcd_gotoxy.y
+017     lcd_gotoxy.address
+018-01B @DIV3232.P1
+018     lcd_gotoxy.@SCRATCH1
+019     lcd_send_byte.address
+01A     lcd_send_byte.n
+01B     lcd_read_byte.low
+01B     lcd_send_byte.@SCRATCH1
+01C     lcd_send_nibble.n
+01C     lcd_read_byte.high
+01C     @DIV3232.@SCRATCH1
+01D     lcd_read_byte.@SCRATCH1
+01D     @DIV3232.@SCRATCH2
+01E     @DIV3232.@SCRATCH3
+01F     @DIV3232.@SCRATCH4
+020     @DIV3232.@SCRATCH5
+F81     lcd
+F83     PSP_DATA
+F8A     lcdlat
+F93     lcdtris
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  LCD_INIT_STRING.call
+000014  LCD_INIT_STRING.data
+000018  @const678.call
+00002A  @const680.call
+000038  @delay_ms1
+00005E  lcd_send_nibble
+000080  lcd_read_nibble
+00008C  lcd_read_byte
+0000CE  lcd_send_byte
+000108  lcd_init
+00016E  lcd_gotoxy
+000190  lcd_putc
+0001E0  @PSTRINGC_662
+000202  @PSTRINGCN_662
+000222  @DIV3232
+0002B0  @PRINTF_L32U_662
+000356  @cinit1
+000356  MAIN
+00036E  @cinit2
+
+Project Directory:
+    C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Microcontroladores e dispositivos periféricos\Programas apostila oficiais\Apostila Micro\P90\
+
+Project Files:
+    P90.c                                                   [22-dez-19 21:10  CRC=7D8B04F9]
+    ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
+    ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.c [23-ago-12 09:01  CRC=D28E8746]
+
+Source signature=C4000163
+
+Units:
+    P90 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   P90.xsym
+    Errors:      P90.err
+    Ext Symbols: P90.esym
+    INHX32:      P90.hex
+    Symbols:     P90.sym
+    List:        P90.lst
+    Debug/COFF:  P90.cof
+    Project:     P90.ccspjt
+    Call Tree:   P90.tre
+    Statistics:  P90.STA

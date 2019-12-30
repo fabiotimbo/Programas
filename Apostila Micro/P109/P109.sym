@@ -1,0 +1,128 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016-019 ad1
+01A-01D pos_min
+01E-021 pos_max
+022-025 pos_servo2
+026-029 pos_servo
+02A.0   funcao_tempo.led
+02B-02E funcao_tempo.n
+02F-030 @ITOF.P1
+02F-032 @FTOSD.P2
+02F     @delay_ms1.P3
+02F     MAIN.@SCRATCH1
+030     @delay_us1.P1
+030     MAIN.@SCRATCH2
+031     MAIN.@SCRATCH3
+032     MAIN.@SCRATCH4
+033-036 @MULFF.P1
+033-036 @DIVFF.P2
+033-036 @ADDFF.P3
+033     @FTOSD.@SCRATCH1
+037-03A @DIVFF.P1
+037-03A @MULFF.P2
+037-03A @ADDFF.P3
+03B     @ADDFF.@SCRATCH1
+03B     @DIVFF.@SCRATCH1
+03B     @MULFF.@SCRATCH1
+03C     @ADDFF.@SCRATCH2
+03C     @DIVFF.@SCRATCH2
+03C     @MULFF.@SCRATCH2
+03D     @ADDFF.@SCRATCH3
+03D     @DIVFF.@SCRATCH3
+03D     @MULFF.@SCRATCH3
+03E     @ADDFF.@SCRATCH4
+03E     @DIVFF.@SCRATCH4
+03F     @ADDFF.@SCRATCH5
+03F     @DIVFF.@SCRATCH5
+040     @ADDFF.@SCRATCH6
+040     @DIVFF.@SCRATCH6
+041     @ADDFF.@SCRATCH7
+042     @ADDFF.@SCRATCH8
+043     funcao_tempo.@SCRATCH1
+044     funcao_tempo.@SCRATCH2
+045     funcao_tempo.@SCRATCH3
+046     funcao_tempo.@SCRATCH4
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000096  funcao_tempo
+0000F0  @ITOF
+000128  @delay_ms1
+00014E  @ADDFF
+0003B8  @DIVFF
+000512  @MULFF
+000604  @FTOSD
+000644  @delay_us1
+00065E  MAIN
+00065E  @cinit1
+00069A  @cinit2
+
+Project Directory:
+    C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Microcontroladores e dispositivos periféricos\Programas apostila oficiais\Apostila Micro\P109\
+
+Project Files:
+    P109.c                                                  [30-dez-19 18:20  CRC=BEF5212F]
+    ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
+
+Source signature=01A4FCEB
+
+Units:
+    P109 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   P109.xsym
+    Errors:      P109.err
+    Ext Symbols: P109.esym
+    INHX32:      P109.hex
+    Symbols:     P109.sym
+    List:        P109.lst
+    Debug/COFF:  P109.cof
+    Project:     P109.ccspjt
+    Call Tree:   P109.tre
+    Statistics:  P109.STA

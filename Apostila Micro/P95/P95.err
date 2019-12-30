@@ -1,0 +1,6 @@
+>>> Warning 203 "P95.c" Line 13(1,1): Condition always TRUE
+>>> Warning 205 "P95.c" Line 30(1,1): Unsigned variable is never less than zero
+>>> Warning 205 "P95.c" Line 31(1,1): Unsigned variable is never less than zero
+      Memory usage:   ROM=5%      RAM=1% - 2%
+      0 Errors,  3 Warnings.
+Build Successful.

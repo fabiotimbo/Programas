@@ -1,0 +1,117 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004-007 lm
+008-00B ad0
+00C     m
+00D     c
+00E     d
+00F     u
+010-011 @ITOF.P1
+010-013 @MULFF.P2
+010-013 @FTOSD.P3
+010     @PRINTF_D_9600_31766_31767.P4
+010     main.@SCRATCH1
+011     @delay_ms1.P1
+011     @PRINTF_D_9600_31766_31767.P2
+011     main.@SCRATCH2
+012     main.@SCRATCH3
+012     @PRINTF_D_9600_31766_31767.@SCRATCH1
+013     main.@SCRATCH4
+013     @PRINTF_D_9600_31766_31767.@SCRATCH2
+014-017 @MULFF.P1
+014     main.@SCRATCH5
+014     @FTOSD.@SCRATCH1
+014     @PRINTF_D_9600_31766_31767.@SCRATCH3
+015     main.@SCRATCH6
+015     @PRINTF_D_9600_31766_31767.@SCRATCH4
+016     @DIV88.P1
+016     main.@SCRATCH7
+017     @DIV88.P1
+017     main.@SCRATCH8
+018     main.@SCRATCH9
+018     @MULFF.@SCRATCH1
+018     @DIV88.@SCRATCH1
+019     main.@SCRATCH10
+019     @MULFF.@SCRATCH2
+01A     main.@SCRATCH11
+01A     @MULFF.@SCRATCH3
+01B     main.@SCRATCH12
+01C     main.@SCRATCH13
+01D     main.@SCRATCH14
+01E     main.@SCRATCH15
+01F     main.@SCRATCH16
+020     main.@SCRATCH17
+021     main.@SCRATCH18
+022     main.@SCRATCH19
+023     main.@SCRATCH20
+024-027 @DIV3232.P1
+028-02B @DIV3232.P1
+02C     @DIV3232.@SCRATCH1
+02D     @DIV3232.@SCRATCH2
+02E     @DIV3232.@SCRATCH3
+02F     @DIV3232.@SCRATCH4
+030     @DIV3232.@SCRATCH5
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @WRITE_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  @delay_ms1
+00002A  @ITOF
+000062  @MULFF
+000156  @FTOSD
+000196  @DIV3232
+000224  @DIV88
+00024C  @PRINTF_D_9600_31766_31767
+0002FE  @cinit1
+0002FE  main
+000320  @cinit2
+
+Project Directory:
+    C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Microcontroladores e dispositivos periféricos\Programas apostila oficiais\Apostila Micro\P129\
+
+Project Files:
+    P129.c                                                  [30-dez-19 18:20  CRC=44BB2A72]
+    ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
+
+Source signature=876B062E
+
+Units:
+    P129 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   P129.xsym
+    Errors:      P129.err
+    Ext Symbols: P129.esym
+    INHX32:      P129.hex
+    Symbols:     P129.sym
+    List:        P129.lst
+    Debug/COFF:  P129.cof
+    Project:     P129.ccspjt
+    Call Tree:   P129.tre
+    Statistics:  P129.STA

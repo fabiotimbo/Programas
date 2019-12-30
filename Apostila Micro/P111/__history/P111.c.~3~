@@ -52,5 +52,5 @@ while(true)
   if (selecao=='2')       { printf(" Posicao 2  "); servo(45); }
   if (selecao=='3')       { printf(" Posicao 3  "); servo(90); }
   if (selecao=='4')       { printf(" Posicao 4  "); servo(135);}                  
-  if (selecao=='5')       { printf(" Posicao 5  "); servo(180);}}}
+  if (selecao=='5')       { printf(" Posicao 5  "); servo(180);}}
 

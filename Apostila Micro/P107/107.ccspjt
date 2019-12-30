@@ -1,0 +1,16 @@
+[PROJECT]
+Target=107.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.007
+Compiler=PCH
+[Target Data]
+FileList=107.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[107.c]
+Type=4
+[mru-list]
+1=107.c
+[Units]
+Count=1
+1=107 (main)
