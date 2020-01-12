@@ -1,7 +1,7 @@
-D G "__PCH__" 0 0 ""5.007""
-D G "__DEVICE__" 0 0 ""
-D G "__DATE__" 0 0 ""30-dez-19""
-D G "__TIME__" 0 0 ""19:37:46"" "Standard Header file for the PIC18F4550 device ////////////////"
+D G "__PCH__" 0 49 ""5.007""
+D G "__DEVICE__" 0 49 "4550"
+D G "__DATE__" 0 49 ""12-jan-20""
+D G "__TIME__" 0 49 ""09:27:13"" "Standard Header file for the PIC18F4550 device ////////////////"
 c L "set_tris_a" 1 5 21 "FUNCTION"
 v L "value" 1 36 "int8" `54 
 f B "set_tris_a" 1 36 "void(int8 value)" `53 
@@ -911,9 +911,11 @@ V G "calc" 0 6 "int32" `645
 V G "ac" 0 7 "int32" `646 
 V G "ad" 0 7 "int32" `647 
 V G "au" 0 7 "int32" `648 
-V G "angulo" 0 8 "int32" `649 
-F G "serial" 0 11 "void()" `650 
-F G "MAIN" 0 25 "void()" `672 
+V G "null" 0 7 "int32" `649 
+V G "angulo" 0 8 "int32" `650 
+F G "serial" 0 11 "void()" `651 
+C L "serial" 0 15 1 "FUNCTION"
+F G "MAIN" 0 26 "void()" `673 
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1

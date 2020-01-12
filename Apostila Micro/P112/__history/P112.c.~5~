@@ -16,15 +16,14 @@ void serial ()
    if(selection=='p')
    {      a=1;   }
    else
-   {      a=0;ac=0;ad=0;au=0;null=0;   }
+   {      a=0;   }
    valor=((100*ac)+(10*ad)+au);
    angulo=((9.44*valor)+700);
    calc=angulo;
    printf("Recebido: %lu -> %lu %lu %lu \r\nAngulo calculado(em ms):%lu \r\n",valor,ac,ad,au,calc);
 }
 void main()
-{  setup_wdt(WDT_ON);
-   enable_interrupts (global);
+{  enable_interrupts (global);
    enable_interrupts (int_rda);
    printf ("teste...serial ok! \r\n");
    printf ("Envie p+angulo.\r\nExemplo:enviando p090, posiciona o servo em 90 graus\r\n\r\n");

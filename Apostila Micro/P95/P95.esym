@@ -1,7 +1,7 @@
-D G "__PCH__" 0 46 ""5.007""
-D G "__DEVICE__" 0 46 "4550"
-D G "__DATE__" 0 46 ""12-jan-20""
-D G "__TIME__" 0 46 ""00:04:58"" "Standard Header file for the PIC18F4550 device ////////////////"
+D G "__PCH__" 0 40 ""5.007""
+D G "__DEVICE__" 0 40 "4550"
+D G "__DATE__" 0 40 ""12-jan-20""
+D G "__TIME__" 0 40 ""08:51:25"" "Standard Header file for the PIC18F4550 device ////////////////"
 c L "set_tris_a" 1 5 21 "FUNCTION"
 v L "value" 1 36 "int8" `54 
 f B "set_tris_a" 1 36 "void(int8 value)" `53 
@@ -900,13 +900,13 @@ d G "INT_EEPROM" 1 815 "0x00A010"
 d G "INT_OSCF" 1 816 "0x00A080"
 d G "INT_SPP" 1 817 "0x009D80"
 d G "INT_USB" 1 818 "0x00A020"
-C L "jump_to_irs" 0 5 5 "FUNCTION"
-V G "u" 0 11 "int32" `638 
-V G "d" 0 11 "int32" `639 
-V G "c" 0 11 "int32" `640 
-V G "null" 0 11 "int32" `641 
-V G "selection" 0 12 "int32" `642 
-F G "main" 0 14 "void()" `643  "lcd_init();"
+C L "jump_to_irs" 0 5 4 "FUNCTION"
+V G "u" 0 9 "int32" `638 
+V G "d" 0 9 "int32" `639 
+V G "c" 0 9 "int32" `640 
+V G "null" 0 9 "int32" `641 
+V G "selection" 0 10 "int32" `642 
+F G "main" 0 12 "void()" `643  "lcd_init();"
 C L "main" 0 5 4 "FUNCTION"
 C L "main" 0 5 1 "FUNCTION"
 C L "main" 0 5 1 "FUNCTION"

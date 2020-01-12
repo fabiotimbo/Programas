@@ -1,0 +1,44 @@
+1.   #INCLUDE <18F4550.h>
+2.   #fuses HS,CPUDIV1,PLL5,USBDIV
+3.   #use delay(clock=20000000)
+4.   #use rs232(baud=9600, xmit=PIN_C6, rcv=PIN_C7, BRGH1OK)
+5.   char selection;
+6.   int32 a,n,valor,centena,dezena,unidade,calc;
+7.   int32 ac,ad,au,null;
+8.   unsigned int32 angulo;
+9.   #int_rda
+10.   void serial ()
+11.   {  selection=getc();
+12.   ac=getc()-'0';
+13.   ad=getc()-'0';
+14.   au=getc()-'0';
+15.   null=getc()-'0';//descarta caractere nulo/indevido enviado pela serial
+16.   if(selection=='p')
+17.   {      a=1;   }
+18.   else
+19.   {      a=0;   }
+20.   valor=((100*ac)+(10*ad)+au);
+21.   angulo=((9.44*valor)+700);
+22.   calc=angulo;
+23.   printf("Rx: %lu -> %lu %lu %lu \r\n (em ms):%lu \r\n",valor,ac,ad,au,calc);
+24.   }
+25.   void main()
+26.   {  enable_interrupts (global);
+27.   enable_interrupts (int_rda);
+28.   printf ("teste...serial ok! \r\n");
+29.   printf ("Envie p+angulo.\r\nEnviando p090,posiciona o servo em 90 graus\r\n\r\n");
+30.   while(1)
+31.   { while(a==1)
+32.   { n=20;
+33.   do
+34.   {  output_high(pin_d2);
+35.   delay_us(angulo);
+36.   output_low(pin_d2);
+37.   delay_ms(20);
+38.   n--;
+39.   }
+40.   while(n>0);
+41.   delay_ms(1000);
+42.   }}}
+
+

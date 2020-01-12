@@ -1,5 +1,5 @@
 #INCLUDE <18F4550.h>
-#fuses HS,CPUDIV1,PLL5,USBDIV,WDT128
+#fuses HS,CPUDIV1,PLL5,USBDIV,WDT16
 #use delay(clock=20000000)
 #use rs232(baud=9600, xmit=PIN_C6, rcv=PIN_C7, BRGH1OK)
 char selection;

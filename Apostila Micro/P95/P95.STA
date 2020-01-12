@@ -1,9 +1,9 @@
 
-ROM used:   988/16384 (3%)
-            988/16384 (3%) including unused fragments
+ROM used:   992/16384 (3%)
+            992/16384 (3%) including unused fragments
 
-            1.1 Average locations per line
-            47.0 Average locations per statement
+            1.2 Average locations per line
+            47.2 Average locations per statement
 
 RAM used:   28/2048 (1%) at main() level
             49/2048 (2%) worst case
@@ -13,22 +13,22 @@ Stack size: 31
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   46    21 100  P95.c
+   39    21 100  P95.c
   821     0   0  ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
 ----- -----
-  867    21 Total
+  860    21 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
 0     38   2    1             @delay_ms1
-0    386  20    4   652  6.6  main
-0     46   2    0             @const646
+0    386  19    4   652  6.6  main
+0     50   3    0             @const646
 0     34   2    2             @PSTRINGC_9600_31766_31767
 0     84   4   14             @MUL3232
 0     16   1    0             @const651
 0     34   2    3             @PSTRINGCN_9600_31766_31767
 0    142   7   13             @DIV3232
-0    168   9   12             @PRINTF_L32U_9600_31766_31767
+0    168   8   12             @PRINTF_L32U_9600_31766_31767
 0     22   1    0             @const659
 0     14   1    0             @const660
  Inline         0             @cinit1
@@ -36,19 +36,19 @@ Page ROM  %  RAM   Vol Diff  Functions:
 Program metrics:
     Functions               1
     Statements              21
-    Comments                159
+    Comments                158
     Volume (V)              677
     Difficulty (D)          5.4
     Effort to implement (E) 3632
     Time to implement (T)   3 minutes
     Est Delivered Bugs (B)  0
     Cyclomatic Complexity   2
-    Maintainability (MI)    119
+    Maintainability (MI)    117
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00002     4  0  
-00004-07FFE   984  31780  
+00004-07FFE   988  31776  
 
 
 

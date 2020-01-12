@@ -16,7 +16,7 @@ void serial ()
    if(selection=='p')
    {      a=1;   }
    else
-   {      a=0;ac=0;ad=0;au=0;null=0;   }
+   {      a=0;   }
    valor=((100*ac)+(10*ad)+au);
    angulo=((9.44*valor)+700);
    calc=angulo;
