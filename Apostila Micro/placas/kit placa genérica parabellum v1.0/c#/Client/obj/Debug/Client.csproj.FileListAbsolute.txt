@@ -1,0 +1,13 @@
+C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\programas\Iot\socket\WindowsFormsApplication1\Client\bin\Debug\Client.exe.config
+C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\programas\Iot\socket\WindowsFormsApplication1\Client\bin\Debug\Client.exe
+C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\programas\Iot\socket\WindowsFormsApplication1\Client\bin\Debug\Client.pdb
+C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\programas\Iot\socket\WindowsFormsApplication1\Client\bin\Debug\SimpleTCP.dll
+C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\programas\Iot\socket\WindowsFormsApplication1\Client\obj\Debug\Client.Client.resources
+C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\programas\Iot\socket\WindowsFormsApplication1\Client\obj\Debug\Client.Properties.Resources.resources
+C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\programas\Iot\socket\WindowsFormsApplication1\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\programas\Iot\socket\WindowsFormsApplication1\Client\obj\Debug\Client.exe
+C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\programas\Iot\socket\WindowsFormsApplication1\Client\obj\Debug\Client.pdb
+C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\programas\Iot\socket\WindowsFormsApplication1\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\placas\kit placa genérica parabellum v1.0\supervisório c#\Client\bin\Debug\Client.exe.config
+C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\placas\kit placa genérica parabellum v1.0\supervisório c#\Client\obj\Debug\Client.exe
+C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\placas\kit placa genérica parabellum v1.0\supervisório c#\Client\obj\Debug\Client.pdb
