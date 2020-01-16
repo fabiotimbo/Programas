@@ -11,6 +11,11 @@ Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers
 Type=4
 [mru-list]
 1=P76.c
+[Opened Files]
+1=..\P129\P129.c
+2=..\Comunicação via esp8266\esp8266.c
+3=P76.c
+4=
 [Units]
 Count=1
 1=P76 (main)

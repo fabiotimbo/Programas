@@ -1,0 +1,141 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016-019 lm
+01A-01D ad0
+01E     m
+01F     c
+020     d
+021     u
+022.0   funcao_tempo.flag
+023-026 funcao_tempo.n
+027-02A @FTOSD.P1
+027-02A @MULFF.P2
+027-028 @ITOF.P3
+027     @delay_ms1.P4
+027     @PRINTF_D_9600_31766_31767.P5
+027     protocolo.@SCRATCH1
+027     funcao_tempo.@SCRATCH1
+028     @PRINTF_D_9600_31766_31767.P1
+028     protocolo.@SCRATCH2
+028     funcao_tempo.@SCRATCH2
+029     protocolo.@SCRATCH3
+029     @PRINTF_D_9600_31766_31767.@SCRATCH1
+02A     protocolo.@SCRATCH4
+02A     @PRINTF_D_9600_31766_31767.@SCRATCH2
+02B-02E @MULFF.P1
+02B     protocolo.@SCRATCH5
+02B     @FTOSD.@SCRATCH1
+02B     @PRINTF_D_9600_31766_31767.@SCRATCH3
+02C     protocolo.@SCRATCH6
+02C     @PRINTF_D_9600_31766_31767.@SCRATCH4
+02D     @DIV88.P1
+02D     protocolo.@SCRATCH7
+02E     @DIV88.P1
+02E     protocolo.@SCRATCH8
+02F     protocolo.@SCRATCH9
+02F     @MULFF.@SCRATCH1
+02F     @DIV88.@SCRATCH1
+030     protocolo.@SCRATCH10
+030     @MULFF.@SCRATCH2
+031     protocolo.@SCRATCH11
+031     @MULFF.@SCRATCH3
+032     protocolo.@SCRATCH12
+033     protocolo.@SCRATCH13
+034     protocolo.@SCRATCH14
+035     protocolo.@SCRATCH15
+036     protocolo.@SCRATCH16
+037     protocolo.@SCRATCH17
+038     protocolo.@SCRATCH18
+039     protocolo.@SCRATCH19
+03A     protocolo.@SCRATCH20
+03B-03E @DIV3232.P1
+03F-042 @DIV3232.P1
+043     @DIV3232.@SCRATCH1
+044     @DIV3232.@SCRATCH2
+045     @DIV3232.@SCRATCH3
+046     @DIV3232.@SCRATCH4
+047     @DIV3232.@SCRATCH5
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @WRITE_PROGRAM_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000096  @ITOF
+0000CE  @delay_ms1
+0000F4  @MULFF
+0001E8  @FTOSD
+000228  @DIV3232
+0002B6  @DIV88
+0002DE  @PRINTF_D_9600_31766_31767
+000390  protocolo
+0006A8  funcao_tempo
+0006FE  @cinit1
+0006FE  MAIN
+000722  @cinit2
+
+Project Directory:
+    C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\Comunicação via esp8266\
+
+Project Files:
+    esp8266.c                                               [15-jan-20 21:34  CRC=05211DC8]
+    ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
+
+Source signature=47D0F984
+
+Units:
+    esp8266 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   esp8266.xsym
+    Errors:      esp8266.err
+    Ext Symbols: esp8266.esym
+    INHX32:      esp8266.hex
+    Symbols:     esp8266.sym
+    List:        esp8266.lst
+    Debug/COFF:  esp8266.cof
+    Project:     esp8266.ccspjt
+    Call Tree:   esp8266.tre
+    Statistics:  esp8266.STA

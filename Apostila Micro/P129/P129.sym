@@ -9,13 +9,13 @@
 00D     c
 00E     d
 00F     u
-010-011 @ITOF.P1
-010-013 @MULFF.P2
+010-013 @MULFF.P1
+010-011 @ITOF.P2
 010-013 @FTOSD.P3
 010     @PRINTF_D_9600_31766_31767.P4
 010     main.@SCRATCH1
-011     @delay_ms1.P1
-011     @PRINTF_D_9600_31766_31767.P2
+011     @PRINTF_D_9600_31766_31767.P1
+011     @delay_ms1.P2
 011     main.@SCRATCH2
 012     main.@SCRATCH3
 012     @PRINTF_D_9600_31766_31767.@SCRATCH1
@@ -57,17 +57,17 @@
 F83     PSP_DATA
 FB4.6   C1OUT
 FB4.7   C2OUT
-FBB     CCP_2
 FBB     CCP_2_LOW
+FBB     CCP_2
 FBC     CCP_2_HIGH
 FBE     CCP_1_LOW
 FBE     CCP_1
 FBF     CCP_1_HIGH
 FE1-FE2 @WRITE_PACKED_MEMORY.P1
 FE1-FE2 @READ_PACKED_MEMORY.P2
-FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P1
 FE9-FEA @READ_PROGRAM_MEMORY.P2
-FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
 FE9-FEA @WRITE_PACKED_MEMORY.P4
 FF6-FF8 @READ_PROGRAM_MEMORY.P1
 FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
@@ -80,15 +80,15 @@ ROM Allocation:
 000196  @DIV3232
 000224  @DIV88
 00024C  @PRINTF_D_9600_31766_31767
-0002FE  @cinit1
 0002FE  main
+0002FE  @cinit1
 000320  @cinit2
 
 Project Directory:
-    C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Microcontroladores e dispositivos periféricos\Programas apostila oficiais\Apostila Micro\P129\
+    C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P129\
 
 Project Files:
-    P129.c                                                  [30-dez-19 18:20  CRC=44BB2A72]
+    P129.c                                                  [15-jan-20 20:00  CRC=44BB2A72]
     ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
 
 Source signature=876B062E

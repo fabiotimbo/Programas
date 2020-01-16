@@ -48,6 +48,7 @@ printf("f");
 delay_ms(100);
 printf("f");
 delay_ms(100);
+printf("\r\n");
 //lcd_gotoxy(1,1);
 //printf(lcd_putc,"\f   Temperatura ");
 //lcd_gotoxy(1,2);

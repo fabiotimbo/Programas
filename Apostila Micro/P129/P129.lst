@@ -1,9 +1,9 @@
-CCS PCH C Compiler, Version 5.007, 61971               30-dez-19 19:41
+CCS PCH C Compiler, Version 5.007, 61971               15-jan-20 20:00
 
-               Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Microcontroladores e dispositivos periféricos\Programas apostila oficiais\Apostila Micro\P129\P129.lst
+               Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P129\P129.lst
 
-               ROM used:   1622 bytes (5%)
-                           Largest free fragment is 31146
+               ROM used:   1638 bytes (5%)
+                           Largest free fragment is 31130
                RAM used:   36 (2%) at main() level
                            49 (2%) worst case
                Stack used: 0 locations
@@ -734,18 +734,27 @@ CCS PCH C Compiler, Version 5.007, 61971               30-dez-19 19:41
 0646:  MOVLW  64
 0648:  MOVWF  11
 064A:  RCALL  0004
+.................... printf("\r\n"); 
+064C:  MOVLW  0D
+064E:  BTFSS  F9E.4
+0650:  BRA    064E
+0652:  MOVWF  FAD
+0654:  MOVLW  0A
+0656:  BTFSS  F9E.4
+0658:  BRA    0656
+065A:  MOVWF  FAD
 .................... //lcd_gotoxy(1,1); 
 .................... //printf(lcd_putc,"\f   Temperatura "); 
 .................... //lcd_gotoxy(1,2); 
 .................... //printf(lcd_putc,"      %.1f %cC",lm,0xdf); 
 .................... delay_ms(100); 
-064C:  MOVLW  64
-064E:  MOVWF  11
-0650:  RCALL  0004
-0652:  BRA    0346
+065C:  MOVLW  64
+065E:  MOVWF  11
+0660:  RCALL  0004
+0662:  BRA    0346
 .................... }} 
 ....................  
-0654:  SLEEP 
+0664:  SLEEP 
 
 Configuration Fuses:
    Word  1: CC24   PLL5 CPUDIV1 USBDIV HS FCMEN IESO

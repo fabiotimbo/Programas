@@ -1,0 +1,55 @@
+
+ROM used:   1886/16384 (6%)
+            1886/16384 (6%) including unused fragments
+
+            2.1 Average locations per line
+            43.9 Average locations per statement
+
+RAM used:   39/2048 (2%) at main() level
+            72/2048 (4%) worst case
+
+Stack used: 1 worst case (0 in main + 1 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   69    43 100  esp8266.c
+  821     0   0  ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
+----- -----
+  890    43 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     38   1    1             @delay_ms1
+0    792  21   20   908  3.8  protocolo
+0     56   1    2             @ITOF
+0    244   6   11             @MULFF
+0     64   2    5             @FTOSD
+0    142   4   13             @DIV3232
+0     40   1    3             @DIV88
+0    178   5    6             @PRINTF_D_9600_31766_31767
+0     86   2    2   225  4.8  funcao_tempo
+0    100   3    0   174  2.2  MAIN
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               3
+    Statements              43
+    Comments                144
+    Volume (V)              1625
+    Difficulty (D)          10.1
+    Effort to implement (E) 16354
+    Time to implement (T)   15 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    47
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-00094   142  0  
+00096-07FFE  1740  30878  
+
+
+
