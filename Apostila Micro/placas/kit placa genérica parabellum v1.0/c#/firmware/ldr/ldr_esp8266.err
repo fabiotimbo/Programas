@@ -1,0 +1,4 @@
+>>> Warning 202 "ldr_esp8266.c" Line 8(16,19): Variable never used:   ad0
+      Memory usage:   ROM=11%      RAM=2% - 4%
+      0 Errors,  1 Warnings.
+Build Successful.

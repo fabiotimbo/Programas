@@ -1,0 +1,168 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016-019 lm
+01A-01D lux
+01E-021 ad0
+022-025 lux2
+026     m
+027     c
+028     d
+029     u
+02A.0   funcao_tempo.flag
+02B-02E funcao_tempo.n
+02F-032 @MULFF.P1
+02F-032 @ADDFF.P2
+02F     @PRINTF_D_9600_31766_31767.P3
+02F     @delay_ms1.P4
+02F-032 @FTOSD.P5
+02F-032 @FLT.P6
+02F-030 @ITOF.P7
+02F     protocolo.@SCRATCH1
+02F     funcao_tempo.@SCRATCH1
+030     @PRINTF_D_9600_31766_31767.P1
+030     protocolo.@SCRATCH2
+030     funcao_tempo.@SCRATCH2
+031     protocolo.@SCRATCH3
+031     @PRINTF_D_9600_31766_31767.@SCRATCH1
+032     protocolo.@SCRATCH4
+032     @PRINTF_D_9600_31766_31767.@SCRATCH2
+033-036 @FLT.P1
+033-036 @MULFF.P2
+033-036 @DIVFF.P3
+033-036 @ADDFF.P4
+033     protocolo.@SCRATCH5
+033     @FTOSD.@SCRATCH1
+033     @PRINTF_D_9600_31766_31767.@SCRATCH3
+034     protocolo.@SCRATCH6
+034     @PRINTF_D_9600_31766_31767.@SCRATCH4
+035     @DIV88.P1
+035     protocolo.@SCRATCH7
+036     @DIV88.P1
+036     protocolo.@SCRATCH8
+037-03A @DIVFF.P1
+037     protocolo.@SCRATCH9
+037     @MULFF.@SCRATCH1
+037     @FLT.@SCRATCH1
+037     @ADDFF.@SCRATCH1
+037     @DIV88.@SCRATCH1
+038     protocolo.@SCRATCH10
+038     @MULFF.@SCRATCH2
+038     @FLT.@SCRATCH2
+038     @ADDFF.@SCRATCH2
+039     protocolo.@SCRATCH11
+039     @MULFF.@SCRATCH3
+039     @ADDFF.@SCRATCH3
+03A     protocolo.@SCRATCH12
+03A     @ADDFF.@SCRATCH4
+03B     protocolo.@SCRATCH13
+03B     @ADDFF.@SCRATCH5
+03B     @DIVFF.@SCRATCH1
+03C     protocolo.@SCRATCH14
+03C     @ADDFF.@SCRATCH6
+03C     @DIVFF.@SCRATCH2
+03D     protocolo.@SCRATCH15
+03D     @ADDFF.@SCRATCH7
+03D     @DIVFF.@SCRATCH3
+03E     protocolo.@SCRATCH16
+03E     @ADDFF.@SCRATCH8
+03E     @DIVFF.@SCRATCH4
+03F     protocolo.@SCRATCH17
+03F     @DIVFF.@SCRATCH5
+040     protocolo.@SCRATCH18
+040     @DIVFF.@SCRATCH6
+041     protocolo.@SCRATCH19
+042     protocolo.@SCRATCH20
+043-046 @DIV3232.P1
+047-04A @DIV3232.P1
+04B     @DIV3232.@SCRATCH1
+04C     @DIV3232.@SCRATCH2
+04D     @DIV3232.@SCRATCH3
+04E     @DIV3232.@SCRATCH4
+04F     @DIV3232.@SCRATCH5
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @WRITE_PROGRAM_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000096  @ITOF
+0000CE  @delay_ms1
+0000F4  @MULFF
+0001E6  @FLT
+00025C  @ADDFF
+0004C6  @DIVFF
+000620  @FTOSD
+000660  @DIV3232
+0006EE  @DIV88
+000716  @PRINTF_D_9600_31766_31767
+0007C8  protocolo
+000CF4  funcao_tempo
+000D4A  @cinit1
+000D4A  MAIN
+000D6E  @cinit2
+
+Project Directory:
+    C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\placas\kit placa genérica parabellum v1.0\c#\Comunicação via esp8266\ldr\
+
+Project Files:
+    ldr_esp8266.c                                           [16-jan-20 08:23  CRC=5E8421AB]
+    ..\..\..\..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
+
+Source signature=A133FD67
+
+Units:
+    ldr_esp8266 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   ldr_esp8266.xsym
+    Errors:      ldr_esp8266.err
+    Ext Symbols: ldr_esp8266.esym
+    INHX32:      ldr_esp8266.hex
+    Symbols:     ldr_esp8266.sym
+    List:        ldr_esp8266.lst
+    Debug/COFF:  ldr_esp8266.cof
+    Project:     ldr_esp8266.ccspjt
+    Call Tree:   ldr_esp8266.tre
+    Statistics:  ldr_esp8266.STA
