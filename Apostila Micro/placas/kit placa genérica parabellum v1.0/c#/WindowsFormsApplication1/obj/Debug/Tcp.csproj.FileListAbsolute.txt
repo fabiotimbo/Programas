@@ -16,3 +16,4 @@ C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Progr
 C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\placas\kit placa genérica parabellum v1.0\c#\WindowsFormsApplication1\obj\Debug\Tcp.csproj.GenerateResource.Cache
 C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\placas\kit placa genérica parabellum v1.0\c#\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\placas\kit placa genérica parabellum v1.0\c#\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\placas\kit placa genérica parabellum v1.0\c#\WindowsFormsApplication1\obj\Debug\Tcp.csprojResolveAssemblyReference.cache

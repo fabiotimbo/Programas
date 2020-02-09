@@ -62,7 +62,7 @@
             this.txtHost.Name = "txtHost";
             this.txtHost.Size = new System.Drawing.Size(100, 20);
             this.txtHost.TabIndex = 2;
-            this.txtHost.Text = "192.168.15.11";
+            this.txtHost.Text = "192.168.15.10";
             // 
             // txtPort
             // 
@@ -70,7 +70,7 @@
             this.txtPort.Name = "txtPort";
             this.txtPort.Size = new System.Drawing.Size(39, 20);
             this.txtPort.TabIndex = 4;
-            this.txtPort.Text = "8910";
+            this.txtPort.Text = "50210";
             // 
             // label2
             // 
