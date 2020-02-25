@@ -1,0 +1,20 @@
+main
+	Usart_Init
+	Lcd_Init
+		Delay_5500us
+	Usart_Data_Ready
+	Usart_Write
+	LCD_Out
+		Lcd_Chr_CP
+			Lcd_Cmd
+				Delay_50us
+				Delay_5500us
+				Delay_1us
+		Lcd_Cmd
+			Delay_50us
+			Delay_5500us
+			Delay_1us
+	Lcd_Cmd
+		Delay_50us
+		Delay_5500us
+		Delay_1us

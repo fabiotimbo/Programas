@@ -1,0 +1,26 @@
+[Header]
+MagicCookie={0b13fe8c-dfe0-40eb-8900-6712719559a7}
+Version=1.0
+[File000]
+Location=E:\ACEPIC\CDS Kits ACEPIC\CD ACEPIC PRO V2.0\Programas\Exemplos\PIC 16F876A\Compilador CCS\LCD.ESYM
+Folder=Intermediary
+[File001]
+Location=E:\ACEPIC\CDS Kits ACEPIC\CD ACEPIC PRO V2.0\Programas\Exemplos\PIC 16F876A\Compilador CCS\LCD.o
+Folder=Intermediary
+[File002]
+Location=E:\ACEPIC\CDS Kits ACEPIC\CD ACEPIC PRO V2.0\Programas\Exemplos\PIC 16F876A\Compilador CCS\LCD.HEX
+Folder=Output
+[File003]
+Location=E:\ACEPIC\CDS Kits ACEPIC\CD ACEPIC PRO V2.0\Programas\Exemplos\PIC 16F876A\Compilador CCS\LCD.LST
+Folder=Output
+[File004]
+Location=E:\ACEPIC\CDS Kits ACEPIC\CD ACEPIC PRO V2.0\Programas\Exemplos\PIC 16F876A\Compilador CCS\LCD.PJT
+Folder=Output
+[File005]
+Location=E:\ACEPIC\CDS Kits ACEPIC\CD ACEPIC PRO V2.0\Programas\Exemplos\PIC 16F876A\Compilador CCS\LCD.ERR
+Folder=Output
+[File006]
+Location=E:\ACEPIC\CDS Kits ACEPIC\CD ACEPIC PRO V2.0\Programas\Exemplos\PIC 16F876A\Compilador CCS\LCD.COF
+Folder=Output
+[TOOL_LOC_STAMPS]
+tool_loc{0C155615-B197-4A4B-AEB6-343BB3F41A35}=C:\Program Files\PICC\Ccsc.exe

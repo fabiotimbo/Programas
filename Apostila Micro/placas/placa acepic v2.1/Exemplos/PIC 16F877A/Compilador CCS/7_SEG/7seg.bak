@@ -1,0 +1,71 @@
+/*******************************************************************************
+*                     Kit de desenvolvimento ACEPIC PRO V2.0                   *
+*                      ACEPIC Tecnologia e Treinamento LTDA                    *
+*                               www.acepic.com.br                              * 
+*                                                                              *
+*Objetivo: Teste Display 7 segmentos                                           *
+*Obs.:     Ligar chave 1, 5, 6, 7 e 8 do DIP DP2                               *
+*          Após a gravação, tire o cabo serial                                 * 
+********************************************************************************/
+#include<18F4550.h>           
+#use delay (clock=8000000)        
+#fuses HS, NOWDT, PUT, BROWNOUT, NOLVP 
+
+int conta=0;
+
+/*Matriz de 10 posições contendo o valor a ser enviado para a porta D a fim de
+   mostrar o dígito referente nos displays */
+int digito[10] =
+               {0b00111111,    //Dígito 0
+                0b00000110,    //Dígito 1
+                0b01011011,    //Dígito 2
+                0b01001111,    //Dígito 3
+                0b01100110,    //Dígito 4
+                0b01101101,    //Dígito 5
+                0b01111101,    //Dígito 6
+                0b00000111,    //Dígito 7
+                0b01111111,    //Dígito 8
+                0b01101111     //Dígito 9
+               };
+
+#INT_TIMER0
+void trata_t0()
+{
+conta++;
+if (conta>4) conta = 1;
+
+switch(conta)
+          {
+         case 1: OUTPUT_D(digito[0]);
+                       OUTPUT_A(0X04);
+                       break; 
+      case 2: OUTPUT_D(digito[1]);
+                       OUTPUT_A(0X08);
+                       break; 
+      case 3: OUTPUT_D(digito[2]);
+                       OUTPUT_HIGH(PIN_E0);
+                       OUTPUT_A(0X00);
+                       break; 
+      case 4: OUTPUT_D(digito[3]);
+                       OUTPUT_LOW(PIN_E0);
+                       OUTPUT_A(0X20);
+                       break; 
+          } 
+
+SET_TIMER0(100); 
+}
+
+
+void main()
+{
+ENABLE_INTERRUPTS(GLOBAL | INT_TIMER0);
+SETUP_TIMER_0(RTCC_INTERNAL | RTCC_DIV_16 |RTCC_8_BIT);
+SET_TIMER0(100);
+
+OUTPUT_A(0X00);
+OUTPUT_LOW(PIN_E0);
+
+while(true);
+}
+
+

@@ -1,0 +1,110 @@
+CCS PCM C Compiler, Version 4.084, 41302               26-dez-09 11:26
+
+               Filename: D:\CDs Kits ACEPIC\CD ACEPIC PRO V2.0\Programas\Exemplos\PIC 16F877A\Botao\Botao.lst
+
+               ROM used: 59 words (1%)
+                         Largest free fragment is 2048
+               RAM used: 6 (2%) at main() level
+                         6 (2%) worst case
+               Stack:    0 locations
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   004
+0003:  NOP
+.................... /******************************************************************************* 
+.................... *                     Kit de desenvolvimento ACEPIC PRO V2.0                   * 
+.................... *                      ACEPIC Tecnologia e Treinamento LTDA                    * 
+.................... *                               www.acepic.com.br                              *  
+.................... *                                                                              * 
+.................... *Objetivo: Acionamento dos botões A,B,C e D do teclado matricial               * 
+.................... *Obs.:     Ligar chave 2 do DIP DP2                                            * 
+.................... ********************************************************************************/ 
+.................... #include<16F877A.h>  
+.................... //////// Standard Header file for the PIC16F877A device //////////////// 
+.................... #device PIC16F877A 
+.................... #list 
+....................  
+.................... #use delay (clock=8000000)         
+.................... #fuses HS, NOWDT, PUT, BROWNOUT, NOLVP  
+....................  
+.................... void main() 
+.................... { 
+0004:  CLRF   04
+0005:  BCF    03.7
+0006:  MOVLW  1F
+0007:  ANDWF  03,F
+0008:  BSF    03.5
+0009:  BSF    1F.0
+000A:  BSF    1F.1
+000B:  BSF    1F.2
+000C:  BCF    1F.3
+000D:  MOVLW  07
+000E:  MOVWF  1C
+.................... PORT_B_PULLUPS(true);      //Habilita resistores de Pull-Up 
+000F:  BCF    01.7
+.................... SET_TRIS_B(0X0F);         /*Configura os 4 bits menos significativos como entrada 
+0010:  MOVLW  0F
+0011:  MOVWF  06
+....................                      ... e os 4 bits mais significativos como saída para a porta B*/ 
+....................  
+.................... OUTPUT_B(0X0F);         //Limpa Porta B          
+0012:  CLRF   06
+0013:  BCF    03.5
+0014:  MOVWF  06
+....................  
+....................  
+.................... while (true)               //Loop principal 
+....................       { 
+....................    if (!input(PIN_B0)) OUTPUT_HIGH(PIN_D0);    /*Se botão pino B0 pressionado 
+0015:  BSF    03.5
+0016:  BSF    06.0
+0017:  BCF    03.5
+0018:  BTFSC  06.0
+0019:  GOTO   01E
+001A:  BSF    03.5
+001B:  BCF    08.0
+001C:  BCF    03.5
+001D:  BSF    08.0
+....................                                     ...acende led no pino D0*/ 
+....................    if (!input(PIN_B1)) OUTPUT_HIGH(PIN_D1);   /*Se botão pino B1 pressionado 
+001E:  BSF    03.5
+001F:  BSF    06.1
+0020:  BCF    03.5
+0021:  BTFSC  06.1
+0022:  GOTO   027
+0023:  BSF    03.5
+0024:  BCF    08.1
+0025:  BCF    03.5
+0026:  BSF    08.1
+....................                                     ...acende led no pino D1*/ 
+....................    if (!input(PIN_B2)) OUTPUT_HIGH(PIN_D2);   /*Se botão pino B2 pressionado 
+0027:  BSF    03.5
+0028:  BSF    06.2
+0029:  BCF    03.5
+002A:  BTFSC  06.2
+002B:  GOTO   030
+002C:  BSF    03.5
+002D:  BCF    08.2
+002E:  BCF    03.5
+002F:  BSF    08.2
+....................                                     ...acende led no pino D2*/ 
+....................    if (!input(PIN_B3)) OUTPUT_HIGH(PIN_D3);   /*Se botão pino B3 pressionado 
+0030:  BSF    03.5
+0031:  BSF    06.3
+0032:  BCF    03.5
+0033:  BTFSC  06.3
+0034:  GOTO   039
+0035:  BSF    03.5
+0036:  BCF    08.3
+0037:  BCF    03.5
+0038:  BSF    08.3
+....................                                     ...acende led no pino D3*/ 
+....................       }    
+0039:  GOTO   015
+.................... }   
+003A:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F72   HS NOWDT PUT NODEBUG NOPROTECT BROWNOUT NOLVP NOCPD NOWRT

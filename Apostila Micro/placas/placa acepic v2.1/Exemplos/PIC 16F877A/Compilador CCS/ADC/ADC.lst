@@ -1,0 +1,417 @@
+CCS PCM C Compiler, Version 4.084, 41302               26-dez-09 11:22
+
+               Filename: D:\CDs Kits ACEPIC\CD ACEPIC PRO V2.0\Programas\Exemplos\PIC 16F877A\ADC\ADC.lst
+
+               ROM used: 413 words (5%)
+                         Largest free fragment is 2048
+               RAM used: 9 (2%) at main() level
+                         25 (7%) worst case
+               Stack:    4 locations
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   13C
+0003:  NOP
+.................... /******************************************************************************* 
+.................... *                     Kit de desenvolvimento ACEPIC PRO V2.0                   * 
+.................... *                      ACEPIC Tecnologia e Treinamento LTDA                    * 
+.................... *                               www.acepic.com.br                              *  
+.................... *                                                                              * 
+.................... *Objetivo: Leitura do canal AN0 mostrando no LCD                               * 
+.................... *Obs.:     Ligar chave 1 do DIP DP1.                                           * 
+.................... ********************************************************************************/ 
+.................... #include<16F877A.h>        //Aqui é incluso o header (*.h)  para o microcontrolador utilizado. 
+.................... //////// Standard Header file for the PIC16F877A device //////////////// 
+.................... #device PIC16F877A 
+.................... #list 
+....................  
+....................  
+.................... #device ADC = 10           //Define 10 bits para o resultado da conversão AD 
+....................  
+.................... #use delay (clock=8000000) //Aqui definimos a frequência do cristal para cálculo dos delays 
+*
+0038:  MOVLW  2D
+0039:  MOVWF  04
+003A:  BCF    03.7
+003B:  MOVF   00,W
+003C:  BTFSC  03.2
+003D:  GOTO   04B
+003E:  MOVLW  02
+003F:  MOVWF  78
+0040:  CLRF   77
+0041:  DECFSZ 77,F
+0042:  GOTO   041
+0043:  DECFSZ 78,F
+0044:  GOTO   040
+0045:  MOVLW  97
+0046:  MOVWF  77
+0047:  DECFSZ 77,F
+0048:  GOTO   047
+0049:  DECFSZ 00,F
+004A:  GOTO   03E
+004B:  RETLW  00
+.................... #fuses HS, NOWDT, PUT, BROWNOUT, NOLVP //Configuração dos fusíveis 
+....................  
+....................  
+.................... #include "LCD8B.c"  //Diretiva de inclusão do arquivo LCD8B.c ao projeto 
+.................... #define EN PIN_E1			//Definimos o pino 1 da porta E como EN 
+.................... #define RS PIN_E0			//Definimos o pino 0 da porta E como RS 
+.................... #define DATA OUTPUT_D		//Definimos a saída para a porta D como DATA 
+....................  
+....................  
+.................... void lcd_cmd(byte cmd)		//Função para envio de comandos para o LCD 
+.................... { 
+....................  DATA(cmd);				//Coloca o conteúdo da variável cmd na porta D 
+004C:  BSF    03.5
+004D:  CLRF   08
+004E:  BCF    03.5
+004F:  MOVF   32,W
+0050:  MOVWF  08
+....................  OUTPUT_HIGH(EN);			//Pulso alto (1) no pino EN (Pino 1 da porta E) 
+0051:  BSF    03.5
+0052:  BCF    09.1
+0053:  BCF    03.5
+0054:  BSF    09.1
+....................  OUTPUT_LOW(EN);			//Retorna a nível baixo (0) em EN 
+0055:  BSF    03.5
+0056:  BCF    09.1
+0057:  BCF    03.5
+0058:  BCF    09.1
+.................... } 
+0059:  RETLW  00
+....................  
+....................  
+.................... void lcd_envia_byte(boolean nivel,byte dado) 	//Função para envio de dados ou escrita para o  
+....................  												//LCD 
+.................... { 
+....................  OUTPUT_LOW(RS);			//Coloca em nível baixo o pino RS (Pino 0 da porta E) 
+*
+0089:  BSF    03.5
+008A:  BCF    09.0
+008B:  BCF    03.5
+008C:  BCF    09.0
+....................  OUTPUT_BIT(RS,nivel);		//Coloca o pino RS no nível da variável nivel 
+008D:  MOVF   30,F
+008E:  BTFSS  03.2
+008F:  GOTO   092
+0090:  BCF    09.0
+0091:  GOTO   093
+0092:  BSF    09.0
+0093:  BSF    03.5
+0094:  BCF    09.0
+....................  delay_us(100);				//Atraso de 100 us 
+0095:  MOVLW  42
+0096:  MOVWF  77
+0097:  DECFSZ 77,F
+0098:  GOTO   097
+0099:  NOP
+....................  OUTPUT_LOW(EN);			//Coloca em nível baixo o pino EN 
+009A:  BCF    09.1
+009B:  BCF    03.5
+009C:  BCF    09.1
+....................  lcd_cmd(dado);				//Chama a função lcd_cmd já com os dados a serem enviados    
+009D:  MOVF   31,W
+009E:  MOVWF  32
+009F:  CALL   04C
+....................  							//para a porta D 
+.................... } 
+00A0:  RETLW  00
+....................  
+....................  
+....................  
+.................... void lcd_pos_xy(byte x, byte y)	//Função de posicionamento do cursor			 
+.................... { 
+....................  byte endereco;		 		//Variável de informação para o endereço do cursor  
+....................  if (y!=1)			 		//Se o valor de y for 2 
+*
+00BB:  DECFSZ 2E,W
+00BC:  GOTO   0BE
+00BD:  GOTO   0C1
+....................          endereco = 0xC0;	 	//então endereco vai ser igual a 0xC0 (endereço da segunda linha) 
+00BE:  MOVLW  C0
+00BF:  MOVWF  2F
+....................  else				 		//Senão 
+00C0:  GOTO   0C3
+....................          endereco = 0x80;	 	//endereço vai ser igual a 0x80 (endereço da primeira linha)  
+00C1:  MOVLW  80
+00C2:  MOVWF  2F
+....................  endereco += x-1;         	 	//Aqui decrementa o valor da variável x e o resultado é somado com 
+00C3:  MOVLW  01
+00C4:  SUBWF  2D,W
+00C5:  ADDWF  2F,F
+....................  				 			//a variável endereço... 
+....................  lcd_envia_byte(0,endereco);  //Chama a função lcd_envia_byte, com o valor 0, informando para 
+00C6:  CLRF   30
+00C7:  MOVF   2F,W
+00C8:  MOVWF  31
+00C9:  CALL   089
+....................  				  			  //o LCD que será enviado um dado e o dado está contido na 
+.................... 				  			  //variável endereço...		 
+....................  } 
+....................   
+.................... void lcd_escreve(char c)		//Função para envio dos caracteres e/ou dados para o LCD 
+.................... { 
+....................  switch(c)						//comando switch com a variável c 
+....................  { 
+*
+00A1:  MOVF   2C,W
+00A2:  XORLW  0C
+00A3:  BTFSC  03.2
+00A4:  GOTO   0AF
+00A5:  XORLW  06
+00A6:  BTFSC  03.2
+00A7:  GOTO   0B7
+00A8:  XORLW  07
+00A9:  BTFSC  03.2
+00AA:  GOTO   0B7
+00AB:  XORLW  05
+00AC:  BTFSC  03.2
+00AD:  GOTO   0CB
+00AE:  GOTO   0D0
+....................   case '\f' : lcd_envia_byte(0,1);	//Caso c seja ‘\f’, o dado 1 será enviado ao LCD para  
+00AF:  CLRF   30
+00B0:  MOVLW  01
+00B1:  MOVWF  31
+00B2:  CALL   089
+.................... 								//limpar todo o seu conteúdo. 
+....................                   delay_ms(2);		//Atraso de 2 ms 
+00B3:  MOVLW  02
+00B4:  MOVWF  2D
+00B5:  CALL   038
+....................                   break;				//Comando break, terminou o processo acima, já não testa  
+00B6:  GOTO   0D6
+....................  								//nenhum outro caso...  
+....................   case '\n' : 					//Caso c seja ‘\n’ 
+....................   case '\r' : lcd_pos_xy(1,2);		//ou ‘\r’, muda o cursor para a segunda linha do LCD 
+00B7:  MOVLW  01
+00B8:  MOVWF  2D
+00B9:  MOVLW  02
+00BA:  MOVWF  2E
+....................                   break;				//Comando break 
+*
+00CA:  GOTO   0D6
+....................   case '\b' : lcd_envia_byte(0,0x10); //Caso c seja ‘\b’ então desloca o cursor para a esquerda 
+00CB:  CLRF   30
+00CC:  MOVLW  10
+00CD:  MOVWF  31
+00CE:  CALL   089
+....................                    break;				//Comando break 
+00CF:  GOTO   0D6
+....................   default    : lcd_envia_byte(1,c);	//caso seja um caractere qualquer, então este será escrito no  
+00D0:  MOVLW  01
+00D1:  MOVWF  30
+00D2:  MOVF   2C,W
+00D3:  MOVWF  31
+00D4:  CALL   089
+....................  									//LCD pela função lcd_envia_byte… 
+....................                    break;				//Comando break 
+00D5:  GOTO   0D6
+....................  } 
+.................... }   
+00D6:  RETLW  00
+....................  
+....................  
+....................  
+.................... void lcd_ini()						//Função de inicialização do LCD 
+.................... { 
+....................  byte conta;						//Variável de contagem  
+....................  	 
+....................  DATA(0x00);						//Coloca na porta D o valor 0x00 
+*
+005A:  BSF    03.5
+005B:  CLRF   08
+005C:  BCF    03.5
+005D:  CLRF   08
+....................  OUTPUT_LOW(RS);					//Coloca em nível baixo o pino RS 
+005E:  BSF    03.5
+005F:  BCF    09.0
+0060:  BCF    03.5
+0061:  BCF    09.0
+....................  OUTPUT_LOW(EN);					//Coloca em nível baixo o pino EN 
+0062:  BSF    03.5
+0063:  BCF    09.1
+0064:  BCF    03.5
+0065:  BCF    09.1
+....................   
+....................  delay_ms(15);						//Atraso de 15ms 
+0066:  MOVLW  0F
+0067:  MOVWF  2D
+0068:  CALL   038
+....................   
+....................  for (conta=1;conta<=3;conta++)	//Para conta = 1 até conta = 3, ou seja executará 3 vezes os   
+0069:  MOVLW  01
+006A:  MOVWF  22
+006B:  MOVF   22,W
+006C:  SUBLW  03
+006D:  BTFSS  03.0
+006E:  GOTO   077
+....................  									//comandos abaixo 
+....................       { 
+....................       lcd_cmd(0x30);					//Envia o comando 0x30 para o LCD 
+006F:  MOVLW  30
+0070:  MOVWF  32
+0071:  CALL   04C
+....................       delay_ms(5);					//Atraso de 5ms 
+0072:  MOVLW  05
+0073:  MOVWF  2D
+0074:  CALL   038
+....................       } 
+0075:  INCF   22,F
+0076:  GOTO   06B
+....................   
+....................  lcd_cmd(0x38); 		//Escreve comando para interface de 8 vias de dados 
+0077:  MOVLW  38
+0078:  MOVWF  32
+0079:  CALL   04C
+....................  lcd_cmd(0x01); 		//Escreve comando para limpar todo o display 
+007A:  MOVLW  01
+007B:  MOVWF  32
+007C:  CALL   04C
+....................   
+....................  delay_ms(1);			//Atraso de 1ms 
+007D:  MOVLW  01
+007E:  MOVWF  2D
+007F:  CALL   038
+....................   
+....................  lcd_cmd(0x0C); 		//Escreve comando para ligar o display sem cursor 
+0080:  MOVLW  0C
+0081:  MOVWF  32
+0082:  CALL   04C
+....................  lcd_cmd(0x06); 		//Escreve comando para incrementar automaticamente à direita 
+0083:  MOVLW  06
+0084:  MOVWF  32
+0085:  CALL   04C
+.................... }  
+0086:  BCF    0A.3
+0087:  BCF    0A.4
+0088:  GOTO   149 (RETURN)
+....................  
+....................  
+.................... long int ad; 
+....................  
+.................... void main()         //Função principal  
+.................... {          
+*
+013C:  CLRF   04
+013D:  BCF    03.7
+013E:  MOVLW  1F
+013F:  ANDWF  03,F
+0140:  BSF    03.5
+0141:  BSF    1F.0
+0142:  BSF    1F.1
+0143:  BSF    1F.2
+0144:  BCF    1F.3
+0145:  MOVLW  07
+0146:  MOVWF  1C
+....................  
+.................... lcd_ini();         /*Chamada à função lcd_ini()... Esta função é para a inicialização 
+0147:  BCF    03.5
+0148:  GOTO   05A
+....................                    do LCD e está no arquivo LCD8B.c*/  
+....................  
+.................... SETUP_ADC_PORTS(RA0_ANALOG);   //Configurada a entrada analógica, somente a entrada RA0 
+0149:  BSF    03.5
+014A:  BCF    1F.0
+014B:  BSF    1F.1
+014C:  BSF    1F.2
+014D:  BSF    1F.3
+.................... SETUP_ADC(ADC_CLOCK_INTERNAL); //Configurado o conversor AD interno    
+014E:  BCF    1F.6
+014F:  BCF    03.5
+0150:  BSF    1F.6
+0151:  BSF    1F.7
+0152:  BSF    03.5
+0153:  BSF    1F.7
+0154:  BCF    03.5
+0155:  BSF    1F.0
+.................... SET_ADC_CHANNEL(0);            //Configurado o canal de leitura 0    
+0156:  MOVLW  00
+0157:  MOVWF  78
+0158:  MOVF   1F,W
+0159:  ANDLW  C7
+015A:  IORWF  78,W
+015B:  MOVWF  1F
+....................    
+....................  
+.................... printf(lcd_escreve,"     ACEPIC");       //Escreve na primeira linha a palavra ACEPIC 
+015C:  CLRF   22
+015D:  MOVF   22,W
+015E:  CALL   004
+015F:  INCF   22,F
+0160:  MOVWF  77
+0161:  MOVWF  2C
+0162:  CALL   0A1
+0163:  MOVLW  0B
+0164:  SUBWF  22,W
+0165:  BTFSS  03.2
+0166:  GOTO   15D
+.................... printf(lcd_escreve,"\n TEC. E TREIN. "); //Escreve na segunda linha as palavras TEC. E TREIN. 
+0167:  CLRF   22
+0168:  MOVF   22,W
+0169:  CALL   014
+016A:  INCF   22,F
+016B:  MOVWF  77
+016C:  MOVWF  2C
+016D:  CALL   0A1
+016E:  MOVLW  10
+016F:  SUBWF  22,W
+0170:  BTFSS  03.2
+0171:  GOTO   168
+....................  
+.................... delay_ms(1500);     //Atraso de 1,5ms 
+0172:  MOVLW  06
+0173:  MOVWF  22
+0174:  MOVLW  FA
+0175:  MOVWF  2D
+0176:  CALL   038
+0177:  DECFSZ 22,F
+0178:  GOTO   174
+....................  
+.................... while(true)         //Loop principal 
+....................      { 
+....................      ad = READ_ADC();                     //Faz a conversão AD e a salva na variável ad  
+0179:  BSF    1F.2
+017A:  BTFSC  1F.2
+017B:  GOTO   17A
+017C:  BSF    03.5
+017D:  MOVF   1E,W
+017E:  BCF    03.5
+017F:  MOVWF  20
+0180:  MOVF   1E,W
+0181:  MOVWF  21
+....................      printf(lcd_escreve,"\fADC = %lu",ad);//Mostra a mensagem 'ADC =' + o valor da conversão  
+0182:  CLRF   22
+0183:  MOVF   22,W
+0184:  CALL   029
+0185:  INCF   22,F
+0186:  MOVWF  77
+0187:  MOVWF  2C
+0188:  CALL   0A1
+0189:  MOVLW  07
+018A:  SUBWF  22,W
+018B:  BTFSS  03.2
+018C:  GOTO   183
+018D:  MOVLW  10
+018E:  MOVWF  04
+018F:  MOVF   21,W
+0190:  MOVWF  24
+0191:  MOVF   20,W
+0192:  MOVWF  23
+0193:  GOTO   0D7
+....................      delay_ms(1000);                      //Atraso de 1 segundo    
+0194:  MOVLW  04
+0195:  MOVWF  22
+0196:  MOVLW  FA
+0197:  MOVWF  2D
+0198:  CALL   038
+0199:  DECFSZ 22,F
+019A:  GOTO   196
+....................      } 
+019B:  GOTO   179
+....................  
+.................... } 
+019C:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F72   HS NOWDT PUT NODEBUG NOPROTECT BROWNOUT NOLVP NOCPD NOWRT

@@ -1,0 +1,36 @@
+[PROJECT]
+Target=7seg.HEX
+Development_Mode=2
+Processor=0x877A
+Processor_Text=PIC16F877A
+ToolSuite=CCS
+
+[Directories]
+Include=
+Library=
+LinkerScript=
+
+[Target Data]
+FileList=7seg.c;
+BuildTool=C-COMPILER
+OptionString=+FM
+AdditionalOptionString=
+BuildRequired=1
+
+[7seg.c]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+
+[mru-list]
+1=7seg.c
+
+[Windows]
+0=0000 7seg.c 0 0 796 451 3 0
+
+[Units]
+Count=1
+1=7seg.c (main)

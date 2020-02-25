@@ -1,0 +1,36 @@
+[PROJECT]
+Target=ADC_Aq.HEX
+Development_Mode=2
+Processor=0x877A
+Processor_Text=PIC16F877A
+ToolSuite=CCS
+
+[Directories]
+Include=
+Library=
+LinkerScript=
+
+[Target Data]
+FileList=ADC_Aq.c;
+BuildTool=C-COMPILER
+OptionString=+FM
+AdditionalOptionString=
+BuildRequired=1
+
+[ADC_Aq.c]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+
+[mru-list]
+1=ADC_Aq.c
+
+[Windows]
+0=0000 ADC_Aq.c 0 0 796 451 3 0
+
+[Units]
+Count=1
+1=ADC_Aq.c (main)

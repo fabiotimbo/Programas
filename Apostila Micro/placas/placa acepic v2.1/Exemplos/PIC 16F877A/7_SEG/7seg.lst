@@ -1,0 +1,268 @@
+CCS PCM C Compiler, Version 4.084, 41302               26-dez-09 11:04
+
+               Filename: D:\CDs Kits ACEPIC\CD ACEPIC PRO V2.0\Programas\Exemplos\PIC 16F877A\7_SEG\7seg.lst
+
+               ROM used: 183 words (2%)
+                         Largest free fragment is 2048
+               RAM used: 25 (7%) at main() level
+                         25 (7%) worst case
+               Stack:    2 worst case (0 in main + 2 for interrupts)
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   082
+0003:  NOP
+0004:  MOVWF  7F
+0005:  SWAPF  03,W
+0006:  CLRF   03
+0007:  MOVWF  21
+0008:  MOVF   0A,W
+0009:  MOVWF  20
+000A:  CLRF   0A
+000B:  MOVF   04,W
+000C:  MOVWF  22
+000D:  MOVF   77,W
+000E:  MOVWF  23
+000F:  MOVF   78,W
+0010:  MOVWF  24
+0011:  MOVF   79,W
+0012:  MOVWF  25
+0013:  MOVF   7A,W
+0014:  MOVWF  26
+0015:  MOVF   7B,W
+0016:  MOVWF  27
+0017:  BCF    03.7
+0018:  BCF    03.5
+0019:  BTFSS  0B.5
+001A:  GOTO   01D
+001B:  BTFSC  0B.2
+001C:  GOTO   030
+001D:  MOVF   22,W
+001E:  MOVWF  04
+001F:  MOVF   23,W
+0020:  MOVWF  77
+0021:  MOVF   24,W
+0022:  MOVWF  78
+0023:  MOVF   25,W
+0024:  MOVWF  79
+0025:  MOVF   26,W
+0026:  MOVWF  7A
+0027:  MOVF   27,W
+0028:  MOVWF  7B
+0029:  MOVF   20,W
+002A:  MOVWF  0A
+002B:  SWAPF  21,W
+002C:  MOVWF  03
+002D:  SWAPF  7F,F
+002E:  SWAPF  7F,W
+002F:  RETFIE
+0030:  BCF    0A.3
+0031:  BCF    0A.4
+0032:  GOTO   033
+.................... /******************************************************************************* 
+.................... *                     Kit de desenvolvimento ACEPIC PRO V2.0                   * 
+.................... *                      ACEPIC Tecnologia e Treinamento LTDA                    * 
+.................... *                               www.acepic.com.br                              *  
+.................... *                                                                              * 
+.................... *Objetivo: Teste Display 7 segmentos                                           * 
+.................... *Obs.:     Ligar chave 1, 5, 6, 7 e 8 do DIP DP2                               * 
+.................... *          Após a gravação, tire o cabo serial                                 *  
+.................... ********************************************************************************/ 
+.................... #include<16F877A.h>            
+.................... //////// Standard Header file for the PIC16F877A device //////////////// 
+.................... #device PIC16F877A 
+.................... #list 
+....................  
+.................... #use delay (clock=8000000)         
+.................... #fuses HS, NOWDT, PUT, BROWNOUT, NOLVP  
+....................  
+.................... int conta=0; 
+*
+008D:  BCF    03.5
+008E:  CLRF   28
+....................  
+.................... /*Matriz de 10 posições contendo o valor a ser enviado para a porta D a fim de 
+....................    mostrar o dígito referente nos displays */ 
+.................... int digito[10] = 
+....................                {0b00111111,    //Dígito 0 
+....................                 0b00000110,    //Dígito 1 
+....................                 0b01011011,    //Dígito 2 
+....................                 0b01001111,    //Dígito 3 
+....................                 0b01100110,    //Dígito 4 
+....................                 0b01101101,    //Dígito 5 
+....................                 0b01111101,    //Dígito 6 
+....................                 0b00000111,    //Dígito 7 
+....................                 0b01111111,    //Dígito 8 
+....................                 0b01101111     //Dígito 9 
+....................                }; 
+008F:  MOVLW  3F
+0090:  MOVWF  29
+0091:  MOVLW  06
+0092:  MOVWF  2A
+0093:  MOVLW  5B
+0094:  MOVWF  2B
+0095:  MOVLW  4F
+0096:  MOVWF  2C
+0097:  MOVLW  66
+0098:  MOVWF  2D
+0099:  MOVLW  6D
+009A:  MOVWF  2E
+009B:  MOVLW  7D
+009C:  MOVWF  2F
+009D:  MOVLW  07
+009E:  MOVWF  30
+009F:  MOVLW  7F
+00A0:  MOVWF  31
+00A1:  MOVLW  6F
+00A2:  MOVWF  32
+....................  
+.................... #INT_TIMER0 
+.................... void trata_t0() 
+.................... { 
+.................... conta++; 
+*
+0033:  INCF   28,F
+.................... if (conta>4) conta = 1; 
+0034:  MOVF   28,W
+0035:  SUBLW  04
+0036:  BTFSC  03.0
+0037:  GOTO   03A
+0038:  MOVLW  01
+0039:  MOVWF  28
+....................  
+.................... switch(conta) 
+....................           { 
+003A:  MOVLW  01
+003B:  SUBWF  28,W
+003C:  ADDLW  FC
+003D:  BTFSC  03.0
+003E:  GOTO   074
+003F:  ADDLW  04
+0040:  GOTO   07A
+....................          case 1: OUTPUT_D(digito[0]); 
+0041:  BSF    03.5
+0042:  CLRF   08
+0043:  BCF    03.5
+0044:  MOVF   29,W
+0045:  MOVWF  08
+....................                        OUTPUT_A(0X04); 
+0046:  BSF    03.5
+0047:  CLRF   05
+0048:  MOVLW  04
+0049:  BCF    03.5
+004A:  MOVWF  05
+....................                        break;  
+004B:  GOTO   074
+....................       case 2: OUTPUT_D(digito[1]); 
+004C:  BSF    03.5
+004D:  CLRF   08
+004E:  BCF    03.5
+004F:  MOVF   2A,W
+0050:  MOVWF  08
+....................                        OUTPUT_A(0X08); 
+0051:  BSF    03.5
+0052:  CLRF   05
+0053:  MOVLW  08
+0054:  BCF    03.5
+0055:  MOVWF  05
+....................                        break;  
+0056:  GOTO   074
+....................       case 3: OUTPUT_D(digito[2]); 
+0057:  BSF    03.5
+0058:  CLRF   08
+0059:  BCF    03.5
+005A:  MOVF   2B,W
+005B:  MOVWF  08
+....................                        OUTPUT_HIGH(PIN_E0); 
+005C:  BSF    03.5
+005D:  BCF    09.0
+005E:  BCF    03.5
+005F:  BSF    09.0
+....................                        OUTPUT_A(0X00); 
+0060:  BSF    03.5
+0061:  CLRF   05
+0062:  BCF    03.5
+0063:  CLRF   05
+....................                        break;  
+0064:  GOTO   074
+....................       case 4: OUTPUT_D(digito[3]); 
+0065:  BSF    03.5
+0066:  CLRF   08
+0067:  BCF    03.5
+0068:  MOVF   2C,W
+0069:  MOVWF  08
+....................                        OUTPUT_LOW(PIN_E0); 
+006A:  BSF    03.5
+006B:  BCF    09.0
+006C:  BCF    03.5
+006D:  BCF    09.0
+....................                        OUTPUT_A(0X20); 
+006E:  BSF    03.5
+006F:  CLRF   05
+0070:  MOVLW  20
+0071:  BCF    03.5
+0072:  MOVWF  05
+....................                        break;  
+0073:  GOTO   074
+....................           }  
+....................  
+.................... SET_TIMER0(100);  
+0074:  MOVLW  64
+0075:  MOVWF  01
+.................... } 
+....................  
+....................  
+0076:  BCF    0B.2
+0077:  BCF    0A.3
+0078:  BCF    0A.4
+0079:  GOTO   01D
+.................... void main() 
+.................... { 
+*
+0082:  CLRF   04
+0083:  BCF    03.7
+0084:  MOVLW  1F
+0085:  ANDWF  03,F
+0086:  BSF    03.5
+0087:  BSF    1F.0
+0088:  BSF    1F.1
+0089:  BSF    1F.2
+008A:  BCF    1F.3
+008B:  MOVLW  07
+008C:  MOVWF  1C
+.................... ENABLE_INTERRUPTS(GLOBAL | INT_TIMER0); 
+*
+00A3:  MOVLW  E0
+00A4:  IORWF  0B,F
+.................... SETUP_TIMER_0(RTCC_INTERNAL | RTCC_DIV_16 |RTCC_8_BIT); 
+00A5:  BSF    03.5
+00A6:  MOVF   01,W
+00A7:  ANDLW  C0
+00A8:  IORLW  03
+00A9:  MOVWF  01
+.................... SET_TIMER0(100); 
+00AA:  MOVLW  64
+00AB:  BCF    03.5
+00AC:  MOVWF  01
+....................  
+.................... OUTPUT_A(0X00); 
+00AD:  BSF    03.5
+00AE:  CLRF   05
+00AF:  BCF    03.5
+00B0:  CLRF   05
+.................... OUTPUT_LOW(PIN_E0); 
+00B1:  BSF    03.5
+00B2:  BCF    09.0
+00B3:  BCF    03.5
+00B4:  BCF    09.0
+....................  
+.................... while(true); 
+00B5:  GOTO   0B5
+.................... } 
+....................  
+....................  
+00B6:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F72   HS NOWDT PUT NODEBUG NOPROTECT BROWNOUT NOLVP NOCPD NOWRT

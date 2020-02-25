@@ -1,0 +1,102 @@
+
+ROM used: 5372 (16%)
+          5372 (16%) including unused fragments
+
+          6 Average locations per line
+          18 Average locations per statement
+
+RAM used: 25 (1%) at main() level
+          39 (2%) worst case
+
+Stack used: 5 worst case (out of 31 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  312   180  61  Demostracao.c
+  429     0   0  C:\Program Files\PICC\devices\18F4550.h
+   77    37  13  LCD8B.c
+   69    54  18  12Keys.c
+   88    23   8  2404.c
+----- -----
+  975   294 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     38   0   1             @delay_ms1
+0     16   0   1    59  1.2  lcd_cmd
+0     42   0   2   149  1.8  lcd_envia_byte
+0     34   0   3   173  5.0  lcd_pos_xy
+0     70   1   1   290  4.1  lcd_escreve
+0     78   1   1   342  2.6  lcd_ini
+0    214   2   1  1435  3.4  varre_teclas
+0     50   0   2   254  4.0  trata_teclas
+0     80   1   3             @I2C_READ_1
+0     80   1   1             @I2C_WRITE_1
+0      8   0   0    32  1.0  init_ext_eeprom
+0     64   1   1    84  2.4  ext_eeprom_ready
+0    110   1   5   200  4.5  write_ext_eeprom
+0    186   2   5   336  5.2  read_ext_eeprom
+0   2526  24   6  6750  7.4  MAIN
+0     70   1   0             @const99
+0     50   0   0             @const101
+0     40   0   0             @const102
+0     32   0   0             @const103
+0     32   0   0             @const105
+0     32   0   0             @const106
+0     34   0   0             @const107
+0     36   0   0             @const108
+0     28   0   0             @const109
+0     46   0   0             @const110
+0     36   0   0             @const111
+0     38   0   0             @const112
+0     28   0   0             @const113
+0     30   0   0             @const114
+0     32   0   0             @const115
+0     30   0   0             @const116
+0     28   0   0             @const117
+0     24   0   0             @const118
+0     34   0   0             @const119
+0     34   0   0             @const120
+0     32   0   0             @const121
+0     32   0   0             @const122
+0     34   0   0             @const123
+0     46   0   0             @const124
+0     34   0   0             @const125
+0     34   0   0             @const126
+0     34   0   0             @const127
+0     34   0   0             @const128
+0     34   0   0             @const129
+0     28   0   0             @const130
+0     34   0   0             @const131
+0     32   0   0             @const132
+0     64   1   2             @PRINTF_X_69
+0     28   0   0             @const136
+0     24   0   0             @const137
+0     30   0   0             @const138
+0     28   0   0             @const139
+0     30   0   0             @const140
+0     28   0   0             @const141
+0     36   0   0             @const160
+0    180   2   9             @PRINTF_LU_69
+0     36   0   0             @const163
+0    166   2   9             @PRINTF_LU_9600_31766_31767
+
+Program metrics:
+    Functions               12
+    Statements              294
+    Comments                259
+    Volume (V)              13443
+    Difficilty (D)          41.5
+    Effort to implement (E) 558011
+    Time to implement (T)   8 hours, 37 minutes
+    Est Delivered Bugs (B)  2
+    Cyclomatic Complexity   48
+    Maintainability (MI)    121
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-07FFE  5368  27396  
+
+
+

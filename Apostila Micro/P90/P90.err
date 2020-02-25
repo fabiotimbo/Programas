@@ -1,3 +1,6 @@
-      Memory usage:   ROM=3%      RAM=0% - 2%
-      0 Errors,  0 Warnings.
-Build Successful.
+*** Error 12 "P90.c" Line 18(4,13): Undefined identifier   selection
+*** Error 12 "P90.c" Line 19(15,24): Undefined identifier   selection
+*** Error 12 "P90.c" Line 20(7,16): Undefined identifier   selection
+*** Error 12 "P90.c" Line 21(16,20): Undefined identifier   led0
+*** Error 51 "P90.c" Line 24(1,5): A numeric expression must appear here
+*** Error 12 "P90.c" Line 24(19,23): Undefined identifier   led0

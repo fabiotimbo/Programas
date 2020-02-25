@@ -1,0 +1,203 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     tecla
+005.0   tecla_pres
+006-007 adc
+008-011 digito
+012     MAIN.i
+013     MAIN.leds
+014.0   MAIN.le_adc
+015-016 @PRINTF_LU_79.P1
+015     @PSTRINGCN_9600_31766_31767.P2
+015-016 write_ext_eeprom.address
+015     trata_teclas.t
+015     lcd_ini.conta
+015-016 @PRINTF_LU_9600_31766_31767.P1
+015     MAIN.@SCRATCH1
+015     @PSTRINGC_9600_31766_31767.@SCRATCH1
+015     @PSTRINGC_79.@SCRATCH1
+016     varre_teclas.key
+016-017 read_ext_eeprom.address
+016     trata_teclas.@SCRATCH1
+016     MAIN.@SCRATCH2
+016     @PSTRINGC_9600_31766_31767.@SCRATCH2
+016     @PSTRINGC_79.@SCRATCH2
+016     @PSTRINGCN_9600_31766_31767.@SCRATCH1
+017     @PRINTF_X_79.P1
+017     @PSTRINGCN_79.P2
+017     write_ext_eeprom.output_d
+017     @PSTRINGCN_9600_31766_31767.@SCRATCH2
+017     @PRINTF_LU_79.@SCRATCH1
+017     @PRINTF_LU_9600_31766_31767.@SCRATCH1
+018     read_ext_eeprom.output_d
+018     @PRINTF_X_79.P1
+018     write_ext_eeprom.@SCRATCH1
+018     @PSTRINGCN_79.@SCRATCH1
+018     @PRINTF_LU_79.@SCRATCH2
+018     @PRINTF_LU_9600_31766_31767.@SCRATCH2
+019.0   ext_eeprom_ready.ack
+019     @I2C_READ_1.P1
+019     read_ext_eeprom.@SCRATCH1
+019     @PSTRINGCN_79.@SCRATCH2
+019     @PRINTF_LU_79.@SCRATCH3
+019     @PRINTF_LU_9600_31766_31767.@SCRATCH3
+01A     @I2C_WRITE_1.P1
+01A     @I2C_READ_1.@SCRATCH1
+01A     @PRINTF_LU_79.@SCRATCH4
+01A     @PRINTF_LU_9600_31766_31767.@SCRATCH4
+01B     @I2C_READ_1.@SCRATCH2
+01B     @PRINTF_LU_79.@SCRATCH5
+01B     @PRINTF_LU_9600_31766_31767.@SCRATCH5
+01C     @PRINTF_LU_79.@SCRATCH6
+01C     @PRINTF_LU_9600_31766_31767.@SCRATCH6
+01D     @PRINTF_LU_79.@SCRATCH7
+01D     @PRINTF_LU_9600_31766_31767.@SCRATCH7
+01E     lcd_escreve.c
+01F     @delay_ms1.P1
+01F     lcd_pos_xy.x
+020     lcd_pos_xy.y
+021     lcd_pos_xy.endereco
+022     lcd_envia_byte.endereco
+023     lcd_envia_byte.dado
+024     lcd_cmd.cmd
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @WRITE_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0400  @delay_ms1
+0426  lcd_cmd
+04A6  lcd_envia_byte
+04D0  lcd_pos_xy
+04F2  lcd_escreve
+0436  lcd_ini
+055A  varre_teclas
+0630  trata_teclas
+07A6  @I2C_READ_1
+06A8  @I2C_WRITE_1
+06A0  init_ext_eeprom
+06F8  ext_eeprom_ready
+0738  write_ext_eeprom
+07F6  read_ext_eeprom
+0A4A  MAIN
+0004  @const109
+0484  @PSTRINGC_9600_31766_31767
+003A  @const111
+0070  @const112
+0092  @const113
+00AA  @const114
+00BA  @const116
+053A  @PSTRINGC_79
+00CA  @const118
+00DA  @const119
+00EC  @const120
+0100  @const121
+010C  @const122
+012A  @const123
+013E  @const124
+0154  @const125
+0160  @const126
+016E  @const127
+0662  @PSTRINGCN_79
+017E  @const130
+0680  @PSTRINGCN_9600_31766_31767
+018A  @const133
+0196  @const134
+019E  @const135
+01B0  @const136
+01C2  @const137
+01D2  @const138
+01E2  @const139
+01F4  @const140
+0212  @const141
+0224  @const142
+0236  @const143
+0248  @const144
+025A  @const145
+026C  @const146
+0278  @const147
+028A  @const148
+08B0  @PRINTF_X_79
+029A  @const152
+02A6  @const153
+02AE  @const154
+02BC  @const155
+02C8  @const156
+02D6  @const157
+02E2  @const158
+02F0  @const159
+02FC  @const160
+030A  @const161
+0316  @const162
+0324  @const163
+0330  @const164
+033E  @const165
+034A  @const166
+0358  @const167
+0364  @const168
+0372  @const169
+037E  @const170
+038C  @const171
+0398  @const172
+03A6  @const173
+03B2  @const174
+03C6  @const175
+03D8  @const176
+08F0  @PRINTF_LU_79
+03EC  @const179
+09A4  @PRINTF_LU_9600_31766_31767
+0A4A  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    G:\ACEPIC\CDS Kits ACEPIC\CD ACEPIC PRO V2.1\Programas\Exemplos\Demonstração\PIC18F4520\
+
+Project Files:
+    Demostracao.c
+    C:\Arquivos de programas\PICC\devices\18F4520.h
+    LCD8B.c
+    12Keys.c
+    2404.c
+
+Units:
+    G:\ACEPIC\CDS Kits ACEPIC\CD ACEPIC PRO V2.1\Programas\Exemplos\Demonstração\PIC18F4520\Demostracao (main)
+
+Compiler Settings:
+    Processor:      PIC18F4520
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      Demostracao.err
+    Ext Symbols: Demostracao.esym
+    INHX32:      Demostracao.hex
+    Symbols:     Demostracao.sym
+    List:        Demostracao.lst
+    Debug/COFF:  Demostracao.cof
+    Project:     Demostracao.PJT
+    Call Tree:   Demostracao.tre
+    Statistics:  Demostracao.sta

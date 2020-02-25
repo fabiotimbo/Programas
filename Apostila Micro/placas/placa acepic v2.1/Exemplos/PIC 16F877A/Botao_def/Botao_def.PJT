@@ -1,0 +1,36 @@
+[PROJECT]
+Target=Botao_def.HEX
+Development_Mode=2
+Processor=0x877A
+Processor_Text=PIC16F877A
+ToolSuite=CCS
+
+[Directories]
+Include=
+Library=
+LinkerScript=
+
+[Target Data]
+FileList=Botao_def.c;
+BuildTool=C-COMPILER
+OptionString=+FM
+AdditionalOptionString=
+BuildRequired=1
+
+[Botao_def.c]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+
+[mru-list]
+1=BOTAO_~1.C
+
+[Windows]
+0=0000 BOTAO_~1.C 0 0 796 451 3 0
+
+[Units]
+Count=1
+1=Botao_def.c (main)

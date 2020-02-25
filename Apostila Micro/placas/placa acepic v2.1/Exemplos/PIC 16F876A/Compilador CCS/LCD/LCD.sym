@@ -1,0 +1,90 @@
+004     @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+021     lcd_ini.conta
+021     MAIN.@SCRATCH1
+021     @PSTRINGC7_80.@SCRATCH1
+022     lcd_ini.@SCRATCH1
+022     @PSTRINGC7_80.@SCRATCH2
+023     @PSTRINGC7_80.@SCRATCH3
+024     lcd_escreve.c
+025     @delay_ms1.P1
+025     lcd_pos_xy.x
+026     lcd_pos_xy.y
+027     lcd_pos_xy.endereco
+028     lcd_pos_xy.@SCRATCH1
+029     lcd_envia_byte.endereco
+02A     lcd_envia_byte.dado
+02B     lcd_envia_byte.@SCRATCH1
+02C     lcd_envia_nibble.dado
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+0040  @delay_ms1
+0004  INI_LCD
+0054  lcd_envia_nibble
+007B  lcd_envia_byte
+009C  lcd_ini
+00F3  lcd_pos_xy
+00D9  lcd_escreve
+0158  MAIN
+000C  @const88
+0112  @PSTRINGC7_80
+0014  @const90
+001D  @const92
+0026  @const93
+002F  @const94
+0037  @const95
+0158  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    E:\ACEPIC\CDS Kits ACEPIC\CD ACEPIC PRO V2.0\Programas\Exemplos\PIC 16F876A\Compilador CCS\
+
+Project Files:
+    LCD.c
+    C:\Program Files\PICC\devices\16F876A.h
+    LCD_4B.c
+
+Units:
+    E:\ACEPIC\CDS Kits ACEPIC\CD ACEPIC PRO V2.0\Programas\Exemplos\PIC 16F876A\Compilador CCS\LCD (main)
+
+Compiler Settings:
+    Processor:      PIC16F876A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    ICD Provisions: Yes
+    Predefined symbols:
+       #define __DEBUG 1
+       #define __16F876A TRUE
+
+Output Files:
+    Errors:      LCD.err
+    Ext Symbols: LCD.esym
+    INHX8:       LCD.hex
+    Symbols:     LCD.sym
+    List:        LCD.lst
+    Debug/COFF:  LCD.cof
+    Project:     LCD.PJT
+    Call Tree:   LCD.tre
+    Statistics:  LCD.sta

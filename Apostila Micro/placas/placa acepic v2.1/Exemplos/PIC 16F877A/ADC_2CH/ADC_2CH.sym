@@ -1,0 +1,117 @@
+004     @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+008     PSP_DATA
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020-023 ad0
+024-027 ad1
+028-02B tensao
+02C-02F @MUL3232.P1
+02C     lcd_ini.conta
+02C     @PSTRINGCN7_75.P1
+02C-02F @PRINTF_L32U_75.P2
+02C     MAIN.@SCRATCH1
+02C     @PSTRINGC7_75.@SCRATCH1
+02D     MAIN.@SCRATCH2
+02D     @PSTRINGC7_75.@SCRATCH2
+02D     @PSTRINGCN7_75.@SCRATCH1
+02E     MAIN.@SCRATCH3
+02E     @PSTRINGC7_75.@SCRATCH3
+02E     @PSTRINGCN7_75.@SCRATCH2
+02F     MAIN.@SCRATCH4
+02F     @PSTRINGCN7_75.@SCRATCH3
+030-033 @MUL3232.P1
+030     @PRINTF_L32U_75.@SCRATCH1
+031     @PRINTF_L32U_75.@SCRATCH2
+032     @PRINTF_L32U_75.@SCRATCH3
+033     @PRINTF_L32U_75.@SCRATCH4
+034     @MUL3232.@SCRATCH1
+034     @PRINTF_L32U_75.@SCRATCH5
+035     @MUL3232.@SCRATCH2
+035     @PRINTF_L32U_75.@SCRATCH6
+036     @MUL3232.@SCRATCH3
+036     @PRINTF_L32U_75.@SCRATCH7
+037     @MUL3232.@SCRATCH4
+037     @PRINTF_L32U_75.@SCRATCH8
+038-03B @DIV3232.P1
+038     lcd_escreve.c
+038     @MUL3232.@SCRATCH5
+039     @delay_ms1.P1
+039     lcd_pos_xy.x
+03A     lcd_pos_xy.y
+03B     lcd_pos_xy.endereco
+03C     lcd_envia_byte.nivel
+03C-03F @DIV3232.P1
+03D     lcd_envia_byte.dado
+03E     lcd_cmd.cmd
+040     @DIV3232.@SCRATCH1
+041     @DIV3232.@SCRATCH2
+042     @DIV3232.@SCRATCH3
+043     @DIV3232.@SCRATCH4
+044     @DIV3232.@SCRATCH5
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+001C  @delay_ms1
+0030  lcd_cmd
+006D  lcd_envia_byte
+009F  lcd_pos_xy
+0085  lcd_escreve
+003E  lcd_ini
+0222  MAIN
+0004  @const84
+00BB  @PSTRINGC7_75
+0103  @MUL3232
+012D  @DIV3232
+000C  @const92
+017C  @PSTRINGCN7_75
+01CB  @PRINTF_L32U_75
+0014  @const97
+0222  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    G:\ACEPIC\CDS Kits ACEPIC\CD ACEPIC PRO V2.0\Programas\Exemplos\PIC 16F877A\ADC_2CH\
+
+Project Files:
+    ADC_2CH.c
+    C:\ARQUIV~1\PICC\devices\16F877A.h
+    LCD8B.c
+
+Units:
+    G:\ACEPIC\CDS Kits ACEPIC\CD ACEPIC PRO V2.0\Programas\Exemplos\PIC 16F877A\ADC_2CH\ADC_2CH (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      ADC_2CH.err
+    Ext Symbols: ADC_2CH.esym
+    INHX8:       ADC_2CH.hex
+    Symbols:     ADC_2CH.sym
+    List:        ADC_2CH.lst
+    Debug/COFF:  ADC_2CH.cof
+    Project:     ADC_2CH.PJT
+    Call Tree:   ADC_2CH.tre
+    Statistics:  ADC_2CH.sta

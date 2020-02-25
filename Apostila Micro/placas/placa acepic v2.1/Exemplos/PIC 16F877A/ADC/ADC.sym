@@ -1,0 +1,85 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004     @WRITE_PROGRAM_MEMORY8.P2
+008     PSP_DATA
+015     CCP_1_HIGH
+015     CCP_1
+015     CCP_1_LOW
+01B     CCP_2_LOW
+01B     CCP_2_HIGH
+01B     CCP_2
+020-021 ad
+022     lcd_ini.conta
+022     MAIN.@SCRATCH1
+023-024 @PRINTF_LU_66.P1
+025     @PRINTF_LU_66.@SCRATCH1
+026     @PRINTF_LU_66.@SCRATCH2
+027     @PRINTF_LU_66.@SCRATCH3
+028     @PRINTF_LU_66.@SCRATCH4
+029     @PRINTF_LU_66.@SCRATCH5
+02A     @PRINTF_LU_66.@SCRATCH6
+02B     @PRINTF_LU_66.@SCRATCH7
+02C     lcd_escreve.c
+02D     lcd_pos_xy.x
+02D     @delay_ms1.P1
+02E     lcd_pos_xy.y
+02F     lcd_pos_xy.endereco
+030     lcd_envia_byte.nivel
+031     lcd_envia_byte.dado
+032     lcd_cmd.cmd
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+07B     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+0038  @delay_ms1
+004C  lcd_cmd
+0089  lcd_envia_byte
+00BB  lcd_pos_xy
+00A1  lcd_escreve
+005A  lcd_ini
+013C  MAIN
+0004  @const73
+0014  @const74
+0029  @const75
+00D7  @PRINTF_LU_66
+013C  @cinit
+
+
+User Memory space: 
+
+Project Directory:
+    D:\CDs Kits ACEPIC\CD ACEPIC PRO V2.0\Programas\Exemplos\PIC 16F877A\ADC\
+
+Project Files:
+    ADC.c
+    C:\Arquivos de programas\PICC\devices\16F877A.h
+    LCD8B.c
+
+Units:
+    D:\CDs Kits ACEPIC\CD ACEPIC PRO V2.0\Programas\Exemplos\PIC 16F877A\ADC\ADC.c (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      ADC.err
+    Ext Symbols: ADC.esym
+    INHX8:       ADC.hex
+    Symbols:     ADC.sym
+    List:        ADC.lst
+    Debug/COFF:  ADC.cof
+    Project:     ADC.PJT
+    Call Tree:   ADC.tre
+    Statistics:  ADC.sta

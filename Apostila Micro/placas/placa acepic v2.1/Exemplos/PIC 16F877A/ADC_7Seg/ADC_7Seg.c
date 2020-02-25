@@ -1,0 +1,88 @@
+/*******************************************************************************
+*                     Kit de desenvolvimento ACEPIC PRO V2.0                   *
+*                      ACEPIC Tecnologia e Treinamento LTDA                    *
+*                               www.acepic.com.br                              * 
+*                                                                              *
+*Objetivo: Teste Display 7 segmentos + conversoses Analógicos Digitais AN0 e AN1
+*Obs.:     Ligar chave 1 do DIP DP1 e chaves 1, 5, 6, 7 e 8 do DIP DP2         * 
+*          Após a gravação, tire o cabo serial                                 * 
+********************************************************************************/
+#include<16F877A.h> 
+#device ADC = 10
+#use delay (clock=8000000)        
+#fuses HS, NOWDT, PUT, BROWNOUT, NOLVP 
+
+#use fast_io(a)            
+
+int conta=0;
+int16 adc, d1, d2, d3, d4;
+
+/*Matriz de 10 posições contendo o valor a ser enviado para a porta D a fim de
+   mostrar o dígito referente nos displays */
+int digito[10] =
+               {0b00111111,    //Dígito 0
+                0b00000110,    //Dígito 1
+                0b01011011,    //Dígito 2
+                0b01001111,    //Dígito 3
+                0b01100110,    //Dígito 4
+                0b01101101,    //Dígito 5
+                0b01111101,    //Dígito 6
+                0b00000111,    //Dígito 7
+                0b01111111,    //Dígito 8
+                0b01101111     //Dígito 9
+               };
+
+#INT_RTCC               //Identificação da interrupção do Timer 0
+void trata_t0()            //função de tratamento da interrupção do Timer 0   
+{
+Conta++;                     //Incrementa a variável conta
+if (conta>4) conta = 1;         //Se conta > 4, faz conta = 1
+
+switch(conta)               //’Chaveia’ o valor da variável conta
+          {
+         case 1: OUTPUT_D(digito[D1]);   //Coloca na Porta D o valor referente ao dígito 0
+                       OUTPUT_A(0x00); 
+                       OUTPUT_E(0X01);      //Liga o Display 1 e desliga os demais 
+                       break; 
+      case 2: OUTPUT_D(digito[D2]);   //Coloca na Porta D o valor referente ao dígito 1
+                       OUTPUT_E(0X02);      //Liga o Display 2 e desliga os demais
+                       break; 
+      case 3: OUTPUT_D(digito[D3]);   //Coloca na Porta D o valor referente ao dígito 2
+                       OUTPUT_E(0X04);      //Liga o Display 3 e desliga os demais
+                       break; 
+      case 4: OUTPUT_D(digito[D4]);   //Coloca na Porta D o valor referente ao dígito 2
+                       OUTPUT_E(0x00); 
+                       OUTPUT_A(0X20);      //Liga o Display 4 e desliga os demais
+                       break; 
+          } 
+
+SET_TIMER0(100);
+  
+}
+
+
+void main()
+{
+SET_TRIS_A(0x01);    //Direciona o RA0 como entrada e o restante como saída.                  
+
+ENABLE_INTERRUPTS(GLOBAL|INT_TIMER0);   //Habilita as interrupções Global e do Timer 0/
+SETUP_TIMER_0(RTCC_INTERNAL | RTCC_DIV_32 | RTCC_8_BIT); //Seleciona o prescaler de 1:32
+SET_TIMER0(100);                  //Inicia o registrador TMR0
+
+SETUP_ADC_PORTS(AN0);       //Configurada a entrada analógica, somente a entrada RA0
+SETUP_ADC(ADC_CLOCK_INTERNAL);    //Configurado o conversor AD interno   
+SET_ADC_CHANNEL(0);            //Configurado o canal de leitura 0
+delay_us(10);
+
+
+  
+while(true)                     //Loop principal
+        {
+        adc = READ_ADC();
+        d1 = adc / 1000;
+        d2 = (adc/100) % 10;
+        d3 = (adc/10) % 10;
+        d4 = (adc/1) % 10;
+        delay_ms(500);          
+        }
+}

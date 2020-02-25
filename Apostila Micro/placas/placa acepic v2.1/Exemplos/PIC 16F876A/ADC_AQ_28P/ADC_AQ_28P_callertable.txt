@@ -1,0 +1,22 @@
+main
+	Lcd_Init
+		Delay_5500us
+	IntToStr
+		WordToStr
+			Div_16x16_U
+	Adc_Read
+		Delay_22us
+	LCD_Out
+		Lcd_Chr_CP
+			Lcd_Cmd
+				Delay_50us
+				Delay_5500us
+				Delay_1us
+		Lcd_Cmd
+			Delay_50us
+			Delay_5500us
+			Delay_1us
+	Lcd_Cmd
+		Delay_50us
+		Delay_5500us
+		Delay_1us

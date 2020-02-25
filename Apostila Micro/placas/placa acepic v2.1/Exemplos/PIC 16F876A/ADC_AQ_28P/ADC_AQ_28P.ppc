@@ -1,0 +1,31 @@
+[DeviceName]
+Value=P16F876A
+[DeviceClock]
+Value=8
+[MainUnit]
+Value=
+[DeviceFlags]
+Count=3
+Value0=_LVP_OFF = $3F7F
+Value1=_WDT_OFF = $3FFB
+Value2=_HS_OSC = $3FFE
+[BuildType]
+bType=0
+[ProjectFiles]
+Count=1
+Value0=ADC_AQ_28P.c
+[HeaderFiles]
+Count=0
+[ObjLibFiles]
+Count=0
+[PLDFiles]
+Count=0
+[EEPROMinfo]
+isused=0
+[SearchPath]
+Count=3
+Value0=C:\Arquivos de programas\Mikroelektronika\mikroC\Defs\
+Value1=C:\Arquivos de programas\Mikroelektronika\mikroC\Uses\p16\
+Value2=G:\ACE_PIC_40\Placa\ACEPIC 40 V2.0\Projetos\ADC_AQ_28P\
+[IncludePath]
+Count=0

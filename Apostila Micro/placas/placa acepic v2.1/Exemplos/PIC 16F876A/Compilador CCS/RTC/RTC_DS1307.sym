@@ -1,0 +1,147 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004     @WRITE_PROGRAM_MEMORY8.P2
+008     PSP_DATA
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020     @TRIS_C
+021     ajuste
+022-03A msg
+03B     MAIN.sec
+03C     MAIN.min
+03D     MAIN.hrs
+03E     MAIN.day
+03F     MAIN.month
+040     MAIN.yr
+041     MAIN.dow
+042     ds1307_init.seconds
+042     lcd_ini.conta
+042     ds1307_set_date_time.day
+042     ds1307_get_date.@SCRATCH1
+042     ds1307_get_time.@SCRATCH1
+042     MAIN.@SCRATCH1
+043     ds1307_set_date_time.mth
+043     ds1307_init.@SCRATCH1
+043     lcd_ini.@SCRATCH1
+043     MAIN.@SCRATCH2
+044     @MUL88.P1
+044     ds1307_set_date_time.year
+044     @PSTRINGCN7_112.P1
+044     @PRINTF_D_112.P2
+044     @PSTRINGR_112.@SCRATCH1
+045     ds1307_set_date_time.dow
+045     @MUL88.P1
+045     @PRINTF_D_112.P2
+045     @PSTRINGCN7_112.@SCRATCH1
+045     @PSTRINGR_112.@SCRATCH2
+046     ds1307_set_date_time.hr
+046     @I2C_READ_1.P1
+046     @PRINTF_D_112.@SCRATCH1
+046     @PSTRINGCN7_112.@SCRATCH2
+047     bcd2bin.bcd_value
+047     ds1307_set_date_time.min
+047     @I2C_READ_1.@SCRATCH1
+047     @PRINTF_D_112.@SCRATCH2
+047     @PSTRINGCN7_112.@SCRATCH3
+048     ds1307_set_date_time.sec
+048     bcd2bin.temp
+048     @I2C_READ_1.@SCRATCH2
+048     @PRINTF_D_112.@SCRATCH3
+049     bin2bcd.binary_value
+049     ds1307_set_date_time.@SCRATCH1
+049     bcd2bin.@SCRATCH1
+049     @PRINTF_D_112.@SCRATCH4
+04A     @DIV88.P1
+04A     lcd_escreve.c
+04A     @I2C_WRITE_1.P1
+04A     bin2bcd.temp
+04B     bin2bcd.retval
+04B     @DIV88.P1
+04B     lcd_pos_xy.x
+04B     @delay_ms1.P1
+04C     lcd_pos_xy.y
+04C     @DIV88.@SCRATCH1
+04D     lcd_pos_xy.endereco
+04E     lcd_pos_xy.@SCRATCH1
+04F     lcd_envia_byte.endereco
+050     lcd_envia_byte.dado
+051     lcd_envia_byte.@SCRATCH1
+052     lcd_envia_nibble.dado
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+0206  @delay_ms1
+006D  @I2C_READ_1
+0023  @I2C_WRITE_1
+00D8  ds1307_init
+0199  ds1307_set_date_time
+042A  ds1307_get_date
+04A3  ds1307_get_time
+00C5  bin2bcd
+00B2  bcd2bin
+0004  INI_LCD
+021A  lcd_envia_nibble
+0241  lcd_envia_byte
+0262  lcd_ini
+029F  lcd_pos_xy
+02B1  lcd_escreve
+03E1  MAIN
+000C  @const131
+02D9  @MUL88
+0300  @DIV88
+0315  @PRINTF_D_112
+037A  @PSTRINGCN7_112
+03C9  @PSTRINGR_112
+0017  @const144
+03E1  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    E:\ACEPIC\CDS Kits ACEPIC\CD ACEPIC PRO V2.0\Programas\Exemplos\PIC 16F876A\Compilador CCS\RTC\
+
+Project Files:
+    RTC_DS1307.c
+    C:\Program Files\PICC\devices\16F877A.h
+    ds1307.c
+    LCD_4B.c
+
+Units:
+    E:\ACEPIC\CDS Kits ACEPIC\CD ACEPIC PRO V2.0\Programas\Exemplos\PIC 16F876A\Compilador CCS\RTC\RTC_DS1307 (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    ICD Provisions: Yes
+    Predefined symbols:
+       #define __DEBUG 1
+       #define __16F876A TRUE
+
+Output Files:
+    Errors:      RTC_DS1307.err
+    Ext Symbols: RTC_DS1307.esym
+    INHX8:       RTC_DS1307.hex
+    Symbols:     RTC_DS1307.sym
+    List:        RTC_DS1307.lst
+    Debug/COFF:  RTC_DS1307.cof
+    Project:     RTC_DS1307.PJT
+    Call Tree:   RTC_DS1307.tre
+    Statistics:  RTC_DS1307.sta

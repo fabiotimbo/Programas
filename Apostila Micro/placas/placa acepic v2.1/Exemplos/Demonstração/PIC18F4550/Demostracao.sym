@@ -1,0 +1,165 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @SCRATCH
+005     tecla
+006.0   tecla_pres
+007-008 adc
+009-012 digito
+013     MAIN.i
+014     MAIN.leds
+015.0   MAIN.le_adc
+016     trata_teclas.t
+016     lcd_ini.conta
+016-017 write_ext_eeprom.address
+016     MAIN.@SCRATCH1
+017     varre_teclas.key
+017-018 @PRINTF_LU_9600_31766_31767.P1
+017-018 @PRINTF_LU_69.P2
+017-018 read_ext_eeprom.address
+017     trata_teclas.@SCRATCH1
+017     MAIN.@SCRATCH2
+018     @PRINTF_X_69.P1
+018     write_ext_eeprom.output_d
+018     MAIN.@SCRATCH3
+019     read_ext_eeprom.output_d
+019     @PRINTF_X_69.P1
+019     write_ext_eeprom.@SCRATCH1
+019     @PRINTF_LU_69.@SCRATCH1
+019     @PRINTF_LU_9600_31766_31767.@SCRATCH1
+01A.0   ext_eeprom_ready.ack
+01A     @I2C_READ_1.P1
+01A     write_ext_eeprom.@SCRATCH2
+01A     read_ext_eeprom.@SCRATCH1
+01A     @PRINTF_LU_69.@SCRATCH2
+01A     @PRINTF_LU_9600_31766_31767.@SCRATCH2
+01B     @I2C_READ_1.@SCRATCH1
+01B     read_ext_eeprom.@SCRATCH2
+01B     @PRINTF_LU_69.@SCRATCH3
+01B     @PRINTF_LU_9600_31766_31767.@SCRATCH3
+01C     @I2C_WRITE_1.P1
+01C     @I2C_READ_1.@SCRATCH2
+01C     @PRINTF_LU_69.@SCRATCH4
+01C     @PRINTF_LU_9600_31766_31767.@SCRATCH4
+01D     @PRINTF_LU_69.@SCRATCH5
+01D     @PRINTF_LU_9600_31766_31767.@SCRATCH5
+01E     @PRINTF_LU_69.@SCRATCH6
+01E     @PRINTF_LU_9600_31766_31767.@SCRATCH6
+01F     @PRINTF_LU_69.@SCRATCH7
+01F     @PRINTF_LU_9600_31766_31767.@SCRATCH7
+020     lcd_escreve.c
+021     @delay_ms1.P1
+021     lcd_pos_xy.x
+022     lcd_pos_xy.y
+023     lcd_pos_xy.endereco
+024     lcd_envia_byte.endereco
+025     lcd_envia_byte.dado
+026     lcd_cmd.cmd
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB-FBC CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE-FBF CCP_1
+FBF     CCP_1_HIGH
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0556  @delay_ms1
+057C  lcd_cmd
+05DA  lcd_envia_byte
+0604  lcd_pos_xy
+0626  lcd_escreve
+058C  lcd_ini
+066C  varre_teclas
+0742  trata_teclas
+087A  @I2C_READ_1
+077C  @I2C_WRITE_1
+0774  init_ext_eeprom
+07CC  ext_eeprom_ready
+080C  write_ext_eeprom
+08CA  read_ext_eeprom
+0B1E  MAIN
+0004  @const99
+004A  @const101
+007C  @const102
+00A4  @const103
+00C4  @const105
+00E4  @const106
+0104  @const107
+0126  @const108
+014A  @const109
+0166  @const110
+0194  @const111
+01B8  @const112
+01DE  @const113
+01FA  @const114
+0218  @const115
+0238  @const116
+0256  @const117
+0272  @const118
+028A  @const119
+02AC  @const120
+02CE  @const121
+02EE  @const122
+030E  @const123
+0330  @const124
+035E  @const125
+0380  @const126
+03A2  @const127
+03C4  @const128
+03E6  @const129
+0408  @const130
+0424  @const131
+0446  @const132
+0984  @PRINTF_X_69
+0466  @const136
+0482  @const137
+049A  @const138
+04B8  @const139
+04D4  @const140
+04F2  @const141
+050E  @const160
+09C4  @PRINTF_LU_69
+0532  @const163
+0A78  @PRINTF_LU_9600_31766_31767
+0B1E  @cinit
+
+Project Directory:
+    E:\ACEPIC\CDS Kits ACEPIC\CD ACEPIC PRO V2.1\Programas\Exemplos\Demonstração\PIC18F4550\
+
+Project Files:
+    Demostracao.c
+    C:\Program Files\PICC\devices\18F4550.h
+    LCD8B.c
+    12Keys.c
+    2404.c
+
+Units:
+    E:\ACEPIC\CDS Kits ACEPIC\CD ACEPIC PRO V2.1\Programas\Exemplos\Demonstração\PIC18F4550\Demostracao.c (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      Demostracao.err
+    Ext Symbols: Demostracao.esym
+    INHX32:      Demostracao.hex
+    Symbols:     Demostracao.sym
+    List:        Demostracao.lst
+    Debug/COFF:  Demostracao.cof
+    Project:     Demostracao.PJT
+    Call Tree:   Demostracao.tre
+    Statistics:  Demostracao.sta
