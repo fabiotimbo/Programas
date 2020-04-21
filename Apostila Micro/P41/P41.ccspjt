@@ -12,8 +12,9 @@ Type=4
 [mru-list]
 1=P41.c
 [Opened Files]
-1=P41.c
-2=
+1=..\..\..\programas\Firmware Universal_Elipse_Scada\universal.c
+2=P41.c
+3=
 [documentation]
 template=C:\Users\Fabio T. Brito\Desktop\template_sdd
 output=P41.rtf

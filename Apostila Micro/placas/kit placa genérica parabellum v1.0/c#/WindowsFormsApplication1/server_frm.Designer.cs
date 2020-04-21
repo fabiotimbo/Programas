@@ -62,7 +62,7 @@
             this.txtHost.Name = "txtHost";
             this.txtHost.Size = new System.Drawing.Size(100, 20);
             this.txtHost.TabIndex = 2;
-            this.txtHost.Text = "192.168.15.10";
+            this.txtHost.Text = "192.168.15.6";
             // 
             // txtPort
             // 
@@ -70,7 +70,7 @@
             this.txtPort.Name = "txtPort";
             this.txtPort.Size = new System.Drawing.Size(39, 20);
             this.txtPort.TabIndex = 4;
-            this.txtPort.Text = "50210";
+            this.txtPort.Text = "502";
             // 
             // label2
             // 
@@ -98,6 +98,7 @@
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.Size = new System.Drawing.Size(261, 155);
             this.txtStatus.TabIndex = 6;
+            this.txtStatus.Text = "1\r\n2\r\n3\r\n4\r\n5\r\n6\r\n7\r\n8\r\n9\r\n10";
             // 
             // server_frm
             // 

@@ -1,7 +1,8 @@
-D G "__PCH__" 0 51 ""5.007""
-D G "__DEVICE__" 0 51 "4550"
-D G "__DATE__" 0 51 ""29-dez-19""
-D G "__TIME__" 0 51 ""10:17:01""
+d G "INT_USB" 1 818 "0x00A020"
+D G "__PCH__" 0 54 ""5.007""
+D G "__DEVICE__" 0 54 "4550"
+D G "__DATE__" 0 54 ""20-abr-20""
+D G "__TIME__" 0 54 ""23:58:00""
 D G "led0" 0 1 "pin_d0"
 D G "led1" 0 2 "pin_d1"
 c L "set_tris_a" 1 1 22 "FUNCTION"
@@ -910,6 +911,8 @@ V L "n" 0 11 "int32" `643
 F G "MAIN" 0 25 "void()" `649 
 V L "ad1" 0 25 "float" `650 
 V L "selection" 0 26 "int8" `651 
+C L "MAIN" 0 38 1 "FUNCTION"
+C L "MAIN" 0 38 1 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1

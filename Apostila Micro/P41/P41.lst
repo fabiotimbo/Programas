@@ -1,9 +1,9 @@
-CCS PCH C Compiler, Version 5.007, 61971               29-dez-19 10:17
+CCS PCH C Compiler, Version 5.007, 61971               20-abr-20 23:58
 
-               Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Microcontroladores e dispositivos periféricos\Programas apostila oficiais\P41\P41.lst
+               Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P41\P41.lst
 
-               ROM used:   780 bytes (2%)
-                           Largest free fragment is 31984
+               ROM used:   792 bytes (2%)
+                           Largest free fragment is 31972
                RAM used:   32 (2%) at main() level
                            48 (2%) worst case
                Stack used: 1 locations (0 in main + 1 for interrupts)
@@ -348,53 +348,63 @@ CCS PCH C Compiler, Version 5.007, 61971               29-dez-19 10:17
 02C4:  ANDLW  C3
 02C6:  IORWF  01,W
 02C8:  MOVWF  FC2
+.................... output_bit(pin_e2,0);  
+02CA:  BCF    F8D.2
+02CC:  BCF    F96.2
 .................... while(true) 
-.................... {  printf("\r\nSelecione:\r\n"); 
-02CA:  MOVLW  02
-02CC:  MOVWF  FF6
-02CE:  MOVLW  02
-02D0:  MOVWF  FF7
-02D2:  RCALL  0246
+.................... {   
+....................    output_bit(pin_e2,1);//ENABLE RS485  
+02CE:  BSF    F8D.2
+02D0:  BCF    F96.2
+....................    printf("\r\nSelecione:\r\n"); 
+02D2:  MOVLW  02
+02D4:  MOVWF  FF6
+02D6:  MOVLW  02
+02D8:  MOVWF  FF7
+02DA:  RCALL  0246
 ....................    printf("    1) L - ligar led \r\n"); 
-02D4:  MOVLW  12
-02D6:  MOVWF  FF6
-02D8:  MOVLW  02
-02DA:  MOVWF  FF7
-02DC:  RCALL  0246
+02DC:  MOVLW  12
+02DE:  MOVWF  FF6
+02E0:  MOVLW  02
+02E2:  MOVWF  FF7
+02E4:  RCALL  0246
 ....................    printf("    2) D - desligar led \r\n"); 
-02DE:  MOVLW  2A
-02E0:  MOVWF  FF6
-02E2:  MOVLW  02
-02E4:  MOVWF  FF7
-02E6:  RCALL  0246
+02E6:  MOVLW  2A
+02E8:  MOVWF  FF6
+02EA:  MOVLW  02
+02EC:  MOVWF  FF7
+02EE:  RCALL  0246
+....................    output_bit(pin_e2,0); //DISABLE RS485  
+02F0:  BCF    F8D.2
+02F2:  BCF    F96.2
 ....................   do { 
 ....................    selection=getc(); 
-02E8:  BTFSS  F9E.5
-02EA:  BRA    02E8
-02EC:  MOVFF  FAE,1F
+02F4:  BTFSS  F9E.5
+02F6:  BRA    02F4
+02F8:  MOVFF  FAE,1F
 ....................   } while (!((selection=='L')||(selection=='D'))); 
-02F0:  MOVF   1F,W
-02F2:  SUBLW  4C
-02F4:  BZ    02FC
-02F6:  MOVF   1F,W
-02F8:  SUBLW  44
-02FA:  BNZ   02E8
-....................   if (selection=='L') 
 02FC:  MOVF   1F,W
 02FE:  SUBLW  4C
-0300:  BNZ   0308
+0300:  BZ    0308
+0302:  MOVF   1F,W
+0304:  SUBLW  44
+0306:  BNZ   02F4
+....................   if (selection=='L') 
+0308:  MOVF   1F,W
+030A:  SUBLW  4C
+030C:  BNZ   0314
 ....................   {output_high(led0); 
-0302:  BCF    F95.0
-0304:  BSF    F8C.0
+030E:  BCF    F95.0
+0310:  BSF    F8C.0
 ....................   } 
-0306:  BRA    030C
+0312:  BRA    0318
 .................... else  {output_low(led0); 
-0308:  BCF    F95.0
-030A:  BCF    F8C.0
+0314:  BCF    F95.0
+0316:  BCF    F8C.0
 ....................   }}} 
-030C:  BRA    02CA
+0318:  BRA    02CE
 ....................  
-030E:  SLEEP 
+031A:  SLEEP 
 ....................  
 
 Configuration Fuses:

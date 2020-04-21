@@ -32,14 +32,14 @@ set_timer1(tm);
 setup_adc_ports(AN0);
 SETUP_ADC(ADC_CLOCK_INTERNAL);
 SET_ADC_CHANNEL(0);
-output_bit(pin_e2,0); // RS485 
+output_bit(pin_e2,0); 
 while(true)
 {  
-   output_bit(pin_e2,1);// RS485 
+   output_bit(pin_e2,1); 
    printf("\r\nSelecione:\r\n");
    printf("    1) L - ligar led \r\n");
    printf("    2) D - desligar led \r\n");
-   output_bit(pin_e2,0); // RS485 
+   output_bit(pin_e2,0); 
   do {
    selection=getc();
   } while (!((selection=='L')||(selection=='D')));
