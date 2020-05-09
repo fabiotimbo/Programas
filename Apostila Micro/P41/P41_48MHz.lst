@@ -1,0 +1,433 @@
+CCS PCH C Compiler, Version 5.007, 61971               26-abr-20 20:02
+
+               Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P41\P41_48MHz.lst
+
+               ROM used:   822 bytes (3%)
+                           Largest free fragment is 31942
+               RAM used:   32 (2%) at main() level
+                           48 (2%) worst case
+               Stack used: 1 locations (0 in main + 1 for interrupts)
+               Stack size: 31
+
+*
+0000:  GOTO   0286
+*
+0008:  MOVWF  04
+000A:  MOVFF  FD8,05
+000E:  MOVFF  FE0,06
+0012:  MOVLB  0
+0014:  MOVFF  FE9,0C
+0018:  MOVFF  FEA,07
+001C:  MOVFF  FE1,08
+0020:  MOVFF  FE2,09
+0024:  MOVFF  FD9,0A
+0028:  MOVFF  FDA,0B
+002C:  MOVFF  FF3,12
+0030:  MOVFF  FF4,13
+0034:  MOVFF  FFA,14
+0038:  MOVFF  00,0E
+003C:  MOVFF  01,0F
+0040:  MOVFF  02,10
+0044:  MOVFF  03,11
+0048:  BTFSS  F9D.0
+004A:  GOTO   0054
+004E:  BTFSC  F9E.0
+0050:  GOTO   0168
+0054:  MOVFF  0E,00
+0058:  MOVFF  0F,01
+005C:  MOVFF  10,02
+0060:  MOVFF  11,03
+0064:  MOVFF  0C,FE9
+0068:  MOVFF  07,FEA
+006C:  BSF    07.7
+006E:  MOVFF  08,FE1
+0072:  MOVFF  09,FE2
+0076:  MOVFF  0A,FD9
+007A:  MOVFF  0B,FDA
+007E:  MOVFF  12,FF3
+0082:  MOVFF  13,FF4
+0086:  MOVFF  14,FFA
+008A:  MOVF   04,W
+008C:  MOVFF  06,FE0
+0090:  MOVFF  05,FD8
+0094:  RETFIE 0
+.................... #define led0 pin_d0 
+.................... #define led1 pin_d1 
+.................... #include <18F4550.h> 
+.................... //////// Standard Header file for the PIC18F4550 device //////////////// 
+.................... #device PIC18F4550 
+0096:  MOVLW  8E
+0098:  MOVWF  00
+009A:  MOVFF  27,01
+009E:  MOVFF  26,02
+00A2:  CLRF   03
+00A4:  MOVF   01,F
+00A6:  BNZ   00BA
+00A8:  MOVFF  02,01
+00AC:  CLRF   02
+00AE:  MOVLW  08
+00B0:  SUBWF  00,F
+00B2:  MOVF   01,F
+00B4:  BNZ   00BA
+00B6:  CLRF   00
+00B8:  BRA    00CA
+00BA:  BCF    FD8.0
+00BC:  BTFSC  01.7
+00BE:  BRA    00C8
+00C0:  RLCF   02,F
+00C2:  RLCF   01,F
+00C4:  DECF   00,F
+00C6:  BRA    00BA
+00C8:  BCF    01.7
+00CA:  GOTO   01E0 (RETURN)
+*
+00F0:  MOVFF  27,2E
+00F4:  MOVF   2B,W
+00F6:  XORWF  2E,F
+00F8:  BTFSS  2E.7
+00FA:  BRA    0106
+00FC:  BCF    FD8.2
+00FE:  BCF    FD8.0
+0100:  BTFSC  27.7
+0102:  BSF    FD8.0
+0104:  BRA    0164
+0106:  MOVFF  27,2E
+010A:  MOVFF  2A,2F
+010E:  MOVF   26,W
+0110:  SUBWF  2F,F
+0112:  BZ    0120
+0114:  BTFSS  2E.7
+0116:  BRA    0164
+0118:  MOVF   FD8,W
+011A:  XORLW  01
+011C:  MOVWF  FD8
+011E:  BRA    0164
+0120:  MOVFF  2B,2F
+0124:  MOVF   27,W
+0126:  SUBWF  2F,F
+0128:  BZ    0136
+012A:  BTFSS  2E.7
+012C:  BRA    0164
+012E:  MOVF   FD8,W
+0130:  XORLW  01
+0132:  MOVWF  FD8
+0134:  BRA    0164
+0136:  MOVFF  2C,2F
+013A:  MOVF   28,W
+013C:  SUBWF  2F,F
+013E:  BZ    014C
+0140:  BTFSS  2E.7
+0142:  BRA    0164
+0144:  MOVF   FD8,W
+0146:  XORLW  01
+0148:  MOVWF  FD8
+014A:  BRA    0164
+014C:  MOVFF  2D,2F
+0150:  MOVF   29,W
+0152:  SUBWF  2F,F
+0154:  BZ    0162
+0156:  BTFSS  2E.7
+0158:  BRA    0164
+015A:  MOVF   FD8,W
+015C:  XORLW  01
+015E:  MOVWF  FD8
+0160:  BRA    0164
+0162:  BCF    FD8.0
+0164:  GOTO   0214 (RETURN)
+*
+0220:  DATA 0D,0A
+0222:  DATA 53,65
+0224:  DATA 6C,65
+0226:  DATA 63,69
+0228:  DATA 6F,6E
+022A:  DATA 65,3A
+022C:  DATA 0D,0A
+022E:  DATA 00,00
+0230:  DATA 20,20
+0232:  DATA 20,20
+0234:  DATA 31,29
+0236:  DATA 20,4C
+0238:  DATA 20,2D
+023A:  DATA 20,6C
+023C:  DATA 69,67
+023E:  DATA 61,72
+0240:  DATA 20,6C
+0242:  DATA 65,64
+0244:  DATA 20,0D
+0246:  DATA 0A,00
+0248:  DATA 20,20
+024A:  DATA 20,20
+024C:  DATA 32,29
+024E:  DATA 20,44
+0250:  DATA 20,2D
+0252:  DATA 20,64
+0254:  DATA 65,73
+0256:  DATA 6C,69
+0258:  DATA 67,61
+025A:  DATA 72,20
+025C:  DATA 6C,65
+025E:  DATA 64,20
+0260:  DATA 0D,0A
+0262:  DATA 00,00
+0264:  TBLRD*+
+0266:  MOVF   FF5,F
+0268:  BZ    0284
+026A:  MOVFF  FF6,20
+026E:  MOVFF  FF7,21
+0272:  MOVF   FF5,W
+0274:  BTFSS  F9E.4
+0276:  BRA    0274
+0278:  MOVWF  FAD
+027A:  MOVFF  20,FF6
+027E:  MOVFF  21,FF7
+0282:  BRA    0264
+0284:  RETURN 0
+....................  
+.................... #list 
+....................  
+.................... #device adc=10 
+.................... #fuses  HSPLL PLL5 CPUDIV1 USBDIV 
+.................... #use delay(clock = 48000000) 
+*
+00CE:  MOVLW  01
+00D0:  SUBWF  26,F
+00D2:  BNC   00EC
+00D4:  CLRF   FEA
+00D6:  MOVLW  26
+00D8:  MOVWF  FE9
+00DA:  MOVF   FEF,W
+00DC:  BZ    00EC
+00DE:  MOVLW  02
+00E0:  MOVWF  00
+00E2:  DECFSZ 00,F
+00E4:  BRA    00E2
+00E6:  BRA    00E8
+00E8:  DECFSZ FEF,F
+00EA:  BRA    00DE
+00EC:  GOTO   01F6 (RETURN)
+.................... #use rs232(baud=9600,parity=N,xmit=PIN_C6,rcv=PIN_C7,bits=8) 
+.................... const int32 tm=3036; 
+.................... #int_timer1 
+.................... void funcao_tempo() 
+.................... {float ad1;static boolean led=1;static unsigned int32 n; 
+.................... set_timer1(tm+get_timer1()); 
+*
+0168:  MOVF   FCE,W
+016A:  MOVFF  FCF,03
+016E:  ADDLW  DC
+0170:  MOVWF  26
+0172:  MOVLW  0B
+0174:  ADDWFC FCF,W
+0176:  CLRF   28
+0178:  BCF    FD8.2
+017A:  BTFSC  FD8.0
+017C:  INCF   28,F
+017E:  MOVWF  FCF
+0180:  MOVFF  26,FCE
+.................... n++; 
+0184:  MOVLW  01
+0186:  ADDWF  17,F
+0188:  BTFSC  FD8.0
+018A:  INCF   18,F
+018C:  BTFSC  FD8.2
+018E:  INCF   19,F
+0190:  BTFSC  FD8.2
+0192:  INCF   1A,F
+.................... if (n==5) 
+0194:  MOVF   17,W
+0196:  SUBLW  05
+0198:  BNZ   01BC
+019A:  MOVF   18,F
+019C:  BNZ   01BC
+019E:  MOVF   19,F
+01A0:  BNZ   01BC
+01A2:  MOVF   1A,F
+01A4:  BNZ   01BC
+.................... {n=0; 
+01A6:  CLRF   1A
+01A8:  CLRF   19
+01AA:  CLRF   18
+01AC:  CLRF   17
+.................... led=!led; 
+01AE:  BTG    16.0
+.................... output_bit(led1,led); 
+01B0:  BTFSC  16.0
+01B2:  BRA    01B8
+01B4:  BCF    F8C.1
+01B6:  BRA    01BA
+01B8:  BSF    F8C.1
+01BA:  BCF    F95.1
+.................... } 
+....................  if ((input(pin_b0)==0)&&(input(pin_b1)==0))  
+01BC:  BSF    F93.0
+01BE:  BTFSC  F81.0
+01C0:  BRA    01CC
+01C2:  BSF    F93.1
+01C4:  BTFSC  F81.1
+01C6:  BRA    01CC
+.................... {output_high(led0);} 
+01C8:  BCF    F95.0
+01CA:  BSF    F8C.0
+.................... ad1=read_adc(); 
+01CC:  BSF    FC2.1
+01CE:  BTFSC  FC2.1
+01D0:  BRA    01CE
+01D2:  MOVFF  FC4,03
+01D6:  MOVFF  FC3,26
+01DA:  MOVFF  FC4,27
+01DE:  BRA    0096
+01E0:  MOVFF  03,25
+01E4:  MOVFF  02,24
+01E8:  MOVFF  01,23
+01EC:  MOVFF  00,22
+.................... delay_us(100); 
+01F0:  MOVLW  64
+01F2:  MOVWF  26
+01F4:  BRA    00CE
+*
+021A:  BCF    F9E.0
+021C:  GOTO   0054
+....................  if (ad1<200)  { output_low(led0);  }} 
+*
+01F6:  MOVFF  25,29
+01FA:  MOVFF  24,28
+01FE:  MOVFF  23,27
+0202:  MOVFF  22,26
+0206:  CLRF   2D
+0208:  CLRF   2C
+020A:  MOVLW  48
+020C:  MOVWF  2B
+020E:  MOVLW  86
+0210:  MOVWF  2A
+0212:  BRA    00F0
+0214:  BNC   021A
+0216:  BCF    F95.0
+0218:  BCF    F8C.0
+.................... void main() 
+*
+0286:  CLRF   FF8
+0288:  BCF    FD0.7
+028A:  BSF    07.7
+028C:  BSF    FB8.3
+028E:  MOVLW  E1
+0290:  MOVWF  FAF
+0292:  MOVLW  04
+0294:  MOVWF  FB0
+0296:  MOVLW  A6
+0298:  MOVWF  FAC
+029A:  MOVLW  90
+029C:  MOVWF  FAB
+029E:  BSF    16.0
+02A0:  MOVF   FC1,W
+02A2:  ANDLW  C0
+02A4:  IORLW  0F
+02A6:  MOVWF  FC1
+02A8:  MOVLW  07
+02AA:  MOVWF  FB4
+02AC:  CLRF   17
+02AE:  CLRF   18
+02B0:  CLRF   19
+02B2:  CLRF   1A
+.................... {float ad1; 
+.................... char selection; 
+.................... port_b_pullups(TRUE); 
+02B4:  BCF    FF1.7
+.................... enable_interrupts(GLOBAL); 
+02B6:  MOVLW  C0
+02B8:  IORWF  FF2,F
+.................... enable_interrupts(INT_timer1); 
+02BA:  BSF    F9D.0
+.................... setup_timer_1(T1_INTERNAL|T1_DIV_BY_8); 
+02BC:  MOVLW  B5
+02BE:  MOVWF  FCD
+.................... set_timer1(tm);                                              
+02C0:  MOVLW  0B
+02C2:  MOVWF  FCF
+02C4:  MOVLW  DC
+02C6:  MOVWF  FCE
+.................... setup_adc_ports(AN0); 
+02C8:  MOVF   FC1,W
+02CA:  ANDLW  C0
+02CC:  IORLW  0E
+02CE:  MOVWF  FC1
+.................... SETUP_ADC(ADC_CLOCK_INTERNAL); 
+02D0:  MOVF   FC0,W
+02D2:  ANDLW  C0
+02D4:  IORLW  07
+02D6:  MOVWF  FC0
+02D8:  BSF    FC0.7
+02DA:  BSF    FC2.0
+.................... SET_ADC_CHANNEL(0); 
+02DC:  MOVLW  00
+02DE:  MOVWF  01
+02E0:  MOVF   FC2,W
+02E2:  ANDLW  C3
+02E4:  IORWF  01,W
+02E6:  MOVWF  FC2
+.................... output_bit(pin_e2,0); // RS485  
+02E8:  BCF    F8D.2
+02EA:  BCF    F96.2
+.................... while(true) 
+.................... {   
+....................    output_bit(pin_e2,1);// RS485  
+02EC:  BSF    F8D.2
+02EE:  BCF    F96.2
+....................    printf("\r\nSelecione:\r\n"); 
+02F0:  MOVLW  20
+02F2:  MOVWF  FF6
+02F4:  MOVLW  02
+02F6:  MOVWF  FF7
+02F8:  RCALL  0264
+....................    printf("    1) L - ligar led \r\n"); 
+02FA:  MOVLW  30
+02FC:  MOVWF  FF6
+02FE:  MOVLW  02
+0300:  MOVWF  FF7
+0302:  RCALL  0264
+....................    printf("    2) D - desligar led \r\n"); 
+0304:  MOVLW  48
+0306:  MOVWF  FF6
+0308:  MOVLW  02
+030A:  MOVWF  FF7
+030C:  RCALL  0264
+....................    output_bit(pin_e2,0); // RS485  
+030E:  BCF    F8D.2
+0310:  BCF    F96.2
+....................   do { 
+....................    selection=getc(); 
+0312:  BTFSS  F9E.5
+0314:  BRA    0312
+0316:  MOVFF  FAE,1F
+....................   } while (!((selection=='L')||(selection=='D'))); 
+031A:  MOVF   1F,W
+031C:  SUBLW  4C
+031E:  BZ    0326
+0320:  MOVF   1F,W
+0322:  SUBLW  44
+0324:  BNZ   0312
+....................   if (selection=='L') 
+0326:  MOVF   1F,W
+0328:  SUBLW  4C
+032A:  BNZ   0332
+....................   {output_high(led0); 
+032C:  BCF    F95.0
+032E:  BSF    F8C.0
+....................   } 
+0330:  BRA    0336
+.................... else  {output_low(led0); 
+0332:  BCF    F95.0
+0334:  BCF    F8C.0
+....................   }}} 
+0336:  BRA    02EC
+....................  
+0338:  SLEEP 
+....................  
+
+Configuration Fuses:
+   Word  1: CE24   PLL5 CPUDIV1 USBDIV HSPLL FCMEN IESO
+   Word  2: 1E3E   PUT BROWNOUT BORV21 VREGEN NOWDT WDT32768
+   Word  3: 8700   CCP2C1 PBADEN LPT1OSC MCLR
+   Word  4: 00A1   STVREN NOLVP ICSP2 NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

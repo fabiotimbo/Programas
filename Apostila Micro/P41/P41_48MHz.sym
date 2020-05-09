@@ -1,0 +1,102 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016.0   funcao_tempo.led
+017-01A funcao_tempo.n
+01B-01E MAIN.ad1
+01F     MAIN.selection
+020     @PSTRINGC_9600_31766_31767.@SCRATCH1
+021     @PSTRINGC_9600_31766_31767.@SCRATCH2
+022-025 funcao_tempo.ad1
+026-027 @ITOF.P1
+026     @delay_us1.P2
+026-029 @FLT.P3
+026     funcao_tempo.@SCRATCH1
+027     funcao_tempo.@SCRATCH2
+028     funcao_tempo.@SCRATCH3
+029     funcao_tempo.@SCRATCH4
+02A-02D @FLT.P1
+02E     @FLT.@SCRATCH1
+02F     @FLT.@SCRATCH2
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @WRITE_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000096  @ITOF
+0000CE  @delay_us1
+0000F0  @FLT
+000168  funcao_tempo
+000220  @const654.call
+000230  @const656.call
+000248  @const657.call
+000264  @PSTRINGC_9600_31766_31767
+000286  @cinit1
+000286  MAIN
+0002AC  @cinit2
+
+Project Directory:
+    C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P41\
+
+Project Files:
+    P41_48MHz.c                                             [26-abr-20 19:59  CRC=43656E86]
+    ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
+
+Source signature=86154A42
+
+Units:
+    P41_48MHz (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   P41_48MHz.xsym
+    Errors:      P41_48MHz.err
+    Ext Symbols: P41_48MHz.esym
+    INHX32:      P41_48MHz.hex
+    Symbols:     P41_48MHz.sym
+    List:        P41_48MHz.lst
+    Debug/COFF:  P41_48MHz.cof
+    Project:     P41_48MHz.ccspjt
+    Call Tree:   P41_48MHz.tre
+    Statistics:  P41_48MHz.STA

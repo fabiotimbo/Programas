@@ -1,0 +1,20 @@
+0	1	mikroCPIC1618.exe -MSF -DBG -pP18F4550 -DL -O11111114 -fo48 -N"C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\placas\kit placa genérica parabellum v1.0\bootloader\Firmware - c20_48Mhz\BootProg.mcppi" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Defs\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\uses\P18\" -SP"C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\placas\kit placa genérica parabellum v1.0\bootloader\Firmware - c20_48Mhz\" -SP"" -SP"C:\Program Files\BootProg 2\Firmware\" -SP"C:\Program Files\BootProg\firmware\" -IP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\uses\P18\" -IP"C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\placas\kit placa genérica parabellum v1.0\bootloader\Firmware - c20_48Mhz\" "Main.c" "USBdsc.c" "__Lib_Math.mcl" "__Lib_MathDouble.mcl" "__Lib_System.mcl" "__Lib_Delays.mcl" "__Lib_EEPROM_256.mcl" "__Lib_FLASH_w32_e64.mcl" "__Lib_USB_genHID.mcl"	 
+warning: 0	1501	Specified search path does not exist: '-SPC:\Program Files\BootProg 2\Firmware'	 
+warning: 0	1501	Specified search path does not exist: 'C:\Program Files\BootProg\firmware'	 
+hint: 0	1139	Available RAM: 2027 [bytes], Available ROM: 32768 [bytes]	 
+diagnostics: 0	122	Compilation Started	P18F4550.c
+diagnostics: 1606	123	Compiled Successfully	P18F4550.c
+diagnostics: 0	122	Compilation Started	__Lib_Delays.c
+diagnostics: 172	123	Compiled Successfully	__Lib_Delays.c
+diagnostics: 0	122	Compilation Started	Main.c
+hint: 78	1354	argument may be out of range []	Main.c
+diagnostics: 179	123	Compiled Successfully	Main.c
+diagnostics: 0	122	Compilation Started	USBdsc.c
+diagnostics: 166	123	Compiled Successfully	USBdsc.c
+diagnostics: 0	127	All files Compiled in 688 ms	 
+hint: 0	1144	Used RAM (bytes): 488 (24%)  Free RAM (bytes): 1539 (76%)	Used RAM (bytes): 488 (24%)  Free RAM (bytes): 1539 (76%)
+hint: 0	1144	Used ROM (bytes): 5908 (18%)  Free ROM (bytes): 26860 (82%)	Used ROM (bytes): 5908 (18%)  Free ROM (bytes): 26860 (82%)
+diagnostics: 0	125	Project Linked Successfully	BootProg.mcppi
+diagnostics: 0	128	Linked in 156 ms	 
+diagnostics: 0	129	Project 'BootProg.mcppi' completed: 2328 ms	 
+diagnostics: 0	103	Finished successfully: 25 abr 2020, 21:15:45	BootProg.mcppi

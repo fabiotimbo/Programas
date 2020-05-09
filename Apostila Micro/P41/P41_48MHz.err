@@ -1,0 +1,4 @@
+>>> Warning 202 "P41_48MHz.c" Line 25(8,11): Variable never used:   ad1
+      Memory usage:   ROM=3%      RAM=2% - 2%
+      0 Errors,  1 Warnings.
+Build Successful.

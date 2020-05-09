@@ -1,4 +1,4 @@
-CCS PCH C Compiler, Version 5.007, 61971               20-abr-20 23:58
+CCS PCH C Compiler, Version 5.007, 61971               26-abr-20 19:57
 
                Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P41\P41.lst
 
@@ -348,12 +348,12 @@ CCS PCH C Compiler, Version 5.007, 61971               20-abr-20 23:58
 02C4:  ANDLW  C3
 02C6:  IORWF  01,W
 02C8:  MOVWF  FC2
-.................... output_bit(pin_e2,0);  
+.................... output_bit(pin_e2,0); // RS485  
 02CA:  BCF    F8D.2
 02CC:  BCF    F96.2
 .................... while(true) 
 .................... {   
-....................    output_bit(pin_e2,1);//ENABLE RS485  
+....................    output_bit(pin_e2,1);// RS485  
 02CE:  BSF    F8D.2
 02D0:  BCF    F96.2
 ....................    printf("\r\nSelecione:\r\n"); 
@@ -374,7 +374,7 @@ CCS PCH C Compiler, Version 5.007, 61971               20-abr-20 23:58
 02EA:  MOVLW  02
 02EC:  MOVWF  FF7
 02EE:  RCALL  0246
-....................    output_bit(pin_e2,0); //DISABLE RS485  
+....................    output_bit(pin_e2,0); // RS485  
 02F0:  BCF    F8D.2
 02F2:  BCF    F96.2
 ....................   do { 

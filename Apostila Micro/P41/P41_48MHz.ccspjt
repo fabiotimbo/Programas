@@ -1,0 +1,23 @@
+[PROJECT]
+Target=P41_48MHz.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.007
+Compiler=PCH
+[Target Data]
+FileList=P41_48MHz.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[P41_48MHz.c]
+Type=4
+[mru-list]
+1=P41_48MHz.c
+[Opened Files]
+1=..\..\..\programas\datalogger\datalogger01.c
+2=..\..\..\programas\sdcard\cartao_flat.c
+3=..\..\..\programas\Firmware Universal_Elipse_Scada\universal_48MHz\universal.c
+4=P41_48MHz.c
+5=P41.c
+6=
+[Units]
+Count=1
+1=P41_48MHz (main)
