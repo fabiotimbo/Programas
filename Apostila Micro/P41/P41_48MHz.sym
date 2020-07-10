@@ -25,6 +25,7 @@
 017-01A funcao_tempo.n
 01B-01E MAIN.ad1
 01F     MAIN.selection
+020     @delay_ms1.P1
 020     @PSTRINGC_9600_31766_31767.@SCRATCH1
 021     @PSTRINGC_9600_31766_31767.@SCRATCH2
 022-025 funcao_tempo.ad1
@@ -44,17 +45,17 @@ FB4.7   C2OUT
 FBB     CCP_2
 FBB     CCP_2_LOW
 FBC     CCP_2_HIGH
-FBE     CCP_1
 FBE     CCP_1_LOW
+FBE     CCP_1
 FBF     CCP_1_HIGH
 FE1-FE2 @WRITE_PACKED_MEMORY.P1
 FE1-FE2 @READ_PACKED_MEMORY.P2
 FE9-FEA @READ_PACKED_MEMORY.P1
-FE9-FEA @WRITE_PROGRAM_MEMORY.P2
-FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
 FE9-FEA @WRITE_PACKED_MEMORY.P4
-FF6-FF8 @READ_PROGRAM_MEMORY.P1
-FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
 
 ROM Allocation:
 000096  @ITOF
@@ -65,18 +66,19 @@ ROM Allocation:
 000230  @const656.call
 000248  @const657.call
 000264  @PSTRINGC_9600_31766_31767
-000286  @cinit1
-000286  MAIN
-0002AC  @cinit2
+000286  @delay_ms1
+0002B0  MAIN
+0002B0  @cinit1
+0002D6  @cinit2
 
 Project Directory:
     C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P41\
 
 Project Files:
-    P41_48MHz.c                                             [26-abr-20 19:59  CRC=43656E86]
+    P41_48MHz.c                                             [30-mai-20 20:47  CRC=65A8F344]
     ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
 
-Source signature=86154A42
+Source signature=A858CF00
 
 Units:
     P41_48MHz (main)

@@ -1,9 +1,9 @@
-CCS PCH C Compiler, Version 5.007, 61971               12-jan-20 08:51
+CCS PCH C Compiler, Version 5.007, 61971               22-jun-20 18:14
 
                Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P95\P95.lst
 
-               ROM used:   992 bytes (3%)
-                           Largest free fragment is 31776
+               ROM used:   976 bytes (3%)
+                           Largest free fragment is 31792
                RAM used:   28 (1%) at main() level
                            49 (2%) worst case
                Stack used: 0 locations
@@ -127,7 +127,7 @@ CCS PCH C Compiler, Version 5.007, 61971               12-jan-20 08:51
 011C:  MOVFF  1A,FF7
 0120:  DECFSZ 18,F
 0122:  BRA    0106
-0124:  GOTO   034E (RETURN)
+0124:  GOTO   033E (RETURN)
 0128:  BTFSC  FD8.1
 012A:  BRA    0132
 012C:  CLRF   FEA
@@ -261,7 +261,7 @@ CCS PCH C Compiler, Version 5.007, 61971               12-jan-20 08:51
 0252:  MOVFF  00,20
 0256:  DECFSZ 1E,F
 0258:  BRA    01CC
-025A:  GOTO   0364 (RETURN)
+025A:  GOTO   0354 (RETURN)
 ....................  
 .................... #list 
 ....................  
@@ -350,7 +350,7 @@ CCS PCH C Compiler, Version 5.007, 61971               12-jan-20 08:51
 02AA:  CLRF   09
 02AC:  CLRF   0A
 02AE:  CLRF   0B
-.................... u=getc()-48;//48 corresponde ao valor do caractere 0 da tabela ASCII. 
+.................... u=getc()-48;//48 corresponde ao valor do caractere 0 da tabela ASCII.\ 
 02B0:  BTFSS  F9E.5
 02B2:  BRA    02B0
 02B4:  MOVF   FAE,W
@@ -359,146 +359,138 @@ CCS PCH C Compiler, Version 5.007, 61971               12-jan-20 08:51
 02BA:  CLRF   05
 02BC:  CLRF   06
 02BE:  CLRF   07
-.................... null=getc()-48;//descarta caractere nulo/indevido caso seja enviado pela serial 
-02C0:  BTFSS  F9E.5
-02C2:  BRA    02C0
-02C4:  MOVF   FAE,W
-02C6:  ADDLW  D0
-02C8:  MOVWF  10
-02CA:  CLRF   11
-02CC:  CLRF   12
-02CE:  CLRF   13
+.................... //null=getc()-48;//descarta caractere nulo/indevido caso seja enviado pela serial 
 .................... selection=(100*c)+(10*d)+u; 
-02D0:  CLRF   1F
-02D2:  CLRF   1E
-02D4:  CLRF   1D
-02D6:  MOVLW  64
-02D8:  MOVWF  1C
-02DA:  MOVFF  0F,23
-02DE:  MOVFF  0E,22
-02E2:  MOVFF  0D,21
-02E6:  MOVFF  0C,20
-02EA:  RCALL  00B2
-02EC:  MOVFF  03,1B
-02F0:  MOVFF  02,1A
-02F4:  MOVFF  01,19
-02F8:  MOVFF  00,18
-02FC:  CLRF   1F
-02FE:  CLRF   1E
-0300:  CLRF   1D
-0302:  MOVLW  0A
-0304:  MOVWF  1C
-0306:  MOVFF  0B,23
-030A:  MOVFF  0A,22
-030E:  MOVFF  09,21
-0312:  MOVFF  08,20
-0316:  RCALL  00B2
-0318:  MOVF   00,W
-031A:  ADDWF  18,F
-031C:  MOVF   01,W
-031E:  ADDWFC 19,F
-0320:  MOVF   02,W
-0322:  ADDWFC 1A,F
-0324:  MOVF   03,W
-0326:  ADDWFC 1B,F
-0328:  MOVF   04,W
-032A:  ADDWF  18,W
-032C:  MOVWF  14
-032E:  MOVF   05,W
-0330:  ADDWFC 19,W
-0332:  MOVWF  15
-0334:  MOVF   06,W
-0336:  ADDWFC 1A,W
-0338:  MOVWF  16
-033A:  MOVF   07,W
-033C:  ADDWFC 1B,W
-033E:  MOVWF  17
+02C0:  CLRF   1F
+02C2:  CLRF   1E
+02C4:  CLRF   1D
+02C6:  MOVLW  64
+02C8:  MOVWF  1C
+02CA:  MOVFF  0F,23
+02CE:  MOVFF  0E,22
+02D2:  MOVFF  0D,21
+02D6:  MOVFF  0C,20
+02DA:  RCALL  00B2
+02DC:  MOVFF  03,1B
+02E0:  MOVFF  02,1A
+02E4:  MOVFF  01,19
+02E8:  MOVFF  00,18
+02EC:  CLRF   1F
+02EE:  CLRF   1E
+02F0:  CLRF   1D
+02F2:  MOVLW  0A
+02F4:  MOVWF  1C
+02F6:  MOVFF  0B,23
+02FA:  MOVFF  0A,22
+02FE:  MOVFF  09,21
+0302:  MOVFF  08,20
+0306:  RCALL  00B2
+0308:  MOVF   00,W
+030A:  ADDWF  18,F
+030C:  MOVF   01,W
+030E:  ADDWFC 19,F
+0310:  MOVF   02,W
+0312:  ADDWFC 1A,F
+0314:  MOVF   03,W
+0316:  ADDWFC 1B,F
+0318:  MOVF   04,W
+031A:  ADDWF  18,W
+031C:  MOVWF  14
+031E:  MOVF   05,W
+0320:  ADDWFC 19,W
+0322:  MOVWF  15
+0324:  MOVF   06,W
+0326:  ADDWFC 1A,W
+0328:  MOVWF  16
+032A:  MOVF   07,W
+032C:  ADDWFC 1B,W
+032E:  MOVWF  17
 .................... printf("\r\nnumero=%lu\r\n",selection); 
-0340:  MOVLW  36
-0342:  MOVWF  FF6
-0344:  MOVLW  00
-0346:  MOVWF  FF7
-0348:  MOVLW  09
-034A:  MOVWF  18
-034C:  BRA    0106
-034E:  MOVLW  41
-0350:  MOVWF  FE9
-0352:  MOVFF  17,1B
-0356:  MOVFF  16,1A
-035A:  MOVFF  15,19
-035E:  MOVFF  14,18
-0362:  BRA    01B6
-0364:  MOVLW  0D
-0366:  BTFSS  F9E.4
-0368:  BRA    0366
-036A:  MOVWF  FAD
-036C:  MOVLW  0A
-036E:  BTFSS  F9E.4
-0370:  BRA    036E
-0372:  MOVWF  FAD
+0330:  MOVLW  36
+0332:  MOVWF  FF6
+0334:  MOVLW  00
+0336:  MOVWF  FF7
+0338:  MOVLW  09
+033A:  MOVWF  18
+033C:  BRA    0106
+033E:  MOVLW  41
+0340:  MOVWF  FE9
+0342:  MOVFF  17,1B
+0346:  MOVFF  16,1A
+034A:  MOVFF  15,19
+034E:  MOVFF  14,18
+0352:  BRA    01B6
+0354:  MOVLW  0D
+0356:  BTFSS  F9E.4
+0358:  BRA    0356
+035A:  MOVWF  FAD
+035C:  MOVLW  0A
+035E:  BTFSS  F9E.4
+0360:  BRA    035E
+0362:  MOVWF  FAD
 .................... if (selection>100||selection<0) {printf("\r\nValor incorreto!!\r\n");}// faixa de valores aceitáveis 
-0374:  MOVF   17,F
-0376:  BNZ   038C
-0378:  MOVF   16,F
-037A:  BNZ   038C
-037C:  MOVF   15,F
-037E:  BNZ   038C
-0380:  MOVF   14,W
-0382:  SUBLW  64
-0384:  BC    0396
-0386:  BRA    038C
-0388:  BTFSS  00.0
-038A:  BRA    0396
-038C:  MOVLW  46
-038E:  MOVWF  FF6
-0390:  MOVLW  00
-0392:  MOVWF  FF7
-0394:  RCALL  0090
+0364:  MOVF   17,F
+0366:  BNZ   037C
+0368:  MOVF   16,F
+036A:  BNZ   037C
+036C:  MOVF   15,F
+036E:  BNZ   037C
+0370:  MOVF   14,W
+0372:  SUBLW  64
+0374:  BC    0386
+0376:  BRA    037C
+0378:  BTFSS  00.0
+037A:  BRA    0386
+037C:  MOVLW  46
+037E:  MOVWF  FF6
+0380:  MOVLW  00
+0382:  MOVWF  FF7
+0384:  RCALL  0090
 .................... } while(selection>100||selection<0); 
-0396:  MOVF   17,F
-0398:  BTFSS  FD8.2
-039A:  BRA    0286
-039C:  MOVF   16,F
-039E:  BTFSS  FD8.2
-03A0:  BRA    0286
-03A2:  MOVF   15,F
-03A4:  BTFSS  FD8.2
-03A6:  BRA    0286
-03A8:  MOVF   14,W
-03AA:  SUBLW  64
-03AC:  BC    03B4
-03AE:  BRA    0286
-03B0:  BTFSC  00.0
-03B2:  BRA    0286
+0386:  MOVF   17,F
+0388:  BTFSS  FD8.2
+038A:  BRA    0286
+038C:  MOVF   16,F
+038E:  BTFSS  FD8.2
+0390:  BRA    0286
+0392:  MOVF   15,F
+0394:  BTFSS  FD8.2
+0396:  BRA    0286
+0398:  MOVF   14,W
+039A:  SUBLW  64
+039C:  BC    03A4
+039E:  BRA    0286
+03A0:  BTFSC  00.0
+03A2:  BRA    0286
 .................... //lcd_gotoxy(1,1); 
 .................... {printf("\r\nValor ok\r\n");} 
-03B4:  MOVLW  5C
-03B6:  MOVWF  FF6
-03B8:  MOVLW  00
-03BA:  MOVWF  FF7
-03BC:  RCALL  0090
+03A4:  MOVLW  5C
+03A6:  MOVWF  FF6
+03A8:  MOVLW  00
+03AA:  MOVWF  FF7
+03AC:  RCALL  0090
 .................... //printf(lcd_putc,"\fsetpoint %lu",selection); 
 .................... delay_ms(200); 
-03BE:  MOVLW  C8
-03C0:  MOVWF  18
-03C2:  RCALL  006A
+03AE:  MOVLW  C8
+03B0:  MOVWF  18
+03B2:  RCALL  006A
 .................... c=0;d=0;u=0; 
-03C4:  CLRF   0F
-03C6:  CLRF   0E
-03C8:  CLRF   0D
-03CA:  CLRF   0C
-03CC:  CLRF   0B
-03CE:  CLRF   0A
-03D0:  CLRF   09
-03D2:  CLRF   08
-03D4:  CLRF   07
-03D6:  CLRF   06
-03D8:  CLRF   05
-03DA:  CLRF   04
-03DC:  BRA    0280
+03B4:  CLRF   0F
+03B6:  CLRF   0E
+03B8:  CLRF   0D
+03BA:  CLRF   0C
+03BC:  CLRF   0B
+03BE:  CLRF   0A
+03C0:  CLRF   09
+03C2:  CLRF   08
+03C4:  CLRF   07
+03C6:  CLRF   06
+03C8:  CLRF   05
+03CA:  CLRF   04
+03CC:  BRA    0280
 .................... }} 
 ....................  
-03DE:  SLEEP 
+03CE:  SLEEP 
 ....................  
 
 Configuration Fuses:

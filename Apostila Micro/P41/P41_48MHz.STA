@@ -1,9 +1,9 @@
 
-ROM used:   822/16384 (3%)
-            822/16384 (3%) including unused fragments
+ROM used:   870/16384 (3%)
+            870/16384 (3%) including unused fragments
 
-            0.9 Average locations per line
-            21.1 Average locations per statement
+            1.0 Average locations per line
+            21.8 Average locations per statement
 
 RAM used:   32/2048 (2%) at main() level
             48/2048 (2%) worst case
@@ -13,42 +13,43 @@ Stack size: 31
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   53    39 100  P41_48MHz.c
+   54    40 100  P41_48MHz.c
   821     0   0  ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
 ----- -----
-  874    39 Total
+  875    40 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
+0     42   2    1             @delay_ms1
 0     34   2    1             @delay_us1
 0    184  11    8   490  5.8  funcao_tempo
-0     56   3    2   490  5.8  @ITOF
-0    120   7   10             @FLT
-0    180  11    5   681  6.1  MAIN
-0     16   1    0   681  6.1  @const654
+0     56   3    2             @ITOF
+0    120   7   10   354  5.6  @FLT
+0    186  11    5   710  6.1  MAIN
+0     16   1    0   144  4.7  @const654
 0     34   2    2             @PSTRINGC_9600_31766_31767
-0     24   1    0             @const656
+0     24   1    0  7200 11.5  @const656
 0     28   2    0             @const657
  Inline         0             @cinit1
 
 Program metrics:
-    Functions               4
-    Statements              39
+    Functions               5
+    Statements              40
     Comments                145
-    Volume (V)              3147
-    Difficulty (D)          23.2
-    Effort to implement (E) 72877
-    Time to implement (T)   1 hours, 7 minutes
-    Est Delivered Bugs (B)  1
-    Cyclomatic Complexity   10
-    Maintainability (MI)    104
+    Volume (V)              10432
+    Difficulty (D)          34.5
+    Effort to implement (E) 359638
+    Time to implement (T)   5 hours, 33 minutes
+    Est Delivered Bugs (B)  2
+    Cyclomatic Complexity   27
+    Maintainability (MI)    140
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00002     4  0  
 00004-00006     0  4  
 00008-00094   142  0  
-00096-07FFE   676  31942  
+00096-07FFE   724  31894  
 
 
 

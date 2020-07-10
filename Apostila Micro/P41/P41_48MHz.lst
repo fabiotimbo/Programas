@@ -1,16 +1,16 @@
-CCS PCH C Compiler, Version 5.007, 61971               26-abr-20 20:02
+CCS PCH C Compiler, Version 5.007, 61971               30-mai-20 20:47
 
                Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P41\P41_48MHz.lst
 
-               ROM used:   822 bytes (3%)
-                           Largest free fragment is 31942
+               ROM used:   870 bytes (3%)
+                           Largest free fragment is 31894
                RAM used:   32 (2%) at main() level
                            48 (2%) worst case
                Stack used: 1 locations (0 in main + 1 for interrupts)
                Stack size: 31
 
 *
-0000:  GOTO   0286
+0000:  GOTO   02B0
 *
 0008:  MOVWF  04
 000A:  MOVFF  FD8,05
@@ -205,6 +205,27 @@ CCS PCH C Compiler, Version 5.007, 61971               26-abr-20 20:02
 00E8:  DECFSZ FEF,F
 00EA:  BRA    00DE
 00EC:  GOTO   01F6 (RETURN)
+*
+0286:  CLRF   FEA
+0288:  MOVLW  20
+028A:  MOVWF  FE9
+028C:  MOVF   FEF,W
+028E:  BZ    02AC
+0290:  MOVLW  0F
+0292:  MOVWF  01
+0294:  CLRF   00
+0296:  DECFSZ 00,F
+0298:  BRA    0296
+029A:  DECFSZ 01,F
+029C:  BRA    0294
+029E:  MOVLW  8F
+02A0:  MOVWF  00
+02A2:  DECFSZ 00,F
+02A4:  BRA    02A2
+02A6:  NOP   
+02A8:  DECFSZ FEF,F
+02AA:  BRA    0290
+02AC:  GOTO   033E (RETURN)
 .................... #use rs232(baud=9600,parity=N,xmit=PIN_C6,rcv=PIN_C7,bits=8) 
 .................... const int32 tm=3036; 
 .................... #int_timer1 
@@ -305,122 +326,126 @@ CCS PCH C Compiler, Version 5.007, 61971               26-abr-20 20:02
 0218:  BCF    F8C.0
 .................... void main() 
 *
-0286:  CLRF   FF8
-0288:  BCF    FD0.7
-028A:  BSF    07.7
-028C:  BSF    FB8.3
-028E:  MOVLW  E1
-0290:  MOVWF  FAF
-0292:  MOVLW  04
-0294:  MOVWF  FB0
-0296:  MOVLW  A6
-0298:  MOVWF  FAC
-029A:  MOVLW  90
-029C:  MOVWF  FAB
-029E:  BSF    16.0
-02A0:  MOVF   FC1,W
-02A2:  ANDLW  C0
-02A4:  IORLW  0F
-02A6:  MOVWF  FC1
-02A8:  MOVLW  07
-02AA:  MOVWF  FB4
-02AC:  CLRF   17
-02AE:  CLRF   18
-02B0:  CLRF   19
-02B2:  CLRF   1A
+02B0:  CLRF   FF8
+02B2:  BCF    FD0.7
+02B4:  BSF    07.7
+02B6:  BSF    FB8.3
+02B8:  MOVLW  E1
+02BA:  MOVWF  FAF
+02BC:  MOVLW  04
+02BE:  MOVWF  FB0
+02C0:  MOVLW  A6
+02C2:  MOVWF  FAC
+02C4:  MOVLW  90
+02C6:  MOVWF  FAB
+02C8:  BSF    16.0
+02CA:  MOVF   FC1,W
+02CC:  ANDLW  C0
+02CE:  IORLW  0F
+02D0:  MOVWF  FC1
+02D2:  MOVLW  07
+02D4:  MOVWF  FB4
+02D6:  CLRF   17
+02D8:  CLRF   18
+02DA:  CLRF   19
+02DC:  CLRF   1A
 .................... {float ad1; 
 .................... char selection; 
 .................... port_b_pullups(TRUE); 
-02B4:  BCF    FF1.7
+02DE:  BCF    FF1.7
 .................... enable_interrupts(GLOBAL); 
-02B6:  MOVLW  C0
-02B8:  IORWF  FF2,F
+02E0:  MOVLW  C0
+02E2:  IORWF  FF2,F
 .................... enable_interrupts(INT_timer1); 
-02BA:  BSF    F9D.0
+02E4:  BSF    F9D.0
 .................... setup_timer_1(T1_INTERNAL|T1_DIV_BY_8); 
-02BC:  MOVLW  B5
-02BE:  MOVWF  FCD
+02E6:  MOVLW  B5
+02E8:  MOVWF  FCD
 .................... set_timer1(tm);                                              
-02C0:  MOVLW  0B
-02C2:  MOVWF  FCF
-02C4:  MOVLW  DC
-02C6:  MOVWF  FCE
+02EA:  MOVLW  0B
+02EC:  MOVWF  FCF
+02EE:  MOVLW  DC
+02F0:  MOVWF  FCE
 .................... setup_adc_ports(AN0); 
-02C8:  MOVF   FC1,W
-02CA:  ANDLW  C0
-02CC:  IORLW  0E
-02CE:  MOVWF  FC1
+02F2:  MOVF   FC1,W
+02F4:  ANDLW  C0
+02F6:  IORLW  0E
+02F8:  MOVWF  FC1
 .................... SETUP_ADC(ADC_CLOCK_INTERNAL); 
-02D0:  MOVF   FC0,W
-02D2:  ANDLW  C0
-02D4:  IORLW  07
-02D6:  MOVWF  FC0
-02D8:  BSF    FC0.7
-02DA:  BSF    FC2.0
+02FA:  MOVF   FC0,W
+02FC:  ANDLW  C0
+02FE:  IORLW  07
+0300:  MOVWF  FC0
+0302:  BSF    FC0.7
+0304:  BSF    FC2.0
 .................... SET_ADC_CHANNEL(0); 
-02DC:  MOVLW  00
-02DE:  MOVWF  01
-02E0:  MOVF   FC2,W
-02E2:  ANDLW  C3
-02E4:  IORWF  01,W
-02E6:  MOVWF  FC2
+0306:  MOVLW  00
+0308:  MOVWF  01
+030A:  MOVF   FC2,W
+030C:  ANDLW  C3
+030E:  IORWF  01,W
+0310:  MOVWF  FC2
 .................... output_bit(pin_e2,0); // RS485  
-02E8:  BCF    F8D.2
-02EA:  BCF    F96.2
+0312:  BCF    F8D.2
+0314:  BCF    F96.2
 .................... while(true) 
 .................... {   
 ....................    output_bit(pin_e2,1);// RS485  
-02EC:  BSF    F8D.2
-02EE:  BCF    F96.2
+0316:  BSF    F8D.2
+0318:  BCF    F96.2
 ....................    printf("\r\nSelecione:\r\n"); 
-02F0:  MOVLW  20
-02F2:  MOVWF  FF6
-02F4:  MOVLW  02
-02F6:  MOVWF  FF7
-02F8:  RCALL  0264
+031A:  MOVLW  20
+031C:  MOVWF  FF6
+031E:  MOVLW  02
+0320:  MOVWF  FF7
+0322:  RCALL  0264
 ....................    printf("    1) L - ligar led \r\n"); 
-02FA:  MOVLW  30
-02FC:  MOVWF  FF6
-02FE:  MOVLW  02
-0300:  MOVWF  FF7
-0302:  RCALL  0264
+0324:  MOVLW  30
+0326:  MOVWF  FF6
+0328:  MOVLW  02
+032A:  MOVWF  FF7
+032C:  RCALL  0264
 ....................    printf("    2) D - desligar led \r\n"); 
-0304:  MOVLW  48
-0306:  MOVWF  FF6
-0308:  MOVLW  02
-030A:  MOVWF  FF7
-030C:  RCALL  0264
+032E:  MOVLW  48
+0330:  MOVWF  FF6
+0332:  MOVLW  02
+0334:  MOVWF  FF7
+0336:  RCALL  0264
+....................    delay_ms(200); 
+0338:  MOVLW  C8
+033A:  MOVWF  20
+033C:  BRA    0286
 ....................    output_bit(pin_e2,0); // RS485  
-030E:  BCF    F8D.2
-0310:  BCF    F96.2
+033E:  BCF    F8D.2
+0340:  BCF    F96.2
 ....................   do { 
 ....................    selection=getc(); 
-0312:  BTFSS  F9E.5
-0314:  BRA    0312
-0316:  MOVFF  FAE,1F
+0342:  BTFSS  F9E.5
+0344:  BRA    0342
+0346:  MOVFF  FAE,1F
 ....................   } while (!((selection=='L')||(selection=='D'))); 
-031A:  MOVF   1F,W
-031C:  SUBLW  4C
-031E:  BZ    0326
-0320:  MOVF   1F,W
-0322:  SUBLW  44
-0324:  BNZ   0312
+034A:  MOVF   1F,W
+034C:  SUBLW  4C
+034E:  BZ    0356
+0350:  MOVF   1F,W
+0352:  SUBLW  44
+0354:  BNZ   0342
 ....................   if (selection=='L') 
-0326:  MOVF   1F,W
-0328:  SUBLW  4C
-032A:  BNZ   0332
+0356:  MOVF   1F,W
+0358:  SUBLW  4C
+035A:  BNZ   0362
 ....................   {output_high(led0); 
-032C:  BCF    F95.0
-032E:  BSF    F8C.0
+035C:  BCF    F95.0
+035E:  BSF    F8C.0
 ....................   } 
-0330:  BRA    0336
+0360:  BRA    0366
 .................... else  {output_low(led0); 
-0332:  BCF    F95.0
-0334:  BCF    F8C.0
+0362:  BCF    F95.0
+0364:  BCF    F8C.0
 ....................   }}} 
-0336:  BRA    02EC
+0366:  BRA    0316
 ....................  
-0338:  SLEEP 
+0368:  SLEEP 
 ....................  
 
 Configuration Fuses:

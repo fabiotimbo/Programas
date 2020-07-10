@@ -1,0 +1,54 @@
+
+ROM used:   748/16384 (2%)
+            748/16384 (2%) including unused fragments
+
+            0.8 Average locations per line
+            19.2 Average locations per statement
+
+RAM used:   33/2048 (2%) at main() level
+            42/2048 (2%) worst case
+
+Stack used: 1 worst case (0 in main + 1 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   64    39 100  P41_48MHz_invertido.c
+  821     0   0  ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
+----- -----
+  885    39 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     40   3    1             @delay_ms1
+0     34   2    1             @delay_us1
+0    148  10    8   422  5.3  funcao_tempo
+0     56   4    2             @ITOF
+0    222  15    6   769  6.2  MAIN
+0     16   1    0   710  6.1  @const651
+0     34   2    2   144  4.7  @PSTRINGC_9600_31766_31767
+0     24   2    0             @const653
+0     28   2    0  7200 11.5  @const654
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               5
+    Statements              39
+    Comments                158
+    Volume (V)              10951
+    Difficulty (D)          34.5
+    Effort to implement (E) 378026
+    Time to implement (T)   5 hours, 50 minutes
+    Est Delivered Bugs (B)  2
+    Cyclomatic Complexity   26
+    Maintainability (MI)    129
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-00094   142  0  
+00096-07FFE   602  32016  
+
+
+

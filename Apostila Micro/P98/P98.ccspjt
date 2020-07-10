@@ -11,6 +11,9 @@ Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers
 Type=4
 [mru-list]
 1=P98.c
+[Opened Files]
+1=..\..\..\programas\trans_recep\trans.c
+2=
 [Units]
 Count=1
 1=P98 (main)

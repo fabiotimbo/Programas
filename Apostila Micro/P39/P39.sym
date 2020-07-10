@@ -1,0 +1,67 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+005     main.delay_reg1
+006     main.delay_reg2
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  @cinit1
+000004  main
+000014  @cinit2
+0016  inicio
+000B  Delay100ms
+000F  loop1
+0012  loop2
+0015  exit
+001E  loop
+
+Project Directory:
+    C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P39\
+
+Project Files:
+    P39.c                                                   [10-jul-20 17:16  CRC=3FBD0448]
+    ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18f4550.h [21-jun-13 16:05  CRC=A157EDDE]
+
+Source signature=826CE004
+
+Units:
+    P39 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   P39.xsym
+    Errors:      P39.err
+    Ext Symbols: P39.esym
+    INHX32:      P39.hex
+    Symbols:     P39.sym
+    List:        P39.lst
+    Debug/COFF:  P39.cof
+    Project:     P39.ccspjt
+    Call Tree:   P39.tre
+    Statistics:  P39.STA

@@ -1,0 +1,22 @@
+[PROJECT]
+Target=P41_48MHz_invertido.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.007
+Compiler=PCH
+[Target Data]
+FileList=P41_48MHz_invertido.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[P41_48MHz_invertido.c]
+Type=4
+[mru-list]
+1=P41_48MHz_invertido.c
+[Opened Files]
+1=..\..\..\programas\Firmware Universal_Elipse_Scada\universal.c
+2=..\..\..\programas\Firmware Universal_Elipse_Scada\universal_48MHz\universal.c
+3=P41_48MHz_invertido.c
+4=P41_48MHz.c
+5=
+[Units]
+Count=1
+1=P41_48MHz_invertido (main)

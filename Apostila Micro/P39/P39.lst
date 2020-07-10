@@ -1,0 +1,106 @@
+CCS PCH C Compiler, Version 5.007, 61971               10-jul-20 17:16
+
+               Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P39\P39.lst
+
+               ROM used:   78 bytes (0%)
+                           Largest free fragment is 32690
+               RAM used:   6 (0%) at main() level
+                           6 (0%) worst case
+               Stack used: 0 locations
+               Stack size: 31
+
+*
+0000:  GOTO   0004
+.................... #include <18f4550.h> 
+.................... //////// Standard Header file for the PIC18F4550 device //////////////// 
+.................... #device PIC18F4550 
+....................  
+.................... #list 
+....................  
+.................... #fuses hs,nowdt,noprotect,nolvp,NOMCLR 
+.................... void main() 
+0004:  CLRF   FF8
+0006:  BCF    FD0.7
+0008:  MOVF   FC1,W
+000A:  ANDLW  C0
+000C:  IORLW  0F
+000E:  MOVWF  FC1
+0010:  MOVLW  07
+0012:  MOVWF  FB4
+.................... { 
+....................  int delay_reg1;// declaração de variáveis 
+....................  int delay_reg2;// declaração de variáveis 
+.................... #asm 
+.................... goto inicio // vai para label inicio 
+0014:  BRA    002C
+.................... Delay100ms: 
+....................   movlw 0x83 //w=131d 
+0016:  MOVLW  83
+....................   movwf delay_reg1 // reg1=131d 
+0018:  MOVWF  05
+....................   movlw 0xFF // w=255d 
+001A:  MOVLW  FF
+....................   movwf delay_reg2 // reg2=255d 
+001C:  MOVWF  06
+.................... loop1: 
+....................   DECFSZ delay_reg1 // decrementa e pula se igual a zero 
+001E:  DECFSZ 05,F
+....................   goto loop2 
+0020:  BRA    0024
+....................   goto exit 
+0022:  BRA    002A
+.................... loop2: 
+....................   DECFSZ delay_reg2 // decrementa e pula se igual a zero 
+0024:  DECFSZ 06,F
+....................   goto loop2 
+0026:  BRA    0024
+....................   goto loop1 
+0028:  BRA    001E
+.................... Exit: 
+002A:  RETURN 0
+....................   RETURN 
+....................  
+.................... inicio:    
+....................  movlw  0x00  // 00h= pullup habilitado;80h=pullup desabilitado. 
+002C:  MOVLW  00
+....................  movwf  0xFF1 //intcon2=00h 
+002E:  MOVWF  FF1
+....................  movlw  0xFF  //w=11111111b 
+0030:  MOVLW  FF
+....................  movwf  0xF93  //trisbB=11111111b 
+0032:  MOVWF  F93
+....................  movlw  0x00 //w=00000000b 
+0034:  MOVLW  00
+....................  movwf  0xF95 // trisD=00000000b 
+0036:  MOVWF  F95
+....................  movlw  0xE6 //w=11100110b 
+0038:  MOVLW  E6
+....................  movwf  0xFD3 // Oscilador 4Mhz Sem cristal e capacitor $$$$ 
+003A:  MOVWF  FD3
+....................  
+.................... loop: 
+....................    clrf    0XF83 // limpa porta d 
+003C:  CLRF   F83
+....................    call    Delay100ms // vai pra subrotina Delay100ms 
+003E:  CALL   0016,1
+....................    movlw   0xff// w=ffh 
+0042:  MOVLW  FF
+....................    movwf   0XF83 // porta d=11111111b 
+0044:  MOVWF  F83
+....................    call    Delay100ms // vai pra subrotina Delay100ms 
+0046:  CALL   0016,1
+....................    goto    loop //vai pra subrotina loop 
+004A:  BRA    003C
+.................... #endasm 
+.................... } 
+....................  
+004C:  SLEEP 
+
+Configuration Fuses:
+   Word  1: CC3F   PLL12 CPUDIV4 USBDIV HS FCMEN IESO
+   Word  2: 1E3E   PUT BROWNOUT BORV21 VREGEN NOWDT WDT32768
+   Word  3: 0700   CCP2C1 PBADEN LPT1OSC NOMCLR
+   Word  4: 00A1   STVREN NOLVP ICSP2 NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

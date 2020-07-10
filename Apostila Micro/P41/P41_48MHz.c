@@ -39,6 +39,7 @@ while(true)
    printf("\r\nSelecione:\r\n");
    printf("    1) L - ligar led \r\n");
    printf("    2) D - desligar led \r\n");
+   delay_ms(200);
    output_bit(pin_e2,0); // RS485 
   do {
    selection=getc();

@@ -45,7 +45,6 @@ namespace Client
             //Update message to txtStatus
             txtStatus.Invoke((MethodInvoker)delegate()
             {
-                
                 txtStatus.Text += e.MessageString;
                 //sm += e.MessageString[0].ToString();
                 //sc = e.MessageString[1].ToString();

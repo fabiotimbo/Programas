@@ -12,11 +12,11 @@ Type=4
 [mru-list]
 1=P41_48MHz.c
 [Opened Files]
-1=..\..\..\programas\datalogger\datalogger01.c
-2=..\..\..\programas\sdcard\cartao_flat.c
-3=..\..\..\programas\Firmware Universal_Elipse_Scada\universal_48MHz\universal.c
+1=..\..\..\programas\Firmware Universal_Elipse_Scada\universal.c
+2=..\..\..\programas\Firmware Universal_Elipse_Scada\universal_48MHz\universal.c
+3=P41_48MHz_invertido.c
 4=P41_48MHz.c
-5=P41.c
+5=
 6=
 [Units]
 Count=1
