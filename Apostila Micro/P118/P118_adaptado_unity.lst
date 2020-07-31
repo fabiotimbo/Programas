@@ -1,16 +1,16 @@
-CCS PCH C Compiler, Version 5.007, 61971               22-jul-20 21:35
+CCS PCH C Compiler, Version 5.007, 61971               30-jul-20 19:38
 
-               Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P118\P118.lst
+               Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P118\P118_adaptado_unity.lst
 
-               ROM used:   360 bytes (1%)
-                           Largest free fragment is 32404
+               ROM used:   448 bytes (1%)
+                           Largest free fragment is 32316
                RAM used:   27 (1%) at main() level
                            31 (2%) worst case
                Stack used: 1 locations (0 in main + 1 for interrupts)
                Stack size: 31
 
 *
-0000:  GOTO   0130
+0000:  GOTO   0176
 *
 0008:  MOVWF  04
 000A:  MOVFF  FD8,05
@@ -32,7 +32,7 @@ CCS PCH C Compiler, Version 5.007, 61971               22-jul-20 21:35
 0048:  BTFSS  F9D.0
 004A:  GOTO   0054
 004E:  BTFSC  F9E.0
-0050:  GOTO   0096
+0050:  GOTO   00B8
 0054:  MOVFF  0E,00
 0058:  MOVFF  0F,01
 005C:  MOVFF  10,02
@@ -58,12 +58,31 @@ CCS PCH C Compiler, Version 5.007, 61971               22-jul-20 21:35
 .................... #include <18F4550.h> 
 .................... //////// Standard Header file for the PIC18F4550 device //////////////// 
 .................... #device PIC18F4550 
+0096:  TBLRD*+
+0098:  MOVF   FF5,F
+009A:  BZ    00B6
+009C:  MOVFF  FF6,1B
+00A0:  MOVFF  FF7,1C
+00A4:  MOVF   FF5,W
+00A6:  BTFSS  F9E.4
+00A8:  BRA    00A6
+00AA:  MOVWF  FAD
+00AC:  MOVFF  1B,FF6
+00B0:  MOVFF  1C,FF7
+00B4:  BRA    0096
+00B6:  RETURN 0
+*
+016E:  DATA 73,0D
+0170:  DATA 0A,00
+0172:  DATA 64,0D
+0174:  DATA 0A,00
 ....................  
 .................... #list 
 ....................  
 .................... #device adc=10 
 .................... #fuses HS,PLL5,CPUDIV1,nowdt ,USBDIV//Configuração dos fusíveis 48Mhz 
 .................... #use delay(clock=20000000) 
+.................... #use rs232(baud=9600,parity=N,xmit=PIN_C6,rcv=PIN_C7,bits=8) 
 .................... const int32 tm=60536; 
 .................... boolean estado_anterior=0; 
 .................... #int_timer1 
@@ -72,148 +91,177 @@ CCS PCH C Compiler, Version 5.007, 61971               22-jul-20 21:35
 .................... static boolean led=1,led2=1; 
 .................... static unsigned int32 n; 
 .................... set_timer1(tm+get_timer1()); 
-0096:  MOVF   FCE,W
-0098:  MOVFF  FCF,03
-009C:  ADDLW  78
-009E:  MOVWF  1B
-00A0:  MOVLW  EC
-00A2:  ADDWFC FCF,W
-00A4:  CLRF   1D
-00A6:  BCF    FD8.2
-00A8:  BTFSC  FD8.0
-00AA:  INCF   1D,F
-00AC:  MOVWF  FCF
-00AE:  MOVFF  1B,FCE
+*
+00B8:  MOVF   FCE,W
+00BA:  MOVFF  FCF,03
+00BE:  ADDLW  78
+00C0:  MOVWF  1B
+00C2:  MOVLW  EC
+00C4:  ADDWFC FCF,W
+00C6:  CLRF   1D
+00C8:  BCF    FD8.2
+00CA:  BTFSC  FD8.0
+00CC:  INCF   1D,F
+00CE:  MOVWF  FCF
+00D0:  MOVFF  1B,FCE
 .................... n++; 
-00B2:  MOVLW  01
-00B4:  ADDWF  17,F
-00B6:  BTFSC  FD8.0
-00B8:  INCF   18,F
-00BA:  BTFSC  FD8.2
-00BC:  INCF   19,F
-00BE:  BTFSC  FD8.2
-00C0:  INCF   1A,F
-.................... if (n==5) 
-00C2:  MOVF   17,W
-00C4:  SUBLW  05
-00C6:  BNZ   00FC
-00C8:  MOVF   18,F
-00CA:  BNZ   00FC
-00CC:  MOVF   19,F
-00CE:  BNZ   00FC
-00D0:  MOVF   1A,F
-00D2:  BNZ   00FC
+00D4:  MOVLW  01
+00D6:  ADDWF  17,F
+00D8:  BTFSC  FD8.0
+00DA:  INCF   18,F
+00DC:  BTFSC  FD8.2
+00DE:  INCF   19,F
+00E0:  BTFSC  FD8.2
+00E2:  INCF   1A,F
+.................... if (n==20) 
+00E4:  MOVF   17,W
+00E6:  SUBLW  14
+00E8:  BNZ   013A
+00EA:  MOVF   18,F
+00EC:  BNZ   013A
+00EE:  MOVF   19,F
+00F0:  BNZ   013A
+00F2:  MOVF   1A,F
+00F4:  BNZ   013A
 .................... { 
 .................... n=0; 
-00D4:  CLRF   1A
-00D6:  CLRF   19
-00D8:  CLRF   18
-00DA:  CLRF   17
+00F6:  CLRF   1A
+00F8:  CLRF   19
+00FA:  CLRF   18
+00FC:  CLRF   17
 .................... if ((input(pin_b0)==0))  
-00DC:  BSF    F93.0
-00DE:  BTFSC  F81.0
-00E0:  BRA    00FC
+00FE:  BSF    F93.0
+0100:  BTFSC  F81.0
+0102:  BRA    013A
 .................... { 
 .................... led=!led;//divide a frequência por 2 poque passa só meio período ligado 
-00E2:  BTG    16.1
+0104:  BTG    16.1
 .................... output_bit(led1,led); 
-00E4:  BTFSC  16.1
-00E6:  BRA    00EC
-00E8:  BCF    F8C.1
-00EA:  BRA    00EE
-00EC:  BSF    F8C.1
-00EE:  BCF    F95.1
+0106:  BTFSC  16.1
+0108:  BRA    010E
+010A:  BCF    F8C.1
+010C:  BRA    0110
+010E:  BSF    F8C.1
+0110:  BCF    F95.1
 .................... output_bit(mpasso,led); 
-00F0:  BTFSC  16.1
-00F2:  BRA    00F8
-00F4:  BCF    F8C.2
-00F6:  BRA    00FA
-00F8:  BSF    F8C.2
-00FA:  BCF    F95.2
+0112:  BTFSC  16.1
+0114:  BRA    011A
+0116:  BCF    F8C.2
+0118:  BRA    011C
+011A:  BSF    F8C.2
+011C:  BCF    F95.2
+.................... if (led2==0) {printf("s\r\n");} 
+011E:  BTFSC  16.2
+0120:  BRA    012C
+0122:  MOVLW  6E
+0124:  MOVWF  FF6
+0126:  MOVLW  01
+0128:  MOVWF  FF7
+012A:  RCALL  0096
+.................... if (led2==1) {printf("d\r\n");} 
+012C:  BTFSS  16.2
+012E:  BRA    013A
+0130:  MOVLW  72
+0132:  MOVWF  FF6
+0134:  MOVLW  01
+0136:  MOVWF  FF7
+0138:  RCALL  0096
+....................  
+....................  
 .................... }} 
 .................... if (input(pin_b1)==0) 
-00FC:  BSF    F93.1
-00FE:  BTFSC  F81.1
-0100:  BRA    0104
+013A:  BSF    F93.1
+013C:  BTFSC  F81.1
+013E:  BRA    0142
 .................... { 
 .................... estado_anterior=1; 
-0102:  BSF    16.0
+0140:  BSF    16.0
 .................... } 
 .................... if((input(pin_b1)==1)&&(estado_anterior==1)) 
-0104:  BSF    F93.1
-0106:  BTFSS  F81.1
-0108:  BRA    012A
-010A:  BTFSS  16.0
-010C:  BRA    012A
+0142:  BSF    F93.1
+0144:  BTFSS  F81.1
+0146:  BRA    0168
+0148:  BTFSS  16.0
+014A:  BRA    0168
 .................... { 
 .................... estado_anterior=0; 
-010E:  BCF    16.0
+014C:  BCF    16.0
 .................... led2=!led2; 
-0110:  BTG    16.2
+014E:  BTG    16.2
 .................... output_bit(dir,led2); 
-0112:  BTFSC  16.2
-0114:  BRA    011A
-0116:  BCF    F8C.3
-0118:  BRA    011C
-011A:  BSF    F8C.3
-011C:  BCF    F95.3
+0150:  BTFSC  16.2
+0152:  BRA    0158
+0154:  BCF    F8C.3
+0156:  BRA    015A
+0158:  BSF    F8C.3
+015A:  BCF    F95.3
 .................... output_bit(led0,led2); 
-011E:  BTFSC  16.2
-0120:  BRA    0126
-0122:  BCF    F8C.0
-0124:  BRA    0128
-0126:  BSF    F8C.0
-0128:  BCF    F95.0
+015C:  BTFSC  16.2
+015E:  BRA    0164
+0160:  BCF    F8C.0
+0162:  BRA    0166
+0164:  BSF    F8C.0
+0166:  BCF    F95.0
 .................... } 
 ....................  
 ....................  
-012A:  BCF    F9E.0
-012C:  GOTO   0054
+0168:  BCF    F9E.0
+016A:  GOTO   0054
 .................... } 
 .................... void main() 
-0130:  CLRF   FF8
-0132:  BCF    FD0.7
-0134:  BSF    07.7
-0136:  BCF    16.0
-0138:  BSF    16.1
-013A:  BSF    16.2
-013C:  MOVF   FC1,W
-013E:  ANDLW  C0
-0140:  IORLW  0F
-0142:  MOVWF  FC1
-0144:  MOVLW  07
-0146:  MOVWF  FB4
-0148:  CLRF   17
-014A:  CLRF   18
-014C:  CLRF   19
-014E:  CLRF   1A
+*
+0176:  CLRF   FF8
+0178:  BCF    FD0.7
+017A:  BSF    07.7
+017C:  BSF    FB8.3
+017E:  MOVLW  08
+0180:  MOVWF  FAF
+0182:  MOVLW  02
+0184:  MOVWF  FB0
+0186:  MOVLW  A6
+0188:  MOVWF  FAC
+018A:  MOVLW  90
+018C:  MOVWF  FAB
+018E:  BCF    16.0
+0190:  BSF    16.1
+0192:  BSF    16.2
+0194:  MOVF   FC1,W
+0196:  ANDLW  C0
+0198:  IORLW  0F
+019A:  MOVWF  FC1
+019C:  MOVLW  07
+019E:  MOVWF  FB4
+01A0:  CLRF   17
+01A2:  CLRF   18
+01A4:  CLRF   19
+01A6:  CLRF   1A
 .................... { 
 .................... port_b_pullups(TRUE); 
-0150:  BCF    FF1.7
+01A8:  BCF    FF1.7
 .................... output_d(0); 
-0152:  CLRF   F95
-0154:  CLRF   F8C
+01AA:  CLRF   F95
+01AC:  CLRF   F8C
 .................... enable_interrupts(GLOBAL); 
-0156:  MOVLW  C0
-0158:  IORWF  FF2,F
+01AE:  MOVLW  C0
+01B0:  IORWF  FF2,F
 .................... enable_interrupts(INT_timer1); 
-015A:  BSF    F9D.0
+01B2:  BSF    F9D.0
 .................... setup_timer_1(T1_INTERNAL|T1_DIV_BY_2); 
-015C:  MOVLW  95
-015E:  MOVWF  FCD
+01B4:  MOVLW  95
+01B6:  MOVWF  FCD
 .................... set_timer1(tm);                                              
-0160:  MOVLW  EC
-0162:  MOVWF  FCF
-0164:  MOVLW  78
-0166:  MOVWF  FCE
+01B8:  MOVLW  EC
+01BA:  MOVWF  FCF
+01BC:  MOVLW  78
+01BE:  MOVWF  FCE
 .................... while(true) 
 .................... {  
-0168:  BRA    0168
+01C0:  BRA    01C0
 ....................  
 .................... } 
 .................... } 
 ....................  
-016A:  SLEEP 
+01C2:  SLEEP 
 
 Configuration Fuses:
    Word  1: CC24   PLL5 CPUDIV1 USBDIV HS FCMEN IESO

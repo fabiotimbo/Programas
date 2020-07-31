@@ -1,3 +1,5 @@
-      Memory usage:   ROM=1%      RAM=1% - 2%
-      0 Errors,  0 Warnings.
-Build Successful.
+*** Error 132 "P118.c" Line 26(29,30): STDOUT not defined (may be missing #USE RS232)  ::
+*** Error 132 "P118.c" Line 27(29,30): STDOUT not defined (may be missing #USE RS232)  ::
+*** Error 173 "P118.c" Line 45(6,10): Functions may not be nested
+*** Error 79 "P118.c" Line 57(1,2): Expect }
+*** Error 79 "P118.c" Line 57(1,2): Expect }

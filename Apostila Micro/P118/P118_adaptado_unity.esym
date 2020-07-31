@@ -1,7 +1,7 @@
-D G "__PCH__" 0 0 ""5.007""
-D G "__DEVICE__" 0 0 ""
-D G "__DATE__" 0 0 ""22-jul-20""
-D G "__TIME__" 0 0 ""21:35:10""
+D G "__PCH__" 0 61 ""5.007""
+D G "__DEVICE__" 0 61 "4550"
+D G "__DATE__" 0 61 ""30-jul-20""
+D G "__TIME__" 0 61 ""19:38:08""
 D G "led0" 0 1 "pin_d0"
 D G "led1" 0 2 "pin_d1"
 D G "mpasso" 0 3 "pin_d2"
@@ -904,14 +904,14 @@ d G "INT_EEPROM" 1 815 "0x00A010"
 d G "INT_OSCF" 1 816 "0x00A080"
 d G "INT_SPP" 1 817 "0x009D80"
 d G "INT_USB" 1 818 "0x00A020"
-V G "tm" 0 9 "int32" `634 
-V G "estado_anterior" 0 10 "int1" `636 
-F G "funcao_tempo" 0 13 "void()" `637 
-V L "led" 0 14 "int1" `638 
-V L "led2" 0 14 "int1" `639 
-V L "n" 0 15 "int32" `640 
-C L "funcao_tempo" 0 23 1 "FUNCTION"
-F G "MAIN" 0 42 "void()" `641 
+V G "tm" 0 10 "int32" `638 
+V G "estado_anterior" 0 11 "int1" `640 
+F G "funcao_tempo" 0 14 "void()" `641 
+V L "led" 0 15 "int1" `642 
+V L "led2" 0 15 "int1" `643 
+V L "n" 0 16 "int32" `644 
+C L "funcao_tempo" 0 24 1 "FUNCTION"
+F G "MAIN" 0 47 "void()" `648 
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1
@@ -1044,3 +1044,10 @@ F B "spi_data_is_in2" 0 0
 F B "brownout_enable" 1 0
 F B "delay_ms" 1 0
 F B "delay_us" 1 0
+F B "putchar" 1 2
+F B "puts" 1 2
+F B "getch" 0 1
+F B "gets" 1 3
+F B "kbhit" 0 1
+F B "set_uart_speed" 1 3
+F B "setup_uart" 1 3
