@@ -1,0 +1,28 @@
+#define vermelho pin_d0
+#define amarelo pin_d1
+#define verde pin_d2
+#include <18F4550.h>
+#device adc=10
+#fuses HS, NOWDT, PUT, BROWNOUT, NOLVP, CPUDIV1,PLL5,USBDIV //Configuração dos fusíveis
+#use delay(clock=20000000)
+
+
+void main()
+{
+port_b_pullups(TRUE);
+while(true)
+{  
+if ((input(pin_b0)==0)&&(input(pin_b1)==0))
+{
+output_low(vermelho);
+delay_ms(3000);
+output_high(amarelo);
+output_low(verde);
+delay_ms(2000);
+output_high(vermelho);
+output_low(amarelo);
+delay_ms(5000);
+}
+}
+}
+

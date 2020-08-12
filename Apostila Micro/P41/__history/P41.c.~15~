@@ -1,0 +1,20 @@
+#define led0 pin_d0
+#define led1 pin_d1
+#include <18F4550.h>
+#device adc=10
+#fuses HS, NOWDT, PUT, BROWNOUT, NOLVP, CPUDIV1,PLL5,USBDIV //Configuração dos fusíveis
+#use delay(clock=20000000)
+
+
+void main()
+{
+port_b_pullups(TRUE);
+while(true)
+{  
+if ((input(pin_b0)==0)&&(input(pin_b1)==0))
+{output_high(led0);}
+else
+{output_low(led0);}
+}
+}
+

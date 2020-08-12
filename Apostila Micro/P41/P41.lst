@@ -1,4 +1,4 @@
-CCS PCH C Compiler, Version 5.007, 61971               26-abr-20 19:57
+CCS PCH C Compiler, Version 5.007, 61971               11-ago-20 21:40
 
                Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P41\P41.lst
 
@@ -405,7 +405,6 @@ CCS PCH C Compiler, Version 5.007, 61971               26-abr-20 19:57
 0318:  BRA    02CE
 ....................  
 031A:  SLEEP 
-....................  
 
 Configuration Fuses:
    Word  1: CC24   PLL5 CPUDIV1 USBDIV HS FCMEN IESO

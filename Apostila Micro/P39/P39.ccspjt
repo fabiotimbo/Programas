@@ -11,6 +11,11 @@ Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers
 Type=4
 [mru-list]
 1=P39.c
+[Opened Files]
+1=..\..\..\programas\assembler\pisca_led\pisca.c
+2=P39.c
+3=..\..\..\..\..\Dispositivos e Microcontroladores\2020.1\micro\Remoto\atividades\atv1_venicius.c
+4=
 [Units]
 Count=1
 1=P39 (main)
