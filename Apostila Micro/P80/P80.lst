@@ -1,6 +1,6 @@
-CCS PCH C Compiler, Version 5.007, 61971               29-dez-19 11:32
+CCS PCH C Compiler, Version 5.007, 61971               04-out-20 15:10
 
-               Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Microcontroladores e dispositivos periféricos\Programas apostila oficiais\P80\P80.lst
+               Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P80\P80.lst
 
                ROM used:   406 bytes (1%)
                            Largest free fragment is 32358
@@ -64,7 +64,7 @@ CCS PCH C Compiler, Version 5.007, 61971               29-dez-19 11:32
 .................... #fuses HS, NOWDT, PUT, BROWNOUT, NOLVP, CPUDIV1,PLL5,USBDIV 
 .................... #use delay(clock=20000000)  
 .................... unsigned int var[] = {0b1,0b10,0b100}; 
-.................... unsigned int16 tempos[] = {1250,3000,4000}; 
+.................... unsigned int16 tempos[] = {2500,4375,5000}; 
 .................... unsigned int *lampadas=var; 
 .................... #int_timer0  
 .................... void funcao_tempo()  
@@ -178,17 +178,17 @@ CCS PCH C Compiler, Version 5.007, 61971               29-dez-19 11:32
 015A:  MOVWF  17
 015C:  MOVLW  04
 015E:  MOVWF  18
-0160:  MOVLW  E2
+0160:  MOVLW  C4
 0162:  MOVWF  19
-0164:  MOVLW  04
+0164:  MOVLW  09
 0166:  MOVWF  1A
-0168:  MOVLW  B8
+0168:  MOVLW  17
 016A:  MOVWF  1B
-016C:  MOVLW  0B
+016C:  MOVLW  11
 016E:  MOVWF  1C
-0170:  MOVLW  A0
+0170:  MOVLW  88
 0172:  MOVWF  1D
-0174:  MOVLW  0F
+0174:  MOVLW  13
 0176:  MOVWF  1E
 0178:  CLRF   21
 017A:  CLRF   22

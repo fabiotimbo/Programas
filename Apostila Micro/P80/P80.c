@@ -6,7 +6,7 @@
 #fuses HS, NOWDT, PUT, BROWNOUT, NOLVP, CPUDIV1,PLL5,USBDIV
 #use delay(clock=20000000) 
 unsigned int var[] = {0b1,0b10,0b100};
-unsigned int16 tempos[] = {1250,3000,4000};
+unsigned int16 tempos[] = {2500,4375,5000};
 unsigned int *lampadas=var;
 #int_timer0 
 void funcao_tempo() 

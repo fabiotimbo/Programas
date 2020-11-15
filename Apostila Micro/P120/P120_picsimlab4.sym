@@ -1,0 +1,134 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004-007 lines
+008     curr_line
+009     opcao
+00A-00D ad1
+00E     value
+00F-012 lm
+013-016 ad0
+017-01A @PRINTF_L32U_654.P1
+017-01A @FTOSD.P2
+017     executarModo.op
+017     @PSTRINGCN_654.P1
+017     lcd_init.i
+017-018 @ITOF.P1
+017-01A @MULFF.P2
+017     MAIN.@SCRATCH1
+018     lcd_init.@SCRATCH1
+018     executarModo.@SCRATCH1
+018     @PSTRINGC_654.@SCRATCH1
+018     @PSTRINGCN_654.@SCRATCH1
+019     @PSTRINGC_654.@SCRATCH2
+019     @PSTRINGCN_654.@SCRATCH2
+01B-01E @MULFF.P1
+01B     @FTOSD.@SCRATCH1
+01B     @PRINTF_L32U_654.@SCRATCH1
+01C     @PRINTF_L32U_654.@SCRATCH2
+01D     @PRINTF_L32U_654.@SCRATCH3
+01E     @PRINTF_L32U_654.@SCRATCH4
+01F     @MULFF.@SCRATCH1
+01F     @PRINTF_L32U_654.@SCRATCH5
+020     @MULFF.@SCRATCH2
+020     @PRINTF_L32U_654.@SCRATCH6
+021     @MULFF.@SCRATCH3
+021     @PRINTF_L32U_654.@SCRATCH7
+022     @PRINTF_L32U_654.@SCRATCH8
+023-026 @DIV3232.P1
+023     lcd_putc.c
+024     @delay_ms1.P1
+024     lcd_gotoxy.x
+025     lcd_gotoxy.y
+026     lcd_gotoxy.address
+027-02A @DIV3232.P1
+027     lcd_gotoxy.@SCRATCH1
+028     lcd_send_byte.address
+029     lcd_send_byte.n
+02A     lcd_send_byte.@SCRATCH1
+02B     lcd_send_nibble.nibble
+02B     @DIV3232.@SCRATCH1
+02C     @DIV3232.@SCRATCH2
+02D     @DIV3232.@SCRATCH3
+02E     @DIV3232.@SCRATCH4
+02F     @DIV3232.@SCRATCH5
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  LCD_INIT_STRING.call
+000014  LCD_INIT_STRING.data
+000018  @const665.call
+000022  @const667.call
+000032  @const668.call
+000042  @const674.call
+00004E  @const675.call
+000054  @const683.call
+000068  @const684.call
+000076  @delay_ms1
+00009C  lcd_send_nibble
+0000E4  lcd_send_byte
+000120  lcd_init
+00017A  lcd_gotoxy
+0001A0  lcd_putc
+0001E6  @PSTRINGC_654
+000206  executarModo
+000288  @ITOF
+0002C0  @MULFF
+0003B4  @FTOSD
+0003F4  @PSTRINGCN_654
+000414  @DIV3232
+0004A2  @PRINTF_L32U_654
+000548  MAIN
+000548  @cinit1
+00056E  @cinit2
+
+Project Directory:
+    C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P120\
+
+Project Files:
+    P120_picsimlab4.c                                       [11-ago-20 23:33  CRC=D9A69250]
+    ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
+    ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\flex_lcd.c [20-jan-20 21:20  CRC=7F7A79FC]
+
+Source signature=79F37426
+
+Units:
+    P120_picsimlab4 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   P120_picsimlab4.xsym
+    Errors:      P120_picsimlab4.err
+    Ext Symbols: P120_picsimlab4.esym
+    INHX32:      P120_picsimlab4.hex
+    Symbols:     P120_picsimlab4.sym
+    List:        P120_picsimlab4.lst
+    Debug/COFF:  P120_picsimlab4.cof
+    Project:     P120_picsimlab4.ccspjt
+    Call Tree:   P120_picsimlab4.tre
+    Statistics:  P120_picsimlab4.STA

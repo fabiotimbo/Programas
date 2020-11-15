@@ -1,8 +1,8 @@
-D G "__PCH__" 0 0 ""5.007""
-D G "__DEVICE__" 0 0 ""
-D G "__DATE__" 0 0 ""29-dez-19""
-D G "__TIME__" 0 0 ""11:32:38"" "luz vermelha ligada no pino d2"
-c L "set_tris_a" 0 0 2 "FUNCTION"
+D G "__PCH__" 0 44 ""5.007""
+D G "__DEVICE__" 0 44 "4550"
+D G "__DATE__" 0 44 ""04-out-20""
+D G "__TIME__" 0 44 ""15:10:01"" "luz vermelha ligada no pino d2"
+c L "set_tris_a" 0 2 2 "FUNCTION"
 c L "set_tris_a" 1 1 22 "FUNCTION"
 v L "value" 1 36 "int8" `54 
 f B "set_tris_a" 1 36 "void(int8 value)" `53 

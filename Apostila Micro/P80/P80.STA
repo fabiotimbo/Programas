@@ -14,7 +14,7 @@ Stack size: 31
 Lines Stmts  %   Files
 ----- ----- ---  -----
    43    23 100  P80.c
-  821     0   0  ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
+  821     0   0  ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
 ----- -----
   864    23 Total
 

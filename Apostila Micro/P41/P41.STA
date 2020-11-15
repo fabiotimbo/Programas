@@ -21,26 +21,26 @@ Lines Stmts  %   Files
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
 0    188  12    8   490  5.8  funcao_tempo
-0     56   4    2   899  6.1  @ITOF
-0    120   8   10   899  6.1  @FLT
+0     56   4    2             @ITOF
+0    120   8   10             @FLT
 0    180  11    5   681  6.1  MAIN
-0     16   1    0   899  6.1  @const654
-0     34   2    2   899  6.1  @PSTRINGC_9600_31766_31767
-0     24   2    0   899  6.1  @const656
+0     16   1    0             @const654
+0     34   2    2             @PSTRINGC_9600_31766_31767
+0     24   2    0             @const656
 0     28   2    0             @const657
  Inline         0             @cinit1
 
 Program metrics:
-    Functions               7
+    Functions               2
     Statements              39
     Comments                145
-    Volume (V)              8218
-    Difficulty (D)          42.2
-    Effort to implement (E) 346873
-    Time to implement (T)   5 hours, 21 minutes
-    Est Delivered Bugs (B)  2
-    Cyclomatic Complexity   25
-    Maintainability (MI)    140
+    Volume (V)              1384
+    Difficulty (D)          11.1
+    Effort to implement (E) 15377
+    Time to implement (T)   14 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   5
+    Maintainability (MI)    118
 
  Segment     Used  Free
 -----------  ----  ----

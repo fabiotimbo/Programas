@@ -12,9 +12,9 @@ Type=4
 [mru-list]
 1=P41.c
 [Opened Files]
-1=..\..\..\programas\lcd_genérico\teste lcd.c
-2=..\..\..\programas\lcd_genérico\lcd_generico.h
-3=..\..\..\..\..\..\..\documentos\Estudo\Pic_udemy\display_lcd_ex2\LCD_ex2.c
+1=..\..\..\programas\elevador_virtual_unipolar\elevador.c
+2=P41.c
+3=
 4=..\..\..\..\..\..\..\documentos\Estudo\Pic_udemy\p120_alterado_picsimlab4\P120_picsimlab4.c
 5=..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\flex_lcd.c
 6=P41.c

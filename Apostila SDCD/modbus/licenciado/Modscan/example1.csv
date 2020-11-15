@@ -1,0 +1,87 @@
+//
+// Example Test Script for ModScan Application
+//                                            
+// Each Script entry consists of the following
+// comma delimited data fields:
+//
+// TEST NAME, NODE, FUNCTION, ADDRESS, LENGTH, DATA, CONTROL CODE
+//
+// Double slashes on the front of a line denote comments
+//
+// The following Control Codes may be used (i.e. last field on each line)
+//					\ -- Continue DATA fields on next line
+//					C -- Generate Bad CRC message to slave
+//					D -- Check response data quantity only, (ignore actual data)
+//					1 -- Expect Exception Response 01
+//					2 -- Expect Exception Response 02
+//					4 -- Expect Exception Response 04
+//					6 -- Expect Exception Response 06
+//					R -- Expect no Response
+//					T (default) -- Verify Response Data
+//    (Added March 2001)
+//					%d -- Verify Response Data using a percentage tolerance
+//						value around the expected data.  Only valid for
+//						modbus function codes 03 & 04 and only valid to
+//						to compare 16-bit register values.  May not be used
+//						with registers containing floats, longs, etc.
+// New Test:
+// 		Read a single Holding Register at address 100 and
+// 		compare its value to +/- 5% of 1000.  Test will pass
+//		if register contains data between 950 - 1050.
+//
+Analog Value Test,1,3,100,1,1000,%5   
+//
+// First Test:
+//		Write 20 Coils to Node 1 starting at address 100
+//		Data is alternating pattern of ones & zeros
+//      (DATA field consists of 32-bits and may be specified
+//		 as a decimal, hex or floating-point value)
+//
+Preset Multiple Coils,1,15,100,20,0xAAAAA,T   
+//
+//
+// Second Test:
+//		Verify results of first test by reading the pattern back
+//
+Verify Coil Status,1,1,100,20,0xAAAAA,T
+//
+// Third Test:
+//		Read 100 Input Status values
+//		ignore the data and only verify proper quantity returned
+//
+Verify Input Status,1,2,100,100,0,D
+//
+//
+// Forth Test:
+//		Check Slave Response to request for 1000 registers
+//		(Should probably generate an exception response)
+//
+Test Exception 2,1,3,100,1000,0,2
+//
+// Fifth Test:
+//		Check Slave Response to bad CRC
+//
+Invalid Request,1,1,100,1,0,C
+//
+// Sixth Test:
+//		Query an unknown device & expect no response
+//
+Query Device 73,73,1,1,1,0,R
+//
+// Seventh Test:
+//		Write 6 Holding Registers with data
+//      (Each floating point number represents
+//		 two registers  -- The NAME field on the
+//		 continuation line is ignored)
+//
+Write Floats,1,16,100,6,1.00,\
+,2.00,3.00,,,,T
+//
+// Eighth Test:
+//		Verify Test Seven by reading back the Registers
+//
+Read Floats,1,3,100,6,1.00,\
+,2.00,3.00,,,,T
+//
+// END OF SCRIPT
+end

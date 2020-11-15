@@ -1,0 +1,101 @@
+#define led0 pin_d0 
+#define led1 pin_d1 
+#define mpasso pin_d2
+#define dir pin_d3
+#include <18F4550.h>
+#device adc=10
+#fuses HS,PLL5,CPUDIV1,nowdt ,USBDIV//Configuração dos fusíveis 48Mhz
+#use delay(clock=20000000)
+#use rs232(baud=9600,parity=N,xmit=PIN_C6,rcv=PIN_C7,bits=8)
+const int32 tm=61606;
+int32 altura=2546;
+boolean estado_anterior=0,estado_anterior2=0,subindo=0,descendo=0;
+#int_timer1
+void funcao_tempo()
+{
+static boolean led=1,led2=1;
+static unsigned int32 n;
+set_timer1(tm+get_timer1());
+n++;
+if (n==2)
+{
+n=0;
+
+
+if (subindo==1) {
+altura++;
+if (altura>=2446){altura=0;subindo=0}
+else{
+output_bit(led1,led);
+output_bit(mpasso,led);
+
+printf("s\r\n");
+}}
+
+if (descendo==1) {
+altura--;
+if (altura<=0){altura=0;descendo=0}
+else {output_bit(led1,led);
+output_bit(mpasso,led);
+printf("d\r\n");
+}}
+
+
+}}
+
+
+
+
+
+
+
+if (input(pin_b3)==0)
+{
+estado_anterior=1;
+}
+if((input(pin_b1)==1)&&(estado_anterior==1))
+{
+estado_anterior=0;
+led2=1;
+output_bit(dir,led2);
+output_bit(led0,led2);
+subindo=1;
+}
+
+
+if (input(pin_b0)==0)
+{
+estado_anterior2=1;
+}
+if((input(pin_b0)==1)&&(estado_anterior2==1))
+{
+estado_anterior2=0;
+led2=0;
+output_bit(dir,led2);
+output_bit(led0,led2);
+descendo=1;
+}
+
+
+
+
+
+
+
+
+
+}
+void main()
+{
+port_b_pullups(TRUE);
+output_d(0);
+enable_interrupts(GLOBAL);
+enable_interrupts(INT_timer1);
+setup_timer_1(T1_INTERNAL|T1_DIV_BY_1);
+set_timer1(tm);                                             
+while(true)
+{ 
+
+}
+}
+

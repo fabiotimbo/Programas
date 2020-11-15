@@ -1,0 +1,634 @@
+
+1.	ModScan Overview
+	1.1	Document/View Architecture
+	1.2	Modbus Data Definition
+	1.3	Display Formats
+	1.4	Connecting to a Modbus Network
+		1.4.1	Direct Serial Connections
+		1.4.2	Modem Connections
+		1.4.3	Network Connections
+
+2.	Menu Commands
+	2.1	File menu
+	2.2	Connection menu
+	2.3	Setup menu
+	2.4	View menu
+	2.5	Window menu
+	2.6	Help menu
+
+3.	Tool & Status Bars
+	3.1	Toolbar
+	3.2	Format Selections
+	3.3	Status Bar
+
+4.	Testing Features
+	4.1	Writing Data to the Modbus
+	4.2	Message Counters
+	4.3	Observing Serial Traffic
+	4.4	Capturing Data to Text File
+	4.5	User Defined Commands
+	4.6	Scripts
+
+5. 	Using ModScan with a Database
+
+6.	Using OLE Automation
+	6.1	Overview
+	6.2	Automation Routines
+
+7.	Distribution/Registration
+
+	7.1	Pricing
+	7.2 	Licensing
+	7.3	Support
+	7.4	Other Products
+
+
+1.	ModScan Overview
+The ModScan application operates as a MODBUS mastermodbus_protocol device
+in either RTU or ASCII transmission modes.  ModScan may be used to access
+and modify data points contained in one or more MODBUS slave devices
+connected to the PC via a serial port, modem, or network.  ModScan supports
+the standard MODBUS message types 01-06, 15 & 16, as well as providing
+the ability for you to exercise special features of a slave device by
+transmitting custom command strings and observing the response.  ModScan
+is a useful test and diagnostic tool for verifying the proper slave
+response to MODBUS queries as well as being a low cost data collection
+tool for interfacing data into PC database and spreadsheet applications.
+
+1.1	Document/View Architecture
+ModScan utilizes the standard Windows Multiple-Document-Interface, (MDI),
+architecture for displaying modbus data to the user.  Each document
+represents a series, (array), of modbus data points identified by the 
+following parameters:
+
+Slave Device Address	Represents the physical device attached to 
+				the modbus network
+Data Type			Internal data representation, (i.e. input, coil, register)
+Data Address		Point address within the device
+Length			Number of points to scan/display
+
+
+Associated with each document is also a timer, which is used to
+periodically scan new data from the defined slave and refresh the
+display.  The modbus data definition is accessible from the ModScan
+menu or via edit controls in the top splitter window of the document
+display.  As new data is obtained from the slave device, it is 
+written to the bottom splitter window in one of several formats,
+depending upon your preference.  The size of each document display
+window is adjustable via the splitter control.
+
+1.2	Modbus Data Definition
+The upper half of each Document's View represents the data selected for
+display, (and possible capture to a historical data file).  In most
+testing applications, the ModScan will only be connected to a single
+modbus slave device, however, in a multidrop modbus network, there may
+be several devices accessible from a single connection.  The "Device Id"
+edit control allows you to specify the slave address for the source of
+the data.  Likewise, edit controls are available to select the point
+type, data address, and number of data points to access.
+
+Notice that the modbus protocol uses a 5-digit representation for the
+slave data address which infers the point-type.  For example, 
+INPUT STATUS values are always represented in the range 10001-19999:
+HOLDING REGISTERS are displayed as 40000-49999.  The ModScan application
+uses the standard notation for displaying data in the bottom splitter
+window, however the address specified in the upper splitter address edit 
+control assumes a 4-digit physical point address.  This address, coupled
+with the point-type specifier completely defines the data to be accessed
+in the slave device.
+
+The upper splitter window also contains two counters which are used to
+tally the number of data requests made from this document to the modbus
+connection and the number of valid slave responses received in reply.
+A button is available within the display which resets the counters
+associated with this document. 
+
+1.3	Display Formats
+As data is received from the slave device, it is displayed to the lower
+splitter view of the associated document.  Any errors incurred during
+the exchange of information will be displayed on the first line.  The
+font and colors used to display the data is configurable via the View,
+Config menu options.
+
+Modbus register data may be displayed in any of the following formats:
+
+Binary			Data displayed as 16 discrete values.
+Decimal			Ranges from -32767 to 32768
+Hexadecimal			0000-ffff
+Floating Point		IEEE Standard Floating Point Notation
+				(Requires two registers per value)
+Word-Swapped Floating Point
+				Inverted Floating Point used by some processors
+Double-Precision Floating Point
+				64-bit Floating Point Notation
+Word Swapped Dbl Precision
+				Inverted 64-bit Float Values
+
+
+1.4	Connecting to a Modbus Network
+
+1.4.1	Direct Serial Connections
+ModScan may be used to obtain data from modbus slave device connected
+to the PC in one of three basic physical arrangements.  The most common
+connection is via any one of the four available PC serial COM ports.
+ModScan uses the standard Win32 software drivers for communication with
+the COM ports, thereby providing support for any hardware serial boards
+which may be installed in the Windows operating system, (including RS-232,
+RS-485, etc.).  You have complete control over the operating characteristics
+of the serial connection by selecting the appropriate baud rate, parity,
+and control line, (handshaking), properties to match the slave device(s).
+
+1.4.2	Modem Connections
+In remote testing situations, the ModScan application may be used to
+communicate with a modbus network over a dedicated modem connection.
+ModScan supports the TAPI, (telephony application interface), standard 
+implemented in Windows and Windows NT.  If selected, the modem connection
+dialog allows you to enter a phone number for dialing.  Any TAPI device
+configured within the Windows operating system is available for use.
+
+It is also possible to connect via modem to a remote system utilizing
+the built-in networking characteristics of Windows '95 & NT.  To do this,
+you will need to configure the ModScan application to connect via a TCP/IP 
+connection which has been setup within Windows to automatically dial and
+establish a PPP connection with another Windows machine which is connected
+directly to the slave device(s) you wish to use.  In this case, ModScan
+operates as if it were using a network card connected directly to a
+modbus to tcp/ip bridge device.
+
+1.4.3	Network Connections
+ModScan allows modbus communications to occur over a TCP/IP network.
+This feature requires the use of a modbus to TCP/IP bridge device which
+can service network requests from the network and obtain the data from
+a connected slave device prior to responding to queries from the ModScan
+application.  A bridge device operates as a network server, providing
+support to numerous client applications distributed over the network.  
+WinTECH Software provides such a server for interfacing to a single
+serial modbus network.  Third-party vendors may provide various solutions
+for interfacing TCP/IP to modbus devices via other hardware, (i.e. modbus
+plus, etc.).  If the interfacing specification for these network bridge
+devices is available in the public domain, they may be included in future
+releases of the ModScan application.  If you have the need to use ModScan
+with a third-party vendor's equipment, please contact the WinTECH Software
+support line for consideration.
+
+
+2.	Menu Commands
+
+2.1	File menu
+The File Menu offers the following commands:
+
+New		Creates a new ModScan document.  Each document represents
+		a different block of data from a modbus device.
+Open		Opens an existing document.	
+Close		Closes an open document.
+Save		Saves an open document.
+SaveAs	Saves an open document to a specified file name.
+Print		Prints an open document.
+Print Setup	Selects a Printer and Printer connection.
+Exit		Exits ModScan
+
+2.2	Connection menu
+The Connect menu offers the following commands:
+
+Connect	Attaches the ModScan application to a modbus network,
+		enabling data collection.
+Disconnect	Detaches the ModScan application from the network,
+		freeing up resources for other Windows applications.
+
+2.3	Setup menu
+The Setup menu offers the following commands:
+
+Data Definition	Defines the document properties of the modbus data to
+			be scanned.
+Display Options	Allows the document data to be viewed in a variety of
+			formats.
+	Show Data	-This default view configuration displays data values 
+			as obtained from the modbus slave device.
+	Show Traffic-This option allows the serial data stream to be 
+			displayed in place of the data points.
+	Binary	-Register values are displayed as 16 discrete bits.
+	Decimal	-Register values are displayed in decimal format,
+			(-32767-32768).
+	Hex		-Register Values are displayed in Hexadecimal, 
+			(0000-ffff).
+	Floating Pt.-Register Values are displayed in floating point 
+			notation, (two registers are required).
+	Swapped FP	-Register Values are displayed in floating point 
+			notation, (least significant register first).
+	Dbl Float	-Register Values are displayed in floating point 
+			notation, (four registers, (64 bits), are required).
+	Swapped Dbl	-Register Values are displayed in floating point 
+			notation, (least significant register first).
+	Hex Addresses-Displays the addresses of data points in hexadecimal 
+			notation..
+Extended Options	Provides the ability to write data to a connected
+			slave device.
+	Force Coils	-Provides the ability to write coil values to a
+			designated slave device.
+	PreSet Registers-Provides the ability to write register values
+			to a designated slave device.
+	User Commands-Allows you to define and transmit a custom command.
+	Script Files-Begins execution of a test script.
+Text Capture	Begins collecting modbus data to a specified text file.
+Dbase Capture	Begins collecting data into a defined database table.
+Capture Off		Stops data collection.
+Reset Counters	Clears all modbus message status counters in all
+			documents.
+
+
+2.4	View menu
+The View menu offers the following commands:
+
+Toolbar	Shows or hides the toolbar.
+Status Bar	Shows or hides the status bar.
+Display Bar	Shows or hides the format toolbar used to select the  display 
+		format for modbus registers.
+Config	Allows you to customize the appearance of ModScan by 
+		selecting the colors and font used.
+	Background Color-Selects the color for the ModScan data display
+		splitter view.
+	Foreground Color-Selects the text color used to display data values.
+	Status Color-Selects the color used to show the modbus status line.
+	Font	-Selects the font.
+
+2.5	Window menu
+The Window menu offers the following commands, which enable you to
+arrange multiple views of multiple documents in the application window:
+
+New Window	Creates a new window that views the same document.
+Cascade	Arranges windows in an overlapped fashion.
+Tile		Arranges windows in non-overlapped tiles.
+Arrange Icons	Arranges icons of closed windows.
+Window 1, 2, Goes to specified window.
+
+2.6	Help menu
+The Help menu offers the following commands, which provide you assistance
+with this application: 
+
+Help Topics	Offers you an index to topics on which you can get help.
+About		Displays the version number of this application.
+
+3.	Tool & Status Bars
+
+3.1	Toolbar
+The toolbar is displayed across the top of the application window, below
+the menu bar.  The toolbar provides quick mouse access to many tools
+used in ModScan.  The toolbar is detachable and dockable by clicking the 
+mouse on the toolbar background and dragging it to the desired location
+within the ModScan application window.
+
+3.2	Format Selections
+The format toolbar is displayed across the top of the application window,
+below the menu bar.  The format toolbar provides quick mouse access to
+select the format used by ModScan to display the contents of modbus 
+registers.  The toolbar is detachable and dockable by clicking the mouse
+on the toolbar background and dragging it to the desired location within
+the ModScan application window.
+
+3.3	Status Bar
+The status bar is displayed at the bottom of the ModScan window.  To
+display or hide the status bar, use the Status Bar command in the View
+menu.
+
+The left area of the status bar describes actions of menu items as you
+use the arrow keys to navigate through menus.  This area similarly shows
+messages that describe the actions of toolbar buttons as you depress them, 
+before releasing them.  If after viewing the description of the toolbar
+button command you wish not to execute the command, then release the
+mouse button while the pointer is off the toolbar button.
+
+The right areas of the status bar indicate the message counters for
+all modbus message activity logged by the various active documents.
+
+4.	Testing Features
+
+4.1	Writing Data to the Modbus
+In order to write a MODBUS data point in a slave device, the communications
+with the device must first be initiated by scanning a series of data
+points by configuring the correct addressing information and initiating a 
+polling cycle.  Once the data is successfully  displayed, double-clicking
+the address/value portion of the screen will initiate a dialog box which
+allows the value to be changed.  If the polling cycle has been configured
+to represent coil addresses, double-clicking an address will initiate
+the Change Coil Dialog.
+
+The Change Register Dialog Box may be initiated by configuring the display
+to represent register data and double clicking on an address.
+
+Register values may be written using binary, decimal, hexadecimal, or
+floating-point notation, depending on the preference selection currently
+in effect.
+
+Pressing the Update Button in either write data point dialog will initiate
+the appropriate MODBUS write command, (05 or 06), during the next scheduled
+poll.
+
+
+4.2	Message Counters
+Each document maintains a counter for each query message transmitted to
+a modbus slave device and a counter for each correct response returned
+from the addresses slave.  The counters for a given document may be reset
+via a button control accessible via the upper, (data definition), splitter
+view.  A total count of all message counters from all active documents,
+(including any OLE Automation client documents), is displayed via the
+ModScan status bar.  
+
+4.3	Observing Serial Traffic
+Use this command to troubleshoot the connection to a particular modbus
+device.  When selected, this option will display the serial data exchanged
+between the ModScan application and the slave device associated with this
+document.  The data display splitter view will show data transmitted to
+the slave device and data returned from the slave device as communications
+occur during the normal polling cycle.  This will help to isolate a problem
+with possible misinterpretation of the modbus protocol.  Data will be
+displayed in either decimal or hex, depending upon the preference settings
+in effect for viewing the modbus data points.  Normal data collection,
+(if enabled), will continue.
+
+4.4	Capturing Data to Text File
+An optional feature of ModScan is its ability to capture modbus data
+directly into a database.  The Microsoft Jet database engine allows
+you to automatically update a compatible database with new data each
+time it is read by a ModScan document.  Included within a database,
+the data is easily accessible for manipulation and display of customized
+applications.  Even without this option, ModScan may be used to capture
+data to an ASCII text file , which may then be ported in an off-line
+fashion to your database.
+
+4.5	User Defined Commands
+Use this command to customize a command string for transmission to a
+designated modbus slave device.  This command is useful for observing
+the slave response to non-standard modbus queries or to test its reaction 
+to requests for data which may not be available.  The slave device should
+respond with the proper exception message if a master device asks for
+data which is beyond its address range or otherwise unavailable via the 
+modbus.  
+
+After transmitting the user string, ModScan will receive characters for
+the entire time-out period specified for the connection.  The results
+will then be updated to the appropriate edit control on the dialog box.
+User defined messages transmitted to a slave device will not show up
+in the ModScan message counters.
+
+
+4.6	Scripts
+
+Test scripts are one of the most unique features of ModScan.  They provide
+for production testing of modbus slave devices by allowing you to construct
+and execute a series of modbus messages to be sent to an attached slave
+device to verify and log the responses.  Script files are constructed
+using any word-processor or spreadsheet application to define the test
+message and expected slave response.  Response codes are available which
+determine how ModScan verifies the response against the user supplied data.
+For example, one script entry may request the contents of a group of known
+registers and expect the exact response to be returned.  Another script
+entry may complete successfully if the correct number of register values
+is returned, regardless of the contents.
+
+Test scripts may be executed one entry at a time, (single-step), or
+placed in a loop to execute continuously, logging the results to a text
+file for later observation by a test technician.
+
+If continuous execution of the script is desired, an auxiliary dialog box
+defines the looping characteristics.
+
+Test results are displayed as each script entry is executed.
+
+5. 	Using ModScan with a Database
+An optional feature of ModScan32 allows you to write data directly into
+a Microsoft compatible database such as Access.  ModScan uses the Jet
+database engine to provide an efficient exchange of information from an 
+addressed slave device into the designated database table.  Selecting the
+Dbase Capture menu ietm allows you to associate a ModScan document with
+a given database table.  The table will then be updated with new data
+each time the slave device is polled.  If you change the properties of
+the document while collection is enabled, updates to the database will
+temporarily cease.  Database updates will resume if the original 
+properties are restored.
+
+6.	Using OLE Automation
+
+6.1	Overview
+An optional feature of ModScan32 is the ability to access modbus data
+using OLE Automation routines.  This allows custom programs to be
+generated, (using Visual Basic, Excel Basic, etc.,), to interpret and
+format data according to your specific requirements. OLE Automation
+routinesHID_OLE_ROUTINES provide both read and write access to one or
+more modbus slave devices through the ModScan application.
+
+Using the OLE Automation routines is a very simple process:
+
+The VBA application links to the ModScan32.tlb file, (Type Library),
+which details the names for each automation procedure and its argument
+list.  From the Visual Basic development framework, this is done by
+selecting the menu item to include a custom type library and then
+browsing for ModScan32.tlb.  During the initial Form Load operation,
+the application must call Create Object as follows:
+
+CreateObject("ModScan32.Document")
+
+The application then creates one or more PollRequests which define an
+array of data points to be read from a modbus device.  Data defined by
+the Poll Request will be automatically scanned by the ModScan application
+on a 1 second basis.  (NOTE:  The ModScan application must be connected
+to the modbus network prior to the VBA application starting up.)
+
+The application uses the handle returned from the CreatePollRequest
+procedure to access, (read or write), a value within the defined array.
+
+During application termination, it must free the memory used by the
+ModScan application to maintain the data points by deleting any Poll
+Requests created.
+
+Refer to the Visual Basic Example application included with the ModScan 
+distribution files for additional details.
+
+6.2	Automation Routines
+
+The following OLE Automation routines are supported by ModScan32:
+
+short CreatePollRequest (short Device, long Address, short Length)
+	Arguments:
+		Device - Specifies the slave device address
+		Address - Specifies the data point address,
+				(in modbus master  (5 digit) format.
+				coil status addresses: 	00000-09999
+				input status addresses: 	10000-19999
+				input register addresses: 	30000-39999
+				holding register addresses: 	40000-49999
+		Length - Specifies the number of values included in the 
+			definition
+	Return Value:
+		Point Handle - Defines the array structure for future 
+				reads	& writes
+	Notes:
+		Sets up data structures within ModScan to begin polling the
+		specified data.  ModScan must be connected to the modbus
+		network prior to creating the data array.  CreatePollRequest
+		returns a non-zero value if the data structure was successfully
+		created, otherwise it returns 0.
+
+short ReadValue (short PointHandle, short Index, short  *pValue)
+	Arguments:
+		Point Handle -  refers to value returned from CreatePollRequest
+		Index - Specifies the index into the array structure
+		*pValue - is a pointer to a value to be returned.
+	Return Value:
+		Status - indicates whether or not the operation was completed
+				successfully
+	Notes:
+		Status will be MBUS_OK, (0), if the data point was
+		successfully read, otherwise, a  non-zero value 
+		indicates one of the defined error conditions.
+
+short WriteValue (short PointHandle, short Index, short  Value)
+	Arguments:
+		Point Handle -  refers to value returned from CreatePollRequest
+		Index - Specifies the index into the array structure
+		Value - is the data to be written.
+	Return Value:
+		Status - indicates whether or not the operation was completed
+				successfully
+	Notes:
+		Status will be MBUS_OK, (0), if the data point was successfully
+		queued for transmission to the addresses slave.  A zero return
+		value does not indicate successful transmission of the request
+		to the slave device.  The controlling application is responsible
+		for verifying the write operation by reading back the value
+		written.
+
+short ModifyPollRequest (short PointHandle, short Device, long Address, short Length)
+	Arguments:
+		Point Handle -  refers to value returned from CreatePollRequest
+		Device - Specifies the new slave device address
+		Address - Specifies the new data point address,(in modbus
+				master  (5 digit) format.
+		Length - Specifies the number of values included in the
+				definition
+	Return Value:
+		Status will be MBUS_OK, (0), if the data point was successfully
+		modified, otherwise, a  non-zero value indicates one of the
+		defined error conditions.
+	Notes:
+		Immediately after changing the parameters of a defined data
+		point, the current status of each value in the array will be
+		set to MBUS_UNINITIALIZED, indicating that the data does not
+		represent that defined 	by the device/address definition.
+		The first poll after modification should reflect the true
+		status of the addressed data array.
+
+short DeletePollRequest (short PointHandle)
+	Arguments:
+		Point Handle -  refers to value returned from CreatePollRequest
+	Return Value:
+		Status will be MBUS_OK, (0), if the data point was successfully
+		modified, otherwise, a  non-zero value indicates one of the
+		defined error conditions.
+	Notes:
+		This routine frees up memory allocated by ModScan to support
+		the defined Poll Request.
+
+
+
+7.	Distribution/Registration
+
+
+7.1	Pricing
+ModScan is a time-limited demo application which allows you to connect
+up to a modbus network and evaluate its operation without cost or
+obligation.  ModScan is designed to allow unrestricted use for a period
+of 3 1/2 minutes after successful communication is established with a
+slave device.  During this time, all features, including OLE and database
+support are active.  At the end of the demo period, ModScan will cease
+updating the views associated with each document.  You must restart
+the application to resume operation.
+
+The introductory registration price for the ModScan32 application is $64.95.
+Options to allow interfacing data to a database and/or OLE are additional.
+ou may print an order form by selecting a button control within the
+ModScan About box.  
+
+For the latest pricing and availability details, please refer to the
+WinTECH Software Web-Site at http://www.win-tech.com
+
+7.2 	Licensing
+ModScan32 is distributed as a shareware/demo-ware application which may
+be freely distributed without charge to prospective users.  Time limits
+and registration reminder screens are utilized to encourage registration.
+If you find this application useful, please refer it to your associates
+in the hope that they too may be able to use it.
+
+If you choose to register this application, you will receive a license
+certificate with access codes which will remove all program restrictions
+when entered into the initial sign-on dialog box.  You will only need to
+enter the registration codes once.  A single-user license allows the
+purchaser to use the application on as many different machines as desired,
+so long as there is only one copy of the application running at any given
+time.  Running multiple instances of the application on different machines
+at the same time is a violation of the copyright owned by WinTECH Software.
+Multiple-User and Site-licenses are available for installations which
+require multiple simultaneous use of the ModScan application.
+
+7.3	Support
+For the latest product and pricing information, please refer to the
+WinTECH Software Web-Site at:
+
+http://www.win-tech.com
+
+
+For technical support, please e-mail:   
+support@win-tech.com
+
+To place an order, fax to:  
+1-304-645-5966
+
+or mail:	
+WinTECH Software
+P.O. Box 907
+Lewisburg, WV  24901
+U.S.A.
+
+7.4	Other Products
+WinTECH Software offers the following products and services which may
+be of interest:
+
+Modbus Driver Dll's
+	Windows drivers are available to support either the modbus master
+	or modbus slave protocol on a PC.  These drivers are written in 'C'.
+	They are available in either 16 or 32-bit designs and include all 
+	modbus message formatting and interaction with the Windows serial
+	drivers.  A simple API is made available to your application, which
+	greatly simplifies its design and allows you to very easily 
+	implement a custom modbus design under Windows.  Each driver is
+	very reasonably priced, and comes with a sample Windows application
+	written in the Microsoft MFC.
+
+ModSim Windows Application
+	ModSim is the counterpart to ModScan and simulates the slave end of
+	the modbus protocol.  ModSim allows you to define a series of data
+	points, (representing one or more slave devices), and provides 
+	this data to an attached modbus master application.
+
+MNetSvr Windows Application
+	MNetSvr is a Windows application which serves as a Modbus to TCP/IP
+	gateway device for interfacing serial modbus slave devices to plant
+	networks.  MNetSvr utilizes the MBAP protocol standard, (Modbus
+	Application Programming Interface), to service multiple Modbus
+	Master Client applications requesting data from one or more slaves.
+
+Listen Windows Application
+	Listen is a fully functional serial data link monitor, (datascope),
+	which allows you to watch data traffic in real time as it travels
+	in two directions between communicating devices. Listen is highly
+	customizable in the way it displays data and uses standard COM
+	drivers for compatibility with any serial hardware configurable
+	under Windows.
+
+Socket Spy Windows Application
+	The Socket Spy allows you to monitor TCP/IP packets transferred
+	between a Windows application and the Windows Sockets dll.  Designed
+	as a design and trouble-shooting aide for communications developers,
+	Socket Spy provides full debugging data relative to all sockets
+	activity occurring within the target application. 
+
+--------------------------------------------------------------------------

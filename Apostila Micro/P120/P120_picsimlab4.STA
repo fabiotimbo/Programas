@@ -1,0 +1,67 @@
+
+ROM used:   1734/16384 (5%)
+            1734/16384 (5%) including unused fragments
+
+            1.4 Average locations per line
+            16.8 Average locations per statement
+
+RAM used:   24/2048 (1%) at main() level
+            48/2048 (2%) worst case
+
+Stack used: 0 worst case (0 in main + 0 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  106    53  51  P120_picsimlab4.c
+  821     0   0  ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
+  288    50  49  ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\flex_lcd.c
+----- -----
+ 1215   103 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     38   1    1             @delay_ms1
+0     20   1    0             @const640
+0     72   2    1   326  2.8  lcd_send_nibble
+0     60   2    3   235  3.8  lcd_send_byte
+0     90   3    2   380  4.7  lcd_init
+0     38   1    4   139  4.5  lcd_gotoxy
+0     70   2    1   321  5.1  lcd_putc
+0    130   4    2   629  3.8  executarModo
+0     10   0    0  1376  6.2  @const665
+0     32   1    2  1072  6.2  @PSTRINGC_654
+0     16   0    0             @const667
+0     16   0    0             @const668
+0    382  11    1   923  6.1  MAIN
+0     12   0    0  1072  6.2  @const674
+0      6   0    0  1072  6.2  @const675
+0     56   2    2  1072  6.2  @ITOF
+0    244   7   11  1104  6.2  @MULFF
+0     64   2    5  1376  6.2  @FTOSD
+0     20   1    0  1072  6.2  @const683
+0     14   0    0             @const684
+0     32   1    3             @PSTRINGCN_654
+0    142   4   13  1072  6.2  @DIV3232
+0    166   5   12  1072  6.2  @PRINTF_L32U_654
+ Inline         0  1072  6.2  @cinit1
+
+Program metrics:
+    Functions               18
+    Statements              103
+    Comments                212
+    Volume (V)              25229
+    Difficulty (D)          98.0
+    Effort to implement (E) 2472666
+    Time to implement (T)   38 hours, 10 minutes
+    Est Delivered Bugs (B)  6
+    Cyclomatic Complexity   73
+    Maintainability (MI)    63
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-07FFE  1730  31034  
+
+
+

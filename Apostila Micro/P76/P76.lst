@@ -1,4 +1,4 @@
-CCS PCH C Compiler, Version 5.007, 61971               15-jan-20 20:22
+CCS PCH C Compiler, Version 5.007, 61971               12-ago-20 10:32
 
                Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P76\P76.lst
 
@@ -130,8 +130,8 @@ CCS PCH C Compiler, Version 5.007, 61971               15-jan-20 20:22
 0104:  CLRF   19
 0106:  CLRF   1A
 .................... { 
-.................... setup_timer_0 (RTCC_DIV_64|RTCC_INTERNAL | RTCC_8_BIT ); //8 bits 
-0108:  MOVLW  C5
+.................... setup_timer_0 (RTCC_DIV_4|RTCC_INTERNAL | RTCC_8_BIT ); //8 bits 
+0108:  MOVLW  C1
 010A:  MOVWF  FD5
 .................... set_timer0(131);                                              
 010C:  CLRF   FD7
