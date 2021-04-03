@@ -1,0 +1,105 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004-005 angulo
+006-007 tempo2
+008-00B tempo
+00C     selecao
+00D     estado_anterior
+00E     n2
+00F     servo.angulo
+00F     MAIN.@SCRATCH1
+00F     @PSTRINGC_9600_31766_31767.@SCRATCH1
+010     @delay_ms1.P1
+010-011 @ITOF.P2
+010-013 @MULFF.P3
+010-013 @SFTOI.P4
+010     servo.@SCRATCH1
+010     @PSTRINGC_9600_31766_31767.@SCRATCH2
+011     @delay_us1.P1
+011     servo.@SCRATCH2
+012     servo.@SCRATCH3
+013     servo.@SCRATCH4
+014-017 @MULFF.P1
+014-017 @ADDFF.P2
+018-01B @ADDFF.P1
+018     @MULFF.@SCRATCH1
+019     @MULFF.@SCRATCH2
+01A     @MULFF.@SCRATCH3
+01C     @ADDFF.@SCRATCH1
+01D     @ADDFF.@SCRATCH2
+01E     @ADDFF.@SCRATCH3
+01F     @ADDFF.@SCRATCH4
+020     @ADDFF.@SCRATCH5
+021     @ADDFF.@SCRATCH6
+022     @ADDFF.@SCRATCH7
+023     @ADDFF.@SCRATCH8
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @WRITE_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  @const663.call
+000012  @const665.call
+000020  @const666.call
+00002C  @const667.call
+000038  @const668.call
+000044  @PSTRINGC_9600_31766_31767
+000066  @ITOF
+00009E  @MULFF
+000190  @ADDFF
+0003FC  @SFTOI
+000436  @delay_us1
+000450  @delay_ms1
+000478  servo
+00054E  MAIN
+00054E  @cinit1
+000578  @cinit2
+
+Project Directory:
+    C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P107\
+
+Project Files:
+    107.c                                                   [02-abr-21 21:09  CRC=2FC503E0]
+    ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
+
+Source signature=7274DF9C
+
+Units:
+    107 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   107.xsym
+    Errors:      107.err
+    Ext Symbols: 107.esym
+    INHX32:      107.hex
+    Symbols:     107.sym
+    List:        107.lst
+    Debug/COFF:  107.cof
+    Project:     107.ccspjt
+    Call Tree:   107.tre
+    Statistics:  107.STA

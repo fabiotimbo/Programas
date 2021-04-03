@@ -1,7 +1,7 @@
-D G "__PCH__" 0 0 ""5.007""
-D G "__DEVICE__" 0 0 ""
-D G "__DATE__" 0 0 ""30-dez-19""
-D G "__TIME__" 0 0 ""19:39:15""
+D G "__PCH__" 0 48 ""5.007""
+D G "__DEVICE__" 0 48 "4550"
+D G "__DATE__" 0 48 ""02-abr-21""
+D G "__TIME__" 0 48 ""21:09:48""
 D G "led1" 0 1 "pin_d1"
 c L "set_tris_a" 1 1 22 "FUNCTION"
 v L "value" 1 36 "int8" `54 
@@ -904,21 +904,17 @@ d G "INT_USB" 1 818 "0x00A020"
 V G "pos_min" 0 6 "int16" `638 
 V G "pos_max" 0 6 "int16" `640 
 C L "jump_to_irs" 0 6 1 "FUNCTION"
-V G "tm" 0 7 "int32" `642 
-V G "angulo" 0 8 "int16" `644 
-V G "tempo2" 0 8 "int16" `645 
-V G "tempo" 0 9 "float" `646 
-V G "selecao" 0 10 "int8" `647 
-V G "estado_anterior" 0 11 "int8" `648 
-V G "n" 0 11 "int8" `649 
-F G "funcao_tempo" 0 14 "void()" `650 
-V L "led" 0 14 "int1" `651 
-V L "n" 0 14 "int32" `652 
-V L "angulo" 0 18 "int8" `654 
-F G "servo" 0 19 "int8(int8 angulo)" `653 
+V G "angulo" 0 7 "int16" `642 
+V G "tempo2" 0 7 "int16" `643 
+V G "tempo" 0 8 "float" `644 
+V G "selecao" 0 9 "int8" `645 
+V G "estado_anterior" 0 10 "int8" `646 
+V G "n2" 0 10 "int8" `647 
+V L "angulo" 0 12 "int8" `649 
+F G "servo" 0 13 "void(int8 angulo)" `648 
 C L "servo" 0 6 1 "FUNCTION"
 C L "servo" 0 6 1 "FUNCTION"
-F G "MAIN" 0 26 "void()" `665 
+F G "MAIN" 0 26 "void()" `660  "port_b_pullups(TRUE);"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1
