@@ -1,0 +1,64 @@
+
+ROM used:   1298/16384 (4%)
+            1298/16384 (4%) including unused fragments
+
+            1.1 Average locations per line
+            18.5 Average locations per statement
+
+RAM used:   18/2048 (1%) at main() level
+            42/2048 (2%) worst case
+
+Stack used: 0 worst case (0 in main + 0 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   53    20  29  teste_ad_lcd16x4.c
+  821     0   0  ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
+  288    50  71  flex_lcd2.c
+----- -----
+ 1162    70 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     38   1    1             @delay_ms1
+0     20   1    0             @const640
+0     72   3    1   326  2.8  lcd_send_nibble
+0     60   2    3   235  3.8  lcd_send_byte
+0     90   3    2   380  4.7  lcd_init
+0     38   1    4   139  4.5  lcd_gotoxy
+0     70   3    1   321  5.1  lcd_putc
+0    304  12    1   552  2.8  MAIN
+0     20   1    0             @const665
+0     32   1    2             @PSTRINGC_654
+0     18   1    0             @const667
+0     56   2    2             @ITOF
+0     64   2    5             @FTOSD
+0     20   1    0             @const672
+0     20   1    0             @const673
+0     20   1    0             @const674
+0     14   1    0             @const675
+0     30   1    3             @PSTRINGCN_654
+0    142   5   13             @DIV3232
+0    166   6   12             @PRINTF_L32U_654
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               6
+    Statements              70
+    Comments                200
+    Volume (V)              2915
+    Difficulty (D)          21.7
+    Effort to implement (E) 63245
+    Time to implement (T)   59 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   7
+    Maintainability (MI)    122
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-07FFE  1294  31470  
+
+
+

@@ -1,0 +1,20 @@
+[PROJECT]
+Target=teste_ad_lcd.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.007
+Compiler=PCH
+[Target Data]
+FileList=teste_ad_lcd.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\programas\picsimlab4\teste ad_lcd\;C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\programas\picsimlab4\ad_lcd_picgenios\
+[teste_ad_lcd.c]
+Type=4
+[mru-list]
+1=teste_ad_lcd.c
+[Opened Files]
+1=teste_ad_lcd16x4.c
+2=teste_ad_lcd.c
+3=
+[Units]
+Count=1
+1=teste_ad_lcd (main)

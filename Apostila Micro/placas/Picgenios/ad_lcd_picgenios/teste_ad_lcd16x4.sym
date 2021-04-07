@@ -1,0 +1,121 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004-007 lines
+008     curr_line
+009-00C lm
+00D-010 ad0
+011-012 @ITOF.P1
+011     lcd_init.i
+011     @PSTRINGCN_654.P1
+011-014 @PRINTF_L32U_654.P2
+011-014 @FTOSD.P3
+011     MAIN.@SCRATCH1
+011     @PSTRINGC_654.@SCRATCH1
+012     lcd_init.@SCRATCH1
+012     @PSTRINGC_654.@SCRATCH2
+012     @PSTRINGCN_654.@SCRATCH1
+013     @PSTRINGCN_654.@SCRATCH2
+015     @FTOSD.@SCRATCH1
+015     @PRINTF_L32U_654.@SCRATCH1
+016     @PRINTF_L32U_654.@SCRATCH2
+017     @PRINTF_L32U_654.@SCRATCH3
+018     @PRINTF_L32U_654.@SCRATCH4
+019     @PRINTF_L32U_654.@SCRATCH5
+01A     @PRINTF_L32U_654.@SCRATCH6
+01B     @PRINTF_L32U_654.@SCRATCH7
+01C     @PRINTF_L32U_654.@SCRATCH8
+01D     lcd_putc.c
+01D-020 @DIV3232.P1
+01E     @delay_ms1.P1
+01E     lcd_gotoxy.x
+01F     lcd_gotoxy.y
+020     lcd_gotoxy.address
+021-024 @DIV3232.P1
+021     lcd_gotoxy.@SCRATCH1
+022     lcd_send_byte.address
+023     lcd_send_byte.n
+024     lcd_send_byte.@SCRATCH1
+025     lcd_send_nibble.nibble
+025     @DIV3232.@SCRATCH1
+026     @DIV3232.@SCRATCH2
+027     @DIV3232.@SCRATCH3
+028     @DIV3232.@SCRATCH4
+029     @DIV3232.@SCRATCH5
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @WRITE_PROGRAM_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  LCD_INIT_STRING.call
+000014  LCD_INIT_STRING.data
+000018  @const665.call
+00002C  @const667.call
+00003E  @const672.call
+000052  @const673.call
+000066  @const674.call
+00007A  @const675.call
+000088  @delay_ms1
+0000AE  lcd_send_nibble
+0000F6  lcd_send_byte
+000132  lcd_init
+00018C  lcd_gotoxy
+0001B2  lcd_putc
+0001F8  @PSTRINGC_654
+000218  @ITOF
+000250  @FTOSD
+000290  @PSTRINGCN_654
+0002AE  @DIV3232
+00033C  @PRINTF_L32U_654
+0003E2  MAIN
+0003E2  @cinit1
+000406  @cinit2
+
+Project Directory:
+    C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\programas\picsimlab4\ad_lcd_picgenios\
+
+Project Files:
+    teste_ad_lcd16x4.c                                      [07-abr-21 10:40  CRC=2C3B72DA]
+    ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
+    flex_lcd2.c                                             [14-set-20 16:55  CRC=7F7A79FC]
+
+Source signature=CC8854B0
+
+Units:
+    teste_ad_lcd16x4 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   teste_ad_lcd16x4.xsym
+    Errors:      teste_ad_lcd16x4.err
+    Ext Symbols: teste_ad_lcd16x4.esym
+    INHX32:      teste_ad_lcd16x4.hex
+    Symbols:     teste_ad_lcd16x4.sym
+    List:        teste_ad_lcd16x4.lst
+    Debug/COFF:  teste_ad_lcd16x4.cof
+    Project:     teste_ad_lcd16x4.ccspjt
+    Call Tree:   teste_ad_lcd16x4.tre
+    Statistics:  teste_ad_lcd16x4.STA
