@@ -1,0 +1,108 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004-007 lines
+008     curr_line
+009-00C n
+00D-010 @PRINTF_L32U_654.P1
+00D     lcd_init.i
+00D     MAIN.@SCRATCH1
+00D     @PSTRINGC_654.@SCRATCH1
+00E     lcd_init.@SCRATCH1
+00E     @PSTRINGC_654.@SCRATCH2
+011     @PRINTF_L32U_654.@SCRATCH1
+012     @PRINTF_L32U_654.@SCRATCH2
+013     @PRINTF_L32U_654.@SCRATCH3
+014     @PRINTF_L32U_654.@SCRATCH4
+015     @PRINTF_L32U_654.@SCRATCH5
+016     @PRINTF_L32U_654.@SCRATCH6
+017     @PRINTF_L32U_654.@SCRATCH7
+018     @PRINTF_L32U_654.@SCRATCH8
+019     lcd_putc.c
+019-01C @DIV3232.P1
+01A     @delay_ms1.P1
+01A     lcd_gotoxy.x
+01B     lcd_gotoxy.y
+01C     lcd_gotoxy.address
+01D-020 @DIV3232.P1
+01D     lcd_gotoxy.@SCRATCH1
+01E     lcd_send_byte.address
+01F     lcd_send_byte.n
+020     lcd_send_byte.@SCRATCH1
+021     lcd_send_nibble.nibble
+021     @DIV3232.@SCRATCH1
+022     @DIV3232.@SCRATCH2
+023     @DIV3232.@SCRATCH3
+024     @DIV3232.@SCRATCH4
+025     @DIV3232.@SCRATCH5
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  LCD_INIT_STRING.call
+000014  LCD_INIT_STRING.data
+000018  @const664.call
+000022  @const666.call
+000034  @const667.call
+000046  @delay_ms1
+00006C  lcd_send_nibble
+0000B4  lcd_send_byte
+0000F0  lcd_init
+00014A  lcd_gotoxy
+000170  lcd_putc
+0001B6  @PSTRINGC_654
+0001D6  @DIV3232
+000264  @PRINTF_L32U_654
+00030A  MAIN
+00030A  @cinit1
+000336  @cinit2
+
+Project Directory:
+    C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P10\
+
+Project Files:
+    teste_lcd.c                                             [28-abr-21 09:20  CRC=F47280C8]
+    ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
+    flex_lcd2.c                                             [14-set-20 16:55  CRC=7F7A79FC]
+
+Source signature=94BF629E
+
+Units:
+    teste_lcd (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   teste_lcd.xsym
+    Errors:      teste_lcd.err
+    Ext Symbols: teste_lcd.esym
+    INHX32:      teste_lcd.hex
+    Symbols:     teste_lcd.sym
+    List:        teste_lcd.lst
+    Debug/COFF:  teste_lcd.cof
+    Project:     teste_lcd.ccspjt
+    Call Tree:   teste_lcd.tre
+    Statistics:  teste_lcd.STA

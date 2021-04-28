@@ -1,0 +1,16 @@
+[PROJECT]
+Target=teste_lcd.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.007
+Compiler=PCH
+[Target Data]
+FileList=teste_lcd.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P10\
+[teste_lcd.c]
+Type=4
+[mru-list]
+1=teste_lcd.c
+[Units]
+Count=1
+1=teste_lcd (main)
