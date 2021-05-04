@@ -566,12 +566,6 @@ hlvdl3
 hlvdl3_bit
 i2c_dat
 i2c_dat_bit
-i2c_read
-i2c_read_bit
-i2c_start_
-i2c_start__bit
-i2c_stop_
-i2c_stop__bit
 ics_auto
 ics_off
 idleie
@@ -883,6 +877,7 @@ plusw1
 plusw2
 por
 por_bit
+port_to_tris_offset
 porta
 portb
 portc

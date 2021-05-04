@@ -58,7 +58,3 @@ Count=3
 File0=USB
 File1=FLASH
 File2=EEPROM
-[EXPANDED NODES]
-Node1=Sources
-Node2=Output Files
-Count=2
