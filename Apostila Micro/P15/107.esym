@@ -1,7 +1,7 @@
 D G "__PCH__" 0 48 ""5.007""
 D G "__DEVICE__" 0 48 "4550"
-D G "__DATE__" 0 48 ""02-abr-21""
-D G "__TIME__" 0 48 ""21:09:48""
+D G "__DATE__" 0 48 ""24-mai-21""
+D G "__TIME__" 0 48 ""09:22:19""
 D G "led1" 0 1 "pin_d1"
 c L "set_tris_a" 1 1 22 "FUNCTION"
 v L "value" 1 36 "int8" `54 
@@ -914,7 +914,7 @@ V L "angulo" 0 12 "int8" `649
 F G "servo" 0 13 "void(int8 angulo)" `648 
 C L "servo" 0 6 1 "FUNCTION"
 C L "servo" 0 6 1 "FUNCTION"
-F G "MAIN" 0 26 "void()" `660  "port_b_pullups(TRUE);"
+F G "MAIN" 0 26 "void()" `660 
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1

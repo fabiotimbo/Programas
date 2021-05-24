@@ -24,7 +24,7 @@ n2=20;
 }
 void main()
 {
-port_b_pullups(TRUE);
+//port_b_pullups(TRUE);
 while(true)
 {if (input(pin_b0)==0)
 {estado_anterior=1;}

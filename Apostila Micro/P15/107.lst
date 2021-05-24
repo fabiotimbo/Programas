@@ -1,9 +1,9 @@
-CCS PCH C Compiler, Version 5.007, 61971               02-abr-21 21:09
+CCS PCH C Compiler, Version 5.007, 61971               24-mai-21 09:22
 
-               Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P107\107.lst
+               Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P15\107.lst
 
-               ROM used:   1546 bytes (5%)
-                           Largest free fragment is 31222
+               ROM used:   1548 bytes (5%)
+                           Largest free fragment is 31220
                RAM used:   16 (1%) at main() level
                            36 (2%) worst case
                Stack used: 0 locations
@@ -555,9 +555,9 @@ CCS PCH C Compiler, Version 5.007, 61971               02-abr-21 21:09
 .................... void servo( int angulo) 
 .................... {          
 .................... do{ 
-.................... output_high(pin_d2); 
-0478:  BCF    F95.2
-047A:  BSF    F8C.2
+.................... output_high(pin_d4); 
+0478:  BCF    F95.4
+047A:  BSF    F8C.4
 .................... tempo=(angulo* 0.00555555555);//converte para % em float 
 047C:  CLRF   11
 047E:  MOVFF  0F,10
@@ -626,9 +626,9 @@ CCS PCH C Compiler, Version 5.007, 61971               02-abr-21 21:09
 0530:  BRA    0526
 0532:  MOVFF  06,11
 0536:  RCALL  0436
-.................... output_low (pin_d2); 
-0538:  BCF    F95.2
-053A:  BCF    F8C.2
+.................... output_low (pin_d4); 
+0538:  BCF    F95.4
+053A:  BCF    F8C.4
 .................... delay_ms(20); 
 053C:  MOVLW  14
 053E:  MOVWF  10
@@ -666,97 +666,98 @@ CCS PCH C Compiler, Version 5.007, 61971               02-abr-21 21:09
 0574:  MOVLW  07
 0576:  MOVWF  FB4
 .................... { 
-.................... //port_b_pullups(TRUE); 
+.................... port_b_pullups(TRUE); 
+0578:  BCF    FF1.7
 .................... while(true) 
 .................... {if (input(pin_b0)==0) 
-0578:  BSF    F93.0
-057A:  BTFSC  F81.0
-057C:  BRA    0582
+057A:  BSF    F93.0
+057C:  BTFSC  F81.0
+057E:  BRA    0584
 .................... {estado_anterior=1;} 
-057E:  MOVLW  01
-0580:  MOVWF  0D
+0580:  MOVLW  01
+0582:  MOVWF  0D
 .................... if((input(pin_b0)==1)&&(estado_anterior==1)) 
-0582:  BSF    F93.0
-0584:  BTFSS  F81.0
-0586:  BRA    059C
-0588:  DECFSZ 0D,W
-058A:  BRA    059C
+0584:  BSF    F93.0
+0586:  BTFSS  F81.0
+0588:  BRA    059E
+058A:  DECFSZ 0D,W
+058C:  BRA    059E
 .................... {estado_anterior=0;selecao=selecao+1;if (selecao>5) selecao=1;} 
-058C:  CLRF   0D
-058E:  MOVLW  01
-0590:  ADDWF  0C,F
-0592:  MOVF   0C,W
-0594:  SUBLW  05
-0596:  BC    059C
-0598:  MOVLW  01
-059A:  MOVWF  0C
+058E:  CLRF   0D
+0590:  MOVLW  01
+0592:  ADDWF  0C,F
+0594:  MOVF   0C,W
+0596:  SUBLW  05
+0598:  BC    059E
+059A:  MOVLW  01
+059C:  MOVWF  0C
 .................... if (selecao==1) 
-059C:  DECFSZ 0C,W
-059E:  BRA    05AE
+059E:  DECFSZ 0C,W
+05A0:  BRA    05B0
 .................... { printf(" Posicao 1  "); servo(0); } 
-05A0:  MOVLW  04
-05A2:  MOVWF  FF6
-05A4:  MOVLW  00
-05A6:  MOVWF  FF7
-05A8:  RCALL  0044
-05AA:  CLRF   0F
-05AC:  RCALL  0478
+05A2:  MOVLW  04
+05A4:  MOVWF  FF6
+05A6:  MOVLW  00
+05A8:  MOVWF  FF7
+05AA:  RCALL  0044
+05AC:  CLRF   0F
+05AE:  RCALL  0478
 .................... if (selecao==2) 
-05AE:  MOVF   0C,W
-05B0:  SUBLW  02
-05B2:  BNZ   05C4
+05B0:  MOVF   0C,W
+05B2:  SUBLW  02
+05B4:  BNZ   05C6
 .................... { printf(" Posicao 2  "); servo(45); } 
-05B4:  MOVLW  12
-05B6:  MOVWF  FF6
-05B8:  MOVLW  00
-05BA:  MOVWF  FF7
-05BC:  RCALL  0044
-05BE:  MOVLW  2D
-05C0:  MOVWF  0F
-05C2:  RCALL  0478
+05B6:  MOVLW  12
+05B8:  MOVWF  FF6
+05BA:  MOVLW  00
+05BC:  MOVWF  FF7
+05BE:  RCALL  0044
+05C0:  MOVLW  2D
+05C2:  MOVWF  0F
+05C4:  RCALL  0478
 .................... if (selecao==3) 
-05C4:  MOVF   0C,W
-05C6:  SUBLW  03
-05C8:  BNZ   05DA
+05C6:  MOVF   0C,W
+05C8:  SUBLW  03
+05CA:  BNZ   05DC
 .................... { printf(" Posicao 3"); servo(90); } 
-05CA:  MOVLW  20
-05CC:  MOVWF  FF6
-05CE:  MOVLW  00
-05D0:  MOVWF  FF7
-05D2:  RCALL  0044
-05D4:  MOVLW  5A
-05D6:  MOVWF  0F
-05D8:  RCALL  0478
+05CC:  MOVLW  20
+05CE:  MOVWF  FF6
+05D0:  MOVLW  00
+05D2:  MOVWF  FF7
+05D4:  RCALL  0044
+05D6:  MOVLW  5A
+05D8:  MOVWF  0F
+05DA:  RCALL  0478
 .................... if (selecao==4) 
-05DA:  MOVF   0C,W
-05DC:  SUBLW  04
-05DE:  BNZ   05F0
+05DC:  MOVF   0C,W
+05DE:  SUBLW  04
+05E0:  BNZ   05F2
 .................... { printf(" Posicao 4 "); servo(135);}                   
-05E0:  MOVLW  2C
-05E2:  MOVWF  FF6
-05E4:  MOVLW  00
-05E6:  MOVWF  FF7
-05E8:  RCALL  0044
-05EA:  MOVLW  87
-05EC:  MOVWF  0F
-05EE:  RCALL  0478
+05E2:  MOVLW  2C
+05E4:  MOVWF  FF6
+05E6:  MOVLW  00
+05E8:  MOVWF  FF7
+05EA:  RCALL  0044
+05EC:  MOVLW  87
+05EE:  MOVWF  0F
+05F0:  RCALL  0478
 .................... if (selecao==5) 
-05F0:  MOVF   0C,W
-05F2:  SUBLW  05
-05F4:  BNZ   0606
+05F2:  MOVF   0C,W
+05F4:  SUBLW  05
+05F6:  BNZ   0608
 .................... { printf(" Posicao 5 "); servo(180);} 
-05F6:  MOVLW  38
-05F8:  MOVWF  FF6
-05FA:  MOVLW  00
-05FC:  MOVWF  FF7
-05FE:  RCALL  0044
-0600:  MOVLW  B4
-0602:  MOVWF  0F
-0604:  RCALL  0478
-0606:  BRA    0578
+05F8:  MOVLW  38
+05FA:  MOVWF  FF6
+05FC:  MOVLW  00
+05FE:  MOVWF  FF7
+0600:  RCALL  0044
+0602:  MOVLW  B4
+0604:  MOVWF  0F
+0606:  RCALL  0478
+0608:  BRA    057A
 .................... }} 
 ....................  
-0608:  SLEEP 
+060A:  SLEEP 
 ....................  
 ....................  
 

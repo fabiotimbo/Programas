@@ -12,11 +12,11 @@ int  estado_anterior,n2=20;
 void servo( int angulo)
 {         
 do{
-output_high(pin_d4);
+output_high(pin_d2);
 tempo=(angulo* 0.00555555555);//converte para % em float
 tempo2=(tempo*(pos_max-pos_min)) + pos_min; //converte para tempo
 delay_us(tempo2);
-output_low (pin_d4);
+output_low (pin_d2);
 delay_ms(20);
 n2--;
 }while (n2>0);
@@ -24,7 +24,7 @@ n2=20;
 }
 void main()
 {
-port_b_pullups(TRUE);
+//port_b_pullups(TRUE);
 while(true)
 {if (input(pin_b0)==0)
 {estado_anterior=1;}
