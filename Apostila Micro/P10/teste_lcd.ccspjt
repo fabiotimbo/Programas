@@ -11,6 +11,12 @@ Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers
 Type=4
 [mru-list]
 1=teste_lcd.c
+[Opened Files]
+1=..\P11\teste_lcd_picgenios.c
+2=..\P12\P93.c
+3=teste_lcd.c
+4=..\P9\P86.c
+5=
 [Units]
 Count=1
 1=teste_lcd (main)

@@ -1,16 +1,16 @@
-CCS PCH C Compiler, Version 5.007, 61971               12-jan-20 09:27
+CCS PCH C Compiler, Version 5.007, 61971               23-mai-21 08:38
 
-               Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P112\P112.lst
+               Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P18\P112.lst
 
-               ROM used:   2570 bytes (8%)
-                           Largest free fragment is 30194
+               ROM used:   2558 bytes (8%)
+                           Largest free fragment is 30206
                RAM used:   72 (4%) at main() level
                            98 (5%) worst case
                Stack used: 1 locations (0 in main + 1 for interrupts)
                Stack size: 31
 
 *
-0000:  GOTO   0958
+0000:  GOTO   095A
 *
 0008:  MOVWF  04
 000A:  MOVFF  FD8,05
@@ -803,7 +803,7 @@ CCS PCH C Compiler, Version 5.007, 61971               12-jan-20 09:27
 092E:  BRA    092A
 0930:  RETURN 0
 0932:  CLRF   FEA
-0934:  MOVLW  48
+0934:  MOVLW  47
 0936:  MOVWF  FE9
 0938:  MOVF   FEF,W
 093A:  BZ    0956
@@ -820,7 +820,7 @@ CCS PCH C Compiler, Version 5.007, 61971               12-jan-20 09:27
 0950:  BRA    094E
 0952:  DECFSZ FEF,F
 0954:  BRA    093C
-0956:  RETURN 0
+0956:  GOTO   09DC (RETURN)
 .................... #use rs232(baud=9600, xmit=PIN_C6, rcv=PIN_C7, BRGH1OK) 
 .................... char selection; 
 .................... int32 a,n,valor,centena,dezena,unidade,calc; 
@@ -1073,115 +1073,108 @@ CCS PCH C Compiler, Version 5.007, 61971               12-jan-20 09:27
 .................... } 
 .................... void main() 
 *
-0958:  CLRF   FF8
-095A:  BCF    FD0.7
-095C:  BSF    07.7
-095E:  BSF    FB8.3
-0960:  MOVLW  08
-0962:  MOVWF  FAF
-0964:  MOVLW  02
-0966:  MOVWF  FB0
-0968:  MOVLW  A6
-096A:  MOVWF  FAC
-096C:  MOVLW  90
-096E:  MOVWF  FAB
-0970:  MOVF   FC1,W
-0972:  ANDLW  C0
-0974:  IORLW  0F
-0976:  MOVWF  FC1
-0978:  MOVLW  07
-097A:  MOVWF  FB4
+095A:  CLRF   FF8
+095C:  BCF    FD0.7
+095E:  BSF    07.7
+0960:  BSF    FB8.3
+0962:  MOVLW  08
+0964:  MOVWF  FAF
+0966:  MOVLW  02
+0968:  MOVWF  FB0
+096A:  MOVLW  A6
+096C:  MOVWF  FAC
+096E:  MOVLW  90
+0970:  MOVWF  FAB
+0972:  MOVF   FC1,W
+0974:  ANDLW  C0
+0976:  IORLW  0F
+0978:  MOVWF  FC1
+097A:  MOVLW  07
+097C:  MOVWF  FB4
 .................... {  setup_wdt(WDT_ON); 
-097C:  BSF    FD1.0
+097E:  BSF    FD1.0
 ....................    enable_interrupts (global); 
-097E:  MOVLW  C0
-0980:  IORWF  FF2,F
+0980:  MOVLW  C0
+0982:  IORWF  FF2,F
 ....................    enable_interrupts (int_rda); 
-0982:  BSF    F9D.5
+0984:  BSF    F9D.5
 ....................    printf ("teste...serial ok! \r\n"); 
-0984:  MOVLW  96
-0986:  MOVWF  FF6
-0988:  MOVLW  08
-098A:  MOVWF  FF7
-098C:  RCALL  08F6
+0986:  MOVLW  96
+0988:  MOVWF  FF6
+098A:  MOVLW  08
+098C:  MOVWF  FF7
+098E:  RCALL  08F6
 ....................    printf ("Envie p+angulo.\r\nExemplo:enviando p090, posiciona o servo em 90 graus\r\n\r\n"); 
-098E:  MOVLW  AC
-0990:  MOVWF  FF6
-0992:  MOVLW  08
-0994:  MOVWF  FF7
-0996:  RCALL  08F6
+0990:  MOVLW  AC
+0992:  MOVWF  FF6
+0994:  MOVLW  08
+0996:  MOVWF  FF7
+0998:  RCALL  08F6
 ....................    while(1) 
 ....................    {restart_wdt(); 
-0998:  CLRWDT
+099A:  CLRWDT
 ....................     while(a==1) 
-099A:  DECFSZ 17,W
-099C:  BRA    0A0A
-099E:  MOVF   18,F
-09A0:  BNZ   0A0A
-09A2:  MOVF   19,F
-09A4:  BNZ   0A0A
-09A6:  MOVF   1A,F
-09A8:  BNZ   0A0A
+099C:  DECFSZ 17,W
+099E:  BRA    09FE
+09A0:  MOVF   18,F
+09A2:  BNZ   09FE
+09A4:  MOVF   19,F
+09A6:  BNZ   09FE
+09A8:  MOVF   1A,F
+09AA:  BNZ   09FE
 ....................       { n=20; 
-09AA:  CLRF   1E
-09AC:  CLRF   1D
-09AE:  CLRF   1C
-09B0:  MOVLW  14
-09B2:  MOVWF  1B
+09AC:  CLRF   1E
+09AE:  CLRF   1D
+09B0:  CLRF   1C
+09B2:  MOVLW  14
+09B4:  MOVWF  1B
 ....................          do 
-....................          {  output_high(pin_d2); 
-09B4:  BCF    F95.2
-09B6:  BSF    F8C.2
+....................          {  output_high(pin_d4); 
+09B6:  BCF    F95.4
+09B8:  BSF    F8C.4
 ....................             delay_us(angulo); 
-09B8:  MOVFF  44,47
-09BC:  INCF   47,F
-09BE:  DECF   47,F
-09C0:  BTFSC  FD8.2
-09C2:  BRA    09CA
-09C4:  SETF   48
-09C6:  RCALL  0918
-09C8:  BRA    09BE
-09CA:  MOVFF  43,48
-09CE:  RCALL  0918
-....................             output_low(pin_d2); 
-09D0:  BCF    F95.2
-09D2:  BCF    F8C.2
+09BA:  MOVFF  44,47
+09BE:  INCF   47,F
+09C0:  DECF   47,F
+09C2:  BTFSC  FD8.2
+09C4:  BRA    09CC
+09C6:  SETF   48
+09C8:  RCALL  0918
+09CA:  BRA    09C0
+09CC:  MOVFF  43,48
+09D0:  RCALL  0918
+....................             output_low(pin_d4); 
+09D2:  BCF    F95.4
+09D4:  BCF    F8C.4
 ....................             delay_ms(20); 
-09D4:  MOVLW  14
-09D6:  MOVWF  48
-09D8:  RCALL  0932
+09D6:  MOVLW  14
+09D8:  MOVWF  47
+09DA:  BRA    0932
 ....................             n--; 
-09DA:  MOVLW  FF
-09DC:  ADDWF  1B,F
-09DE:  BTFSS  FD8.0
-09E0:  ADDWF  1C,F
-09E2:  BTFSS  FD8.0
-09E4:  ADDWF  1D,F
-09E6:  BTFSS  FD8.0
-09E8:  ADDWF  1E,F
+09DC:  MOVLW  FF
+09DE:  ADDWF  1B,F
+09E0:  BTFSS  FD8.0
+09E2:  ADDWF  1C,F
+09E4:  BTFSS  FD8.0
+09E6:  ADDWF  1D,F
+09E8:  BTFSS  FD8.0
+09EA:  ADDWF  1E,F
 ....................          } 
 ....................          while(n>0); 
-09EA:  MOVF   1B,F
-09EC:  BNZ   09B4
-09EE:  MOVF   1C,F
-09F0:  BNZ   09B4
-09F2:  MOVF   1D,F
-09F4:  BNZ   09B4
-09F6:  MOVF   1E,F
-09F8:  BNZ   09B4
-....................          delay_ms(1000); 
-09FA:  MOVLW  04
-09FC:  MOVWF  47
-09FE:  MOVLW  FA
-0A00:  MOVWF  48
-0A02:  RCALL  0932
-0A04:  DECFSZ 47,F
-0A06:  BRA    09FE
-0A08:  BRA    099A
+09EC:  MOVF   1B,F
+09EE:  BNZ   09B6
+09F0:  MOVF   1C,F
+09F2:  BNZ   09B6
+09F4:  MOVF   1D,F
+09F6:  BNZ   09B6
+09F8:  MOVF   1E,F
+09FA:  BNZ   09B6
+09FC:  BRA    099C
+....................          //delay_ms(1000); 
 ....................     }}} 
-0A0A:  BRA    0998
+09FE:  BRA    099A
 ....................  
-0A0C:  SLEEP 
+0A00:  SLEEP 
 ....................  
 ....................  
 

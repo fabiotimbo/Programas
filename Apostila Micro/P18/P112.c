@@ -33,14 +33,14 @@ void main()
     while(a==1)
       { n=20;
          do
-         {  output_high(pin_d2);
+         {  output_high(pin_d4);
             delay_us(angulo);
-            output_low(pin_d2);
+            output_low(pin_d4);
             delay_ms(20);
             n--;
          }
          while(n>0);
-         delay_ms(1000);
+         //delay_ms(1000);
     }}}
 
 

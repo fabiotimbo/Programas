@@ -1,0 +1,24 @@
+[PROJECT]
+Target=p13_com_lcd.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.007
+Compiler=PCH
+[Target Data]
+FileList=p13_com_lcd.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[p13_com_lcd.c]
+Type=4
+[mru-list]
+1=p13_com_lcd.c
+[Opened Files]
+1=..\P11\teste_lcd_picgenios.c
+2=..\P12\P93.c
+3=..\P10\teste_lcd.c
+4=..\P9\P86.c
+5=..\..\..\programas\robo scara programa\teste placa.c
+6=p13_com_lcd.c
+7=
+[Units]
+Count=1
+1=p13_com_lcd (main)

@@ -1,0 +1,8 @@
+>>> Warning 203 "p13_adaptado_picgenios.c" Line 28(1,1): Condition always TRUE
+>>> Warning 205 "p13_adaptado_picgenios.c" Line 42(1,1): Unsigned variable is never less than zero
+>>> Warning 205 "p13_adaptado_picgenios.c" Line 43(1,1): Unsigned variable is never less than zero
+>>> Warning 202 "p13_adaptado_picgenios.c" Line 20(13,17): Variable never used:   null
+>>> Warning 202 "p13_adaptado_picgenios.c" Line 22(16,17): Variable never used:   n
+      Memory usage:   ROM=5%      RAM=2% - 3%
+      0 Errors,  5 Warnings.
+Build Successful.

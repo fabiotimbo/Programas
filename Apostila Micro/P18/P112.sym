@@ -34,10 +34,10 @@
 03B-03E au
 03F-042 null
 043-046 angulo
+047     @delay_ms1.P1
 047     MAIN.@SCRATCH1
 047     @PSTRINGC_9600_31766_31767.@SCRATCH1
-048     @delay_ms1.P1
-048     @delay_us1.P2
+048     @delay_us1.P1
 048     @PSTRINGC_9600_31766_31767.@SCRATCH2
 049-04C @FTOSD.P1
 049-04C @PRINTF_L32U_9600_31766_31767.P2
@@ -122,15 +122,15 @@ ROM Allocation:
 0008F6  @PSTRINGC_9600_31766_31767
 000918  @delay_us1
 000932  @delay_ms1
-000958  @cinit1
-000958  MAIN
-00097C  @cinit2
+00095A  @cinit1
+00095A  MAIN
+00097E  @cinit2
 
 Project Directory:
-    C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P112\
+    C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P18\
 
 Project Files:
-    P112.c                                                  [12-jan-20 09:27  CRC=CF83BFBB]
+    P112.c                                                  [23-mai-21 08:38  CRC=CF83BFBB]
     ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
 
 Source signature=12339B77

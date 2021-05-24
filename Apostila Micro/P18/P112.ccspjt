@@ -12,8 +12,8 @@ Type=4
 [mru-list]
 1=P112.c
 [Opened Files]
-1=..\P95\P95.c
-2=P112.c
+1=P112.c
+2=
 3=..\..\..\programas\USB\firmware_simplificado\Placa USB genérica adaptado bootloader\facil1.c
 4=..\..\..\programas\Braço robótico\robo_modbus_celular.c
 5=

@@ -1,0 +1,6 @@
+>>> Warning 203 "p13_com_lcd.c" Line 14(1,1): Condition always TRUE
+>>> Warning 205 "p13_com_lcd.c" Line 29(1,1): Unsigned variable is never less than zero
+>>> Warning 205 "p13_com_lcd.c" Line 30(1,1): Unsigned variable is never less than zero
+      Memory usage:   ROM=5%      RAM=1% - 2%
+      0 Errors,  3 Warnings.
+Build Successful.

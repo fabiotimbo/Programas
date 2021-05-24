@@ -6,15 +6,15 @@ Compiler=PCH
 [Target Data]
 FileList=teste_lcd_picgenios.c
 [Directories]
-Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P11_X\
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P11_X\;C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P11\
 [teste_lcd_picgenios.c]
 Type=4
 [mru-list]
 1=teste_lcd_picgenios.c
 [Opened Files]
-1=..\..\..\programas\picsimlab4\ad_lcd_picgenios\teste_ad_lcd16x4.c
-2=..\..\..\programas\picsimlab4\teste_lcd\P120_picsimlab4.c
-3=teste_lcd_picgenios.c
+1=teste_lcd_picgenios.c
+2=..\P12\P93.c
+3=
 4=
 [Units]
 Count=1

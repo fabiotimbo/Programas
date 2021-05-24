@@ -1,0 +1,150 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004-007 lines
+008     curr_line
+009-00C u
+00D-010 d
+011-014 c
+015-018 null
+019-01C selection
+01D-020 n
+021-024 @PRINTF_L32U_654.P1
+021-024 @PRINTF_L32U_9600_31766_31767.P2
+021     @PSTRINGCN_654.P3
+021     @PSTRINGCN_9600_31766_31767.P4
+021     lcd_init.i
+021     MAIN.@SCRATCH1
+021     @PSTRINGC_654.@SCRATCH1
+021     @PSTRINGC_9600_31766_31767.@SCRATCH1
+022     lcd_init.@SCRATCH1
+022     MAIN.@SCRATCH2
+022     @PSTRINGC_654.@SCRATCH2
+022     @PSTRINGC_9600_31766_31767.@SCRATCH2
+022     @PSTRINGCN_9600_31766_31767.@SCRATCH1
+022     @PSTRINGCN_654.@SCRATCH1
+023     MAIN.@SCRATCH3
+023     @PSTRINGCN_9600_31766_31767.@SCRATCH2
+023     @PSTRINGCN_654.@SCRATCH2
+024     MAIN.@SCRATCH4
+025-028 @MUL3232.P1
+025     @PRINTF_L32U_9600_31766_31767.@SCRATCH1
+025     @PRINTF_L32U_654.@SCRATCH1
+026     @PRINTF_L32U_9600_31766_31767.@SCRATCH2
+026     @PRINTF_L32U_654.@SCRATCH2
+027     @PRINTF_L32U_9600_31766_31767.@SCRATCH3
+027     @PRINTF_L32U_654.@SCRATCH3
+028     @PRINTF_L32U_9600_31766_31767.@SCRATCH4
+028     @PRINTF_L32U_654.@SCRATCH4
+029-02C @MUL3232.P1
+029     @PRINTF_L32U_9600_31766_31767.@SCRATCH5
+029     @PRINTF_L32U_654.@SCRATCH5
+02A     @PRINTF_L32U_9600_31766_31767.@SCRATCH6
+02A     @PRINTF_L32U_654.@SCRATCH6
+02B     @PRINTF_L32U_9600_31766_31767.@SCRATCH7
+02B     @PRINTF_L32U_654.@SCRATCH7
+02C     @PRINTF_L32U_9600_31766_31767.@SCRATCH8
+02C     @PRINTF_L32U_654.@SCRATCH8
+02D     lcd_putc.c
+02D-030 @DIV3232.P1
+02D     @MUL3232.@SCRATCH1
+02E     @delay_ms1.P1
+02E     lcd_gotoxy.x
+02E     @MUL3232.@SCRATCH2
+02F     lcd_gotoxy.y
+02F     @MUL3232.@SCRATCH3
+030     lcd_gotoxy.address
+030     @MUL3232.@SCRATCH4
+031-034 @DIV3232.P1
+031     lcd_gotoxy.@SCRATCH1
+031     @MUL3232.@SCRATCH5
+032     lcd_send_byte.address
+032     @MUL3232.@SCRATCH6
+033     lcd_send_byte.n
+034     lcd_send_byte.@SCRATCH1
+035     lcd_send_nibble.nibble
+035     @DIV3232.@SCRATCH1
+036     @DIV3232.@SCRATCH2
+037     @DIV3232.@SCRATCH3
+038     @DIV3232.@SCRATCH4
+039     @DIV3232.@SCRATCH5
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  LCD_INIT_STRING.call
+000014  LCD_INIT_STRING.data
+000018  @const669.call
+00002C  @const671.call
+00003A  @const672.call
+00006C  @const677.call
+00007C  @const685.call
+000092  @const686.call
+0000A0  @const687.call
+0000AE  @delay_ms1
+0000D4  lcd_send_nibble
+00011C  lcd_send_byte
+000158  lcd_init
+0001B2  lcd_gotoxy
+0001D8  lcd_putc
+00021E  @PSTRINGC_654
+00023E  @PSTRINGC_9600_31766_31767
+000260  @MUL3232
+0002B4  @PSTRINGCN_9600_31766_31767
+0002D6  @DIV3232
+000364  @PRINTF_L32U_9600_31766_31767
+00040C  @PSTRINGCN_654
+00042C  @PRINTF_L32U_654
+0004D2  MAIN
+0004D2  @cinit1
+0004FE  @cinit2
+
+Project Directory:
+    C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P13\
+
+Project Files:
+    p13_adaptado_picgenios.c                                [09-mai-21 22:53  CRC=9905210B]
+    ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
+    flex_lcd2.c                                             [14-set-20 16:55  CRC=7F7A79FC]
+
+Source signature=395202E1
+
+Units:
+    p13_adaptado_picgenios (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   p13_adaptado_picgenios.xsym
+    Errors:      p13_adaptado_picgenios.err
+    Ext Symbols: p13_adaptado_picgenios.esym
+    INHX32:      p13_adaptado_picgenios.hex
+    Symbols:     p13_adaptado_picgenios.sym
+    List:        p13_adaptado_picgenios.lst
+    Debug/COFF:  p13_adaptado_picgenios.cof
+    Project:     p13_adaptado_picgenios.ccspjt
+    Call Tree:   p13_adaptado_picgenios.tre
+    Statistics:  p13_adaptado_picgenios.STA
