@@ -1,0 +1,131 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016.0   estado_anterior
+016.1   funcao_tempo.led
+016.2   funcao_tempo.led2
+017-01A valor
+01B-042 a
+043-046 temp
+047     pos
+048-04B funcao_tempo.n
+04C-04F @PRINTF_L32U_9600_31766_31767.P1
+04C     serial.@SCRATCH1
+04C     funcao_tempo.@SCRATCH1
+04C     @PSTRINGC_9600_31766_31767.@SCRATCH1
+04D     serial.@SCRATCH2
+04D     funcao_tempo.@SCRATCH2
+04D     @PSTRINGC_9600_31766_31767.@SCRATCH2
+04E     serial.@SCRATCH3
+04E     funcao_tempo.@SCRATCH3
+04F     serial.@SCRATCH4
+04F     funcao_tempo.@SCRATCH4
+050     serial.@SCRATCH5
+050     @PRINTF_L32U_9600_31766_31767.@SCRATCH1
+051     serial.@SCRATCH6
+051     @PRINTF_L32U_9600_31766_31767.@SCRATCH2
+052     serial.@SCRATCH7
+052     @PRINTF_L32U_9600_31766_31767.@SCRATCH3
+053     serial.@SCRATCH8
+053     @PRINTF_L32U_9600_31766_31767.@SCRATCH4
+054-057 @MUL3232.P1
+054     @PRINTF_L32U_9600_31766_31767.@SCRATCH5
+055     @PRINTF_L32U_9600_31766_31767.@SCRATCH6
+056     @PRINTF_L32U_9600_31766_31767.@SCRATCH7
+057     @PRINTF_L32U_9600_31766_31767.@SCRATCH8
+058-05B @DIV3232.P1
+058-05B @MUL3232.P2
+05C-05F @DIV3232.P1
+05C     @MUL3232.@SCRATCH1
+05D     @MUL3232.@SCRATCH2
+05E     @MUL3232.@SCRATCH3
+05F     @MUL3232.@SCRATCH4
+060     @MUL3232.@SCRATCH5
+060     @DIV3232.@SCRATCH1
+061     @MUL3232.@SCRATCH6
+061     @DIV3232.@SCRATCH2
+062     @DIV3232.@SCRATCH3
+063     @DIV3232.@SCRATCH4
+064     @DIV3232.@SCRATCH5
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @WRITE_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0000A2  @MUL3232
+0000F6  @DIV3232
+000184  @PRINTF_L32U_9600_31766_31767
+00022C  serial
+0003C8  @PSTRINGC_9600_31766_31767
+0003EA  funcao_tempo
+0004A0  @const660.call
+0004A4  @const662.call
+0004A8  MAIN
+0004A8  @cinit1
+0004D4  @cinit2
+
+Project Directory:
+    C:\Users\IFMaker\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P20\
+
+Project Files:
+    P118_adaptado_unity_fb.c                                [24-jun-21 14:24  CRC=267850EC]
+    ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
+
+Source signature=69282CA8
+
+Units:
+    P118_adaptado_unity_fb (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   P118_adaptado_unity_fb.xsym
+    Errors:      P118_adaptado_unity_fb.err
+    Ext Symbols: P118_adaptado_unity_fb.esym
+    INHX32:      P118_adaptado_unity_fb.hex
+    Symbols:     P118_adaptado_unity_fb.sym
+    List:        P118_adaptado_unity_fb.lst
+    Debug/COFF:  P118_adaptado_unity_fb.cof
+    Project:     P118_adaptado_unity_fb.ccspjt
+    Call Tree:   P118_adaptado_unity_fb.tre
+    Statistics:  P118_adaptado_unity_fb.STA
