@@ -14,7 +14,7 @@ if (n==5)
 led=!led;
 output_bit(led1,led);
 }
- if ((input(pin_b0)==0)) 
+ if ((input(pin_b0)==0)&&(input(pin_b1)==0)) 
 {output_high(led0);}
 ad1=read_adc();
 delay_us(100);

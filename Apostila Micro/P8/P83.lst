@@ -1,16 +1,16 @@
-CCS PCH C Compiler, Version 5.007, 61971               17-ago-20 11:05
+CCS PCH C Compiler, Version 5.007, 61971               05-jul-21 10:43
 
-               Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P83\P83.lst
+               Filename:   C:\Users\IFMaker\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P8\P83.lst
 
-               ROM used:   586 bytes (2%)
-                           Largest free fragment is 32178
+               ROM used:   580 bytes (2%)
+                           Largest free fragment is 32184
                RAM used:   32 (2%) at main() level
                            46 (2%) worst case
                Stack used: 1 locations (0 in main + 1 for interrupts)
                Stack size: 31
 
 *
-0000:  GOTO   01FA
+0000:  GOTO   01F4
 *
 0008:  MOVWF  04
 000A:  MOVFF  FD8,05
@@ -79,7 +79,7 @@ CCS PCH C Compiler, Version 5.007, 61971               17-ago-20 11:05
 00C4:  DECF   00,F
 00C6:  BRA    00BA
 00C8:  BCF    01.7
-00CA:  GOTO   01B6 (RETURN)
+00CA:  GOTO   01B0 (RETURN)
 00CE:  MOVFF  25,2C
 00D2:  MOVF   29,W
 00D4:  XORWF  2C,F
@@ -132,7 +132,7 @@ CCS PCH C Compiler, Version 5.007, 61971               17-ago-20 11:05
 013C:  MOVWF  FD8
 013E:  BRA    0142
 0140:  BCF    FD8.0
-0142:  GOTO   01EE (RETURN)
+0142:  GOTO   01E8 (RETURN)
 ....................  
 .................... #list 
 ....................  
@@ -185,110 +185,107 @@ CCS PCH C Compiler, Version 5.007, 61971               17-ago-20 11:05
 018E:  BSF    F8C.1
 0190:  BCF    F95.1
 .................... } 
-....................  if ((input(pin_b0)==0)&&(input(pin_b1)==0))  
+....................  if ((input(pin_b0)==0))  
 0192:  BSF    F93.0
 0194:  BTFSC  F81.0
-0196:  BRA    01A2
-0198:  BSF    F93.1
-019A:  BTFSC  F81.1
-019C:  BRA    01A2
+0196:  BRA    019C
 .................... {output_high(led0);} 
-019E:  BCF    F95.0
-01A0:  BSF    F8C.0
+0198:  BCF    F95.0
+019A:  BSF    F8C.0
 .................... ad1=read_adc(); 
-01A2:  BSF    FC2.1
-01A4:  BTFSC  FC2.1
-01A6:  BRA    01A4
-01A8:  MOVFF  FC4,03
-01AC:  MOVFF  FC3,24
-01B0:  MOVFF  FC4,25
-01B4:  BRA    0096
-01B6:  MOVFF  03,23
-01BA:  MOVFF  02,22
-01BE:  MOVFF  01,21
-01C2:  MOVFF  00,20
+019C:  BSF    FC2.1
+019E:  BTFSC  FC2.1
+01A0:  BRA    019E
+01A2:  MOVFF  FC4,03
+01A6:  MOVFF  FC3,24
+01AA:  MOVFF  FC4,25
+01AE:  BRA    0096
+01B0:  MOVFF  03,23
+01B4:  MOVFF  02,22
+01B8:  MOVFF  01,21
+01BC:  MOVFF  00,20
 .................... delay_us(100); 
-01C6:  MOVLW  A6
-01C8:  MOVWF  00
-01CA:  DECFSZ 00,F
-01CC:  BRA    01CA
-01CE:  NOP   
+01C0:  MOVLW  A6
+01C2:  MOVWF  00
+01C4:  DECFSZ 00,F
+01C6:  BRA    01C4
+01C8:  NOP   
 *
-01F4:  BCF    F9E.0
-01F6:  GOTO   0054
+01EE:  BCF    F9E.0
+01F0:  GOTO   0054
 ....................  if (ad1<200)  { output_low(led0);  }} 
 *
-01D0:  MOVFF  23,27
-01D4:  MOVFF  22,26
-01D8:  MOVFF  21,25
-01DC:  MOVFF  20,24
-01E0:  CLRF   2B
-01E2:  CLRF   2A
-01E4:  MOVLW  48
-01E6:  MOVWF  29
-01E8:  MOVLW  86
-01EA:  MOVWF  28
-01EC:  BRA    00CE
-01EE:  BNC   01F4
-01F0:  BCF    F95.0
-01F2:  BCF    F8C.0
+01CA:  MOVFF  23,27
+01CE:  MOVFF  22,26
+01D2:  MOVFF  21,25
+01D6:  MOVFF  20,24
+01DA:  CLRF   2B
+01DC:  CLRF   2A
+01DE:  MOVLW  48
+01E0:  MOVWF  29
+01E2:  MOVLW  86
+01E4:  MOVWF  28
+01E6:  BRA    00CE
+01E8:  BNC   01EE
+01EA:  BCF    F95.0
+01EC:  BCF    F8C.0
 .................... void main() 
 *
-01FA:  CLRF   FF8
-01FC:  BCF    FD0.7
-01FE:  BSF    07.7
-0200:  BSF    16.0
-0202:  MOVF   FC1,W
-0204:  ANDLW  C0
-0206:  IORLW  0F
-0208:  MOVWF  FC1
-020A:  MOVLW  07
-020C:  MOVWF  FB4
-020E:  CLRF   17
-0210:  CLRF   18
-0212:  CLRF   19
-0214:  CLRF   1A
+01F4:  CLRF   FF8
+01F6:  BCF    FD0.7
+01F8:  BSF    07.7
+01FA:  BSF    16.0
+01FC:  MOVF   FC1,W
+01FE:  ANDLW  C0
+0200:  IORLW  0F
+0202:  MOVWF  FC1
+0204:  MOVLW  07
+0206:  MOVWF  FB4
+0208:  CLRF   17
+020A:  CLRF   18
+020C:  CLRF   19
+020E:  CLRF   1A
 .................... {float ad1; 
 .................... char selection; 
 .................... port_b_pullups(TRUE); 
-0216:  BCF    FF1.7
+0210:  BCF    FF1.7
 .................... enable_interrupts(GLOBAL); 
-0218:  MOVLW  C0
-021A:  IORWF  FF2,F
+0212:  MOVLW  C0
+0214:  IORWF  FF2,F
 .................... enable_interrupts(INT_timer1); 
-021C:  BSF    F9D.0
+0216:  BSF    F9D.0
 .................... setup_timer_1(T1_INTERNAL|T1_DIV_BY_8); 
-021E:  MOVLW  B5
-0220:  MOVWF  FCD
+0218:  MOVLW  B5
+021A:  MOVWF  FCD
 .................... set_timer1(3036);                                              
-0222:  MOVLW  0B
-0224:  MOVWF  FCF
-0226:  MOVLW  DC
-0228:  MOVWF  FCE
+021C:  MOVLW  0B
+021E:  MOVWF  FCF
+0220:  MOVLW  DC
+0222:  MOVWF  FCE
 .................... setup_adc_ports(AN0); 
-022A:  MOVF   FC1,W
-022C:  ANDLW  C0
-022E:  IORLW  0E
-0230:  MOVWF  FC1
+0224:  MOVF   FC1,W
+0226:  ANDLW  C0
+0228:  IORLW  0E
+022A:  MOVWF  FC1
 .................... SETUP_ADC(ADC_CLOCK_INTERNAL); 
-0232:  MOVF   FC0,W
-0234:  ANDLW  C0
-0236:  IORLW  07
-0238:  MOVWF  FC0
-023A:  BSF    FC0.7
-023C:  BSF    FC2.0
+022C:  MOVF   FC0,W
+022E:  ANDLW  C0
+0230:  IORLW  07
+0232:  MOVWF  FC0
+0234:  BSF    FC0.7
+0236:  BSF    FC2.0
 .................... SET_ADC_CHANNEL(0); 
-023E:  MOVLW  00
-0240:  MOVWF  01
-0242:  MOVF   FC2,W
-0244:  ANDLW  C3
-0246:  IORWF  01,W
-0248:  MOVWF  FC2
+0238:  MOVLW  00
+023A:  MOVWF  01
+023C:  MOVF   FC2,W
+023E:  ANDLW  C3
+0240:  IORWF  01,W
+0242:  MOVWF  FC2
 .................... while(true) 
 .................... { }} 
-024A:  BRA    024A
+0244:  BRA    0244
 ....................  
-024C:  SLEEP 
+0246:  SLEEP 
 ....................  
 
 Configuration Fuses:
