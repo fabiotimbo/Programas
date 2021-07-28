@@ -1,0 +1,66 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+005     main.selection
+006     @PSTRINGC_9600_31766_31767.@SCRATCH1
+007     @PSTRINGC_9600_31766_31767.@SCRATCH2
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  @const642.call
+000014  @const644.call
+00002A  @const645.call
+000042  @PSTRINGC_9600_31766_31767
+000064  @cinit1
+000064  main
+000086  @cinit2
+
+Project Directory:
+    C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Blog\conversor_ap\teste serial CCS pic18f4550\
+
+Project Files:
+    serial_CCS.c                                            [28-jul-21 08:48  CRC=F1F73D2B]
+    ..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
+
+Source signature=34A718E7
+
+Units:
+    serial_CCS (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   serial_CCS.xsym
+    Errors:      serial_CCS.err
+    Ext Symbols: serial_CCS.esym
+    INHX32:      serial_CCS.hex
+    Symbols:     serial_CCS.sym
+    List:        serial_CCS.lst
+    Debug/COFF:  serial_CCS.cof
+    Project:     serial_CCS.ccspjt
+    Call Tree:   serial_CCS.tre
+    Statistics:  serial_CCS.STA

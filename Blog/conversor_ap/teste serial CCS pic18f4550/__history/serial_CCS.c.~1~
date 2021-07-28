@@ -8,16 +8,16 @@ void main()
 while(true)
    {
 char selection;
-printf("\r\nSelecione:\r\n");//Pequeno menu com as opções
+printf("\r\nSelecione:\r\n");
 printf(" 1) L - ligar led \r\n");
 printf(" 2) D - desligar led \r\n");
 do    {
       selection=getc();
-      } while (!((selection=='L')||(selection=='D')));//Espera que o caractere enviado seja "L" ou "D".
-if (selection=='L')// se o valor enviado for igual a "L" liga o led no pino D0
+      } while (!((selection=='L')||(selection=='D')));
+if (selection=='L')
       {output_high(led);}
 else
-      {output_low(led);}// se o valor enviado for igual a "D" liga o led no pino D0
+      {output_low(led);}
    }
 }
 

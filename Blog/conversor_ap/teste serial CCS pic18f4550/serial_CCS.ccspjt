@@ -1,0 +1,16 @@
+[PROJECT]
+Target=serial_CCS.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.007
+Compiler=PCH
+[Target Data]
+FileList=serial_CCS.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[serial_CCS.c]
+Type=4
+[mru-list]
+1=serial_CCS.c
+[Units]
+Count=1
+1=serial_CCS (main)
