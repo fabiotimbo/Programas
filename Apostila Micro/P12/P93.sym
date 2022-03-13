@@ -34,13 +34,13 @@ ROM Allocation:
 000086  @cinit2
 
 Project Directory:
-    C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P12\
+    C:\Users\LINC\Dropbox\IFCE\github\Programas\Apostila Micro\P12\
 
 Project Files:
-    P93.c                                                   [30-dez-19 18:20  CRC=ACA4DA8E]
-    ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
+    P93.c                                                   [12-mar-22 22:52  CRC=24F7B5A6]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
 
-Source signature=EF54B64A
+Source signature=67A79162
 
 Units:
     P93 (main)

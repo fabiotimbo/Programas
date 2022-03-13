@@ -117,12 +117,12 @@ ROM Allocation:
 0004FE  @cinit2
 
 Project Directory:
-    C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P13\
+    C:\Users\LINC\Dropbox\IFCE\github\Programas\Apostila Micro\P13\
 
 Project Files:
-    p13_adaptado_picgenios.c                                [09-mai-21 22:53  CRC=9905210B]
-    ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
-    flex_lcd2.c                                             [14-set-20 16:55  CRC=7F7A79FC]
+    p13_adaptado_picgenios.c                                [11-mar-22 08:38  CRC=9905210B]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
+    flex_lcd2.c                                             [11-mar-22 08:38  CRC=7F7A79FC]
 
 Source signature=395202E1
 

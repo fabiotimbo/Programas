@@ -1,6 +1,6 @@
-CCS PCH C Compiler, Version 5.007, 61971               12-mai-21 00:12
+CCS PCH C Compiler, Version 5.007, 61971               12-mar-22 22:52
 
-               Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P12\P93.lst
+               Filename:   C:\Users\LINC\Dropbox\IFCE\github\Programas\Apostila Micro\P12\P93.lst
 
                ROM used:   204 bytes (1%)
                            Largest free fragment is 32564
@@ -85,7 +85,7 @@ CCS PCH C Compiler, Version 5.007, 61971               12-mai-21 00:12
 0084:  MOVWF  FB4
 .................... { 
 .................... while(true) 
-.................... { 
+....................    { 
 .................... char selection; 
 .................... printf("\r\nSelecione:\r\n"); 
 0086:  MOVLW  04
@@ -105,12 +105,12 @@ CCS PCH C Compiler, Version 5.007, 61971               12-mai-21 00:12
 009E:  MOVLW  00
 00A0:  MOVWF  FF7
 00A2:  RCALL  0042
-.................... do { 
-.................... selection=getc(); 
+.................... do    { 
+....................       selection=getc(); 
 00A4:  BTFSS  F9E.5
 00A6:  BRA    00A4
 00A8:  MOVFF  FAE,05
-.................... } while (!((selection=='L')||(selection=='D'))); 
+....................       } while (!((selection=='L')||(selection=='D'))); 
 00AC:  MOVF   05,W
 00AE:  SUBLW  4C
 00B0:  BZ    00B8
@@ -121,17 +121,17 @@ CCS PCH C Compiler, Version 5.007, 61971               12-mai-21 00:12
 00B8:  MOVF   05,W
 00BA:  SUBLW  4C
 00BC:  BNZ   00C4
-.................... {output_high(led); 
+....................       {output_high(led);} 
 00BE:  BCF    F95.0
 00C0:  BSF    F8C.0
-.................... } 
 00C2:  BRA    00C8
 .................... else 
-.................... {output_low(led); 
+....................       {output_low(led);} 
 00C4:  BCF    F95.0
 00C6:  BCF    F8C.0
-.................... }}} 
 00C8:  BRA    0086
+....................    } 
+.................... } 
 ....................  
 00CA:  SLEEP 
 
