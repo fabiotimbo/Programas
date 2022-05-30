@@ -12,9 +12,9 @@ Type=4
 [mru-list]
 1=P39.c
 [Opened Files]
-1=..\..\..\programas\assembler\pisca_led\pisca.c
+1=..\..\..\..\Disciplinas_IFCE\Apostilas IFCE\Micro\programas\60hZ\timer0.c
 2=P39.c
-3=..\..\..\..\..\Dispositivos e Microcontroladores\2020.1\micro\Remoto\atividades\atv1_venicius.c
+3=..\..\..\..\Disciplinas_IFCE\Dispositivos e Microcontroladores\2022.1\micro\7seg\7seg.c
 4=
 [Units]
 Count=1

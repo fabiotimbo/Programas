@@ -30,7 +30,7 @@ inicio:
  movlw  0x00 //w=00000000b
  movwf  0xF95 // trisD=00000000b
  movlw  0xE6 //w=11100110b
- movwf  0xFD3 // Oscilador 4Mhz Sem cristal e capacitor $$$$
+// movwf  0xFD3 // Oscilador 4Mhz Sem cristal e capacitor $$$$
 
 loop:
    clrf    0XF83 // limpa porta d

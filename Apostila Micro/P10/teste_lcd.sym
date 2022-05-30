@@ -84,12 +84,12 @@ ROM Allocation:
 00036A  @cinit2
 
 Project Directory:
-    C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P10\
+    C:\Users\LINC\Dropbox\IFCE\github\Programas\Apostila Micro\P10\
 
 Project Files:
-    teste_lcd.c                                             [12-mai-21 00:18  CRC=7D8B04F9]
-    ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
-    ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.c [23-ago-12 09:01  CRC=D28E8746]
+    teste_lcd.c                                             [11-mar-22 08:38  CRC=7D8B04F9]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.c [23-ago-12 09:01  CRC=D28E8746]
 
 Source signature=C4000163
 

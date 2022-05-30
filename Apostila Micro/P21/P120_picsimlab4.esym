@@ -1,8 +1,7 @@
-D G "lcd_line_two" 2 52 "0x40" "LCD RAM address for the 2nd line"
-D G "__PCH__" 0 107 ""5.007""
-D G "__DEVICE__" 0 107 "4550"
-D G "__DATE__" 0 107 ""12-set-20""
-D G "__TIME__" 0 107 ""22:02:23"" "Standard Header file for the PIC18F4550 device ////////////////"
+D G "__PCH__" 0 40 ""5.007""
+D G "__DEVICE__" 0 40 "4550"
+D G "__DATE__" 0 40 ""09-mai-22""
+D G "__TIME__" 0 40 ""08:38:49"" "Standard Header file for the PIC18F4550 device ////////////////"
 c L "set_tris_a" 1 5 21 "FUNCTION"
 v L "value" 1 36 "int8" `54 
 f B "set_tris_a" 1 36 "void(int8 value)" `53 
@@ -911,60 +910,28 @@ D G "LCD_DB6" 0 14 "PIN_D6"
 D G "LCD_DB7" 0 15 "PIN_D7"
 D G "LCD_E" 0 16 "PIN_E1"
 D G "LCD_RS" 0 17 "PIN_E2"
-C L "jump_to_irs" 2 1 3 "FUNCTION"
-D G "lcd_type" 2 51 "2" "0=5x7, 1=5x10, 2=2 lines"
-D G "lcd_line_two" 2 52 "0x40" "LCD RAM address for the 2nd line"
-V G "lines" 2 54 "int8[1]" `638 
-V G "curr_line" 2 55 "int8" `639 
-V G "LCD_INIT_STRING" 2 57 "[4]" `640 
-C L "jump_to_irs" 2 1 1 "FUNCTION"
-C L "jump_to_irs" 2 1 1 "FUNCTION"
-C L "jump_to_irs" 2 1 1 "FUNCTION"
-C L "jump_to_irs" 2 1 1 "FUNCTION"
-V L "nibble" 2 67 "int8" `644 
-F G "lcd_send_nibble" 2 68 "void(int8 nibble)" `643  "Note:  !! converts an integer expression"
-C L "lcd_send_nibble" 2 1 1 "FUNCTION"
-C L "lcd_send_byte" 2 1 6 "FUNCTION"
-V L "address" 2 137 "int8" `646 
-V L "n" 2 137 "int8" `647 
-F G "lcd_send_byte" 2 138 "void(int8 address,int8 n)" `645 
-F G "lcd_init" 2 167 "void()" `648 
-V L "i" 2 168 "int8" `649 
-C L "lcd_init" 2 1 6 "FUNCTION"
-V L "x" 2 207 "int8" `651 
-V L "y" 2 207 "int8" `652 
-F G "lcd_gotoxy" 2 208 "void(int8 x,int8 y)" `650 
-V L "address" 2 209 "int8" `653  "curr_line = y - 1;"
-C L "lcd_gotoxy" 2 1 4 "FUNCTION"
-V L "c" 2 224 "int8" `655 
-F G "lcd_putc" 2 225 "void(int8 c)" `654 
-C L "lcd_set_cgram_char" 2 1 1 "FUNCTION"
-V L "which" 2 269 "int8" `657 
-V L "ptr" 2 269 "*int8" `658 
-F G "lcd_set_cgram_char" 2 270 "void(int8 which,*int8 ptr)" `656 
-V L "i" 2 271 "int8" `659 
-C L "lcd_set_cgram_char" 2 1 1 "FUNCTION"
-V G "opcao" 0 21 "int8" `660 
-V G "ad1" 0 22 "float" `661 
-V G "value" 0 23 "int8" `662 
-V L "op" 0 26 "int8" `664 
-F G "executarModo" 0 26 "void(int8 op)" `663 
-C L "executarModo" 0 19 1 "FUNCTION"
-C L "executarModo" 0 19 1 "FUNCTION"
-C L "executarModo" 0 19 1 "FUNCTION"
-C L "executarModo" 0 19 1 "FUNCTION"
-C L "executarModo" 0 19 1 "FUNCTION"
-C L "executarModo" 0 19 1 "FUNCTION"
-C L "executarModo" 0 19 1 "FUNCTION"
-C L "executarModo" 0 19 1 "FUNCTION"
-C L "executarModo" 0 19 1 "FUNCTION"
-V G "lm" 0 58 "float" `669 
-V G "ad0" 0 59 "int32" `670 
-F G "MAIN" 0 63 "void()" `671 
-C L "MAIN" 0 19 1 "FUNCTION"
-C L "MAIN" 0 19 1 "FUNCTION"
-C L "MAIN" 0 19 1 "FUNCTION"
-C L "MAIN" 0 19 1 "FUNCTION"
+C L "jump_to_irs" 0 7 1 "FUNCTION"
+V G "opcao" 0 21 "int8" `638 
+V G "ad1" 0 22 "float" `639 
+V G "value" 0 23 "int8" `640 
+V L "op" 0 26 "int8" `642 
+F G "executarModo" 0 26 "void(int8 op)" `641 
+C L "executarModo" 0 7 1 "FUNCTION"
+C L "executarModo" 0 7 1 "FUNCTION"
+C L "executarModo" 0 7 1 "FUNCTION"
+C L "executarModo" 0 7 1 "FUNCTION"
+C L "executarModo" 0 7 1 "FUNCTION"
+C L "executarModo" 0 7 1 "FUNCTION"
+C L "executarModo" 0 7 1 "FUNCTION"
+C L "executarModo" 0 7 1 "FUNCTION"
+C L "executarModo" 0 7 1 "FUNCTION"
+V G "lm" 0 58 "float" `643 
+V G "ad0" 0 59 "int32" `644 
+F G "MAIN" 0 63 "void(float ,float )" `645 
+C L "MAIN" 0 7 1 "FUNCTION"
+C L "MAIN" 0 7 1 "FUNCTION"
+C L "MAIN" 0 7 1 "FUNCTION"
+C L "MAIN" 0 7 1 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1

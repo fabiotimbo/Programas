@@ -14,25 +14,25 @@ Stack size: 31
 Lines Stmts  %   Files
 ----- ----- ---  -----
    44    13  21  teste_lcd_picgenios.c
-  821     0   0  ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
-  288    50  79  flex_lcd2.c
+  821     0   0  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
+  288    50  79  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\flex_lcd2.c
 ----- -----
  1153    63 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
 0     38   2    1             @delay_ms1
-0     20   1    0             @const640
+0     20   1    0   629  3.8  @const640
 0     72   4    1   326  2.8  lcd_send_nibble
 0     60   3    3   235  3.8  lcd_send_byte
 0     90   4    2   380  4.7  lcd_init
 0     38   2    4   139  4.5  lcd_gotoxy
 0     70   3    1   321  5.1  lcd_putc
 0    196  10    1   351  3.2  MAIN
-0     16   1    0             @const664
-0     32   2    2             @PSTRINGC_654
-0     18   1    0             @const666
-0     20   1    0             @const667
+0     16   1    0   238  4.0  @const664
+0     32   2    2   267  6.8  @PSTRINGC_654
+0     18   1    0    90  2.5  @const666
+0     20   1    0   592  3.2  @const667
 0     14   1    0             @const668
 0     32   2    3             @PSTRINGCN_654
 0    142   7   13             @DIV3232
@@ -40,16 +40,16 @@ Page ROM  %  RAM   Vol Diff  Functions:
  Inline         0             @cinit1
 
 Program metrics:
-    Functions               6
+    Functions               11
     Statements              63
     Comments                198
-    Volume (V)              2640
-    Difficulty (D)          22.4
-    Effort to implement (E) 59006
-    Time to implement (T)   55 minutes
+    Volume (V)              5821
+    Difficulty (D)          42.9
+    Effort to implement (E) 249567
+    Time to implement (T)   3 hours, 51 minutes
     Est Delivered Bugs (B)  1
-    Cyclomatic Complexity   7
-    Maintainability (MI)    126
+    Cyclomatic Complexity   12
+    Maintainability (MI)    124
 
  Segment     Used  Free
 -----------  ----  ----

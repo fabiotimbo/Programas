@@ -3,10 +3,17 @@
 #device adc=10
 #use delay(clock=20000000)
 #use rs232(baud=9600, xmit=PIN_C6, rcv=PIN_C7)
-#use standard_io(B) //comentar linha caso a biblioteca do LCD seja diferente
-#define use_portB_lcd TRUE //comentar linha caso a biblioteca do LCD seja diferente
-#define LCD_TYPE 2
-#include <LCD.c>
+#define LCD_DB0   PIN_D0
+#define LCD_DB1   PIN_D1
+#define LCD_DB2   PIN_D2
+#define LCD_DB3   PIN_D3
+#define LCD_DB4   PIN_D4
+#define LCD_DB5   PIN_D5
+#define LCD_DB6   PIN_D6
+#define LCD_DB7   PIN_D7
+#define LCD_E     PIN_E1
+#define LCD_RS    PIN_E2
+#include <flex_lcd.c>
 float32 lm;
 unsigned int32 ad0;
 void main()

@@ -14,8 +14,8 @@ Stack size: 31
 Lines Stmts  %   Files
 ----- ----- ---  -----
    20     9  10  teste_lcd.c
-  821     0   0  ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
-  456    84  90  ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.c
+  821     0   0  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
+  456    84  90  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.c
 ----- -----
  1297    93 Total
 

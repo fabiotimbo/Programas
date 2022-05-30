@@ -1,9 +1,9 @@
-CCS PCH C Compiler, Version 5.007, 61971               30-dez-19 19:37
+CCS PCH C Compiler, Version 5.007, 61971               09-mai-22 08:29
 
-               Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Microcontroladores e dispositivos periféricos\Programas apostila oficiais\Apostila Micro\P120\P120.lst
+               Filename:   C:\Users\IFMaker\Dropbox\IFCE\github\Programas\Apostila Micro\P21\P120.lst
 
-               ROM used:   1556 bytes (5%)
-                           Largest free fragment is 31212
+               ROM used:   1560 bytes (5%)
+                           Largest free fragment is 31208
                RAM used:   13 (1%) at main() level
                            37 (2%) worst case
                Stack used: 0 locations
@@ -84,7 +84,7 @@ CCS PCH C Compiler, Version 5.007, 61971               30-dez-19 19:37
 0240:  DECF   00,F
 0242:  BRA    0236
 0244:  BCF    01.7
-0246:  GOTO   0556 (RETURN)
+0246:  GOTO   055A (RETURN)
 024A:  MOVF   0C,W
 024C:  BTFSC  FD8.2
 024E:  BRA    0332
@@ -201,7 +201,7 @@ CCS PCH C Compiler, Version 5.007, 61971               30-dez-19 19:37
 0334:  CLRF   01
 0336:  CLRF   02
 0338:  CLRF   03
-033A:  GOTO   058E (RETURN)
+033A:  GOTO   0592 (RETURN)
 033E:  MOVF   0C,W
 0340:  SUBLW  B6
 0342:  MOVWF  0C
@@ -231,7 +231,7 @@ CCS PCH C Compiler, Version 5.007, 61971               30-dez-19 19:37
 0374:  INCF   02,F
 0376:  BTFSC  FD8.2
 0378:  INCF   03,F
-037A:  GOTO   05A0 (RETURN)
+037A:  GOTO   05A4 (RETURN)
 037E:  TBLRD*+
 0380:  MOVFF  FF6,0D
 0384:  MOVFF  FF7,0E
@@ -241,7 +241,7 @@ CCS PCH C Compiler, Version 5.007, 61971               30-dez-19 19:37
 0392:  MOVFF  0E,FF7
 0396:  DECFSZ 0C,F
 0398:  BRA    037E
-039A:  GOTO   05DA (RETURN)
+039A:  GOTO   05DE (RETURN)
 039E:  BTFSC  FD8.1
 03A0:  BRA    03A8
 03A2:  CLRF   FEA
@@ -373,7 +373,7 @@ CCS PCH C Compiler, Version 5.007, 61971               30-dez-19 19:37
 04C6:  MOVFF  00,14
 04CA:  DECFSZ 12,F
 04CC:  BRA    0442
-04CE:  GOTO   05F0 (RETURN)
+04CE:  GOTO   05F4 (RETURN)
 ....................  
 .................... #list 
 ....................  
@@ -1100,10 +1100,10 @@ CCS PCH C Compiler, Version 5.007, 61971               30-dez-19 19:37
 051C:  MOVLW  64
 051E:  MOVWF  19
 0520:  RCALL  004A
-.................... setup_adc_ports(an0); 
+.................... setup_adc_ports(an0_to_an2); 
 0522:  MOVF   FC1,W
 0524:  ANDLW  C0
-0526:  IORLW  0E
+0526:  IORLW  0C
 0528:  MOVWF  FC1
 .................... setup_adc(adc_clock_internal); 
 052A:  MOVF   FC0,W
@@ -1112,105 +1112,109 @@ CCS PCH C Compiler, Version 5.007, 61971               30-dez-19 19:37
 0530:  MOVWF  FC0
 0532:  BSF    FC0.7
 0534:  BSF    FC2.0
-.................... set_adc_channel(0); 
-0536:  MOVLW  00
+.................... set_adc_channel(2); 
+0536:  MOVLW  08
 0538:  MOVWF  01
 053A:  MOVF   FC2,W
 053C:  ANDLW  C3
 053E:  IORWF  01,W
 0540:  MOVWF  FC2
 .................... while(true) 
-.................... {lm=read_adc(); 
-0542:  BSF    FC2.1
-0544:  BTFSC  FC2.1
-0546:  BRA    0544
-0548:  MOVFF  FC4,03
-054C:  MOVFF  FC3,0C
-0550:  MOVFF  FC4,0D
-0554:  BRA    0212
-0556:  MOVFF  03,07
-055A:  MOVFF  02,06
-055E:  MOVFF  01,05
-0562:  MOVFF  00,04
+.................... { 
+.................... output_high(pin_c5); 
+0542:  BCF    F94.5
+0544:  BSF    F8B.5
+.................... lm=read_adc(); 
+0546:  BSF    FC2.1
+0548:  BTFSC  FC2.1
+054A:  BRA    0548
+054C:  MOVFF  FC4,03
+0550:  MOVFF  FC3,0C
+0554:  MOVFF  FC4,0D
+0558:  BRA    0212
+055A:  MOVFF  03,07
+055E:  MOVFF  02,06
+0562:  MOVFF  01,05
+0566:  MOVFF  00,04
 .................... delay_ms(10); 
-0566:  MOVLW  0A
-0568:  MOVWF  19
-056A:  RCALL  004A
+056A:  MOVLW  0A
+056C:  MOVWF  19
+056E:  RCALL  004A
 .................... ad0=lm*0.488758;//igual a (5/1023)*100 
-056C:  MOVFF  07,0F
-0570:  MOVFF  06,0E
-0574:  MOVFF  05,0D
-0578:  MOVFF  04,0C
-057C:  MOVLW  7D
-057E:  MOVWF  13
-0580:  MOVLW  3E
-0582:  MOVWF  12
-0584:  MOVLW  7A
-0586:  MOVWF  11
-0588:  MOVLW  7D
-058A:  MOVWF  10
-058C:  BRA    024A
-058E:  MOVFF  03,0F
-0592:  MOVFF  02,0E
-0596:  MOVFF  01,0D
-059A:  MOVFF  00,0C
-059E:  BRA    033E
-05A0:  MOVFF  03,0B
-05A4:  MOVFF  02,0A
-05A8:  MOVFF  01,09
-05AC:  MOVFF  00,08
+0570:  MOVFF  07,0F
+0574:  MOVFF  06,0E
+0578:  MOVFF  05,0D
+057C:  MOVFF  04,0C
+0580:  MOVLW  7D
+0582:  MOVWF  13
+0584:  MOVLW  3E
+0586:  MOVWF  12
+0588:  MOVLW  7A
+058A:  MOVWF  11
+058C:  MOVLW  7D
+058E:  MOVWF  10
+0590:  BRA    024A
+0592:  MOVFF  03,0F
+0596:  MOVFF  02,0E
+059A:  MOVFF  01,0D
+059E:  MOVFF  00,0C
+05A2:  BRA    033E
+05A4:  MOVFF  03,0B
+05A8:  MOVFF  02,0A
+05AC:  MOVFF  01,09
+05B0:  MOVFF  00,08
 .................... lcd_gotoxy(1,1); 
-05B0:  MOVLW  01
-05B2:  MOVWF  19
-05B4:  MOVWF  1A
-05B6:  RCALL  0180
+05B4:  MOVLW  01
+05B6:  MOVWF  19
+05B8:  MOVWF  1A
+05BA:  RCALL  0180
 .................... printf(lcd_putc,"\f   Temperatura  ", ); 
-05B8:  MOVLW  28
-05BA:  MOVWF  FF6
-05BC:  MOVLW  00
-05BE:  MOVWF  FF7
-05C0:  RCALL  01F2
+05BC:  MOVLW  28
+05BE:  MOVWF  FF6
+05C0:  MOVLW  00
+05C2:  MOVWF  FF7
+05C4:  RCALL  01F2
 .................... lcd_gotoxy(1,2); 
-05C2:  MOVLW  01
-05C4:  MOVWF  19
-05C6:  MOVLW  02
-05C8:  MOVWF  1A
-05CA:  RCALL  0180
+05C6:  MOVLW  01
+05C8:  MOVWF  19
+05CA:  MOVLW  02
+05CC:  MOVWF  1A
+05CE:  RCALL  0180
 .................... printf(lcd_putc,"        %lu %cC",ad0,0xdf); 
-05CC:  MOVLW  3A
-05CE:  MOVWF  FF6
-05D0:  MOVLW  00
-05D2:  MOVWF  FF7
-05D4:  MOVLW  08
-05D6:  MOVWF  0C
-05D8:  BRA    037E
-05DA:  MOVLW  41
-05DC:  MOVWF  FE9
-05DE:  MOVFF  0B,0F
-05E2:  MOVFF  0A,0E
-05E6:  MOVFF  09,0D
-05EA:  MOVFF  08,0C
-05EE:  BRA    042C
-05F0:  MOVLW  20
-05F2:  MOVWF  18
-05F4:  RCALL  01A2
-05F6:  MOVLW  DF
-05F8:  MOVWF  18
-05FA:  RCALL  01A2
-05FC:  MOVLW  43
-05FE:  MOVWF  18
-0600:  RCALL  01A2
+05D0:  MOVLW  3A
+05D2:  MOVWF  FF6
+05D4:  MOVLW  00
+05D6:  MOVWF  FF7
+05D8:  MOVLW  08
+05DA:  MOVWF  0C
+05DC:  BRA    037E
+05DE:  MOVLW  41
+05E0:  MOVWF  FE9
+05E2:  MOVFF  0B,0F
+05E6:  MOVFF  0A,0E
+05EA:  MOVFF  09,0D
+05EE:  MOVFF  08,0C
+05F2:  BRA    042C
+05F4:  MOVLW  20
+05F6:  MOVWF  18
+05F8:  RCALL  01A2
+05FA:  MOVLW  DF
+05FC:  MOVWF  18
+05FE:  RCALL  01A2
+0600:  MOVLW  43
+0602:  MOVWF  18
+0604:  RCALL  01A2
 .................... delay_ms(1000);}} 
-0602:  MOVLW  04
-0604:  MOVWF  0C
-0606:  MOVLW  FA
-0608:  MOVWF  19
-060A:  RCALL  004A
-060C:  DECFSZ 0C,F
-060E:  BRA    0606
-0610:  BRA    0542
+0606:  MOVLW  04
+0608:  MOVWF  0C
+060A:  MOVLW  FA
+060C:  MOVWF  19
+060E:  RCALL  004A
+0610:  DECFSZ 0C,F
+0612:  BRA    060A
+0614:  BRA    0542
 ....................  
-0612:  SLEEP 
+0616:  SLEEP 
 
 Configuration Fuses:
    Word  1: CC24   PLL5 CPUDIV1 USBDIV HS FCMEN IESO

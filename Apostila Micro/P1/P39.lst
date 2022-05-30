@@ -1,9 +1,9 @@
-CCS PCH C Compiler, Version 5.007, 61971               02-ago-20 12:06
+CCS PCH C Compiler, Version 5.007, 61971               25-abr-22 11:20
 
-               Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P39\P39.lst
+               Filename:   C:\Users\IFMaker\Dropbox\IFCE\github\Programas\Apostila Micro\P1\P39.lst
 
-               ROM used:   78 bytes (0%)
-                           Largest free fragment is 32690
+               ROM used:   76 bytes (0%)
+                           Largest free fragment is 32692
                RAM used:   6 (0%) at main() level
                            6 (0%) worst case
                Stack used: 0 locations
@@ -75,26 +75,25 @@ CCS PCH C Compiler, Version 5.007, 61971               02-ago-20 12:06
 0036:  MOVWF  F95
 ....................  movlw  0xE6 //w=11100110b 
 0038:  MOVLW  E6
-....................  movwf  0xFD3 // Oscilador 4Mhz Sem cristal e capacitor $$$$ 
-003A:  MOVWF  FD3
+.................... // movwf  0xFD3 // Oscilador 4Mhz Sem cristal e capacitor $$$$ 
 ....................  
 .................... loop: 
 ....................    clrf    0XF83 // limpa porta d 
-003C:  CLRF   F83
+003A:  CLRF   F83
 ....................    call    Delay100ms // vai pra subrotina Delay100ms 
-003E:  CALL   0016,1
+003C:  CALL   0016,1
 ....................    movlw   0xff// w=ffh 
-0042:  MOVLW  FF
+0040:  MOVLW  FF
 ....................    movwf   0XF83 // porta d=11111111b 
-0044:  MOVWF  F83
+0042:  MOVWF  F83
 ....................    call    Delay100ms // vai pra subrotina Delay100ms 
-0046:  CALL   0016,1
+0044:  CALL   0016,1
 ....................    goto    loop //vai pra subrotina loop 
-004A:  BRA    003C
+0048:  BRA    003A
 .................... #endasm 
 .................... } 
 ....................  
-004C:  SLEEP 
+004A:  SLEEP 
 
 Configuration Fuses:
    Word  1: CC3F   PLL12 CPUDIV4 USBDIV HS FCMEN IESO

@@ -12,11 +12,10 @@ Type=4
 [mru-list]
 1=teste_lcd.c
 [Opened Files]
-1=..\P11\teste_lcd_picgenios.c
+1=teste_lcd.c
 2=..\P12\P93.c
-3=teste_lcd.c
-4=..\P9\P86.c
-5=
+3=..\P13\p13_com_lcd.c
+4=
 [Units]
 Count=1
 1=teste_lcd (main)

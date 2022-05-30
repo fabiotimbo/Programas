@@ -1,5 +1,16 @@
->>> Warning 202 "P120_picsimlab4.c" Line 22(7,10): Variable never used:   ad1
->>> Warning 202 "P120_picsimlab4.c" Line 23(5,10): Variable never used:   value
-      Memory usage:   ROM=5%      RAM=1% - 2%
-      0 Errors,  2 Warnings.
-Build Successful.
+*** Error 18 "P120_picsimlab4.c" Line 18(10,22): File can not be opened
+    Not in "C:\Program Files (x86)\PICC\Devices\flex_lcd.c"
+    Not in "C:\Program Files (x86)\PICC\Drivers\flex_lcd.c"
+    Not in project "C:\Users\IFMaker\Dropbox\IFCE\github\Programas\Apostila Micro\P21\flex_lcd.c"
+*** Error 12 "P120_picsimlab4.c" Line 34(17,25): Undefined identifier   lcd_putc
+*** Error 12 "P120_picsimlab4.c" Line 42(17,25): Undefined identifier   lcd_putc
+*** Error 12 "P120_picsimlab4.c" Line 50(17,25): Undefined identifier   lcd_putc
+*** Error 12 "P120_picsimlab4.c" Line 65(9,10): Undefined identifier  -- lcd_init
+*** Error 12 "P120_picsimlab4.c" Line 66(11,12): Undefined identifier  -- lcd_gotoxy
+*** Error 12 "P120_picsimlab4.c" Line 67(8,16): Undefined identifier   lcd_putc
+*** Error 12 "P120_picsimlab4.c" Line 68(8,16): Undefined identifier   lcd_putc
+*** Error 12 "P120_picsimlab4.c" Line 97(11,12): Undefined identifier  -- lcd_gotoxy
+*** Error 12 "P120_picsimlab4.c" Line 98(8,16): Undefined identifier   lcd_putc
+*** Error 12 "P120_picsimlab4.c" Line 99(8,16): Undefined identifier   lcd_putc
+      11 Errors,  0 Warnings.
+Build Failed.

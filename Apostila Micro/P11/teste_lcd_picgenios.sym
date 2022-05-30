@@ -80,12 +80,12 @@ ROM Allocation:
 00036C  @cinit2
 
 Project Directory:
-    C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P11\
+    C:\Users\IFMaker\Dropbox\IFCE\github\Programas\Apostila Micro\P11\
 
 Project Files:
-    teste_lcd_picgenios.c                                   [28-abr-21 08:41  CRC=F3652FD3]
-    ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
-    flex_lcd2.c                                             [14-set-20 16:55  CRC=7F7A79FC]
+    teste_lcd_picgenios.c                                   [11-mar-22 08:38  CRC=F3652FD3]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\flex_lcd2.c [11-mar-22 08:38  CRC=7F7A79FC]
 
 Source signature=93B211A9
 

@@ -12,10 +12,11 @@ Type=4
 [mru-list]
 1=teste_lcd_picgenios.c
 [Opened Files]
-1=teste_lcd_picgenios.c
-2=..\P12\P93.c
-3=
-4=
+1=..\P21\P120.c
+2=..\P21\P120_picsimlab4.c
+3=..\..\..\..\..\..\Downloads\teste_lm35.c
+4=teste_lcd_picgenios.c
+5=
 [Units]
 Count=1
 1=teste_lcd_picgenios (main)

@@ -12,9 +12,10 @@ Type=4
 [mru-list]
 1=P120_picsimlab4.c
 [Opened Files]
-1=P120_picsimlab4.c
-2=..\..\..\programas\picsimlab4\controle temperatura\controle.c
-3=
+1=P120.c
+2=P120_picsimlab4.c
+3=..\..\..\..\..\..\Downloads\teste_lm35.c
+4=
 [Units]
 Count=1
 1=P120_picsimlab4 (main)

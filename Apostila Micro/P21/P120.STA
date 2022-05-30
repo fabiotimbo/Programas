@@ -1,9 +1,9 @@
 
-ROM used:   1556/16384 (5%)
-            1556/16384 (5%) including unused fragments
+ROM used:   1560/16384 (5%)
+            1560/16384 (5%) including unused fragments
 
             1.2 Average locations per line
-            15.1 Average locations per statement
+            15.0 Average locations per statement
 
 RAM used:   13/2048 (1%) at main() level
             37/2048 (2%) worst case
@@ -13,11 +13,11 @@ Stack size: 31
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   32    19  18  P120.c
-  821     0   0  ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
-  456    84  82  ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.c
+   34    20  19  P120.c
+  821     0   0  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
+  456    84  81  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.c
 ----- -----
- 1309   103 Total
+ 1311   104 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
@@ -30,7 +30,7 @@ Page ROM  %  RAM   Vol Diff  Functions:
 0    102   3    2   667  5.9  lcd_init
 0     34   1    4   208  6.3  lcd_gotoxy
 0     80   3    1   354  4.7  lcd_putc
-0    322  10    1   563  3.2  MAIN
+0    326  10    1   592  3.2  MAIN
 0     10   0    0             @const683
 0     32   1    2             @PSTRINGC_666
 0      6   0    0             @const685
@@ -46,12 +46,12 @@ Page ROM  %  RAM   Vol Diff  Functions:
 
 Program metrics:
     Functions               8
-    Statements              103
+    Statements              104
     Comments                243
-    Volume (V)              4714
+    Volume (V)              4752
     Difficulty (D)          35.0
-    Effort to implement (E) 165081
-    Time to implement (T)   2 hours, 33 minutes
+    Effort to implement (E) 166408
+    Time to implement (T)   2 hours, 34 minutes
     Est Delivered Bugs (B)  1
     Cyclomatic Complexity   8
     Maintainability (MI)    135
@@ -59,7 +59,7 @@ Program metrics:
  Segment     Used  Free
 -----------  ----  ----
 00000-00002     4  0  
-00004-07FFE  1552  31212  
+00004-07FFE  1556  31208  
 
 
 

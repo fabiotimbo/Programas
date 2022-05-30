@@ -13,7 +13,9 @@ Type=4
 1=P120.c
 [Opened Files]
 1=P120.c
-2=
+2=P120_picsimlab4.c
+3=..\..\..\..\..\..\Downloads\teste_lm35.c
+4=
 [Units]
 Count=1
 1=P120 (main)

@@ -1,3 +1,15 @@
-      Memory usage:   ROM=5%      RAM=1% - 2%
-      0 Errors,  0 Warnings.
-Build Successful.
+*** Error 18 "P120.c" Line 16(10,22): File can not be opened
+    Not in "C:\Program Files (x86)\PICC\Devices\flex_lcd.c"
+    Not in "C:\Program Files (x86)\PICC\Drivers\flex_lcd.c"
+    Not in project "C:\Users\IFMaker\Dropbox\IFCE\github\Programas\Apostila Micro\P21\flex_lcd.c"
+*** Error 12 "P120.c" Line 20(10,11): Undefined identifier  -- lcd_init
+*** Error 12 "P120.c" Line 21(11,12): Undefined identifier  -- lcd_gotoxy
+*** Error 12 "P120.c" Line 22(8,16): Undefined identifier   lcd_putc
+*** Error 12 "P120.c" Line 23(11,12): Undefined identifier  -- lcd_gotoxy
+*** Error 12 "P120.c" Line 24(8,16): Undefined identifier   lcd_putc
+*** Error 12 "P120.c" Line 33(11,12): Undefined identifier  -- lcd_gotoxy
+*** Error 12 "P120.c" Line 34(8,16): Undefined identifier   lcd_putc
+*** Error 12 "P120.c" Line 35(11,12): Undefined identifier  -- lcd_gotoxy
+*** Error 12 "P120.c" Line 36(8,16): Undefined identifier   lcd_putc
+      10 Errors,  0 Warnings.
+Build Failed.
