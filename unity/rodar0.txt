@@ -1,0 +1,27 @@
+using System.Collections;
+using System.Collections.Generic;
+ using UnityEngine;
+
+public class Rodar : MonoBehaviour
+{
+    public GameObject Barra;
+    public float angulo;
+        // Start is called before the first frame update
+    void Start()
+    {
+        Barra = GameObject.FindWithTag("barra");    
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            transform.Rotate(Vector3.forward);
+        }
+        else if (Input.GetKey(KeyCode.DownArrow))
+        {
+            transform.Rotate(Vector3.back);
+        }
+    }
+}
