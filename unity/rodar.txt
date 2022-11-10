@@ -1,73 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using System;
-using System.IO.Ports;
-using UnityEngine.UI;
-using System.Globalization;
+ using UnityEngine;
 
-public class Rodar2 : MonoBehaviour
+public class Rodar : MonoBehaviour
 {
     public GameObject Barra;
-    SerialPort stream = new SerialPort();
-    private bool serial_ok = false, conta_tempo = false;
-    public float countdown = 1.0f, countdown2 = 1.0f;
-    public string recebido = "0", recebido0 = "0";
-    public void serial()
-    {
-
-        stream.BaudRate = 9600;
-        stream.PortName = "COM2";
-        stream.Open(); //Open the Serial Stream.  
-
-    }
-
-    public void Atualiza()
-    {
-   
-
-    }
-    // Start is called before the first frame update
+    public float angulo;
+        // Start is called before the first frame update
     void Start()
     {
-        conta_tempo = true;
-        Barra = GameObject.FindWithTag("barra");
+        Barra = GameObject.FindWithTag("barra");    
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (conta_tempo == true) { countdown -= Time.deltaTime; }
-        if (countdown <= 0.0f)
+        if (Input.GetKey(KeyCode.UpArrow))
         {
-            serial();
-            serial_ok = true;
-            conta_tempo = false;
-            countdown = 1.0f;
+            transform.Rotate(Vector3.forward);
         }
-        { countdown2 -= Time.deltaTime; } //ciclo de atualização
-        if (countdown2 <= 0.0f)
+        else if (Input.GetKey(KeyCode.DownArrow))
         {
-            if (serial_ok == true)
-            {
-                Atualiza(); 
-                            }
-            countdown2 = 1.0f;
+            transform.Rotate(Vector3.back);
         }
-        if (serial_ok == true)
-        {
-            if (stream.BytesToRead > 0)
-            {
-                recebido0 = stream.ReadLine();
-                if ((float.Parse(recebido0) >= 0) && (float.Parse(recebido0) <= 100)) { recebido = recebido0; }
-                stream.BaseStream.Flush();
-                Debug.Log(recebido);
-                }
-
-            if (recebido == "q") { serial_ok = false; Application.Quit(); }
-        }
-        //Barra.transform.position= new Vector3(float.Parse(recebido0), Barra.transform.position.y, Barra.transform.position.z);
-        Vector3 newRotation = new Vector3(0, 0, (float.Parse(recebido0)));
-        transform.eulerAngles = newRotation;
     }
 }
