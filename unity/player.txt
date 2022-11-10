@@ -1,0 +1,43 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Player : MonoBehaviour
+{
+    public float speed;
+    public float forca;
+    public Rigidbody2D rig;
+    float direction;
+    // Start is called before the first frame update
+    void Start()
+    {
+        speed = 10;
+        forca = 10;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        direction = Input.GetAxis("Horizontal");
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        { 
+        rig.AddForce(Vector2.up*forca,ForceMode2D.Impulse);
+        }
+
+        if (Input.GetKeyDown("escape"))
+        {
+        Application.Quit();
+        }
+
+
+
+
+    }
+
+    void FixedUpdate()
+    {
+        rig.velocity = new Vector2(direction * speed, rig.velocity.y);
+
+    }
+}
