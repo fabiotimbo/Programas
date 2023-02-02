@@ -1,7 +1,7 @@
 D G "__PCH__" 0 29 ""5.007""
 D G "__DEVICE__" 0 29 "4550"
-D G "__DATE__" 0 29 ""12-ago-20""
-D G "__TIME__" 0 29 ""10:32:50""
+D G "__DATE__" 0 29 ""01-fev-23""
+D G "__TIME__" 0 29 ""11:32:41""
 D G "led1" 0 1 "pin_d1"
 c L "set_tris_a" 1 1 22 "FUNCTION"
 v L "value" 1 36 "int8" `54 

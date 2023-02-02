@@ -18,7 +18,7 @@ output_bit(led1,flag);
 }
 void main()
 {
-setup_timer_0 (RTCC_DIV_64|RTCC_INTERNAL | RTCC_8_BIT ); //8 bits
+setup_timer_0 (RTCC_DIV_4|RTCC_INTERNAL | RTCC_8_BIT ); //8 bits
 set_timer0(131);                                             
 enable_interrupts(GLOBAL);
 enable_interrupts(INT_TIMER0);

@@ -1,6 +1,6 @@
-CCS PCH C Compiler, Version 5.007, 61971               12-ago-20 10:32
+CCS PCH C Compiler, Version 5.007, 61971               01-fev-23 11:32
 
-               Filename:   C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P76\P76.lst
+               Filename:   C:\Users\IFMaker\Dropbox\IFCE\github\Programas\Apostila Micro\P4\P76.lst
 
                ROM used:   280 bytes (1%)
                            Largest free fragment is 32484
@@ -130,8 +130,8 @@ CCS PCH C Compiler, Version 5.007, 61971               12-ago-20 10:32
 0104:  CLRF   19
 0106:  CLRF   1A
 .................... { 
-.................... setup_timer_0 (RTCC_DIV_4|RTCC_INTERNAL | RTCC_8_BIT ); //8 bits 
-0108:  MOVLW  C1
+.................... setup_timer_0 (RTCC_DIV_64|RTCC_INTERNAL | RTCC_8_BIT ); //8 bits 
+0108:  MOVLW  C5
 010A:  MOVWF  FD5
 .................... set_timer0(131);                                              
 010C:  CLRF   FD7

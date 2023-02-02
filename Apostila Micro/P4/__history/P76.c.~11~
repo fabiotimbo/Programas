@@ -13,7 +13,7 @@ if (n==625)
 {
 n=0;
 flag=!flag;
-output_bit(led1,flag);
+output_bit(led1,flag)
 }
 }
 void main()
