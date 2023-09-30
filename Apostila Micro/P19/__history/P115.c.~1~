@@ -2,7 +2,6 @@
 #byte portd=0xF83
 #fuses HS,CPUDIV1,PLL5,USBDIV
 #use delay(clock=20000000)
-#use rs232(baud=9600,xmit=PIN_C6,rcv=PIN_C7)
 //motor 28Byj-48 possui 2048 passos por rotação ou 0,175° /passo
 void main()
 {
@@ -15,31 +14,23 @@ while(true)
     if ((input(pin_b0)==0)&&(input(pin_b1)==1))//botão b0 pressionado
        {
        portd=0b10010000;
-       printf("d\r\n");
        delay_ms(a);
        portd=0b00110000;
-        printf("d\r\n");
        delay_ms(a);
        portd=0b01100000;
-        printf("d\r\n");
        delay_ms(a);
        portd=0b11000000;
-        printf("d\r\n");
        delay_ms(a);
        }
     if ((input(pin_b0)==1)&&(input(pin_b1)==0))//botão b1 pressionado
        {
        portd=0b11000000;
-        printf("s\r\n");
        delay_ms(a);
        portd=0b01100000;
-        printf("s\r\n");
        delay_ms(a);
        portd=0b00110000;
-        printf("s\r\n");
        delay_ms(a);
        portd=0b10010000;
-        printf("s\r\n");
        delay_ms(a);       }
        portd=0b00000000;//evita energizar as bobinas e o aquecimento do motor
 }}

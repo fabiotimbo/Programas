@@ -1,7 +1,8 @@
+d G "INT_USB" 1 818 "0x00A020"
 D G "__PCH__" 0 44 ""5.007""
 D G "__DEVICE__" 0 44 "4550"
-D G "__DATE__" 0 44 ""04-out-20""
-D G "__TIME__" 0 44 ""15:10:01"" "luz vermelha ligada no pino d2"
+D G "__DATE__" 0 44 ""29-mar-23""
+D G "__TIME__" 0 44 ""11:48:42"" "luz vermelha ligada no pino d2"
 c L "set_tris_a" 0 2 2 "FUNCTION"
 c L "set_tris_a" 1 1 22 "FUNCTION"
 v L "value" 1 36 "int8" `54 

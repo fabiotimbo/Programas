@@ -14,7 +14,7 @@ Stack size: 31
 Lines Stmts  %   Files
 ----- ----- ---  -----
    48    36 100  P112.c
-  821     0   0  ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
+  821     0   0  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
 ----- -----
   869    36 Total
 
@@ -32,7 +32,7 @@ Page ROM  %  RAM   Vol Diff  Functions:
 0     32   1    3             @PSTRINGCN_9600_31766_31767
 0    142   3   13             @DIV3232
 0    166   3   12             @PRINTF_L32U_9600_31766_31767
-0    168   3    1   349  4.0  MAIN
+0    168   3    1   349  4.1  MAIN
 0     22   0    0             @const676
 0     34   1    2             @PSTRINGC_9600_31766_31767
 0     74   1    0             @const678

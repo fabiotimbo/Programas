@@ -1,6 +1,6 @@
 
-ROM used:   406/16384 (1%)
-            406/16384 (1%) including unused fragments
+ROM used:   408/16384 (1%)
+            408/16384 (1%) including unused fragments
 
             0.5 Average locations per line
             17.7 Average locations per statement
@@ -14,14 +14,14 @@ Stack size: 31
 Lines Stmts  %   Files
 ----- ----- ---  -----
    43    23 100  P80.c
-  821     0   0  ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
+  821     0   0  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
 ----- -----
   864    23 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
 0    166  20    2   391  5.2  funcao_tempo
-0     94  12    0   154  2.6  MAIN
+0     96  12    0   154  2.6  MAIN
  Inline         0             @cinit1
 
 Program metrics:
@@ -41,7 +41,7 @@ Program metrics:
 00000-00002     4  0  
 00004-00006     0  4  
 00008-00094   142  0  
-00096-07FFE   260  32358  
+00096-07FFE   262  32356  
 
 
 
