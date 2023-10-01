@@ -35,8 +35,8 @@ void main()
 set_timer0(131); 
 enable_interrupts(GLOBAL); 
 enable_interrupts(INT_TIMER0); 
-set_tris_d(0b00000000);
-port_d=0b00000100;
+set_tris_d(0b00000100);
+port_d=0;
 while(true) 
 {}}
 

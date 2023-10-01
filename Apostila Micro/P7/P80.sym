@@ -53,11 +53,11 @@ ROM Allocation:
 000154  @cinit2
 
 Project Directory:
-    C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P80\
+    C:\Users\Bolsistas\Dropbox\IFCE\github\Programas\Apostila Micro\P7\
 
 Project Files:
-    P80.c                                                   [04-out-20 15:10  CRC=B7903F7E]
-    ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
+    P80.c                                                   [29-mar-23 11:48  CRC=B7903F7E]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
 
 Source signature=FA401B3A
 
