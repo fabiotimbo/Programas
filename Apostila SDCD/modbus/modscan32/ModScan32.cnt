@@ -1,0 +1,52 @@
+:Base ModScan32.hlp
+1 MODBUS Reference
+2 Protocol=modbus_protocol
+2 Messages=modbus_cmds
+2 Error Detection=modbus_err
+2 Exception Responses=modbus_exceptions
+1 ModScan Overview
+2 Operation=modscan_overview
+2 Document/View Architecture=HIDR_DOC1TYPE
+2 Modbus Data Definition=HID_SPLITTER1
+2 Display Formats=HID_SPLITTER2
+2 Connecting to a Modbus Network=modbus_connections
+1 Menus
+2 File menu=menu_file
+2 Connection menu=menu_connection
+2 Setup menu=menu_setup
+2 View menu=menu_view
+2 Window menu=menu_window
+2 Help menu=menu_help
+1 Tool and Status Bars
+2 Toolbar=AFX_HIDW_TOOLBAR
+2 Format Selections=HID_FORMATBAR
+2 Status Bar=AFX_HIDW_STATUS_BAR
+1 Testing Operations
+2 Writing Data to the Modbus=HID_WRITE_DATA
+2 Message Counters=HID_COUNTERS
+2 Observing Serial Traffic=HID_SHOWTRAFFIC
+2 Capturing Data to Text File=HID_CAPTUREFILES
+2 User Defined Commands=HID_SETUP_EXTENDED_USERMSG
+2 Scripts=HID_SETUP_EXTENDED_RUNSCRIPT
+1 Using ModScan with a Database
+2 Overview=HID_DATABASE_OP
+2 Table Format=HID_TABLE_FORMAT
+2 Example Database=HID_DATABASE_EXAMPLE
+1 Using OLE Automation
+2 Overview=HID_OLE_OVERVIEW
+2 Automation Routines=HID_OLE_ROUTINES
+2 Visual Basic Example=HID_OLE_EXAMPLE
+1 Custom Displays
+2 Creating=HID_CUSTOM_DOC
+2 Simple Text Items=HID_MMI_TEXT
+2 Rectangle Display Items=HID_MMI_RECT
+2 Modbus Discretes=HID_MMI_DISCRETE
+2 Modbus Registers=HID_MMI_REGISTER
+2 Bitmaps=HID_MMI_BMAP
+2 Bargraphs=HID_MMI_BAR
+2 Trend Charts=HID_MMI_TREND
+1 Registration Information
+2 Pricing Details=HID_PRICING_INFO
+2 Licensing Information=HID_LICENSING_INFO
+2 Contact Info=HID_CONTACT_INFO
+2 Other WinTECH Products=HID_PRODUCT_INFO
