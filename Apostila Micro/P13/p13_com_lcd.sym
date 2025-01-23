@@ -122,12 +122,12 @@ ROM Allocation:
 00052A  @cinit2
 
 Project Directory:
-    C:\Users\Fabio T. Brito\Dropbox\IFCE\Disciplinas_IFCE\Apostilas IFCE\Micro\Programas oficiais\Apostila Micro\P13\
+    C:\Users\IFMaker\Dropbox\IFCE\github\programas oficiais\Apostila Micro\P13\
 
 Project Files:
-    p13_com_lcd.c                                           [14-mai-21 22:24  CRC=C6F838FA]
-    ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
-    ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.c [23-ago-12 09:01  CRC=D28E8746]
+    p13_com_lcd.c                                           [01-ago-21 21:08  CRC=C6F838FA]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [21-jun-13 16:05  CRC=A157EDDE]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.c [23-ago-12 09:01  CRC=D28E8746]
 
 Source signature=0D6D3564
 

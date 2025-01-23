@@ -12,11 +12,11 @@ Type=4
 [mru-list]
 1=p13_com_lcd.c
 [Opened Files]
-1=..\P11\teste_lcd_picgenios.c
-2=..\P12\P93.c
-3=..\P10\teste_lcd.c
-4=..\P9\P86.c
-5=..\..\..\programas\robo scara programa\teste placa.c
+1=p13_com_lcd.c
+2=P95.c
+3=..\P20\P118.c
+4=..\..\..\..\Disciplinas_IFCE\Apostilas IFCE\Micro\programas\teclado matricial\teclado_real2_portab.c
+5=
 6=p13_com_lcd.c
 7=
 [Units]

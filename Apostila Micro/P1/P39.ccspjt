@@ -12,10 +12,11 @@ Type=4
 [mru-list]
 1=P39.c
 [Opened Files]
-1=..\..\..\..\Disciplinas_IFCE\Apostilas IFCE\Micro\programas\60hZ\timer0.c
-2=P39.c
-3=..\..\..\..\Disciplinas_IFCE\Dispositivos e Microcontroladores\2022.1\micro\7seg\7seg.c
-4=
+1=..\..\..\..\Disciplinas_IFCE\Apostilas IFCE\Micro\programas\assembler\ou\ou.c
+2=..\..\..\..\Disciplinas_IFCE\Dispositivos e Microcontroladores\2024.1\dispo\questão 2\Questão 2 - Vitoria Lane Rocha Cavalcante\Questão 2\P83_vitoria.c
+3=..\..\..\..\Disciplinas_IFCE\Dispositivos e Microcontroladores\2024.1\dispo\questão 2\P83 - Pedro Victor Silva Rocha.c
+4=P39.c
+5=
 [Units]
 Count=1
 1=P39 (main)

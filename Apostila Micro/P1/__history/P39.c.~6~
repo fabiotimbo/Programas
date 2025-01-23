@@ -7,7 +7,7 @@ void main()
 #asm
 goto inicio // vai para label inicio
 Delay100ms:
-  movlw 50 //w=131d
+  movlw 131 //w=131d
   movwf delay_reg1 // reg1=131d
   movlw 0xFF // w=255d
   movwf delay_reg2 // reg2=255d

@@ -12,11 +12,11 @@ Type=4
 [mru-list]
 1=P41.c
 [Opened Files]
-1=P41.c
-2=
-3=
-4=..\..\..\..\..\..\..\documentos\Estudo\Pic_udemy\p120_alterado_picsimlab4\P120_picsimlab4.c
-5=..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\flex_lcd.c
+1=..\..\..\..\Disciplinas_IFCE\Apostilas IFCE\Micro\programas\placas\teste motores\teste_pulsos_mav.c
+2=..\..\..\..\Disciplinas_IFCE\Apostilas IFCE\Micro\programas\pwm_pot\pwm_pot_bancada clp.c
+3=..\..\..\..\Disciplinas_IFCE\Apostilas IFCE\Micro\programas\elevador novo\final.c
+4=P41.c
+5=
 6=P41.c
 7=
 [documentation]

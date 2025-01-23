@@ -14,15 +14,15 @@ Stack size: 31
 Lines Stmts  %   Files
 ----- ----- ---  -----
    39    28  25  p13_com_lcd.c
-  821     0   0  ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
-  456    84  75  ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.c
+  821     0   0  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
+  456    84  75  ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.c
 ----- -----
  1316   112 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
 0     38   1    1             @delay_ms1
-0     20   1    0   652  5.4  @const648
+0     20   1    0             @const648
 0     66   2    3   596  5.9  lcd_read_byte
 0     12   0    0    59  4.2  lcd_read_nibble
 0     34   1    1   179  3.3  lcd_send_nibble
@@ -49,16 +49,16 @@ Page ROM  %  RAM   Vol Diff  Functions:
  Inline         0             @cinit1
 
 Program metrics:
-    Functions               9
+    Functions               8
     Statements              112
     Comments                247
-    Volume (V)              6333
-    Difficulty (D)          43.6
-    Effort to implement (E) 276284
-    Time to implement (T)   4 hours, 16 minutes
+    Volume (V)              5237
+    Difficulty (D)          38.1
+    Effort to implement (E) 199698
+    Time to implement (T)   3 hours, 5 minutes
     Est Delivered Bugs (B)  1
-    Cyclomatic Complexity   14
-    Maintainability (MI)    144
+    Cyclomatic Complexity   10
+    Maintainability (MI)    131
 
  Segment     Used  Free
 -----------  ----  ----

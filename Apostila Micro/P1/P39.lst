@@ -1,6 +1,6 @@
-CCS PCH C Compiler, Version 5.007, 61971               25-abr-22 11:20
+CCS PCH C Compiler, Version 5.007, 61971               22-fev-24 11:06
 
-               Filename:   C:\Users\IFMaker\Dropbox\IFCE\github\Programas\Apostila Micro\P1\P39.lst
+               Filename:   C:\Users\Bolsistas\Dropbox\IFCE\github\Programas\Apostila Micro\P1\P39.lst
 
                ROM used:   76 bytes (0%)
                            Largest free fragment is 32692
@@ -34,8 +34,8 @@ CCS PCH C Compiler, Version 5.007, 61971               25-abr-22 11:20
 .................... goto inicio // vai para label inicio 
 0014:  BRA    002C
 .................... Delay100ms: 
-....................   movlw 0x83 //w=131d 
-0016:  MOVLW  83
+....................   movlw 50 //w=131d 
+0016:  MOVLW  32
 ....................   movwf delay_reg1 // reg1=131d 
 0018:  MOVWF  05
 ....................   movlw 0xFF // w=255d 
